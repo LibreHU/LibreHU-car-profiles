@@ -7,6 +7,9 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  # Daily as well: pushes made with an app token start no run (packs then rebuilt the next day at the latest).
+  schedule:
+    - cron: "37 3 * * *"
 
 permissions:
   contents: write
