@@ -36,6 +36,25 @@
    "sha256": "a4bb153a3adb4d5b27e17b92385c6aa95d99cfe01bc6b4e3323e33d0d940b0ed"
   },
   {
+   "id": "psa",
+   "name": "Peugeot, Citroën, DS",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Citroën",
+    "DS",
+    "Peugeot"
+   ],
+   "profiles": [
+    "psa-raise-keep",
+    "psa-raise"
+   ],
+   "cars": 111,
+   "file": "psa.json",
+   "size": 31745,
+   "sha256": "bb958ba02ef17d58bdbe65ef34efd149ca14ba061ed5d9a3e9a3755710e97a82"
+  },
+  {
    "id": "renault",
    "name": "Renault",
    "revision": 1,
