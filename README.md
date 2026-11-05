@@ -20,7 +20,8 @@ by LibreHU Apps without updating the service. Guide to port a car (French): [POR
   page [Moteur voiture](https://librehu.github.io/engine.html).
 - **Versions** : chaque fiche dit le moteur dont elle a besoin (`"engine": ">=2.1"`, Semantic Versioning) ; un paquet
   demande le plus récent de ses fiches ; LibreHU Apps ne propose que les paquets que votre service sait lire.
-- **Intégrité** : chaque paquet est publié avec sa taille et son SHA-256 dans `dist/index.json`, téléchargé en HTTPS ;
+- **Intégrité** : chaque paquet est publié avec sa taille et son SHA-256 dans `dist/index.json` et dans
+  `dist/SHA256SUMS` (à la main : `cd dist && sha256sum -c SHA256SUMS`), téléchargé en HTTPS ;
   LibreHU Apps vérifie l'empreinte et le service relit le paquet tout ou rien (pas de signature, choix du projet).
 - **CI** : à chaque push et pull request, chaque jour, ou à la main (Actions → « Check and build packs » → Run workflow).
 - **Révision d'un paquet** : nombre de commits qui ont touché son dossier ; corriger une Renault ne change que le

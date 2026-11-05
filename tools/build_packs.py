@@ -98,7 +98,11 @@ def build() -> dict:
             }
         )
     index = {"format": "librehu-car-packs", "version": 1, "packs": packs}
-    (DIST / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    index_text = json.dumps(index, ensure_ascii=False, indent=1) + "\n"
+    (DIST / "index.json").write_text(index_text, encoding="utf-8")
+    # The usual checksum list (sha256sum -c SHA256SUMS in dist/): every pack and the index.
+    sums = [(p["sha256"], p["file"]) for p in packs] + [(hashlib.sha256(index_text.encode("utf-8")).hexdigest(), "index.json")]
+    (DIST / "SHA256SUMS").write_text("".join(f"{h}  {f}\n" for h, f in sums), encoding="utf-8")
     return index
 
 
