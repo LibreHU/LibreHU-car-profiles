@@ -1,0 +1,455 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.0",
+ "id": "psa-raise-keep",
+ "name": "Peugeot, Citroën (Raise PSA, original screen kept)",
+ "description": "Raise (RZC) box for PSA keeping the original small screen (RePsaProtocol_KeepOriginalDisplay). Car Info's decoder (com.can.activity 1.0.3991) for these boxes; cars and car types (0xA7) from its managers and buildCarTypePacket. FD framing, 19200 bit/s, no acknowledgement; car type 0xA7 [05, trim, 00] every second. Not tried on a car yet.",
+ "box": "raise-fd",
+ "baud": 19200,
+ "link": {
+  "ack": false,
+  "send": [
+   {
+    "name": "connect",
+    "cmd": "0x81",
+    "data": "01",
+    "first_ms": 500,
+    "every_ms": 0
+   },
+   {
+    "name": "car type",
+    "cmd": "0xA7",
+    "data": "",
+    "first_ms": 1000,
+    "every_ms": 1000
+   }
+  ]
+ },
+ "variants": [
+  {
+   "name": "Citroën berlingo 2009-2015, all trims",
+   "send": {
+    "car type": "05 00 00"
+   }
+  },
+  {
+   "name": "Citroën c5 2010-now, keep original small screen",
+   "send": {
+    "car type": "05 00 00"
+   }
+  },
+  {
+   "name": "Citroën c_quatre 2012-now, keep original small screen",
+   "send": {
+    "car type": "05 00 00"
+   }
+  },
+  {
+   "name": "Citroën, other compatible models, original small screen kept, high trim",
+   "send": {
+    "car type": "05 03 00"
+   }
+  },
+  {
+   "name": "Citroën, other compatible models, original small screen kept, low trim",
+   "send": {
+    "car type": "05 01 00"
+   }
+  },
+  {
+   "name": "Citroën, other compatible models, original small screen kept, medium trim",
+   "send": {
+    "car type": "05 02 00"
+   }
+  },
+  {
+   "name": "Peugeot 308sw 2010-2013, all trims",
+   "send": {
+    "car type": "05 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 408CC 2010-now, all trims",
+   "send": {
+    "car type": "05 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 408sw 2010-now, all trims",
+   "send": {
+    "car type": "05 00 00"
+   }
+  },
+  {
+   "name": "Peugeot MPV_Tepee 2015, all trims",
+   "send": {
+    "car type": "05 00 00"
+   }
+  },
+  {
+   "name": "Peugeot Tepee 2010-now, all trims",
+   "send": {
+    "car type": "05 00 00"
+   }
+  },
+  {
+   "name": "Peugeot, other compatible models, original small screen kept, high trim",
+   "send": {
+    "car type": "05 03 00"
+   }
+  },
+  {
+   "name": "Peugeot, other compatible models, original small screen kept, low trim",
+   "send": {
+    "car type": "05 01 00"
+   }
+  },
+  {
+   "name": "Peugeot, other compatible models, original small screen kept, medium trim",
+   "send": {
+    "car type": "05 02 00"
+   }
+  }
+ ],
+ "wheel_keys": {
+  "cmd": "0x02",
+  "code_byte": 0,
+  "names": {
+   "7": "play / pause",
+   "8": "back",
+   "16": "mute",
+   "17": "mode",
+   "18": "next",
+   "19": "previous",
+   "20": "volume +",
+   "21": "volume -",
+   "22": "answer",
+   "23": "hang up",
+   "24": "previous",
+   "25": "next",
+   "32": "trip computer page",
+   "33": "home",
+   "48": "answer",
+   "49": "hang up",
+   "50": "navigation",
+   "51": "radio",
+   "52": "settings",
+   "53": "navigation",
+   "54": "mode",
+   "55": "navigation",
+   "56": "volume +",
+   "57": "volume -",
+   "64": "previous",
+   "65": "next",
+   "66": "previous",
+   "67": "next",
+   "68": "1",
+   "69": "2",
+   "70": "3",
+   "71": "4",
+   "72": "5",
+   "73": "6",
+   "80": "radio",
+   "81": "answer / list",
+   "82": "sound settings",
+   "83": "settings",
+   "84": "TV",
+   "85": "eject",
+   "86": "next",
+   "87": "previous",
+   "88": "previous",
+   "89": "next",
+   "128": "power"
+  }
+ },
+ "messages": {
+  "0x02": {
+   "name": "Wheel key",
+   "signals": {
+    "wheel_key": {
+     "start_byte": 0,
+     "label": "wheel key",
+     "values": {
+      "7": "play / pause",
+      "8": "back",
+      "16": "mute",
+      "17": "mode",
+      "18": "next",
+      "19": "previous",
+      "20": "volume +",
+      "21": "volume -",
+      "22": "answer",
+      "23": "hang up",
+      "24": "previous",
+      "25": "next",
+      "32": "trip computer page",
+      "33": "home",
+      "48": "answer",
+      "49": "hang up",
+      "50": "navigation",
+      "51": "radio",
+      "52": "settings",
+      "53": "navigation",
+      "54": "mode",
+      "55": "navigation",
+      "56": "volume +",
+      "57": "volume -",
+      "64": "previous",
+      "65": "next",
+      "66": "previous",
+      "67": "next",
+      "68": "1",
+      "69": "2",
+      "70": "3",
+      "71": "4",
+      "72": "5",
+      "73": "6",
+      "80": "radio",
+      "81": "answer / list",
+      "82": "sound settings",
+      "83": "settings",
+      "84": "TV",
+      "85": "eject",
+      "86": "next",
+      "87": "previous",
+      "88": "previous",
+      "89": "next",
+      "128": "power"
+     }
+    }
+   }
+  },
+  "0x29": {
+   "name": "Steering",
+   "signals": {
+    "steering": {
+     "start_byte": 0,
+     "size": 2,
+     "endian": "little",
+     "signed": true,
+     "factor": 0.099083,
+     "unit": "°",
+     "label": "steering angle",
+     "role": "steering.angle"
+    }
+   }
+  },
+  "0x36": {
+   "name": "Outside temperature",
+   "signals": {
+    "outside": {
+     "start_byte": 0,
+     "sign_magnitude": true,
+     "unit": "°C",
+     "role": "outside.temp"
+    }
+   }
+  },
+  "0x38": {
+   "name": "Doors and lights",
+   "signals": {
+    "doors": {
+     "start_byte": 0,
+     "bits": {
+      "front left": {
+       "bit": 7,
+       "role": "door.front_left"
+      },
+      "front right": {
+       "bit": 6,
+       "role": "door.front_right"
+      },
+      "rear left": {
+       "bit": 5,
+       "role": "door.rear_left"
+      },
+      "rear right": {
+       "bit": 4,
+       "role": "door.rear_right"
+      },
+      "trunk": {
+       "bit": 3,
+       "role": "door.trunk"
+      }
+     }
+    },
+    "state": {
+     "start_byte": 3,
+     "bits": {
+      "side lights": {
+       "bit": 0,
+       "role": "lights.parking"
+      },
+      "P": {
+       "bit": 1,
+       "role": "gear.park"
+      },
+      "reverse": {
+       "bit": 2,
+       "role": "gear.reverse"
+      },
+      "radar off": 3
+     }
+    }
+   }
+  },
+  "0x33": {
+   "name": "Trip computer",
+   "signals": {
+    "instant": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 0,
+     "factor": 0.1,
+     "unit": "L/100 km",
+     "role": "fuel.instant",
+     "label": "instant consumption"
+    },
+    "range": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 2,
+     "unit": "km",
+     "role": "fuel.range",
+     "label": "range"
+    },
+    "to_destination": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 4,
+     "unit": "km",
+     "label": "distance to destination"
+    }
+   }
+  },
+  "0x34": {
+   "name": "Trip 1",
+   "signals": {
+    "average": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 0,
+     "factor": 0.1,
+     "unit": "L/100 km",
+     "role": "fuel.average",
+     "label": "average consumption"
+    },
+    "speed": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 2,
+     "unit": "km/h",
+     "role": "trip.average_speed",
+     "label": "average speed"
+    },
+    "distance": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 4,
+     "unit": "km",
+     "role": "trip.distance",
+     "label": "distance"
+    }
+   }
+  },
+  "0x35": {
+   "name": "Trip 2",
+   "signals": {
+    "average": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 0,
+     "factor": 0.1,
+     "unit": "L/100 km",
+     "label": "average consumption"
+    },
+    "speed": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 2,
+     "unit": "km/h",
+     "label": "average speed"
+    },
+    "distance": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 4,
+     "unit": "km",
+     "label": "distance"
+    }
+   }
+  },
+  "0x08": {
+   "name": "Parking radar",
+   "signals": {
+    "front_L": {
+     "start_byte": 0,
+     "max_value": 4,
+     "label": "front L (0-4, 5 = none)"
+    },
+    "front_M": {
+     "start_byte": 1,
+     "max_value": 4,
+     "label": "front middle (0-4, 5 = none)"
+    },
+    "front_R": {
+     "start_byte": 2,
+     "max_value": 4,
+     "label": "front R (0-4, 5 = none)"
+    },
+    "rear_L": {
+     "start_byte": 3,
+     "max_value": 4,
+     "label": "rear L (0-4, 5 = none)"
+    },
+    "rear_M": {
+     "start_byte": 4,
+     "max_value": 4,
+     "label": "rear middle (0-4, 5 = none)"
+    },
+    "rear_R": {
+     "start_byte": 5,
+     "max_value": 4,
+     "label": "rear R (0-4, 5 = none)"
+    }
+   }
+  }
+ },
+ "examples": [
+  {
+   "cmd": "0x02",
+   "data": "38",
+   "expect": {
+    "wheel_key": "volume +"
+   }
+  },
+  {
+   "cmd": "0x08",
+   "data": "00 01 02 03 04 05",
+   "expect": {
+    "front_L": 0,
+    "rear_L": 3,
+    "rear_R": null
+   }
+  }
+ ]
+}

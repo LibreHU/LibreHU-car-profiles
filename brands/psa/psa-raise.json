@@ -1,0 +1,1078 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.0",
+ "id": "psa-raise",
+ "name": "Peugeot, Citroën, DS (Raise PSA)",
+ "description": "Raise (RZC) box for PSA, original screen removed (RePsaProtocol), and Oudi for some Citroën. Car Info's decoder (com.can.activity 1.0.3991) for these boxes; cars and car types (0xA7) from its managers and buildCarTypePacket. FD framing (8-bit sum), 19200 bit/s, no acknowledgement; hello 0x81 01, the car type every second. Not tried on a car yet.",
+ "box": "raise-fd",
+ "baud": 19200,
+ "link": {
+  "ack": false,
+  "send": [
+   {
+    "name": "connect",
+    "cmd": "0x81",
+    "data": "01",
+    "first_ms": 500,
+    "every_ms": 0
+   },
+   {
+    "name": "car type",
+    "cmd": "0xA7",
+    "data": "",
+    "first_ms": 1000,
+    "every_ms": 1000
+   }
+  ]
+ },
+ "variants": [
+  {
+   "name": "Citroën berlingo 2021, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c3 2014-2023, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c3 2014-2023, remove air",
+   "send": {
+    "car type": "50 00 00"
+   }
+  },
+  {
+   "name": "Citroën c3 2021-2023, keep air panel",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c3 2021-2023, remove air panel",
+   "send": {
+    "car type": "50 00 00"
+   }
+  },
+  {
+   "name": "Citroën c3xr 2014-2019, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c3xr 2014-2019, customized version",
+   "send": {
+    "car type": "01 00 00"
+   }
+  },
+  {
+   "name": "Citroën c3xr 2014-2019, has hvac",
+   "send": {
+    "car type": "03 03 00"
+   }
+  },
+  {
+   "name": "Citroën c3xr 2014-2019, no hvac",
+   "send": {
+    "car type": "03 01 00"
+   }
+  },
+  {
+   "name": "Citroën c4 2015-now, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c4 2020-2023 (export), high trim",
+   "send": {
+    "car type": "04 03 00"
+   }
+  },
+  {
+   "name": "Citroën c4 2020-2023 (export), low trim",
+   "send": {
+    "car type": "04 01 00"
+   }
+  },
+  {
+   "name": "Citroën c4 2020-2023 (export), medium trim",
+   "send": {
+    "car type": "04 02 00"
+   }
+  },
+  {
+   "name": "Citroën c4_quatre 2015-2018, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c4l 2010-2012, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c4l 2013-2018, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c4l 2014-now, keep air panel",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c4l 2014-now, remove air panel",
+   "send": {
+    "car type": "50 00 00"
+   }
+  },
+  {
+   "name": "Citroën c4l 2019-now, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c5 2010-2012, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c5 2010-now, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c5 2013-2016, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c5_aircorss 2017-2022, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c5_aircorss 2017-2022, ev",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën c_quatre 2012-now, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën ds3 2009-now, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën ds4 2012-now, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën ds5 2011-now, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën ds6 2018-now, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën Elysee 2013-2018, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën ES600 2022, all trims",
+   "send": {
+    "car type": "06 00 00"
+   }
+  },
+  {
+   "name": "Citroën ES600 2022, keep air panel",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën ES600 2022, remove air panel",
+   "send": {
+    "car type": "50 00 00"
+   }
+  },
+  {
+   "name": "Citroën Jumpy 2015-2024, high trim",
+   "send": {
+    "car type": "03 03 00"
+   }
+  },
+  {
+   "name": "Citroën Jumpy 2015-2024, low trim",
+   "send": {
+    "car type": "03 01 00"
+   }
+  },
+  {
+   "name": "Citroën Jumpy 2015-2024, medium trim",
+   "send": {
+    "car type": "03 02 00"
+   }
+  },
+  {
+   "name": "Citroën triumph 2006-2010, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën Xsara 2004-2005, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën, other compatible models, climate panel removed, high trim",
+   "send": {
+    "car type": "50 03 00"
+   }
+  },
+  {
+   "name": "Citroën, other compatible models, climate panel removed, low trim",
+   "send": {
+    "car type": "50 01 00"
+   }
+  },
+  {
+   "name": "Citroën, other compatible models, climate panel removed, medium trim",
+   "send": {
+    "car type": "50 02 00"
+   }
+  },
+  {
+   "name": "Citroën, other compatible models, compatible",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Citroën, other compatible models, original screen removed, high trim",
+   "send": {
+    "car type": "03 03 00"
+   }
+  },
+  {
+   "name": "Citroën, other compatible models, original screen removed, low trim",
+   "send": {
+    "car type": "03 01 00"
+   }
+  },
+  {
+   "name": "Citroën, other compatible models, original screen removed, medium trim",
+   "send": {
+    "car type": "03 02 00"
+   }
+  },
+  {
+   "name": "DS ds5 2013-2018, high trim",
+   "send": {
+    "car type": "03 03 00"
+   }
+  },
+  {
+   "name": "DS ds5 2013-2018, low trim",
+   "send": {
+    "car type": "03 01 00"
+   }
+  },
+  {
+   "name": "DS ds5ls 2014-2016, high trim",
+   "send": {
+    "car type": "03 03 00"
+   }
+  },
+  {
+   "name": "DS ds5ls 2014-2016, medium low",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "DS ds6 2014-2017, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "DS, other compatible models, compatible",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 2008 2014-2020, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 2008 2014-2021 (Turkey), all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 206 2006, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 207 2006-2015, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 208 2014-2021, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 3008 2013-now (original small screen kept), high trim",
+   "send": {
+    "car type": "00 03 00"
+   }
+  },
+  {
+   "name": "Peugeot 3008 2013-now (original small screen kept), low trim",
+   "send": {
+    "car type": "00 01 00"
+   }
+  },
+  {
+   "name": "Peugeot 3008 2013-now (original small screen kept), medium trim",
+   "send": {
+    "car type": "00 02 00"
+   }
+  },
+  {
+   "name": "Peugeot 3008 2013-now, high trim",
+   "send": {
+    "car type": "00 03 00"
+   }
+  },
+  {
+   "name": "Peugeot 3008 2013-now, low trim",
+   "send": {
+    "car type": "00 01 00"
+   }
+  },
+  {
+   "name": "Peugeot 3008 2013-now, medium trim",
+   "send": {
+    "car type": "00 02 00"
+   }
+  },
+  {
+   "name": "Peugeot 301 2014-2018, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 307 2004-2007, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 307 2007-2013, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 308 2012-2015, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 308 2012-2015, keep original small screen",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 308 2016-2018, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 308s 2015-2018, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 4008 2016-2019, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 4008 2017-now, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 4008 2021 (hybrid), all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 407 2004-2010, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 407 2004-2010, cd",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 408 2010-2013 (original small screen kept), all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 408 2010-2013, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 408 2014-2018 (climate panel removed), all trims",
+   "send": {
+    "car type": "50 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 408 2014-2018, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 5008 2017-2019, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 5008 2020-2023 (Turkey), all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 5008 2022, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 508 2010-now, all trims",
+   "send": {
+    "car type": "08 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 508L 2019-now, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot 607 2005-2012, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot boxer 2016-now, high trim",
+   "send": {
+    "car type": "03 03 00"
+   }
+  },
+  {
+   "name": "Peugeot boxer 2016-now, low trim",
+   "send": {
+    "car type": "03 01 00"
+   }
+  },
+  {
+   "name": "Peugeot boxer 2016-now, medium trim",
+   "send": {
+    "car type": "03 02 00"
+   }
+  },
+  {
+   "name": "Peugeot rcz 2010-now, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot Rifter 2019-2021, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot Traveller 2016-2022, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot Traveller 2024, all trims",
+   "send": {
+    "car type": "03 00 00"
+   }
+  },
+  {
+   "name": "Peugeot, other compatible models, climate panel removed, high trim",
+   "send": {
+    "car type": "50 03 00"
+   }
+  },
+  {
+   "name": "Peugeot, other compatible models, climate panel removed, low trim",
+   "send": {
+    "car type": "50 01 00"
+   }
+  },
+  {
+   "name": "Peugeot, other compatible models, climate panel removed, medium trim",
+   "send": {
+    "car type": "50 02 00"
+   }
+  },
+  {
+   "name": "Peugeot, other compatible models, original screen removed, high trim",
+   "send": {
+    "car type": "03 03 00"
+   }
+  },
+  {
+   "name": "Peugeot, other compatible models, original screen removed, low trim",
+   "send": {
+    "car type": "03 01 00"
+   }
+  },
+  {
+   "name": "Peugeot, other compatible models, original screen removed, medium trim",
+   "send": {
+    "car type": "03 02 00"
+   }
+  }
+ ],
+ "wheel_keys": {
+  "cmd": "0x02",
+  "code_byte": 0,
+  "names": {
+   "2": "home",
+   "3": "up",
+   "4": "down",
+   "7": "play / pause",
+   "8": "back",
+   "9": "mode",
+   "16": "mode",
+   "17": "answer / hang up",
+   "18": "next",
+   "19": "previous",
+   "20": "volume +",
+   "21": "volume -",
+   "22": "mute",
+   "23": "previous",
+   "24": "next",
+   "25": "home",
+   "32": "trip computer page",
+   "33": "home",
+   "34": "speed memory",
+   "35": "answer / hang up",
+   "41": "voice",
+   "42": "settings",
+   "43": "navigation",
+   "44": "USB",
+   "45": "answer",
+   "46": "home",
+   "47": "climate",
+   "48": "answer",
+   "49": "hang up",
+   "50": "navigation",
+   "51": "radio",
+   "52": "settings",
+   "53": "navigation",
+   "54": "mode",
+   "55": "navigation",
+   "56": "up",
+   "57": "down",
+   "64": "left",
+   "65": "right",
+   "66": "up",
+   "67": "down",
+   "68": "1",
+   "69": "2",
+   "70": "3",
+   "71": "4",
+   "72": "5",
+   "73": "6",
+   "74": "mode",
+   "80": "radio",
+   "81": "answer / hang up",
+   "82": "sound settings",
+   "83": "settings",
+   "84": "TV",
+   "85": "eject",
+   "86": "next",
+   "87": "previous",
+   "88": "previous",
+   "89": "next",
+   "90": "home",
+   "91": "home",
+   "93": "mute",
+   "96": "OK",
+   "97": "mode",
+   "98": "answer",
+   "128": "power"
+  }
+ },
+ "messages": {
+  "0x02": {
+   "name": "Wheel key",
+   "signals": {
+    "wheel_key": {
+     "start_byte": 0,
+     "label": "wheel key",
+     "values": {
+      "2": "home",
+      "3": "up",
+      "4": "down",
+      "7": "play / pause",
+      "8": "back",
+      "9": "mode",
+      "16": "mode",
+      "17": "answer / hang up",
+      "18": "next",
+      "19": "previous",
+      "20": "volume +",
+      "21": "volume -",
+      "22": "mute",
+      "23": "previous",
+      "24": "next",
+      "25": "home",
+      "32": "trip computer page",
+      "33": "home",
+      "34": "speed memory",
+      "35": "answer / hang up",
+      "41": "voice",
+      "42": "settings",
+      "43": "navigation",
+      "44": "USB",
+      "45": "answer",
+      "46": "home",
+      "47": "climate",
+      "48": "answer",
+      "49": "hang up",
+      "50": "navigation",
+      "51": "radio",
+      "52": "settings",
+      "53": "navigation",
+      "54": "mode",
+      "55": "navigation",
+      "56": "up",
+      "57": "down",
+      "64": "left",
+      "65": "right",
+      "66": "up",
+      "67": "down",
+      "68": "1",
+      "69": "2",
+      "70": "3",
+      "71": "4",
+      "72": "5",
+      "73": "6",
+      "74": "mode",
+      "80": "radio",
+      "81": "answer / hang up",
+      "82": "sound settings",
+      "83": "settings",
+      "84": "TV",
+      "85": "eject",
+      "86": "next",
+      "87": "previous",
+      "88": "previous",
+      "89": "next",
+      "90": "home",
+      "91": "home",
+      "93": "mute",
+      "96": "OK",
+      "97": "mode",
+      "98": "answer",
+      "128": "power"
+     }
+    }
+   }
+  },
+  "0x29": {
+   "name": "Steering",
+   "signals": {
+    "steering": {
+     "start_byte": 0,
+     "size": 2,
+     "endian": "little",
+     "signed": true,
+     "factor": 0.099083,
+     "unit": "°",
+     "label": "steering angle",
+     "role": "steering.angle"
+    }
+   }
+  },
+  "0x36": {
+   "name": "Outside temperature",
+   "signals": {
+    "outside": {
+     "start_byte": 0,
+     "sign_magnitude": true,
+     "unit": "°C",
+     "role": "outside.temp"
+    }
+   }
+  },
+  "0x38": {
+   "name": "Doors and lights",
+   "signals": {
+    "doors": {
+     "start_byte": 0,
+     "bits": {
+      "front left": {
+       "bit": 7,
+       "role": "door.front_left"
+      },
+      "front right": {
+       "bit": 6,
+       "role": "door.front_right"
+      },
+      "rear left": {
+       "bit": 5,
+       "role": "door.rear_left"
+      },
+      "rear right": {
+       "bit": 4,
+       "role": "door.rear_right"
+      },
+      "trunk": {
+       "bit": 3,
+       "role": "door.trunk"
+      }
+     }
+    },
+    "state": {
+     "start_byte": 3,
+     "bits": {
+      "side lights": {
+       "bit": 0,
+       "role": "lights.parking"
+      },
+      "P": {
+       "bit": 1,
+       "role": "gear.park"
+      },
+      "reverse": {
+       "bit": 2,
+       "role": "gear.reverse"
+      },
+      "radar off": 3
+     }
+    }
+   }
+  },
+  "0x33": {
+   "name": "Trip computer",
+   "signals": {
+    "instant": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 0,
+     "factor": 0.1,
+     "unit": "L/100 km",
+     "role": "fuel.instant",
+     "label": "instant consumption"
+    },
+    "range": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 2,
+     "unit": "km",
+     "role": "fuel.range",
+     "label": "range"
+    },
+    "to_destination": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 4,
+     "unit": "km",
+     "label": "distance to destination"
+    }
+   }
+  },
+  "0x34": {
+   "name": "Trip 1",
+   "signals": {
+    "average": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 0,
+     "factor": 0.1,
+     "unit": "L/100 km",
+     "role": "fuel.average",
+     "label": "average consumption"
+    },
+    "speed": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 2,
+     "unit": "km/h",
+     "role": "trip.average_speed",
+     "label": "average speed"
+    },
+    "distance": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 4,
+     "unit": "km",
+     "role": "trip.distance",
+     "label": "distance"
+    }
+   }
+  },
+  "0x35": {
+   "name": "Trip 2",
+   "signals": {
+    "average": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 0,
+     "factor": 0.1,
+     "unit": "L/100 km",
+     "label": "average consumption"
+    },
+    "speed": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 2,
+     "unit": "km/h",
+     "label": "average speed"
+    },
+    "distance": {
+     "size": 2,
+     "invalid": [
+      "0xFFFF"
+     ],
+     "start_byte": 4,
+     "unit": "km",
+     "label": "distance"
+    }
+   }
+  },
+  "0x30": {
+   "name": "Parking radar",
+   "signals": {
+    "front_L": {
+     "start_byte": 0,
+     "max_value": 4,
+     "label": "front L (0-4, 5 = none)"
+    },
+    "front_M": {
+     "start_byte": 1,
+     "max_value": 4,
+     "label": "front middle (0-4, 5 = none)"
+    },
+    "front_R": {
+     "start_byte": 2,
+     "max_value": 4,
+     "label": "front R (0-4, 5 = none)"
+    },
+    "rear_L": {
+     "start_byte": 3,
+     "max_value": 4,
+     "label": "rear L (0-4, 5 = none)"
+    },
+    "rear_M": {
+     "start_byte": 4,
+     "max_value": 4,
+     "label": "rear middle (0-4, 5 = none)"
+    },
+    "rear_R": {
+     "start_byte": 5,
+     "max_value": 4,
+     "label": "rear R (0-4, 5 = none)"
+    }
+   }
+  },
+  "0x32": {
+   "name": "Parking radar (shown)",
+   "signals": {
+    "radar_state": {
+     "start_byte": 0,
+     "values": {
+      "2": "shown",
+      "3": "off"
+     },
+     "label": "radar"
+    },
+    "rear_L": {
+     "start_byte": 1,
+     "max_value": 4,
+     "label": "rear L (0-4, 5 = none)"
+    },
+    "rear_M": {
+     "start_byte": 2,
+     "max_value": 4,
+     "label": "rear middle (0-4, 5 = none)"
+    },
+    "rear_R": {
+     "start_byte": 3,
+     "max_value": 4,
+     "label": "rear R (0-4, 5 = none)"
+    },
+    "front_L": {
+     "start_byte": 4,
+     "max_value": 4,
+     "label": "front L (0-4, 5 = none)"
+    },
+    "front_M": {
+     "start_byte": 5,
+     "max_value": 4,
+     "label": "front middle (0-4, 5 = none)"
+    },
+    "front_R": {
+     "start_byte": 6,
+     "max_value": 4,
+     "label": "front R (0-4, 5 = none)"
+    }
+   }
+  },
+  "0x7F": {
+   "name": "Box version",
+   "signals": {
+    "version": {
+     "start_byte": 0,
+     "ascii": true,
+     "role": "box.version"
+    }
+   }
+  }
+ },
+ "examples": [
+  {
+   "cmd": "0x02",
+   "data": "12",
+   "expect": {
+    "wheel_key": "next"
+   }
+  },
+  {
+   "cmd": "0x29",
+   "data": "D2 04",
+   "expect": {
+    "steering.angle": 122.26
+   }
+  },
+  {
+   "cmd": "0x36",
+   "data": "8A",
+   "expect": {
+    "outside.temp": -10
+   }
+  },
+  {
+   "cmd": "0x36",
+   "data": "15",
+   "expect": {
+    "outside.temp": 21
+   }
+  },
+  {
+   "cmd": "0x38",
+   "data": "88 00 00 05",
+   "expect": {
+    "door.front_left": true,
+    "door.trunk": true,
+    "door.front_right": false,
+    "gear.reverse": true,
+    "lights.parking": true
+   }
+  },
+  {
+   "cmd": "0x33",
+   "data": "00 41 01 2C FF FF",
+   "expect": {
+    "fuel.instant": 6.5,
+    "fuel.range": 300,
+    "to_destination": null
+   }
+  }
+ ]
+}

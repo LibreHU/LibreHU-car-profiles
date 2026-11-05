@@ -19,7 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 BRANDS = ROOT / "brands"
 DIST = ROOT / "dist"
-NAMES = {"renault": "Renault", "hyundai-kia": "Hyundai, Kia", "toyota": "Toyota", "honda": "Honda", "volkswagen": "Volkswagen group"}
+NAMES = {"renault": "Renault", "hyundai-kia": "Hyundai, Kia", "toyota": "Toyota", "honda": "Honda", "volkswagen": "Volkswagen group", "psa": "Peugeot, Citroën, DS"}
 
 
 def version(req: str):
