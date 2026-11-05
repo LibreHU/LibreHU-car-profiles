@@ -1,0 +1,1067 @@
+{
+ "format": "librehu-car-pack",
+ "version": 1,
+ "id": "toyota",
+ "name": "Toyota",
+ "revision": 1,
+ "engine": ">=2.0",
+ "profiles": [
+  {
+   "format": "librehu-can-vehicle",
+   "version": 2,
+   "engine": ">=2.0",
+   "id": "toyota-hiworld",
+   "name": "Toyota, Lexus ES (Hiworld TYP001)",
+   "description": "Hiworld box, protocol TYP001 (Toyota full compatible, Lexus ES), from Hiworld's own app (HdToyotaProtocol). Choose your car: its box needs its car type. Not tried on a car yet.",
+   "box": "hiworld",
+   "baud": 38400,
+   "link": {
+    "ack": true,
+    "send": [
+     {
+      "name": "car type",
+      "cmd": "0x24",
+      "data": "",
+      "first_ms": 1000,
+      "every_ms": 30000
+     }
+    ]
+   },
+   "variants": [
+    {
+     "name": "Toyota Alpha 2009-2015, all trims",
+     "send": {
+      "car type": "58 01"
+     }
+    },
+    {
+     "name": "Toyota Alphard 2003-2007, all trims",
+     "send": {
+      "car type": "AF 01"
+     }
+    },
+    {
+     "name": "Toyota Alphard 2015-2020, all trims",
+     "send": {
+      "car type": "BC 01"
+     }
+    },
+    {
+     "name": "Toyota Alphard_Hybrid 2003-2007, all trims",
+     "send": {
+      "car type": "AF 01"
+     }
+    },
+    {
+     "name": "Toyota Avalon 2010-2013, all trims",
+     "send": {
+      "car type": "40 01"
+     }
+    },
+    {
+     "name": "Toyota Avalon 2014, all trims",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota Avalon 2015-2017, all trims",
+     "send": {
+      "car type": "41 01"
+     }
+    },
+    {
+     "name": "Toyota Avalon 2019-2023, all trims",
+     "send": {
+      "car type": "42 01"
+     }
+    },
+    {
+     "name": "Toyota Avalon 2019-2023, all trims",
+     "send": {
+      "car type": "BA 01"
+     }
+    },
+    {
+     "name": "Toyota Avalon 2019-2023, high with 360",
+     "send": {
+      "car type": "BD 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2009, all trims",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2010~2012, all trims",
+     "send": {
+      "car type": "18 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2012-2014, all trims",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2012~2016, all trims",
+     "send": {
+      "car type": "19 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2015-2017, high trim",
+     "send": {
+      "car type": "82 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2015-2017, high trim",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2015-2017, medium low",
+     "send": {
+      "car type": "82 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2015-2017, medium low",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2017-2023, all trims",
+     "send": {
+      "car type": "19 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2018-now, high trim",
+     "send": {
+      "car type": "98 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2018-now, medium low",
+     "send": {
+      "car type": "98 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2022~至今(北美), all trims",
+     "send": {
+      "car type": "B5 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2024-now, all trims",
+     "send": {
+      "car type": "BA 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2024-now, all trims",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota camry 2024-now, high with 360",
+     "send": {
+      "car type": "BD 01"
+     }
+    },
+    {
+     "name": "Toyota chr 2018-now, all trims",
+     "send": {
+      "car type": "10 01"
+     }
+    },
+    {
+     "name": "Toyota corolla 2007, auto air",
+     "send": {
+      "car type": "A4 01"
+     }
+    },
+    {
+     "name": "Toyota corolla 2013-now, all trims",
+     "send": {
+      "car type": "A4 01"
+     }
+    },
+    {
+     "name": "Toyota corolla 2013-now, all trims",
+     "send": {
+      "car type": "F0 01"
+     }
+    },
+    {
+     "name": "Toyota corolla 2013~2021, all trims",
+     "send": {
+      "car type": "24 01"
+     }
+    },
+    {
+     "name": "Toyota corolla 2019~Present, all trims",
+     "send": {
+      "car type": "AC 01"
+     }
+    },
+    {
+     "name": "Toyota corolla 2022~Present, high trim",
+     "send": {
+      "car type": "A4 01"
+     }
+    },
+    {
+     "name": "Toyota corolla 2022~Present, low trim",
+     "send": {
+      "car type": "A3 01"
+     }
+    },
+    {
+     "name": "Toyota Corolla Cross 2022~Present, all trims",
+     "send": {
+      "car type": "96 01"
+     }
+    },
+    {
+     "name": "Toyota Corolla Cross 2022~Present, all trims",
+     "send": {
+      "car type": "A2 01"
+     }
+    },
+    {
+     "name": "Toyota Corolla Cross 2022~Present, high trim",
+     "send": {
+      "car type": "BF 01"
+     }
+    },
+    {
+     "name": "Toyota Corolla Cross 2022~Present, low trim",
+     "send": {
+      "car type": "BE 01"
+     }
+    },
+    {
+     "name": "Toyota Corolla Cross 2023~Present, all trims",
+     "send": {
+      "car type": "A1 01"
+     }
+    },
+    {
+     "name": "Toyota crown 2015-2018, all trims",
+     "send": {
+      "car type": "6C 01"
+     }
+    },
+    {
+     "name": "Toyota cruiser 2012, all trims",
+     "send": {
+      "car type": "F0 01"
+     }
+    },
+    {
+     "name": "Toyota cruiser 2016, all trims",
+     "send": {
+      "car type": "F0 01"
+     }
+    },
+    {
+     "name": "Toyota ES 09-18, high trim",
+     "send": {
+      "car type": "9A 01"
+     }
+    },
+    {
+     "name": "Toyota ES 09-18, low trim",
+     "send": {
+      "car type": "99 01"
+     }
+    },
+    {
+     "name": "Toyota ES 9, all trims",
+     "send": {
+      "car type": "9A 01"
+     }
+    },
+    {
+     "name": "Toyota fenglanda 2022, all trims",
+     "send": {
+      "car type": "97 01"
+     }
+    },
+    {
+     "name": "Toyota fenglanda 2022~Present, all trims",
+     "send": {
+      "car type": "97 01"
+     }
+    },
+    {
+     "name": "Toyota Fortuner 2015-2020, all trims",
+     "send": {
+      "car type": "A9 01"
+     }
+    },
+    {
+     "name": "Toyota Fortuner 2018~Present, all trims",
+     "send": {
+      "car type": "91 01"
+     }
+    },
+    {
+     "name": "Toyota Fortuner 2020, all trims",
+     "send": {
+      "car type": "91 01"
+     }
+    },
+    {
+     "name": "Toyota Fortuner 2021~Present, all trims",
+     "send": {
+      "car type": "A7 01"
+     }
+    },
+    {
+     "name": "Toyota GeRuiWeiYa 2022~Present, all trims",
+     "send": {
+      "car type": "A5 01"
+     }
+    },
+    {
+     "name": "Toyota GeRuiWeiYa 2023, all trims",
+     "send": {
+      "car type": "A5 01"
+     }
+    },
+    {
+     "name": "Toyota harrier 2013-2017, all trims",
+     "send": {
+      "car type": "B1 01"
+     }
+    },
+    {
+     "name": "Toyota harrier 2022, all trims",
+     "send": {
+      "car type": "93 01"
+     }
+    },
+    {
+     "name": "Toyota harrier 2022~Present, all trims",
+     "send": {
+      "car type": "93 01"
+     }
+    },
+    {
+     "name": "Toyota HIACE 2021-now, all trims",
+     "send": {
+      "car type": "64 01"
+     }
+    },
+    {
+     "name": "Toyota highlander 2007-2014, all trims",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota highlander 2009, auto air",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota highlander 2009, manual air",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota highlander 2015, auto air",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota highlander 2015, manual air",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota highlander 2015-2021, all trims",
+     "send": {
+      "car type": "30 01"
+     }
+    },
+    {
+     "name": "Toyota highlander 2018-now, high trim",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota highlander 2018-now, medium low",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota highlander 2022, all trims",
+     "send": {
+      "car type": "94 01"
+     }
+    },
+    {
+     "name": "Toyota highlander 2022~Present, all trims",
+     "send": {
+      "car type": "94 01"
+     }
+    },
+    {
+     "name": "Toyota HILUX 2004-2015, all trims",
+     "send": {
+      "car type": "4F 01"
+     }
+    },
+    {
+     "name": "Toyota HILUX 2016-2022, all trims",
+     "send": {
+      "car type": "50 01"
+     }
+    },
+    {
+     "name": "Toyota Innova 2023, all trims",
+     "send": {
+      "car type": "A8 01"
+     }
+    },
+    {
+     "name": "Toyota izoa 2018-now, all trims",
+     "send": {
+      "car type": "14 01"
+     }
+    },
+    {
+     "name": "Toyota Kluger 2021, all trims",
+     "send": {
+      "car type": "95 01"
+     }
+    },
+    {
+     "name": "Toyota Kluger 2021~Present, all trims",
+     "send": {
+      "car type": "95 01"
+     }
+    },
+    {
+     "name": "Toyota Landcruiser 2007-2015, all trims",
+     "send": {
+      "car type": "54 01"
+     }
+    },
+    {
+     "name": "Toyota Landcruiser 2009-2012, all trims",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota Landcruiser 2016, auto air",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota Landcruiser 2016, manual air",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota Landcruiser 2016-now, all trims",
+     "send": {
+      "car type": "55 01"
+     }
+    },
+    {
+     "name": "Toyota levin 2014-2018, all trims",
+     "send": {
+      "car type": "68 01"
+     }
+    },
+    {
+     "name": "Toyota levin 2014-2019, all trims",
+     "send": {
+      "car type": "F0 01"
+     }
+    },
+    {
+     "name": "Toyota levin 2019-now, all trims",
+     "send": {
+      "car type": "69 01"
+     }
+    },
+    {
+     "name": "Toyota noah 2022, all trims",
+     "send": {
+      "car type": "9E 01"
+     }
+    },
+    {
+     "name": "Toyota noah 2022, macao",
+     "send": {
+      "car type": "9E 01"
+     }
+    },
+    {
+     "name": "Toyota noah 2022~Present, all trims",
+     "send": {
+      "car type": "9E 01"
+     }
+    },
+    {
+     "name": "Toyota None",
+     "send": {
+      "car type": "F0 01"
+     }
+    },
+    {
+     "name": "Toyota prado 2002-2009, all trims",
+     "send": {
+      "car type": "3C 01"
+     }
+    },
+    {
+     "name": "Toyota prado 2009-2013, all trims",
+     "send": {
+      "car type": "3D 01"
+     }
+    },
+    {
+     "name": "Toyota prado 2010~2018, auto air",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota prado 2010~2018, manual air",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota prado 2014-2017, high trim",
+     "send": {
+      "car type": "3E 01"
+     }
+    },
+    {
+     "name": "Toyota prado 2014-2017, medium low",
+     "send": {
+      "car type": "3E 01"
+     }
+    },
+    {
+     "name": "Toyota prado 2017-now, all trims",
+     "send": {
+      "car type": "3F 01"
+     }
+    },
+    {
+     "name": "Toyota PREVIA 2007-now, all trims",
+     "send": {
+      "car type": "60 01"
+     }
+    },
+    {
+     "name": "Toyota Prius 2003-2009, all trims",
+     "send": {
+      "car type": "2A 01"
+     }
+    },
+    {
+     "name": "Toyota Prius 2003-2009, keep cd",
+     "send": {
+      "car type": "2B 01"
+     }
+    },
+    {
+     "name": "Toyota Prius 2010~2020, all trims",
+     "send": {
+      "car type": "B6 01"
+     }
+    },
+    {
+     "name": "Toyota Prius 2011~2017, all trims",
+     "send": {
+      "car type": "B7 01"
+     }
+    },
+    {
+     "name": "Toyota Prius 2013~now, all trims",
+     "send": {
+      "car type": "2C 01"
+     }
+    },
+    {
+     "name": "Toyota PRO_ACE_CITY 2019-now, all trims",
+     "send": {
+      "car type": "5C 01"
+     }
+    },
+    {
+     "name": "Toyota rav4 2006-2012, all trims",
+     "send": {
+      "car type": "8E 01"
+     }
+    },
+    {
+     "name": "Toyota rav4 2013-now, all trims",
+     "send": {
+      "car type": "B8 01"
+     }
+    },
+    {
+     "name": "Toyota rav4 2013~2016, all trims",
+     "send": {
+      "car type": "20 01"
+     }
+    },
+    {
+     "name": "Toyota rav4 2016~2021, auto",
+     "send": {
+      "car type": "21 01"
+     }
+    },
+    {
+     "name": "Toyota rav4 2019~Present, all trims",
+     "send": {
+      "car type": "AB 01"
+     }
+    },
+    {
+     "name": "Toyota rav4 2022, all trims",
+     "send": {
+      "car type": "9D 01"
+     }
+    },
+    {
+     "name": "Toyota rav4 2022~Present, all trims",
+     "send": {
+      "car type": "9D 01"
+     }
+    },
+    {
+     "name": "Toyota reiz 2005-2009, keep original air",
+     "send": {
+      "car type": "9B 01"
+     }
+    },
+    {
+     "name": "Toyota reiz 2005-2009, modification air",
+     "send": {
+      "car type": "9C 01"
+     }
+    },
+    {
+     "name": "Toyota reiz 2006, all trims",
+     "send": {
+      "car type": "9B 01"
+     }
+    },
+    {
+     "name": "Toyota reiz 2009~2013, all trims",
+     "send": {
+      "car type": "28 01"
+     }
+    },
+    {
+     "name": "Toyota reiz 2012, auto air",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota reiz 2012, manual air",
+     "send": {
+      "car type": "00 01"
+     }
+    },
+    {
+     "name": "Toyota reiz 2013-now, all trims",
+     "send": {
+      "car type": "29 01"
+     }
+    },
+    {
+     "name": "Toyota reiz 2013~2019, all trims",
+     "send": {
+      "car type": "29 01"
+     }
+    },
+    {
+     "name": "Toyota Sequoia 2010-2012, all trims",
+     "send": {
+      "car type": "48 01"
+     }
+    },
+    {
+     "name": "Toyota SharpRelease 2021, all trims",
+     "send": {
+      "car type": "96 01"
+     }
+    },
+    {
+     "name": "Toyota sienna 2010-2014, all trims",
+     "send": {
+      "car type": "44 01"
+     }
+    },
+    {
+     "name": "Toyota sienna 2011-2017, all trims",
+     "send": {
+      "car type": "B2 01"
+     }
+    },
+    {
+     "name": "Toyota sienna 2015-2020, all trims",
+     "send": {
+      "car type": "45 01"
+     }
+    },
+    {
+     "name": "Toyota sienna 2018-2020, all trims",
+     "send": {
+      "car type": "B3 01"
+     }
+    },
+    {
+     "name": "Toyota sienna 2020-now, all trims",
+     "send": {
+      "car type": "92 01"
+     }
+    },
+    {
+     "name": "Toyota sienna 2021, all trims",
+     "send": {
+      "car type": "92 01"
+     }
+    },
+    {
+     "name": "Toyota sienna 2021-2024, all trims",
+     "send": {
+      "car type": "B9 01"
+     }
+    },
+    {
+     "name": "Toyota Sienta 2023~Present, all trims",
+     "send": {
+      "car type": "AE 01"
+     }
+    },
+    {
+     "name": "Toyota TACOMA 2013-2023, all trims",
+     "send": {
+      "car type": "B4 01"
+     }
+    },
+    {
+     "name": "Toyota Tundra 2014-2017, all trims",
+     "send": {
+      "car type": "4C 01"
+     }
+    },
+    {
+     "name": "Toyota Tundra 2018-now, all trims",
+     "send": {
+      "car type": "4D 01"
+     }
+    },
+    {
+     "name": "Toyota Vellfire 2008-2014, all trims",
+     "send": {
+      "car type": "AA 01"
+     }
+    },
+    {
+     "name": "Toyota Vellfire 2013, all trims",
+     "send": {
+      "car type": "AA 01"
+     }
+    },
+    {
+     "name": "Toyota Veloz 2022-now, all trims",
+     "send": {
+      "car type": "A6 01"
+     }
+    },
+    {
+     "name": "Toyota venza 2022, all trims",
+     "send": {
+      "car type": "93 01"
+     }
+    },
+    {
+     "name": "Toyota venza 2022~Present, all trims",
+     "send": {
+      "car type": "93 01"
+     }
+    },
+    {
+     "name": "Toyota vios 2022, all trims",
+     "send": {
+      "car type": "9F 01"
+     }
+    },
+    {
+     "name": "Toyota vios 2023~Presnt, all trims",
+     "send": {
+      "car type": "A0 01"
+     }
+    },
+    {
+     "name": "Toyota WILLANDER 2020-now, all trims",
+     "send": {
+      "car type": "95 01"
+     }
+    },
+    {
+     "name": "Toyota Yaris 2013-2020, all trims",
+     "send": {
+      "car type": "1C 01"
+     }
+    },
+    {
+     "name": "Toyota Yaris 2020-present, all trims",
+     "send": {
+      "car type": "1D 01"
+     }
+    },
+    {
+     "name": "Toyota Yaris 2023-present, all trims",
+     "send": {
+      "car type": "B0 01"
+     }
+    },
+    {
+     "name": "Toyota Yaris Cross 2013~2020, all trims",
+     "send": {
+      "car type": "1C 01"
+     }
+    },
+    {
+     "name": "Toyota Yaris Cross 2020~至今, all trims",
+     "send": {
+      "car type": "1D 01"
+     }
+    },
+    {
+     "name": "Toyota Yaris Cross 2023, all trims",
+     "send": {
+      "car type": "AD 01"
+     }
+    },
+    {
+     "name": "Toyota Yaris Cross 2023, all trims",
+     "send": {
+      "car type": "B0 01"
+     }
+    },
+    {
+     "name": "Toyota Yaris Cross 2023-present, all trims",
+     "send": {
+      "car type": "AD 01"
+     }
+    }
+   ],
+   "wheel_keys": {
+    "cmd": "0x11",
+    "code_byte": 2,
+    "state_byte": 3,
+    "pressed": [
+     1
+    ],
+    "names": {
+     "1": "volume +",
+     "2": "volume -",
+     "3": "mute",
+     "4": "voice",
+     "5": "answer",
+     "6": "hang up",
+     "8": "previous",
+     "9": "next",
+     "12": "mode",
+     "13": "previous",
+     "14": "next",
+     "15": "play / pause",
+     "16": "back",
+     "32": "climate"
+    }
+   },
+   "messages": {
+    "0x11": {
+     "name": "State",
+     "signals": {
+      "status": {
+       "start_byte": 0,
+       "bits": {
+        "ACC": {
+         "bit": 0,
+         "role": "ignition.acc"
+        },
+        "lights": {
+         "bit": 1,
+         "role": "lights.on"
+        },
+        "reverse": {
+         "bit": 2,
+         "role": "gear.reverse"
+        },
+        "park": 3,
+        "radar": {
+         "bit": 5,
+         "role": "radar.shown"
+        },
+        "mute": 7
+       }
+      },
+      "wheel_key": {
+       "start_byte": 2,
+       "label": "wheel key",
+       "values": {
+        "1": "volume +",
+        "2": "volume -",
+        "3": "mute",
+        "4": "voice",
+        "5": "answer",
+        "6": "hang up",
+        "8": "previous",
+        "9": "next",
+        "12": "mode",
+        "13": "previous",
+        "14": "next",
+        "15": "play / pause",
+        "16": "back",
+        "32": "climate"
+       }
+      },
+      "wheel_key_state": {
+       "start_byte": 3,
+       "label": "key state"
+      },
+      "doors": {
+       "start_byte": 4,
+       "bits": {
+        "front left": {
+         "bit": 6,
+         "role": "door.front_left"
+        },
+        "front right": {
+         "bit": 7,
+         "role": "door.front_right"
+        },
+        "rear left": {
+         "bit": 4,
+         "role": "door.rear_left"
+        },
+        "rear right": {
+         "bit": 5,
+         "role": "door.rear_right"
+        },
+        "trunk": {
+         "bit": 3,
+         "role": "door.trunk"
+        },
+        "hood": {
+         "bit": 2,
+         "role": "door.hood"
+        }
+       }
+      },
+      "steering": {
+       "start_byte": 6,
+       "size": 2,
+       "signed": true,
+       "factor": -1,
+       "label": "steering angle",
+       "unit": "°",
+       "role": "steering.angle"
+      }
+     }
+    },
+    "0x41": {
+     "name": "Parking radar",
+     "signals": {
+      "rear_left": {
+       "start_byte": 0,
+       "label": "rear L (raw)"
+      },
+      "rear_left_mid": {
+       "start_byte": 1,
+       "label": "rear LM (raw)"
+      },
+      "rear_right_mid": {
+       "start_byte": 2,
+       "label": "rear RM (raw)"
+      },
+      "rear_right": {
+       "start_byte": 3,
+       "label": "rear R (raw)"
+      },
+      "front_left": {
+       "start_byte": 4,
+       "label": "front L (raw)"
+      },
+      "front_left_mid": {
+       "start_byte": 5,
+       "label": "front LM (raw)"
+      },
+      "front_right_mid": {
+       "start_byte": 6,
+       "label": "front RM (raw)"
+      },
+      "front_right": {
+       "start_byte": 7,
+       "label": "front R (raw)"
+      },
+      "radar_mode": {
+       "start_byte": 10,
+       "label": "radar shown"
+      }
+     }
+    },
+    "0xF0": {
+     "name": "Box version",
+     "signals": {
+      "version": {
+       "start_byte": 0,
+       "ascii": true,
+       "label": "version",
+       "role": "box.version"
+      }
+     }
+    }
+   },
+   "examples": [
+    {
+     "cmd": "0x11",
+     "data": "02 00 00 00 C0 00 00 64",
+     "expect": {
+      "lights.on": true,
+      "door.front_left": true,
+      "door.front_right": true,
+      "door.trunk": false,
+      "steering.angle": -100
+     }
+    }
+   ]
+  }
+ ]
+}

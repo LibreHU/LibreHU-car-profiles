@@ -1,0 +1,1217 @@
+{
+ "format": "librehu-car-pack",
+ "version": 1,
+ "id": "renault",
+ "name": "Renault",
+ "revision": 1,
+ "engine": ">=2.0",
+ "profiles": [
+  {
+   "format": "librehu-can-vehicle",
+   "version": 2,
+   "engine": ">=2.0",
+   "id": "renault-clio3-hiworld",
+   "name": "Renault, Dacia, LADA, Samsung, Nissan, Mercedes (Hiworld LNP002)",
+   "description": "Hiworld box, protocol LNP002 (Renault / LADA / Samsung full compatible): Clio 3 by default, the other models in the list (car type from Hiworld's own app, HdRenaultProtocolLNP002). Like that app, the head unit also sends its audio source (0xE1, AUX here) and Bluetooth state (0xCD, not connected) for the car's display, and asks the box for its version (0x6A [5, 1, 0xF0], the Hiworld request, HdProtocol.txRequestCmdId) every 30 s: an F0 message right after each request shows that the box hears the head unit.",
+   "box": "hiworld",
+   "baud": 38400,
+   "link": {
+    "ack": true,
+    "send": [
+     {
+      "name": "car type",
+      "cmd": "0x24",
+      "data": "00 31",
+      "first_ms": 1000,
+      "every_ms": 30000
+     },
+     {
+      "name": "source",
+      "cmd": "0xE1",
+      "data": "0A 20 20 20 20 20 20 20 20 20 20 20 20",
+      "first_ms": 1500,
+      "every_ms": 10000
+     },
+     {
+      "name": "bluetooth",
+      "cmd": "0xCD",
+      "data": "06 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00",
+      "first_ms": 2000,
+      "every_ms": 0
+     },
+     {
+      "name": "version request",
+      "cmd": "0x6A",
+      "data": "05 01 F0",
+      "first_ms": 3000,
+      "every_ms": 30000
+     }
+    ]
+   },
+   "variants": [
+    {
+     "name": "LADA priora 2012-now, all trims",
+     "send": {
+      "car type": "22 31"
+     }
+    },
+    {
+     "name": "LADA vesta 2015-2022, high trim",
+     "send": {
+      "car type": "21 31"
+     }
+    },
+    {
+     "name": "LADA vesta 2015-2022, low trim",
+     "send": {
+      "car type": "1F 31"
+     }
+    },
+    {
+     "name": "LADA vesta 2015-2022, medium",
+     "send": {
+      "car type": "20 31"
+     }
+    },
+    {
+     "name": "LADA vesta 2023~Present, all trims",
+     "send": {
+      "car type": "1E 31"
+     }
+    },
+    {
+     "name": "Mercedes-Benz smart 2017-now, high trim",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Nissan Magnite 2020-now, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Arkana 2019-2023, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Arkana 2024-now, high trim",
+     "send": {
+      "car type": "07 31"
+     }
+    },
+    {
+     "name": "Renault Arkana 2024-now, low trim",
+     "send": {
+      "car type": "05 31"
+     }
+    },
+    {
+     "name": "Renault Arkana 2024-now, medium",
+     "send": {
+      "car type": "06 31"
+     }
+    },
+    {
+     "name": "Renault brilliancerenaultgoldencupview 2019-now, all trims",
+     "send": {
+      "car type": "1D 31"
+     }
+    },
+    {
+     "name": "Renault captur 2013-2018, low trim",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Captur_II 2019-now, high trim",
+     "send": {
+      "car type": "16 31"
+     }
+    },
+    {
+     "name": "Renault Captur_II 2019-now, low trim",
+     "send": {
+      "car type": "14 31"
+     }
+    },
+    {
+     "name": "Renault Captur_II 2019-now, mid trim",
+     "send": {
+      "car type": "15 31"
+     }
+    },
+    {
+     "name": "Renault Clio3 2005-2014, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Clio4 2012-2019, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault clio5 2019-now, high trim",
+     "send": {
+      "car type": "16 31"
+     }
+    },
+    {
+     "name": "Renault clio5 2019-now, low trim",
+     "send": {
+      "car type": "14 31"
+     }
+    },
+    {
+     "name": "Renault clio5 2019-now, mid trim",
+     "send": {
+      "car type": "15 31"
+     }
+    },
+    {
+     "name": "Renault duster 2010-now, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Express 2021-now, high trim",
+     "send": {
+      "car type": "16 31"
+     }
+    },
+    {
+     "name": "Renault Express 2021-now, low trim",
+     "send": {
+      "car type": "14 31"
+     }
+    },
+    {
+     "name": "Renault Express 2021-now, medium",
+     "send": {
+      "car type": "15 31"
+     }
+    },
+    {
+     "name": "Renault fluence 2009-2020, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault jogger 2021-now, high trim",
+     "send": {
+      "car type": "1C 31"
+     }
+    },
+    {
+     "name": "Renault jogger 2021-now, low trim",
+     "send": {
+      "car type": "1A 31"
+     }
+    },
+    {
+     "name": "Renault jogger 2021-now, mid trim",
+     "send": {
+      "car type": "1B 31"
+     }
+    },
+    {
+     "name": "Renault kadjar 2015-2022, high trim",
+     "send": {
+      "car type": "10 31"
+     }
+    },
+    {
+     "name": "Renault kadjar 2015-2022, low trim",
+     "send": {
+      "car type": "0E 31"
+     }
+    },
+    {
+     "name": "Renault kadjar 2015-2022, mid trim",
+     "send": {
+      "car type": "0F 31"
+     }
+    },
+    {
+     "name": "Renault Kangoo_II 2007-2020, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Kangoo_III 2021-now, high trim",
+     "send": {
+      "car type": "16 31"
+     }
+    },
+    {
+     "name": "Renault Kangoo_III 2021-now, low trim",
+     "send": {
+      "car type": "14 31"
+     }
+    },
+    {
+     "name": "Renault Kangoo_III 2021-now, medium",
+     "send": {
+      "car type": "15 31"
+     }
+    },
+    {
+     "name": "Renault Kiger_I 2021-now, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault koleos 2006-2015, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault koleos 2016-2023, high p",
+     "send": {
+      "car type": "19 31"
+     }
+    },
+    {
+     "name": "Renault koleos 2016-2023, low p",
+     "send": {
+      "car type": "17 31"
+     }
+    },
+    {
+     "name": "Renault koleos 2016-2023, medium p",
+     "send": {
+      "car type": "18 31"
+     }
+    },
+    {
+     "name": "Renault krebbin 2019, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Kwid 2015-now, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault latitude 2020, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Lodgy 2012-2022, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Logan_II 2012-2020, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Logan_III 2020-now, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Master 2004-2009, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Master 2010-now, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault megane 2003-2007, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault megane 2008-2015, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault megane 4 2017-2020, high p",
+     "send": {
+      "car type": "10 31"
+     }
+    },
+    {
+     "name": "Renault megane 4 2017-2020, low p",
+     "send": {
+      "car type": "0E 31"
+     }
+    },
+    {
+     "name": "Renault megane 4 2017-2020, medium p",
+     "send": {
+      "car type": "0F 31"
+     }
+    },
+    {
+     "name": "Renault megane 4 2021-2023, high p",
+     "send": {
+      "car type": "13 31"
+     }
+    },
+    {
+     "name": "Renault megane 4 2021-2023, low p",
+     "send": {
+      "car type": "11 31"
+     }
+    },
+    {
+     "name": "Renault megane 4 2021-2023, medium p",
+     "send": {
+      "car type": "12 31"
+     }
+    },
+    {
+     "name": "Renault Megane2 2002-2009, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Megane3 2008-2016, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault None",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Samsung None",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Samsung qm3 2019-2023, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Samsung qm5 2007-2016, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Samsung sm3 2009-2020, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Samsung sm5 2009-2019, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Samsung sm6 2016~now, high trim",
+     "send": {
+      "car type": "10 31"
+     }
+    },
+    {
+     "name": "Renault Samsung sm6 2016~now, low trim",
+     "send": {
+      "car type": "0E 31"
+     }
+    },
+    {
+     "name": "Renault Samsung sm6 2016~now, medium",
+     "send": {
+      "car type": "0F 31"
+     }
+    },
+    {
+     "name": "Renault Samsung sm7 2012-2019, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Samsung xm3 2009-Persent, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault sandero 2008-2012, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault sandero 2008-2012, high p",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault sandero 2008-2012, low p",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault sandero 2008-2012, medium p",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Sandero_II 2012-2020, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Sandero_III 2020-now, high trim",
+     "send": {
+      "car type": "1C 31"
+     }
+    },
+    {
+     "name": "Renault Sandero_III 2020-now, low trim",
+     "send": {
+      "car type": "1A 31"
+     }
+    },
+    {
+     "name": "Renault Sandero_III 2020-now, medium",
+     "send": {
+      "car type": "1B 31"
+     }
+    },
+    {
+     "name": "Renault Scenic_II 2003-2009, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Scenic_III 2009-2015, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Scenic_IV 2016-2022, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault smart 2017, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Symbol_II 2008-2013, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Symbol_III 2012-2021, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Taliant 2021-now, high trim",
+     "send": {
+      "car type": "16 31"
+     }
+    },
+    {
+     "name": "Renault Taliant 2021-now, low trim",
+     "send": {
+      "car type": "14 31"
+     }
+    },
+    {
+     "name": "Renault Taliant 2021-now, medium",
+     "send": {
+      "car type": "15 31"
+     }
+    },
+    {
+     "name": "Renault talisman 2016-now, high trim",
+     "send": {
+      "car type": "13 31"
+     }
+    },
+    {
+     "name": "Renault talisman 2016-now, low trim",
+     "send": {
+      "car type": "11 31"
+     }
+    },
+    {
+     "name": "Renault talisman 2016-now, med",
+     "send": {
+      "car type": "12 31"
+     }
+    },
+    {
+     "name": "Renault Traffic_II 2007-2015, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Traffic_III 2014-now, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Twingo_II 2007-2013, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    },
+    {
+     "name": "Renault Twingo_III 2014-now, all trims",
+     "send": {
+      "car type": "00 31"
+     }
+    }
+   ],
+   "wheel_keys": {
+    "cmd": "0x11",
+    "code_byte": 2,
+    "state_byte": 3,
+    "pressed": [
+     1
+    ],
+    "event_byte": 1,
+    "event_mask": "0x08",
+    "names": {
+     "1": "volume +",
+     "2": "volume -",
+     "3": "mute",
+     "4": "navigation",
+     "5": "previous / answer",
+     "6": "next / hang up",
+     "8": "right",
+     "9": "left",
+     "10": "mode",
+     "13": "previous",
+     "14": "next",
+     "15": "OK",
+     "16": "phone",
+     "18": "mute",
+     "19": "answer",
+     "20": "hang up",
+     "21": "scan",
+     "24": "voice"
+    }
+   },
+   "messages": {
+    "0x11": {
+     "name": "State",
+     "signals": {
+      "status": {
+       "start_byte": 0,
+       "bits": {
+        "ACC": {
+         "bit": 0,
+         "role": "ignition.acc"
+        },
+        "lights": {
+         "bit": 1,
+         "role": "lights.on"
+        },
+        "reverse": {
+         "bit": 2,
+         "role": "gear.reverse"
+        },
+        "handbrake": {
+         "bit": 3,
+         "role": "handbrake"
+        },
+        "SOS mute": 7
+       }
+      },
+      "wheel_key": {
+       "start_byte": 2,
+       "mask": "0x1F",
+       "label": "wheel key",
+       "values": {
+        "0": "-",
+        "1": "volume +",
+        "2": "volume -",
+        "3": "mute / answer / hang up",
+        "4": "navigation",
+        "5": "previous / answer",
+        "6": "next / hang up",
+        "8": "right",
+        "9": "left",
+        "10": "mode",
+        "13": "previous",
+        "14": "next",
+        "15": "OK",
+        "16": "phone",
+        "18": "mute",
+        "19": "answer",
+        "20": "hang up",
+        "21": "scan / answer",
+        "24": "voice"
+       }
+      },
+      "wheel_key_state": {
+       "start_byte": 3,
+       "label": "key state"
+      },
+      "steering_angle": {
+       "start_byte": 6,
+       "size": 2,
+       "sign_magnitude": true,
+       "factor": 0.1,
+       "min_value": -540,
+       "max_value": 540,
+       "unit": "°",
+       "label": "steering",
+       "role": "steering.angle"
+      }
+     }
+    },
+    "0x12": {
+     "name": "Doors",
+     "signals": {
+      "doors": {
+       "start_byte": 2,
+       "bits": {
+        "front left": {
+         "bit": 7,
+         "role": "door.front_left"
+        },
+        "front right": {
+         "bit": 6,
+         "role": "door.front_right"
+        },
+        "rear left": {
+         "bit": 5,
+         "role": "door.rear_left"
+        },
+        "rear right": {
+         "bit": 4,
+         "role": "door.rear_right"
+        },
+        "trunk": {
+         "bit": 3,
+         "role": "door.trunk"
+        }
+       }
+      }
+     }
+    },
+    "0x14": {
+     "name": "Trip computer",
+     "signals": {
+      "avg_consumption": {
+       "start_byte": 0,
+       "size": 2,
+       "factor": 0.1,
+       "max_value": 6553.4,
+       "unit": "L/100 km",
+       "label": "average consumption",
+       "role": "fuel.average"
+      },
+      "avg_speed": {
+       "start_byte": 2,
+       "size": 2,
+       "factor": 0.1,
+       "max_value": 6553.4,
+       "unit": "km/h",
+       "label": "average speed",
+       "role": "trip.average_speed"
+      },
+      "distance": {
+       "start_byte": 4,
+       "size": 3,
+       "factor": 0.1,
+       "max_value": 1677721.4,
+       "unit": "km",
+       "label": "distance",
+       "role": "trip.distance"
+      },
+      "time_minutes": {
+       "start_byte": 7,
+       "max_value": 254,
+       "unit": "min",
+       "label": "driving time (min)"
+      },
+      "time_hours": {
+       "start_byte": 8,
+       "size": 2,
+       "max_value": 65534,
+       "unit": "h",
+       "label": "driving time (h)"
+      },
+      "fuel_used": {
+       "start_byte": 10,
+       "size": 2,
+       "factor": 0.1,
+       "max_value": 6553.4,
+       "unit": "L",
+       "label": "fuel used",
+       "role": "trip.fuel_used"
+      },
+      "green_distance": {
+       "start_byte": 12,
+       "size": 2,
+       "factor": 0.1,
+       "max_value": 6553.4,
+       "unit": "km",
+       "label": "distance (green)"
+      }
+     }
+    },
+    "0x21": {
+     "name": "Front panel key",
+     "signals": {
+      "key": {
+       "start_byte": 0,
+       "label": "key"
+      },
+      "state": {
+       "start_byte": 1,
+       "label": "state"
+      }
+     }
+    },
+    "0x22": {
+     "name": "Knob",
+     "signals": {
+      "knob": {
+       "start_byte": 0,
+       "label": "knob",
+       "values": {
+        "1": "volume",
+        "2": "tune"
+       }
+      },
+      "steps": {
+       "start_byte": 1,
+       "label": "counter"
+      }
+     }
+    },
+    "0x31": {
+     "name": "Climate",
+     "signals": {
+      "climate": {
+       "start_byte": 0,
+       "bits": {
+        "AC": {
+         "bit": 0,
+         "role": "hvac.ac"
+        },
+        "sync": 2,
+        "auto": {
+         "bit": 3,
+         "role": "hvac.auto"
+        },
+        "rear": 4,
+        "climate on": {
+         "bit": 6,
+         "role": "hvac.power"
+        }
+       }
+      },
+      "air": {
+       "start_byte": 1,
+       "bits": {
+        "auto recirculation": 3,
+        "recirculation": {
+         "bit": 4,
+         "role": "hvac.recirculation"
+        }
+       }
+      },
+      "defrost": {
+       "start_byte": 2,
+       "bits": {
+        "front defrost": {
+         "bit": 4,
+         "role": "hvac.defrost_front"
+        },
+        "rear defrost": {
+         "bit": 5,
+         "role": "hvac.defrost_rear"
+        }
+       }
+      },
+      "seat_heat_left": {
+       "start_byte": 2,
+       "mask": "0x03",
+       "label": "seat heating L",
+       "role": "hvac.seat_heat_left"
+      },
+      "seat_heat_right": {
+       "start_byte": 2,
+       "mask": "0x0C",
+       "shift": 2,
+       "label": "seat heating R",
+       "role": "hvac.seat_heat_right"
+      },
+      "air_mode": {
+       "start_byte": 4,
+       "label": "air distribution",
+       "role": "hvac.airflow"
+      },
+      "fan": {
+       "start_byte": 5,
+       "label": "fan",
+       "role": "hvac.fan"
+      },
+      "temp_left": {
+       "start_byte": 6,
+       "factor": 0.5,
+       "unit": "°C",
+       "label": "temp L",
+       "values": {
+        "254": "LO",
+        "255": "HI"
+       },
+       "role": "hvac.temp_left"
+      },
+      "temp_right": {
+       "start_byte": 7,
+       "factor": 0.5,
+       "unit": "°C",
+       "label": "temp R",
+       "values": {
+        "254": "LO",
+        "255": "HI"
+       },
+       "role": "hvac.temp_right"
+      },
+      "outside_temp": {
+       "start_byte": 11,
+       "factor": 0.5,
+       "offset": -40,
+       "unit": "°C",
+       "label": "outside",
+       "role": "outside.temp"
+      }
+     }
+    },
+    "0x41": {
+     "name": "Parking radar",
+     "signals": {
+      "rear_left": {
+       "start_byte": 0,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "rear L",
+       "unit": "%",
+       "role": "radar.rear.left"
+      },
+      "rear_center_left": {
+       "start_byte": 1,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "rear CL",
+       "unit": "%",
+       "role": "radar.rear.left_center"
+      },
+      "rear_center_right": {
+       "start_byte": 2,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "rear CR",
+       "unit": "%",
+       "role": "radar.rear.right_center"
+      },
+      "rear_right": {
+       "start_byte": 3,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "rear R",
+       "unit": "%",
+       "role": "radar.rear.right"
+      },
+      "front_left": {
+       "start_byte": 4,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "front L",
+       "unit": "%",
+       "role": "radar.front.left"
+      },
+      "front_center_left": {
+       "start_byte": 5,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "front CL",
+       "unit": "%",
+       "role": "radar.front.left_center"
+      },
+      "front_center_right": {
+       "start_byte": 6,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "front CR",
+       "unit": "%",
+       "role": "radar.front.right_center"
+      },
+      "front_right": {
+       "start_byte": 7,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "front R",
+       "unit": "%",
+       "role": "radar.front.right"
+      },
+      "radar_shown": {
+       "start_byte": 8,
+       "label": "radar shown",
+       "role": "radar.shown"
+      }
+     }
+    },
+    "0x42": {
+     "name": "Side radar",
+     "signals": {
+      "right_front": {
+       "start_byte": 0,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "right F",
+       "unit": "%",
+       "role": "radar.right.front"
+      },
+      "right_front_mid": {
+       "start_byte": 1,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "right FM",
+       "unit": "%",
+       "role": "radar.right.front_center"
+      },
+      "right_rear_mid": {
+       "start_byte": 2,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "right RM",
+       "unit": "%",
+       "role": "radar.right.rear_center"
+      },
+      "right_rear": {
+       "start_byte": 3,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "right R",
+       "unit": "%",
+       "role": "radar.right.rear"
+      },
+      "left_front": {
+       "start_byte": 4,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "left F",
+       "unit": "%",
+       "role": "radar.left.front"
+      },
+      "left_front_mid": {
+       "start_byte": 5,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "left FM",
+       "unit": "%",
+       "role": "radar.left.front_center"
+      },
+      "left_rear_mid": {
+       "start_byte": 6,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "left RM",
+       "unit": "%",
+       "role": "radar.left.rear_center"
+      },
+      "left_rear": {
+       "start_byte": 7,
+       "factor": -25,
+       "offset": 100,
+       "min_value": 0,
+       "label": "left R",
+       "unit": "%",
+       "role": "radar.left.rear"
+      }
+     }
+    },
+    "0x48": {
+     "name": "Tyre pressure",
+     "signals": {
+      "front_left": {
+       "start_byte": 2,
+       "size": 2,
+       "factor": 0.1,
+       "max_value": 6553.4,
+       "unit": "kPa",
+       "label": "front L",
+       "role": "tpms.front_left.pressure"
+      },
+      "front_right": {
+       "start_byte": 4,
+       "size": 2,
+       "factor": 0.1,
+       "max_value": 6553.4,
+       "unit": "kPa",
+       "label": "front R",
+       "role": "tpms.front_right.pressure"
+      },
+      "rear_left": {
+       "start_byte": 6,
+       "size": 2,
+       "factor": 0.1,
+       "max_value": 6553.4,
+       "unit": "kPa",
+       "label": "rear L",
+       "role": "tpms.rear_left.pressure"
+      },
+      "rear_right": {
+       "start_byte": 8,
+       "size": 2,
+       "factor": 0.1,
+       "max_value": 6553.4,
+       "unit": "kPa",
+       "label": "rear R",
+       "role": "tpms.rear_right.pressure"
+      }
+     }
+    },
+    "0x60": {
+     "name": "Park assist",
+     "signals": {
+      "mode": {
+       "start_byte": 0,
+       "mask": "0x0F",
+       "label": "park assist mode"
+      }
+     }
+    },
+    "0x61": {
+     "name": "Vehicle settings",
+     "signals": {}
+    },
+    "0x62": {
+     "name": "Vehicle settings / service",
+     "signals": {
+      "service": {
+       "start_byte": 2,
+       "size": 2,
+       "max_value": 65534,
+       "unit": "km",
+       "label": "service in",
+       "role": "service.distance"
+      }
+     }
+    },
+    "0xF0": {
+     "name": "Box version",
+     "signals": {
+      "version": {
+       "start_byte": 0,
+       "ascii": true,
+       "label": "version",
+       "role": "box.version"
+      }
+     }
+    }
+   },
+   "examples": [
+    {
+     "cmd": "0x11",
+     "data": "09 00 22 01 00 00 80 7D",
+     "expect": {
+      "ignition.acc": true,
+      "handbrake": true,
+      "lights.on": false,
+      "steering.angle": -12.5,
+      "wheel_key": "volume -"
+     }
+    },
+    {
+     "cmd": "0x41",
+     "data": "00 01 04 07 04 04 04 04",
+     "expect": {
+      "radar.rear.left": 100,
+      "radar.rear.left_center": 75,
+      "radar.rear.right_center": 0,
+      "radar.rear.right": null
+     }
+    },
+    {
+     "cmd": "0x48",
+     "data": "00 00 08 FC 08 FC 08 98 08 98",
+     "expect": {
+      "tpms.front_left.pressure": 230,
+      "tpms.rear_right.pressure": 220
+     }
+    },
+    {
+     "cmd": "0x31",
+     "data": "00 00 00 00 00 00 00 00 00 00 00 64",
+     "expect": {
+      "outside.temp": 10
+     }
+    }
+   ]
+  }
+ ]
+}
