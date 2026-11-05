@@ -1,0 +1,566 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.1",
+ "id": "vw-pq-hiworld",
+ "name": "Volkswagen, Skoda, older Mercedes (Hiworld VWP003, PQ)",
+ "description": "Hiworld box, protocol VWP003 (older Volkswagen / Skoda platforms, older Mercedes), from Hiworld's own app (HdMQB6Protocol). This box needs no car type: the car chosen only names it. Also the older Volkswagen cars (PQ platforms) that Hiworld's catalogue lists with the VWP004 box but its app decodes with this protocol. Not tried on a car yet.",
+ "box": "hiworld",
+ "baud": 38400,
+ "link": {
+  "ack": true,
+  "send": []
+ },
+ "variants": [
+  {
+   "name": "Mercedes-Benz b200 2005-2011, all trims",
+   "send": {}
+  },
+  {
+   "name": "Mercedes-Benz benzA 2004-2012, all trims",
+   "send": {}
+  },
+  {
+   "name": "Mercedes-Benz benzB 2005-2011, all trims",
+   "send": {}
+  },
+  {
+   "name": "Mercedes-Benz benzGL 2005-2013, all trims",
+   "send": {}
+  },
+  {
+   "name": "Mercedes-Benz benzML 2005-2011, all trims",
+   "send": {}
+  },
+  {
+   "name": "Mercedes-Benz r320 2006-2014, all trims",
+   "send": {}
+  },
+  {
+   "name": "Mercedes-Benz r_class 2006-2014, all trims",
+   "send": {}
+  },
+  {
+   "name": "Mercedes-Benz sl300 2006-2018, all trims",
+   "send": {}
+  },
+  {
+   "name": "Mercedes-Benz smart 2015-2017, all trims",
+   "send": {}
+  },
+  {
+   "name": "Mercedes-Benz Sprinter 2006-2018, all trims",
+   "send": {}
+  },
+  {
+   "name": "Mercedes-Benz viano 2010-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Mercedes-Benz vito 2003-2013, all trims",
+   "send": {}
+  },
+  {
+   "name": "Mercedes-Benz, other compatible models, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda octavia 2002-2013, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda rapid 2012-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda superb_haorui 2008-2013, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda yeti 2009-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen bora 2013-2015, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen bora 2016-2018, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen cc 2009-2011, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen cc 2012-2014, medium low",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Cross_Lavida 2013-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen golf 2003-2007, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen golf 2008-2012, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Grand_Lavida 2013-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen jetta 2011-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen magotan 2007-2011, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen magotan 2012-2015, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen passat 2002-2005, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen passat 2006-2011, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen passat 2013-2015, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen polo 2010-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen polo 2011-2016, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen sagitar 2006-2012, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen sagitar 2013-2018, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Santana 2013-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Scirocco 2008-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen tiguan 2010-2015, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen tiguan 2010-2015, high trim",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen tiguan 2010-2015, low trim",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen touran 2010-2014, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen TREK 2017-now, all trims",
+   "send": {}
+  }
+ ],
+ "wheel_keys": {
+  "cmd": "0x72",
+  "code_byte": 2,
+  "names": {
+   "1": "volume +",
+   "2": "volume -",
+   "3": "mute",
+   "5": "answer",
+   "6": "hang up",
+   "8": "previous",
+   "9": "next",
+   "10": "mode",
+   "15": "voice"
+  }
+ },
+ "messages": {
+  "0x72": {
+   "name": "State",
+   "signals": {
+    "status": {
+     "start_byte": 0,
+     "bits": {
+      "ACC": {
+       "bit": 0,
+       "role": "ignition.acc"
+      },
+      "lights": {
+       "bit": 1,
+       "role": "lights.on"
+      },
+      "reverse": {
+       "bit": 2,
+       "role": "gear.reverse"
+      },
+      "handbrake": {
+       "bit": 3,
+       "role": "handbrake"
+      },
+      "key in": 4,
+      "radar": {
+       "bit": 5,
+       "role": "radar.shown"
+      },
+      "bluetooth": 6
+     }
+    },
+    "speed": {
+     "start_byte": 1,
+     "unit": "km/h",
+     "label": "speed",
+     "role": "vehicle.speed"
+    },
+    "wheel_key": {
+     "start_byte": 2,
+     "label": "wheel key",
+     "values": {
+      "1": "volume +",
+      "2": "volume -",
+      "3": "mute",
+      "5": "answer",
+      "6": "hang up",
+      "8": "previous",
+      "9": "next",
+      "10": "mode",
+      "15": "voice"
+     }
+    },
+    "brightness": {
+     "start_byte": 3,
+     "label": "brightness"
+    },
+    "steering": {
+     "start_byte": 4,
+     "expr": "D4 == 0 ? -D5 : D4",
+     "factor": 3.857143,
+     "unit": "°",
+     "label": "steering angle",
+     "role": "steering.angle"
+    },
+    "rear_L": {
+     "start_byte": 6,
+     "label": "rear L (raw, /16)"
+    },
+    "rear_LM": {
+     "start_byte": 7,
+     "label": "rear LM (raw, /16)"
+    },
+    "rear_RM": {
+     "start_byte": 8,
+     "label": "rear RM (raw, /16)"
+    },
+    "rear_R": {
+     "start_byte": 9,
+     "label": "rear R (raw, /16)"
+    },
+    "front_L": {
+     "start_byte": 10,
+     "label": "front L (raw, /16)"
+    },
+    "front_LM": {
+     "start_byte": 11,
+     "label": "front LM (raw, /16)"
+    },
+    "front_RM": {
+     "start_byte": 12,
+     "label": "front RM (raw, /16)"
+    },
+    "front_R": {
+     "start_byte": 13,
+     "label": "front R (raw, /16)"
+    }
+   }
+  },
+  "0x73": {
+   "name": "Climate and doors",
+   "signals": {
+    "outside": {
+     "start_byte": 6,
+     "factor": 0.5,
+     "offset": -40,
+     "unit": "°C",
+     "label": "outside temperature (0 = none)",
+     "role": "outside.temp"
+    },
+    "doors": {
+     "start_byte": 7,
+     "bits": {
+      "front right": {
+       "bit": 7,
+       "role": "door.front_right"
+      },
+      "front left": {
+       "bit": 6,
+       "role": "door.front_left"
+      },
+      "rear left": {
+       "bit": 5,
+       "role": "door.rear_left"
+      },
+      "rear right": {
+       "bit": 4,
+       "role": "door.rear_right"
+      },
+      "trunk": {
+       "bit": 3,
+       "role": "door.trunk"
+      },
+      "hood": {
+       "bit": 2,
+       "role": "door.hood"
+      }
+     }
+    }
+   }
+  },
+  "0x12": {
+   "name": "Car info",
+   "signals": {
+    "oil_temp": {
+     "start_byte": 2,
+     "unit": "°C",
+     "label": "oil temperature (255 = none)",
+     "role": "engine.oil_temp"
+    },
+    "consumption": {
+     "start_byte": 3,
+     "label": "instant consumption (whole part)",
+     "role": "fuel.instant"
+    },
+    "gear": {
+     "start_byte": 5,
+     "label": "gear"
+    },
+    "warnings": {
+     "start_byte": 6,
+     "bits": {
+      "low oil": {
+       "bit": 7,
+       "role": "engine.oil_warning"
+      },
+      "low battery": {
+       "bit": 6,
+       "role": "battery.warning"
+      },
+      "seat belt": {
+       "bit": 5,
+       "role": "seatbelt.warning"
+      },
+      "washer fluid": {
+       "bit": 4,
+       "role": "washer.warning"
+      },
+      "engine oil": 3
+     }
+    },
+    "fuel": {
+     "start_byte": 7,
+     "label": "fuel left"
+    },
+    "battery": {
+     "start_byte": 8,
+     "unit": "V",
+     "label": "battery (whole volts)",
+     "role": "battery.voltage"
+    }
+   }
+  },
+  "0x13": {
+   "name": "Driving",
+   "signals": {
+    "mileage": {
+     "start_byte": 0,
+     "size": 3,
+     "unit": "km",
+     "label": "mileage",
+     "role": "vehicle.odometer"
+    },
+    "speed": {
+     "start_byte": 3,
+     "size": 2,
+     "factor": 0.1,
+     "unit": "km/h",
+     "label": "speed",
+     "role": "vehicle.speed"
+    },
+    "rpm": {
+     "start_byte": 8,
+     "size": 2,
+     "unit": "rpm",
+     "label": "engine speed",
+     "role": "engine.rpm"
+    }
+   }
+  },
+  "0x18": {
+   "name": "Lights",
+   "signals": {
+    "lights": {
+     "start_byte": 0,
+     "bits": {
+      "low beam": {
+       "bit": 7,
+       "role": "lights.low_beam"
+      },
+      "high beam": {
+       "bit": 6,
+       "role": "lights.high_beam"
+      },
+      "side lights": {
+       "bit": 5,
+       "role": "lights.parking"
+      },
+      "front fog": {
+       "bit": 4,
+       "role": "lights.fog_front"
+      },
+      "rear fog": {
+       "bit": 3,
+       "role": "lights.fog_rear"
+      },
+      "brake": {
+       "bit": 2,
+       "role": "lights.brake"
+      },
+      "reversing": {
+       "bit": 1,
+       "role": "lights.reverse"
+      }
+     }
+    },
+    "turn": {
+     "start_byte": 1,
+     "bits": {
+      "left": {
+       "bit": 7,
+       "role": "turn.left"
+      },
+      "right": {
+       "bit": 6,
+       "role": "turn.right"
+      },
+      "hazard": {
+       "bit": 3,
+       "role": "turn.hazard"
+      }
+     }
+    }
+   }
+  },
+  "0x42": {
+   "name": "Side radar",
+   "signals": {
+    "right_F": {
+     "start_byte": 0,
+     "label": "right front (raw, /16)"
+    },
+    "right_FM": {
+     "start_byte": 1,
+     "label": "right front mid (raw, /16)"
+    },
+    "right_RM": {
+     "start_byte": 2,
+     "label": "right rear mid (raw, /16)"
+    },
+    "right_R": {
+     "start_byte": 3,
+     "label": "right rear (raw, /16)"
+    },
+    "left_F": {
+     "start_byte": 4,
+     "label": "left front (raw, /16)"
+    },
+    "left_FM": {
+     "start_byte": 5,
+     "label": "left front mid (raw, /16)"
+    },
+    "left_RM": {
+     "start_byte": 6,
+     "label": "left rear mid (raw, /16)"
+    },
+    "left_R": {
+     "start_byte": 7,
+     "label": "left rear (raw, /16)"
+    }
+   }
+  },
+  "0xF0": {
+   "name": "Box version",
+   "signals": {
+    "version": {
+     "start_byte": 0,
+     "ascii": true,
+     "label": "version",
+     "role": "box.version"
+    }
+   }
+  }
+ },
+ "examples": [
+  {
+   "cmd": "0x13",
+   "data": "01 00 00 03 E8 00 00 00 03 20",
+   "expect": {
+    "vehicle.odometer": 65536,
+    "speed": 100,
+    "engine.rpm": 800
+   }
+  },
+  {
+   "cmd": "0x73",
+   "data": "00 00 00 00 00 00 78 40",
+   "expect": {
+    "outside.temp": 20,
+    "door.front_left": true,
+    "door.front_right": false
+   }
+  },
+  {
+   "cmd": "0x18",
+   "data": "C0 80",
+   "expect": {
+    "lights.low_beam": true,
+    "lights.high_beam": true,
+    "turn.left": true,
+    "turn.right": false
+   }
+  },
+  {
+   "cmd": "0x72",
+   "data": "00 00 00 00 00 46 00 00 00 00 00 00 00 00",
+   "expect": {
+    "steering.angle": -270
+   }
+  },
+  {
+   "cmd": "0x72",
+   "data": "00 00 00 00 23 00 00 00 00 00 00 00 00 00",
+   "expect": {
+    "steering.angle": 135
+   }
+  }
+ ]
+}

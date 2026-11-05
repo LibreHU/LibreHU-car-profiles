@@ -1,0 +1,1187 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.0",
+ "id": "hyundai-kia-hiworld",
+ "name": "Hyundai, Kia (Hiworld HYP001)",
+ "description": "Hiworld box, protocol HYP001 (Hyundai / Kia full compatible), from Hiworld's own app (HdKoreaProtocol). Choose your car: its box needs its car type. Not tried on a car yet.",
+ "box": "hiworld",
+ "baud": 38400,
+ "link": {
+  "ack": false,
+  "send": [
+   {
+    "name": "car type",
+    "cmd": "0x24",
+    "data": "",
+    "first_ms": 1000,
+    "every_ms": 30000
+   }
+  ]
+ },
+ "variants": [
+  {
+   "name": "Hyundai Accent 2010-2019, all trims",
+   "send": {
+    "car type": "0A 09"
+   }
+  },
+  {
+   "name": "Hyundai Avante 2010-2015, all trims",
+   "send": {
+    "car type": "05 09"
+   }
+  },
+  {
+   "name": "Hyundai Avante 2015-2020, all trims",
+   "send": {
+    "car type": "26 09"
+   }
+  },
+  {
+   "name": "Hyundai Avante 2020-2023, all trims",
+   "send": {
+    "car type": "41 09"
+   }
+  },
+  {
+   "name": "Hyundai Casper 2021~Present, all trims",
+   "send": {
+    "car type": "46 09"
+   }
+  },
+  {
+   "name": "Hyundai Elantra 2020-now, all trims",
+   "send": {
+    "car type": "41 09"
+   }
+  },
+  {
+   "name": "Hyundai encino 2017-2023, all trims",
+   "send": {
+    "car type": "2F 09"
+   }
+  },
+  {
+   "name": "Hyundai encino 2018-now, all trims",
+   "send": {
+    "car type": "2F 09"
+   }
+  },
+  {
+   "name": "Hyundai Equus 2009-2013, all trims",
+   "send": {
+    "car type": "48 09"
+   }
+  },
+  {
+   "name": "Hyundai Equus 2013-2016, all trims",
+   "send": {
+    "car type": "49 09"
+   }
+  },
+  {
+   "name": "Hyundai Genesis 2008-2013, all trims",
+   "send": {
+    "car type": "0C 09"
+   }
+  },
+  {
+   "name": "Hyundai Genesis Coupe 2008-2011, all trims",
+   "send": {
+    "car type": "0D 09"
+   }
+  },
+  {
+   "name": "Hyundai Genesis Coupe 2011-2016, all trims",
+   "send": {
+    "car type": "0E 09"
+   }
+  },
+  {
+   "name": "Hyundai Genesis G80 2016-2020, all trims",
+   "send": {
+    "car type": "4B 09"
+   }
+  },
+  {
+   "name": "Hyundai Genesis G80 2020-Present, all trims",
+   "send": {
+    "car type": "4C 09"
+   }
+  },
+  {
+   "name": "Hyundai Grandeur 2011-2017, all trims",
+   "send": {
+    "car type": "20 09"
+   }
+  },
+  {
+   "name": "Hyundai Grandeur 2018-2020, all trims",
+   "send": {
+    "car type": "2C 09"
+   }
+  },
+  {
+   "name": "Hyundai GV70 2020~Present, all trims",
+   "send": {
+    "car type": "4D 09"
+   }
+  },
+  {
+   "name": "Hyundai H1 Starex 2007-2017, all trims",
+   "send": {
+    "car type": "04 09"
+   }
+  },
+  {
+   "name": "Hyundai H1 Starex 2019~Present, all trims",
+   "send": {
+    "car type": "3A 09"
+   }
+  },
+  {
+   "name": "Hyundai H1 Starex 2022, all trims",
+   "send": {
+    "car type": "3A 09"
+   }
+  },
+  {
+   "name": "Hyundai i30 2011-2016, all trims",
+   "send": {
+    "car type": "02 09"
+   }
+  },
+  {
+   "name": "Hyundai i30 2016-Present, all trims",
+   "send": {
+    "car type": "26 09"
+   }
+  },
+  {
+   "name": "Hyundai i40 2011-2017, all trims",
+   "send": {
+    "car type": "03 09"
+   }
+  },
+  {
+   "name": "Hyundai IONIQ 2016-2019, all trims",
+   "send": {
+    "car type": "09 09"
+   }
+  },
+  {
+   "name": "Hyundai ix35 2010-2011, high trim",
+   "send": {
+    "car type": "20 09"
+   }
+  },
+  {
+   "name": "Hyundai ix35 2010-2011, medium low",
+   "send": {
+    "car type": "20 09"
+   }
+  },
+  {
+   "name": "Hyundai ix35 2012-2015, high trim",
+   "send": {
+    "car type": "20 09"
+   }
+  },
+  {
+   "name": "Hyundai ix35 2012-2015, medium low",
+   "send": {
+    "car type": "20 09"
+   }
+  },
+  {
+   "name": "Hyundai ix35 2018-now, all trims",
+   "send": {
+    "car type": "20 09"
+   }
+  },
+  {
+   "name": "Hyundai ix35 2019-2015, all trims",
+   "send": {
+    "car type": "20 09"
+   }
+  },
+  {
+   "name": "Hyundai ix45 2012-2022, high trim",
+   "send": {
+    "car type": "2B 09"
+   }
+  },
+  {
+   "name": "Hyundai ix45 2012-2022, low trim",
+   "send": {
+    "car type": "21 09"
+   }
+  },
+  {
+   "name": "Hyundai ix45 2013-2015, high trim",
+   "send": {
+    "car type": "2B 09"
+   }
+  },
+  {
+   "name": "Hyundai ix45 2013-2015, medium low",
+   "send": {
+    "car type": "21 09"
+   }
+  },
+  {
+   "name": "Hyundai ix45 2016-2018, high trim",
+   "send": {
+    "car type": "21 09"
+   }
+  },
+  {
+   "name": "Hyundai ix45 2016-2018, medium low",
+   "send": {
+    "car type": "21 09"
+   }
+  },
+  {
+   "name": "Hyundai ix45 2019-now, high trim",
+   "send": {
+    "car type": "31 09"
+   }
+  },
+  {
+   "name": "Hyundai ix45 2019-now, low trim",
+   "send": {
+    "car type": "31 09"
+   }
+  },
+  {
+   "name": "Hyundai ix45 2019-now, medium",
+   "send": {
+    "car type": "31 09"
+   }
+  },
+  {
+   "name": "Hyundai K9 2012~2015, all trims",
+   "send": {
+    "car type": "43 09"
+   }
+  },
+  {
+   "name": "Hyundai Kona 2017-2023, all trims",
+   "send": {
+    "car type": "2F 09"
+   }
+  },
+  {
+   "name": "Hyundai Lafesta 2018-2022, all trims",
+   "send": {
+    "car type": "44 09"
+   }
+  },
+  {
+   "name": "Hyundai lingdong 2015-2020, all trims",
+   "send": {
+    "car type": "26 09"
+   }
+  },
+  {
+   "name": "Hyundai lingdong 2016-2018, all trims",
+   "send": {
+    "car type": "26 09"
+   }
+  },
+  {
+   "name": "Hyundai mistra 2013-2015, all trims",
+   "send": {
+    "car type": "24 09"
+   }
+  },
+  {
+   "name": "Hyundai mistra 2013-2020, all trims",
+   "send": {
+    "car type": "24 09"
+   }
+  },
+  {
+   "name": "Hyundai mistra 2016-2017, all trims",
+   "send": {
+    "car type": "24 09"
+   }
+  },
+  {
+   "name": "Hyundai mistra 2020-Present, all trims",
+   "send": {
+    "car type": "01 09"
+   }
+  },
+  {
+   "name": "Hyundai New zealand 2023, all trims",
+   "send": {
+    "car type": "3C 09"
+   }
+  },
+  {
+   "name": "Hyundai New zealand 2023-Present, all trims",
+   "send": {
+    "car type": "3C 09"
+   }
+  },
+  {
+   "name": "Hyundai NIRO 2020, all trims",
+   "send": {
+    "car type": "42 09"
+   }
+  },
+  {
+   "name": "Hyundai None",
+   "send": {
+    "car type": "20 09"
+   }
+  },
+  {
+   "name": "Hyundai Porter II 2004~Present, all trims",
+   "send": {
+    "car type": "0B 09"
+   }
+  },
+  {
+   "name": "Hyundai santafe 2007-now, all trims",
+   "send": {
+    "car type": "34 09"
+   }
+  },
+  {
+   "name": "Hyundai santafe 2012-2022, high trim",
+   "send": {
+    "car type": "2B 09"
+   }
+  },
+  {
+   "name": "Hyundai santafe 2012-2022, low trim",
+   "send": {
+    "car type": "21 09"
+   }
+  },
+  {
+   "name": "Hyundai santafe 2018-2023, high trim",
+   "send": {
+    "car type": "37 09"
+   }
+  },
+  {
+   "name": "Hyundai santafe 2018-2023, low trim",
+   "send": {
+    "car type": "31 09"
+   }
+  },
+  {
+   "name": "Hyundai santafe 2021, all trims",
+   "send": {
+    "car type": "37 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2009-2014, all trims",
+   "send": {
+    "car type": "22 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2010-2015, all trims",
+   "send": {
+    "car type": "22 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2014-2019, high trim",
+   "send": {
+    "car type": "3E 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2014-2019, high trim",
+   "send": {
+    "car type": "45 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2014-2019, high trim",
+   "send": {
+    "car type": "39 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2014-2019, low trim",
+   "send": {
+    "car type": "23 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2014-2019, low trim",
+   "send": {
+    "car type": "2A 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2014-2019, low trim",
+   "send": {
+    "car type": "2E 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2014-2019, medium",
+   "send": {
+    "car type": "3D 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2014-2019, medium",
+   "send": {
+    "car type": "2D 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2015-2016, all trims",
+   "send": {
+    "car type": "23 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2017, all trims",
+   "send": {
+    "car type": "2A 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2018-now, high trim",
+   "send": {
+    "car type": "39 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2018-now, low trim",
+   "send": {
+    "car type": "2E 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2018-now, medium",
+   "send": {
+    "car type": "2D 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata 2019-2023, all trims",
+   "send": {
+    "car type": "08 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata9 2015, high trim",
+   "send": {
+    "car type": "3E 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata9 2015, medium",
+   "send": {
+    "car type": "3D 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata9 2017, all trims",
+   "send": {
+    "car type": "2A 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata9 2017, all trims",
+   "send": {
+    "car type": "45 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata9 2018, high trim",
+   "send": {
+    "car type": "39 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata9 2018, low trim",
+   "send": {
+    "car type": "2E 09"
+   }
+  },
+  {
+   "name": "Hyundai sonata9 2018, medium",
+   "send": {
+    "car type": "2D 09"
+   }
+  },
+  {
+   "name": "Hyundai Staria 2021~Present, all trims",
+   "send": {
+    "car type": "3C 09"
+   }
+  },
+  {
+   "name": "Hyundai Staria 2022, all trims",
+   "send": {
+    "car type": "3C 09"
+   }
+  },
+  {
+   "name": "Hyundai Tucson 2009-2015, all trims",
+   "send": {
+    "car type": "20 09"
+   }
+  },
+  {
+   "name": "Hyundai Tucson 2013-2016, all trims",
+   "send": {
+    "car type": "25 09"
+   }
+  },
+  {
+   "name": "Hyundai Tucson 2015-2020, all trims",
+   "send": {
+    "car type": "25 09"
+   }
+  },
+  {
+   "name": "Hyundai Tucson 2018, all trims",
+   "send": {
+    "car type": "25 09"
+   }
+  },
+  {
+   "name": "Hyundai Tucson 2019-now, high trim",
+   "send": {
+    "car type": "25 09"
+   }
+  },
+  {
+   "name": "Hyundai Tucson 2019-now, medium low",
+   "send": {
+    "car type": "25 09"
+   }
+  },
+  {
+   "name": "Hyundai Tucson 2020-2023, all trims",
+   "send": {
+    "car type": "06 09"
+   }
+  },
+  {
+   "name": "Hyundai Veloster 2011-2013, all trims",
+   "send": {
+    "car type": "3F 09"
+   }
+  },
+  {
+   "name": "Hyundai Venue 2022~Present, all trims",
+   "send": {
+    "car type": "07 09"
+   }
+  },
+  {
+   "name": "Hyundai veracruz 2006-2013, all trims",
+   "send": {
+    "car type": "36 09"
+   }
+  },
+  {
+   "name": "Hyundai veracruz 2007, all trims",
+   "send": {
+    "car type": "36 09"
+   }
+  },
+  {
+   "name": "Hyundai Xcient 2013~Present, all trims",
+   "send": {
+    "car type": "4A 09"
+   }
+  },
+  {
+   "name": "Kia Bongo III 2004~Present, all trims",
+   "send": {
+    "car type": "59 09"
+   }
+  },
+  {
+   "name": "Kia Carnes 2013-2016, all trims",
+   "send": {
+    "car type": "56 09"
+   }
+  },
+  {
+   "name": "Kia Carnival 2005-2014, all trims",
+   "send": {
+    "car type": "40 09"
+   }
+  },
+  {
+   "name": "Kia Carnival 2014-2020, all trims",
+   "send": {
+    "car type": "3B 09"
+   }
+  },
+  {
+   "name": "Kia k5 2010-2015, all trims",
+   "send": {
+    "car type": "12 09"
+   }
+  },
+  {
+   "name": "Kia k5 2012-2018, all trims",
+   "send": {
+    "car type": "10 09"
+   }
+  },
+  {
+   "name": "Kia k5 2015, all trims",
+   "send": {
+    "car type": "27 09"
+   }
+  },
+  {
+   "name": "Kia k5 2015-2019, all trims",
+   "send": {
+    "car type": "27 09"
+   }
+  },
+  {
+   "name": "Kia k5 2016-2018, all trims",
+   "send": {
+    "car type": "27 09"
+   }
+  },
+  {
+   "name": "Kia k5 2018-2024, all trims",
+   "send": {
+    "car type": "11 09"
+   }
+  },
+  {
+   "name": "Kia k5 2019-2023, all trims",
+   "send": {
+    "car type": "13 09"
+   }
+  },
+  {
+   "name": "Kia k7 2009-2016, all trims",
+   "send": {
+    "car type": "14 09"
+   }
+  },
+  {
+   "name": "Kia k9 2012-2018, all trims",
+   "send": {
+    "car type": "43 09"
+   }
+  },
+  {
+   "name": "Kia kx5 2015, all trims",
+   "send": {
+    "car type": "28 09"
+   }
+  },
+  {
+   "name": "Kia kx5 2015-2018, all trims",
+   "send": {
+    "car type": "28 09"
+   }
+  },
+  {
+   "name": "Kia kx5 2016-now, all trims",
+   "send": {
+    "car type": "28 09"
+   }
+  },
+  {
+   "name": "Kia kx5 2018-2021, all trims",
+   "send": {
+    "car type": "33 09"
+   }
+  },
+  {
+   "name": "Kia kx5 2019, all trims",
+   "send": {
+    "car type": "33 09"
+   }
+  },
+  {
+   "name": "Kia kx7 2014-2020, high trim",
+   "send": {
+    "car type": "2C 09"
+   }
+  },
+  {
+   "name": "Kia kx7 2017, medium low",
+   "send": {
+    "car type": "2C 09"
+   }
+  },
+  {
+   "name": "Kia Mohave 2008-2019, all trims",
+   "send": {
+    "car type": "53 09"
+   }
+  },
+  {
+   "name": "Kia Morning 2008-2011, all trims",
+   "send": {
+    "car type": "16 09"
+   }
+  },
+  {
+   "name": "Kia Morning 2011-2017, all trims",
+   "send": {
+    "car type": "17 09"
+   }
+  },
+  {
+   "name": "Kia Morning 2017-2020, all trims",
+   "send": {
+    "car type": "18 09"
+   }
+  },
+  {
+   "name": "Kia Morning 2020-2023, all trims",
+   "send": {
+    "car type": "19 09"
+   }
+  },
+  {
+   "name": "Kia NIRO 2016-2022, high trim",
+   "send": {
+    "car type": "42 09"
+   }
+  },
+  {
+   "name": "Kia NIRO 2016-2022, low trim",
+   "send": {
+    "car type": "38 09"
+   }
+  },
+  {
+   "name": "Kia NIRO 2022, all trims",
+   "send": {
+    "car type": "38 09"
+   }
+  },
+  {
+   "name": "Kia Opirus 2006-2009, all trims",
+   "send": {
+    "car type": "1B 09"
+   }
+  },
+  {
+   "name": "Kia OPTIMA 2015-2020, all trims",
+   "send": {
+    "car type": "15 09"
+   }
+  },
+  {
+   "name": "Kia OPTIMA 2018, all trims",
+   "send": {
+    "car type": "3B 09"
+   }
+  },
+  {
+   "name": "Kia Pride 2005-2011, all trims",
+   "send": {
+    "car type": "57 09"
+   }
+  },
+  {
+   "name": "Kia Pride 2011-2017, all trims",
+   "send": {
+    "car type": "58 09"
+   }
+  },
+  {
+   "name": "Kia Ray 2011-2017, all trims",
+   "send": {
+    "car type": "1E 09"
+   }
+  },
+  {
+   "name": "Kia Ray 2017~Present, all trims",
+   "send": {
+    "car type": "1F 09"
+   }
+  },
+  {
+   "name": "Kia Sedona 2019-now, all trims",
+   "send": {
+    "car type": "00 09"
+   }
+  },
+  {
+   "name": "Kia Seltos 2019-2022, all trims",
+   "send": {
+    "car type": "54 09"
+   }
+  },
+  {
+   "name": "Kia sorento 2009-2014, all trims",
+   "send": {
+    "car type": "35 09"
+   }
+  },
+  {
+   "name": "Kia sorento 2012-now, all trims",
+   "send": {
+    "car type": "35 09"
+   }
+  },
+  {
+   "name": "Kia sorento 2014-2020, high trim",
+   "send": {
+    "car type": "2C 09"
+   }
+  },
+  {
+   "name": "Kia sorento 2014-2020, low trim",
+   "send": {
+    "car type": "29 09"
+   }
+  },
+  {
+   "name": "Kia sorento 2015-now, all trims",
+   "send": {
+    "car type": "29 09"
+   }
+  },
+  {
+   "name": "Kia sorento 2020-2023, all trims",
+   "send": {
+    "car type": "1A 09"
+   }
+  },
+  {
+   "name": "Kia Soul 2008-2013, all trims",
+   "send": {
+    "car type": "50 09"
+   }
+  },
+  {
+   "name": "Kia Soul 2013-2019, all trims",
+   "send": {
+    "car type": "51 09"
+   }
+  },
+  {
+   "name": "Kia Soul 2019-2024, all trims",
+   "send": {
+    "car type": "52 09"
+   }
+  },
+  {
+   "name": "Kia sportage 2010-2015, all trims",
+   "send": {
+    "car type": "1C 09"
+   }
+  },
+  {
+   "name": "Kia sportage 2011-2016, all trims",
+   "send": {
+    "car type": "00 09"
+   }
+  },
+  {
+   "name": "Kia sportage 2015-2018, all trims",
+   "send": {
+    "car type": "28 09"
+   }
+  },
+  {
+   "name": "Kia sportage 2016-2017, all trims",
+   "send": {
+    "car type": "00 09"
+   }
+  },
+  {
+   "name": "Kia sportage 2018-2019, all trims",
+   "send": {
+    "car type": "30 09"
+   }
+  },
+  {
+   "name": "Kia sportage 2018-2021, low trim",
+   "send": {
+    "car type": "33 09"
+   }
+  },
+  {
+   "name": "Kia sportage 2018-2023, high trim",
+   "send": {
+    "car type": "30 09"
+   }
+  },
+  {
+   "name": "Kia sportage 2021-2024, all trims",
+   "send": {
+    "car type": "1D 09"
+   }
+  },
+  {
+   "name": "Kia Stonic 2017-2020, all trims",
+   "send": {
+    "car type": "55 09"
+   }
+  }
+ ],
+ "wheel_keys": {
+  "cmd": "0x11",
+  "code_byte": 2,
+  "state_byte": 3,
+  "pressed": [
+   1
+  ],
+  "names": {
+   "1": "volume +",
+   "2": "volume -",
+   "3": "mute",
+   "4": "voice",
+   "5": "answer",
+   "6": "hang up",
+   "8": "previous",
+   "9": "next",
+   "10": "mode",
+   "11": "mode",
+   "23": "navigation",
+   "32": "previous",
+   "33": "next",
+   "69": "navigation",
+   "70": "EQ",
+   "71": "settings"
+  }
+ },
+ "messages": {
+  "0x11": {
+   "name": "State",
+   "signals": {
+    "status": {
+     "start_byte": 0,
+     "bits": {
+      "ACC": {
+       "bit": 0,
+       "role": "ignition.acc"
+      },
+      "lights": {
+       "bit": 1,
+       "role": "lights.on"
+      },
+      "reverse": {
+       "bit": 2,
+       "role": "gear.reverse"
+      },
+      "park": 3
+     }
+    },
+    "wheel_key": {
+     "start_byte": 2,
+     "label": "wheel key",
+     "values": {
+      "1": "volume +",
+      "2": "volume -",
+      "3": "mute",
+      "4": "voice",
+      "5": "answer",
+      "6": "hang up",
+      "8": "previous",
+      "9": "next",
+      "10": "mode",
+      "11": "mode",
+      "23": "navigation",
+      "32": "previous",
+      "33": "next",
+      "69": "navigation",
+      "70": "EQ",
+      "71": "settings"
+     }
+    },
+    "wheel_key_state": {
+     "start_byte": 3,
+     "label": "key state"
+    },
+    "steering": {
+     "start_byte": 6,
+     "size": 2,
+     "signed": true,
+     "factor": -1,
+     "label": "steering angle",
+     "unit": "°",
+     "role": "steering.angle"
+    }
+   }
+  },
+  "0x12": {
+   "name": "Doors",
+   "signals": {
+    "doors": {
+     "start_byte": 2,
+     "bits": {
+      "front left": {
+       "bit": 7,
+       "role": "door.front_left"
+      },
+      "front right": {
+       "bit": 6,
+       "role": "door.front_right"
+      },
+      "rear left": {
+       "bit": 5,
+       "role": "door.rear_left"
+      },
+      "rear right": {
+       "bit": 4,
+       "role": "door.rear_right"
+      },
+      "trunk": {
+       "bit": 3,
+       "role": "door.trunk"
+      },
+      "hood": {
+       "bit": 2,
+       "role": "door.hood"
+      }
+     }
+    },
+    "park_state": {
+     "start_byte": 1,
+     "mask": "0x07",
+     "label": "park state"
+    },
+    "drive_mode": {
+     "start_byte": 3,
+     "label": "drive mode"
+    }
+   }
+  },
+  "0x31": {
+   "name": "Climate",
+   "signals": {
+    "outside_temp": {
+     "start_byte": 11,
+     "factor": 0.5,
+     "offset": -40,
+     "unit": "°C",
+     "label": "outside",
+     "role": "outside.temp"
+    }
+   }
+  },
+  "0x32": {
+   "name": "Car info",
+   "signals": {
+    "rpm": {
+     "start_byte": 2,
+     "size": 2,
+     "max_value": 65534,
+     "unit": "rpm",
+     "label": "engine speed",
+     "role": "engine.rpm"
+    },
+    "speed": {
+     "start_byte": 4,
+     "size": 2,
+     "max_value": 65534,
+     "unit": "km/h",
+     "label": "speed",
+     "role": "vehicle.speed"
+    },
+    "odometer": {
+     "start_byte": 10,
+     "size": 3,
+     "max_value": 16777214,
+     "unit": "km",
+     "label": "odometer",
+     "role": "vehicle.odometer"
+    }
+   }
+  },
+  "0x41": {
+   "name": "Parking radar",
+   "signals": {
+    "rear_left": {
+     "start_byte": 0,
+     "label": "rear L (raw)"
+    },
+    "rear_left_mid": {
+     "start_byte": 1,
+     "label": "rear LM (raw)"
+    },
+    "rear_right_mid": {
+     "start_byte": 2,
+     "label": "rear RM (raw)"
+    },
+    "rear_right": {
+     "start_byte": 3,
+     "label": "rear R (raw)"
+    },
+    "front_left": {
+     "start_byte": 4,
+     "label": "front L (raw)"
+    },
+    "front_left_mid": {
+     "start_byte": 5,
+     "label": "front LM (raw)"
+    },
+    "front_right_mid": {
+     "start_byte": 6,
+     "label": "front RM (raw)"
+    },
+    "front_right": {
+     "start_byte": 7,
+     "label": "front R (raw)"
+    },
+    "radar_mode": {
+     "start_byte": 11,
+     "label": "radar mode (0: levels 0-3)"
+    }
+   }
+  },
+  "0xF0": {
+   "name": "Box version",
+   "signals": {
+    "version": {
+     "start_byte": 0,
+     "ascii": true,
+     "label": "version",
+     "role": "box.version"
+    }
+   }
+  }
+ },
+ "examples": [
+  {
+   "cmd": "0x32",
+   "data": "00 00 03 20 00 32 00 00 00 00 01 E2 40",
+   "expect": {
+    "engine.rpm": 800,
+    "vehicle.speed": 50,
+    "vehicle.odometer": 123456
+   }
+  },
+  {
+   "cmd": "0x11",
+   "data": "05 00 00 00 00 00 FF 9C",
+   "expect": {
+    "ignition.acc": true,
+    "gear.reverse": true,
+    "lights.on": false,
+    "steering.angle": 100
+   }
+  },
+  {
+   "cmd": "0x31",
+   "data": "00 00 00 00 00 00 00 00 00 00 00 64",
+   "expect": {
+    "outside.temp": 10
+   }
+  }
+ ]
+}

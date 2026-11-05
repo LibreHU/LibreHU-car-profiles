@@ -1,0 +1,59 @@
+{
+ "$schema": "https://raw.githubusercontent.com/LibreHU/LibreHU-car-profiles/main/schema/can-vehicle.schema.json",
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.0",
+ "id": "make-model-box",
+ "name": "Make Model (Box maker PROTOCOL)",
+ "description": "Box maker and protocol (the code on the box's sticker or in its app), where the decoding comes from (your captures, the box's documentation). Tried on: <car, year> / not tried yet.",
+ "box": "hiworld",
+ "baud": 38400,
+ "link": {
+  "ack": true,
+  "send": []
+ },
+ "variants": [
+  { "name": "Make Model 2015-2020, all trims", "send": {} }
+ ],
+ "wheel_keys": {
+  "cmd": "0x11",
+  "code_byte": 2,
+  "state_byte": 3,
+  "pressed": [1],
+  "names": { "1": "volume +", "2": "volume -", "3": "mute" }
+ },
+ "messages": {
+  "0x11": {
+   "name": "State",
+   "signals": {
+    "status": { "start_byte": 0, "bits": {
+     "ACC": { "bit": 0, "role": "ignition.acc" },
+     "lights": { "bit": 1, "role": "lights.on" },
+     "reverse": { "bit": 2, "role": "gear.reverse" },
+     "handbrake": { "bit": 3, "role": "handbrake" } } },
+    "wheel_key": { "start_byte": 2, "label": "wheel key", "values": { "1": "volume +", "2": "volume -", "3": "mute" } },
+    "wheel_key_state": { "start_byte": 3, "label": "key state" },
+    "steering": { "start_byte": 6, "size": 2, "signed": true, "unit": "°", "role": "steering.angle", "label": { "en": "steering angle", "fr": "angle du volant" } }
+   }
+  },
+  "0x12": {
+   "name": "Doors",
+   "signals": {
+    "doors": { "start_byte": 0, "bits": {
+     "front left": { "bit": 7, "role": "door.front_left" },
+     "front right": { "bit": 6, "role": "door.front_right" },
+     "rear left": { "bit": 5, "role": "door.rear_left" },
+     "rear right": { "bit": 4, "role": "door.rear_right" },
+     "trunk": { "bit": 3, "role": "door.trunk" } } }
+   }
+  },
+  "0xF0": {
+   "name": "Box version",
+   "signals": { "version": { "start_byte": 0, "ascii": true, "role": "box.version" } }
+  }
+ },
+ "examples": [
+  { "cmd": "0x11", "data": "05 00 01 01 00 00 00 64", "expect": { "ignition.acc": true, "gear.reverse": true, "steering.angle": 100, "wheel_key": "volume +" } },
+  { "cmd": "0x12", "data": "88", "expect": { "door.front_left": true, "door.trunk": true, "door.front_right": false } }
+ ]
+}

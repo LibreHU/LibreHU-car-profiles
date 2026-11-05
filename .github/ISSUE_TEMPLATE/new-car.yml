@@ -1,0 +1,47 @@
+name: Nouvelle voiture / New car
+description: Demander ou proposer la prise en charge d'une voiture (boîtier CAN ou OBD).
+title: "[Voiture] Marque Modèle année (boîtier)"
+labels: ["new car"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Guide : [PORTING.md](https://github.com/LibreHU/LibreHU-car-profiles/blob/main/PORTING.md).
+        **Ne collez pas de VIN ni de position GPS.**
+  - type: input
+    id: car
+    attributes:
+      label: Voiture
+      description: Marque, modèle, année, finition
+      placeholder: Renault Clio 3 2008, Dynamique
+    validations:
+      required: true
+  - type: input
+    id: box
+    attributes:
+      label: Boîtier CAN
+      description: Fabricant (Hiworld, Raise, Simple, Oudi, Binary…) et code de protocole s'il est connu
+      placeholder: Hiworld LNP002
+    validations:
+      required: true
+  - type: input
+    id: service
+    attributes:
+      label: Version de LibreHU service
+      placeholder: v170
+  - type: textarea
+    id: works
+    attributes:
+      label: Ce qui marche / ce qui manque
+      description: Touches du volant, portes, marche arrière, angle du volant, clim, radar…
+  - type: textarea
+    id: capture
+    attributes:
+      label: Extrait d'export CAN
+      description: Onglet CAN → Exporter, en actionnant une commande à la fois (notez lesquelles et quand)
+      render: text
+  - type: textarea
+    id: profile
+    attributes:
+      label: Fiche (si vous l'avez écrite)
+      render: json

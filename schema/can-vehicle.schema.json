@@ -1,0 +1,673 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicle.schema.json",
+ "title": "LibreHU CAN car profile (format 2)",
+ "description": "A car profile of LibreHU service: how to talk to a CAN box and decode its messages. See docs/can-vehicles.md.",
+ "type": "object",
+ "required": [
+  "format",
+  "id"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "$schema": {
+   "type": "string"
+  },
+  "format": {
+   "const": "librehu-can-vehicle"
+  },
+  "version": {
+   "enum": [
+    1,
+    2
+   ]
+  },
+  "engine": {
+   "type": "string",
+   "pattern": "^(>=|\\^)?\\s*\\d{1,3}(\\.\\d{1,3}){0,2}$",
+   "description": "Engine the profile needs (Semantic Versioning), e.g. \">=2.1\""
+  },
+  "id": {
+   "type": "string",
+   "pattern": "^[a-z0-9][a-z0-9._-]{1,63}$"
+  },
+  "extends": {
+   "type": "string"
+  },
+  "name": {
+   "type": "string"
+  },
+  "description": {
+   "type": "string"
+  },
+  "box": {
+   "type": "string"
+  },
+  "baud": {
+   "type": "integer"
+  },
+  "framing": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "head"
+   ],
+   "properties": {
+    "head": {
+     "type": "string",
+     "pattern": "^(\\s*(0[xX])?[0-9A-Fa-f]{1,2}[\\s,]*)*$"
+    },
+    "order": {
+     "enum": [
+      "len,cmd",
+      "cmd,len"
+     ]
+    },
+    "len_offset": {
+     "type": "integer",
+     "minimum": -2,
+     "maximum": 8
+    },
+    "checksum": {
+     "type": "object",
+     "additionalProperties": false,
+     "properties": {
+      "algo": {
+       "enum": [
+        "sum",
+        "xor"
+       ]
+      },
+      "over": {
+       "type": "string"
+      },
+      "size": {
+       "enum": [
+        1,
+        2
+       ]
+      },
+      "add": {
+       "type": "integer"
+      },
+      "xor": {
+       "oneOf": [
+        {
+         "type": "integer"
+        },
+        {
+         "type": "string"
+        }
+       ]
+      }
+     }
+    },
+    "ack": {
+     "type": "object",
+     "additionalProperties": false,
+     "properties": {
+      "cmd": {
+       "type": "string",
+       "pattern": "^0[xX][0-9A-Fa-f]{1,2}$"
+      },
+      "raw": {
+       "type": "string",
+       "pattern": "^(\\s*(0[xX])?[0-9A-Fa-f]{1,2}[\\s,]*)*$"
+      }
+     }
+    },
+    "no_ack_for": {
+     "type": "array",
+     "items": {
+      "oneOf": [
+       {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 255
+       },
+       {
+        "type": "string",
+        "pattern": "^(0[xX])?[0-9A-Fa-f]{1,2}$"
+       }
+      ]
+     }
+    },
+    "box_answers": {
+     "type": "array",
+     "items": {
+      "oneOf": [
+       {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 255
+       },
+       {
+        "type": "string",
+        "pattern": "^(0[xX])?[0-9A-Fa-f]{1,2}$"
+       }
+      ]
+     }
+    },
+    "baud": {
+     "type": "integer"
+    }
+   }
+  },
+  "link": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "ack": {
+     "type": "boolean"
+    },
+    "send": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "cmd"
+      ],
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "cmd": {
+        "type": "string",
+        "pattern": "^0[xX][0-9A-Fa-f]{1,2}$"
+       },
+       "data": {
+        "type": "string"
+       },
+       "first_ms": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 60000
+       },
+       "every_ms": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 3600000
+       },
+       "on": {
+        "enum": [
+         "start",
+         "change"
+        ]
+       }
+      }
+     }
+    },
+    "commands": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "cmd"
+      ],
+      "properties": {
+       "cmd": {
+        "type": "string",
+        "pattern": "^0[xX][0-9A-Fa-f]{1,2}$"
+       },
+       "data": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  },
+  "wheel_keys": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "cmd",
+    "code_byte"
+   ],
+   "properties": {
+    "cmd": {
+     "type": "string",
+     "pattern": "^0[xX][0-9A-Fa-f]{1,2}$"
+    },
+    "code_byte": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 63
+    },
+    "code_mask": {
+     "type": "string"
+    },
+    "state_byte": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 63
+    },
+    "pressed": {
+     "type": "array",
+     "items": {
+      "type": "integer"
+     }
+    },
+    "event_byte": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 63
+    },
+    "event_mask": {
+     "type": "string"
+    },
+    "names": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "string"
+     }
+    },
+    "code_base": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 65535
+    },
+    "steps_byte": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 63
+    },
+    "steps_signed": {
+     "type": "boolean"
+    }
+   }
+  },
+  "keys": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "cmd",
+     "code_byte"
+    ],
+    "properties": {
+     "cmd": {
+      "type": "string",
+      "pattern": "^0[xX][0-9A-Fa-f]{1,2}$"
+     },
+     "code_byte": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 63
+     },
+     "code_mask": {
+      "type": "string"
+     },
+     "state_byte": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 63
+     },
+     "pressed": {
+      "type": "array",
+      "items": {
+       "type": "integer"
+      }
+     },
+     "event_byte": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 63
+     },
+     "event_mask": {
+      "type": "string"
+     },
+     "names": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "string"
+      }
+     },
+     "code_base": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 65535
+     },
+     "steps_byte": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 63
+     },
+     "steps_signed": {
+      "type": "boolean"
+     }
+    }
+   }
+  },
+  "variants": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name"
+    ],
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "send": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "string"
+      }
+     },
+     "patch": {
+      "type": "object"
+     }
+    }
+   }
+  },
+  "messages": {
+   "type": "object",
+   "propertyNames": {
+    "pattern": "^0[xX][0-9A-Fa-f]{1,2}$"
+   },
+   "additionalProperties": {
+    "oneOf": [
+     {
+      "$ref": "#/$defs/message"
+     },
+     {
+      "type": "null"
+     }
+    ]
+   }
+  },
+  "examples": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "cmd",
+     "data",
+     "expect"
+    ],
+    "properties": {
+     "cmd": {
+      "type": "string",
+      "pattern": "^0[xX][0-9A-Fa-f]{1,2}$"
+     },
+     "data": {
+      "type": "string",
+      "pattern": "^(\\s*(0[xX])?[0-9A-Fa-f]{1,2}[\\s,]*)*$"
+     },
+     "expect": {
+      "type": "object",
+      "additionalProperties": {
+       "type": [
+        "number",
+        "boolean",
+        "string",
+        "null"
+       ]
+      }
+     }
+    }
+   }
+  }
+ },
+ "$defs": {
+  "signal": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "start_byte": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "size": {
+     "type": "integer",
+     "minimum": 1,
+     "maximum": 8
+    },
+    "endian": {
+     "enum": [
+      "big",
+      "little"
+     ]
+    },
+    "mask": {
+     "type": "string"
+    },
+    "shift": {
+     "type": "integer"
+    },
+    "start_bit": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "bit_length": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "signed": {
+     "type": "boolean"
+    },
+    "sign_magnitude": {
+     "type": "boolean"
+    },
+    "factor": {
+     "type": "number"
+    },
+    "offset": {
+     "type": "number"
+    },
+    "min_value": {
+     "type": "number"
+    },
+    "max_value": {
+     "type": "number"
+    },
+    "unit": {
+     "type": "string"
+    },
+    "label": {
+     "oneOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "object",
+       "additionalProperties": {
+        "type": "string"
+       }
+      }
+     ]
+    },
+    "bits": {
+     "type": "object",
+     "additionalProperties": {
+      "oneOf": [
+       {
+        "type": "integer",
+        "minimum": 0
+       },
+       {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+         "bit"
+        ],
+        "properties": {
+         "bit": {
+          "type": "integer",
+          "minimum": 0
+         },
+         "role": {
+          "type": "string",
+          "pattern": "^([a-z0-9_]+\\.)*[a-z0-9_]+$"
+         }
+        }
+       }
+      ]
+     }
+    },
+    "values": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "string"
+     }
+    },
+    "ascii": {
+     "type": "boolean"
+    },
+    "role": {
+     "type": "string",
+     "pattern": "^([a-z0-9_]+\\.)*[a-z0-9_]+$"
+    },
+    "invalid": {
+     "oneOf": [
+      {
+       "oneOf": [
+        {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 255
+        },
+        {
+         "type": "string",
+         "pattern": "^(0[xX])?[0-9A-Fa-f]{1,2}$"
+        }
+       ]
+      },
+      {
+       "type": "integer"
+      },
+      {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "integer"
+         },
+         {
+          "type": "string"
+         }
+        ]
+       }
+      }
+     ]
+    },
+    "when": {
+     "oneOf": [
+      {
+       "type": "object",
+       "additionalProperties": false,
+       "properties": {
+        "byte": {
+         "type": "integer",
+         "minimum": 0,
+         "maximum": 63
+        },
+        "is": {
+         "oneOf": [
+          {
+           "oneOf": [
+            {
+             "type": "integer",
+             "minimum": 0,
+             "maximum": 255
+            },
+            {
+             "type": "string",
+             "pattern": "^(0[xX])?[0-9A-Fa-f]{1,2}$"
+            }
+           ]
+          },
+          {
+           "type": "array",
+           "items": {
+            "oneOf": [
+             {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 255
+             },
+             {
+              "type": "string",
+              "pattern": "^(0[xX])?[0-9A-Fa-f]{1,2}$"
+             }
+            ]
+           }
+          }
+         ]
+        },
+        "mask": {
+         "type": "string"
+        },
+        "len": {
+         "type": "integer"
+        },
+        "min_len": {
+         "type": "integer"
+        },
+        "max_len": {
+         "type": "integer"
+        }
+       }
+      },
+      {
+       "type": "string",
+       "maxLength": 600
+      }
+     ]
+    },
+    "expr": {
+     "type": "string",
+     "maxLength": 600
+    }
+   }
+  },
+  "message": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "name": {
+     "type": "string"
+    },
+    "signals": {
+     "type": "object",
+     "additionalProperties": {
+      "$ref": "#/$defs/signal"
+     }
+    },
+    "mux": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 63
+    },
+    "cases": {
+     "type": "object",
+     "propertyNames": {
+      "pattern": "^0[xX][0-9A-Fa-f]{1,2}$"
+     },
+     "additionalProperties": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "signals": {
+        "type": "object",
+        "additionalProperties": {
+         "$ref": "#/$defs/signal"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

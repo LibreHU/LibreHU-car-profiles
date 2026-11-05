@@ -1,0 +1,570 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.0",
+ "id": "vw-mqb-raise",
+ "name": "Volkswagen, Skoda (Raise / Oudi, MQB)",
+ "description": "Raise (RZC) or Oudi box, Volkswagen MQB protocol, from the decoder Hiworld's own app uses for these boxes (ReMQB7Protocol); the cars are the ones that app decodes with it. The head unit says hello once (0x81 01) and acknowledges each message (FF); no car type. Not tried on a car yet.",
+ "box": "raise",
+ "baud": 38400,
+ "link": {
+  "ack": true,
+  "send": [
+   {
+    "name": "connect",
+    "cmd": "0x81",
+    "data": "01",
+    "first_ms": 500,
+    "every_ms": 0
+   }
+  ]
+ },
+ "variants": [
+  {
+   "name": "Skoda kamiq 2018-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda KAROQ 2018-2023, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda KAROQ 2018-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda kodiak 2017-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda kodiak 2020-2023, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda kodiak_gt 2019-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda octavia 2014-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda superb_haorui 2008-2013, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda superb_supai 2016-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda, other compatible models",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Amarok 2015-2023, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen bora 2019-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen caddy 2020-2024, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen caddy 2022, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Caravelle 2014-2018, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen cc 2018-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen golf 2013-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen golf 2014-2019, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen golf 2020, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen golf 2021, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen golf_7_ev 2020, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen golf_sportsvan 2016-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen lamando 2015-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen lavida 2018-2023, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen lavida 2018-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen lavida 2019-2020, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen leon 2017, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen leon 2017-2023, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen magotan 2016-2019, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen magotan 2017-2022, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen passat 2019-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen passat_gte 2019-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen passatb8 2017, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen phideon 2021, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen sagitar 2019-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Scala 2020-2023, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Sharan 2012-2018, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen t6 2015-2024, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen t_cross 2019-2022, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen t_cross 2019-2023, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen t_cross 2023, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen tayron 2018-now, high trim",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen tayron 2018-now, medium low",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Teramont 2017, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Teramont 2019-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Teramont 2022, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen teramont_x 2019-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen tharu 2018-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen tiguan 2010-2015, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen tiguan_l 2017-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen tiguan_l_gte 2019-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen touareg 2011-2017, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen touran 2016-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen touran_l 2016-2018, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Transporter 2017-2020, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen troc 2018-now, high trim",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen troc 2018-now, medium low",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen troc 2019-2024, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Variant 2016-2018, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen viloran 2019, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen, other compatible models",
+   "send": {}
+  }
+ ],
+ "wheel_keys": {
+  "cmd": "0x20",
+  "code_byte": 0,
+  "state_byte": 1,
+  "pressed": [
+   1
+  ],
+  "names": {
+   "1": "volume +",
+   "2": "volume -",
+   "3": "next",
+   "4": "previous",
+   "5": "answer / back",
+   "6": "mute",
+   "7": "mode",
+   "8": "voice / hang up",
+   "17": "mute (hold: power)",
+   "18": "back",
+   "19": "play / pause",
+   "20": "navigation",
+   "21": "music",
+   "22": "list",
+   "23": "Bluetooth",
+   "24": "radio",
+   "25": "answer",
+   "26": "hang up",
+   "27": "mode",
+   "28": "sound settings"
+  }
+ },
+ "messages": {
+  "0x20": {
+   "name": "Wheel key",
+   "signals": {
+    "wheel_key": {
+     "start_byte": 0,
+     "label": "wheel key",
+     "values": {
+      "1": "volume +",
+      "2": "volume -",
+      "3": "next",
+      "4": "previous",
+      "5": "answer / back",
+      "6": "mute",
+      "7": "mode",
+      "8": "voice / hang up",
+      "17": "mute (hold: power)",
+      "18": "back",
+      "19": "play / pause",
+      "20": "navigation",
+      "21": "music",
+      "22": "list",
+      "23": "Bluetooth",
+      "24": "radio",
+      "25": "answer",
+      "26": "hang up",
+      "27": "mode",
+      "28": "sound settings"
+     }
+    },
+    "wheel_key_state": {
+     "start_byte": 1,
+     "label": "key state"
+    }
+   }
+  },
+  "0x24": {
+   "name": "Doors and lights",
+   "signals": {
+    "doors": {
+     "start_byte": 0,
+     "bits": {
+      "front right": {
+       "bit": 7,
+       "role": "door.front_right"
+      },
+      "front left": {
+       "bit": 6,
+       "role": "door.front_left"
+      },
+      "rear right": {
+       "bit": 5,
+       "role": "door.rear_right"
+      },
+      "rear left": {
+       "bit": 4,
+       "role": "door.rear_left"
+      },
+      "trunk": {
+       "bit": 3,
+       "role": "door.trunk"
+      },
+      "hood": {
+       "bit": 2,
+       "role": "door.hood"
+      },
+      "doors valid": 0
+     }
+    },
+    "status": {
+     "start_byte": 1,
+     "bits": {
+      "lights": {
+       "bit": 2,
+       "role": "lights.on"
+      },
+      "handbrake": {
+       "bit": 1,
+       "role": "handbrake"
+      },
+      "reverse": {
+       "bit": 0,
+       "role": "gear.reverse"
+      }
+     }
+    }
+   }
+  },
+  "0x27": {
+   "name": "Outside temperature",
+   "signals": {
+    "outside": {
+     "start_byte": 1,
+     "size": 2,
+     "endian": "little",
+     "signed": true,
+     "factor": 0.1,
+     "label": "outside temperature",
+     "role": "outside.temp",
+     "when": {
+      "byte": 0,
+      "is": [
+       0
+      ],
+      "mask": "0x01"
+     },
+     "unit": "°C"
+    },
+    "outside_f": {
+     "start_byte": 1,
+     "size": 2,
+     "endian": "little",
+     "signed": true,
+     "factor": 0.1,
+     "unit": "°F",
+     "label": "outside temperature (°F)",
+     "when": {
+      "byte": 0,
+      "is": [
+       1
+      ],
+      "mask": "0x01"
+     }
+    }
+   }
+  },
+  "0x29": {
+   "name": "Steering",
+   "signals": {
+    "steering": {
+     "start_byte": 0,
+     "size": 2,
+     "endian": "little",
+     "signed": true,
+     "factor": -0.027111,
+     "label": "steering angle",
+     "unit": "°",
+     "role": "steering.angle"
+    }
+   }
+  },
+  "0x22": {
+   "name": "Parking radar",
+   "signals": {
+    "rear_L": {
+     "start_byte": 0,
+     "label": "rear L (raw)"
+    },
+    "rear_LM": {
+     "start_byte": 1,
+     "label": "rear LM (raw)"
+    },
+    "rear_RM": {
+     "start_byte": 2,
+     "label": "rear RM (raw)"
+    },
+    "rear_R": {
+     "start_byte": 3,
+     "label": "rear R (raw)"
+    }
+   }
+  },
+  "0x23": {
+   "name": "Front radar",
+   "signals": {
+    "front_L": {
+     "start_byte": 0,
+     "label": "front L (raw)"
+    },
+    "front_LM": {
+     "start_byte": 1,
+     "label": "front LM (raw)"
+    },
+    "front_RM": {
+     "start_byte": 2,
+     "label": "front RM (raw)"
+    },
+    "front_R": {
+     "start_byte": 3,
+     "label": "front R (raw)"
+    }
+   }
+  },
+  "0x32": {
+   "name": "Side radar",
+   "signals": {
+    "left_F": {
+     "start_byte": 0,
+     "label": "left front"
+    },
+    "left_FM": {
+     "start_byte": 1,
+     "label": "left front mid"
+    },
+    "left_RM": {
+     "start_byte": 2,
+     "label": "left rear mid"
+    },
+    "left_R": {
+     "start_byte": 3,
+     "label": "left rear"
+    }
+   }
+  },
+  "0x33": {
+   "name": "Side radar",
+   "signals": {
+    "right_F": {
+     "start_byte": 0,
+     "label": "right front"
+    },
+    "right_FM": {
+     "start_byte": 1,
+     "label": "right front mid"
+    },
+    "right_RM": {
+     "start_byte": 2,
+     "label": "right rear mid"
+    },
+    "right_R": {
+     "start_byte": 3,
+     "label": "right rear"
+    }
+   }
+  },
+  "0x30": {
+   "name": "Box version",
+   "signals": {
+    "version": {
+     "start_byte": 0,
+     "ascii": true,
+     "label": "version",
+     "role": "box.version"
+    }
+   }
+  }
+ },
+ "examples": [
+  {
+   "cmd": "0x27",
+   "data": "00 D2 00",
+   "expect": {
+    "outside.temp": 21,
+    "outside_f": null
+   }
+  },
+  {
+   "cmd": "0x27",
+   "data": "01 46 03",
+   "expect": {
+    "outside_f": 83.8,
+    "outside.temp": null
+   }
+  },
+  {
+   "cmd": "0x29",
+   "data": "00 01",
+   "expect": {
+    "steering.angle": -6.94
+   }
+  },
+  {
+   "cmd": "0x24",
+   "data": "41 05",
+   "expect": {
+    "door.front_left": true,
+    "door.front_right": false,
+    "lights.on": true,
+    "gear.reverse": true
+   }
+  }
+ ]
+}

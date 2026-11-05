@@ -1,0 +1,702 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.0",
+ "id": "honda-hiworld",
+ "name": "Honda, Acura (Hiworld HDP004)",
+ "description": "Hiworld box, protocol HDP004 (Honda & Acura full compatible), from Hiworld's own app (HdHondaDAProtocol). Choose your car: its box needs its car type. Accord 2018, Odyssey 2004-2008, Crosstour, Civic 2016-, CR-V 2017 not listed yet (car type from rules not read). Not tried on a car yet.",
+ "box": "hiworld",
+ "baud": 38400,
+ "link": {
+  "ack": true,
+  "send": [
+   {
+    "name": "car type",
+    "cmd": "0x24",
+    "data": "",
+    "first_ms": 1000,
+    "every_ms": 30000
+   }
+  ]
+ },
+ "variants": [
+  {
+   "name": "Honda accord 2013~2017, all trims",
+   "send": {
+    "car type": "42 02"
+   }
+  },
+  {
+   "name": "Honda accord 2018~2021, all trims",
+   "send": {
+    "car type": "23 02"
+   }
+  },
+  {
+   "name": "Honda accord 2022, all trims",
+   "send": {
+    "car type": "2E 02"
+   }
+  },
+  {
+   "name": "Honda accord 2022~Presnet, all trims",
+   "send": {
+    "car type": "2E 02"
+   }
+  },
+  {
+   "name": "Honda Acura 2016~2021, all trims",
+   "send": {
+    "car type": "32 02"
+   }
+  },
+  {
+   "name": "Honda Acura 2017, all trims",
+   "send": {
+    "car type": "35 02"
+   }
+  },
+  {
+   "name": "Honda Avancier 2017-now, low trim",
+   "send": {
+    "car type": "5E 02"
+   }
+  },
+  {
+   "name": "Honda Avancier 2017-now, medium high",
+   "send": {
+    "car type": "5E 02"
+   }
+  },
+  {
+   "name": "Honda breeze 2018-2022, all trims",
+   "send": {
+    "car type": "2C 02"
+   }
+  },
+  {
+   "name": "Honda breeze 2023~2024, all trims",
+   "send": {
+    "car type": "5F 02"
+   }
+  },
+  {
+   "name": "Honda city 2015~Present, all trims",
+   "send": {
+    "car type": "5B 02"
+   }
+  },
+  {
+   "name": "Honda civic 2012-2015, high trim",
+   "send": {
+    "car type": "19 02"
+   }
+  },
+  {
+   "name": "Honda civic 2012~2015, high trim",
+   "send": {
+    "car type": "1F 02"
+   }
+  },
+  {
+   "name": "Honda civic 2012~2015, high trim",
+   "send": {
+    "car type": "1C 02"
+   }
+  },
+  {
+   "name": "Honda civic 2012~2015, low trim",
+   "send": {
+    "car type": "1D 02"
+   }
+  },
+  {
+   "name": "Honda civic 2017-2021, all trims",
+   "send": {
+    "car type": "3F 02"
+   }
+  },
+  {
+   "name": "Honda civic 2022, all trims",
+   "send": {
+    "car type": "2D 02"
+   }
+  },
+  {
+   "name": "Honda civic 2022~Present, all trims",
+   "send": {
+    "car type": "2D 02"
+   }
+  },
+  {
+   "name": "Honda Clarity 2018~now, all trims",
+   "send": {
+    "car type": "37 02"
+   }
+  },
+  {
+   "name": "Honda crider 2013-2018, all trims",
+   "send": {
+    "car type": "2F 02"
+   }
+  },
+  {
+   "name": "Honda crider 2013-2022, all trims",
+   "send": {
+    "car type": "2F 02"
+   }
+  },
+  {
+   "name": "Honda crider 2019-now, all trims",
+   "send": {
+    "car type": "2F 02"
+   }
+  },
+  {
+   "name": "Honda crider 2022, all trims",
+   "send": {
+    "car type": "2F 02"
+   }
+  },
+  {
+   "name": "Honda crv 2012-2016, high trim",
+   "send": {
+    "car type": "19 02"
+   }
+  },
+  {
+   "name": "Honda crv 2012~2016, high trim",
+   "send": {
+    "car type": "1F 02"
+   }
+  },
+  {
+   "name": "Honda crv 2012~2016, high trim",
+   "send": {
+    "car type": "1C 02"
+   }
+  },
+  {
+   "name": "Honda crv 2012~2016, low trim",
+   "send": {
+    "car type": "1D 02"
+   }
+  },
+  {
+   "name": "Honda crv 2017-2021, all trims",
+   "send": {
+    "car type": "22 02"
+   }
+  },
+  {
+   "name": "Honda crv 2022~now, all trims",
+   "send": {
+    "car type": "2B 02"
+   }
+  },
+  {
+   "name": "Honda Elysion 2016-2018, high trim",
+   "send": {
+    "car type": "41 02"
+   }
+  },
+  {
+   "name": "Honda Elysion 2016-2018, medium low",
+   "send": {
+    "car type": "41 02"
+   }
+  },
+  {
+   "name": "Honda Elysion 2016-2018, top",
+   "send": {
+    "car type": "41 02"
+   }
+  },
+  {
+   "name": "Honda Elysion 2019-now, all trims",
+   "send": {
+    "car type": "28 02"
+   }
+  },
+  {
+   "name": "Honda Elysion 2019-now, all with 360",
+   "send": {
+    "car type": "28 02"
+   }
+  },
+  {
+   "name": "Honda Envix 2019~now, all trims",
+   "send": {
+    "car type": "55 02"
+   }
+  },
+  {
+   "name": "Honda EVERUS 2019~Present, all trims",
+   "send": {
+    "car type": "2A 02"
+   }
+  },
+  {
+   "name": "Honda fit 2016-now, all trims",
+   "send": {
+    "car type": "30 02"
+   }
+  },
+  {
+   "name": "Honda fit 2021, all trims",
+   "send": {
+    "car type": "30 02"
+   }
+  },
+  {
+   "name": "Honda Freed 2014~2020, all trims",
+   "send": {
+    "car type": "43 02"
+   }
+  },
+  {
+   "name": "Honda Freed 2023~now, all trims",
+   "send": {
+    "car type": "44 02"
+   }
+  },
+  {
+   "name": "Honda Gienia 2017-now, all trims",
+   "send": {
+    "car type": "5A 02"
+   }
+  },
+  {
+   "name": "Honda greiz 2015~Present, all trims",
+   "send": {
+    "car type": "59 02"
+   }
+  },
+  {
+   "name": "Honda Hrv 2018-2019, all trims",
+   "send": {
+    "car type": "6A 02"
+   }
+  },
+  {
+   "name": "Honda Hrv 2023~Present, all trims",
+   "send": {
+    "car type": "51 02"
+   }
+  },
+  {
+   "name": "Honda Insight 2018~now, all trims",
+   "send": {
+    "car type": "3A 02"
+   }
+  },
+  {
+   "name": "Honda inspire 2019, all trims",
+   "send": {
+    "car type": "29 02"
+   }
+  },
+  {
+   "name": "Honda inspire 2019-now, all trims",
+   "send": {
+    "car type": "29 02"
+   }
+  },
+  {
+   "name": "Honda Integra 2022~Present, all trims",
+   "send": {
+    "car type": "56 02"
+   }
+  },
+  {
+   "name": "Honda jade 2013~Present, all trims",
+   "send": {
+    "car type": "58 02"
+   }
+  },
+  {
+   "name": "Honda Jazz 2014~now, all trims",
+   "send": {
+    "car type": "5C 02"
+   }
+  },
+  {
+   "name": "Honda Life 2021~Present, all trims",
+   "send": {
+    "car type": "53 02"
+   }
+  },
+  {
+   "name": "Honda MNV 2021~Present, all trims",
+   "send": {
+    "car type": "54 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2011-2017, ex",
+   "send": {
+    "car type": "61 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2011-2017, ex l",
+   "send": {
+    "car type": "62 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2011-2017, ex l w navi",
+   "send": {
+    "car type": "64 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2011-2017, ex l w res",
+   "send": {
+    "car type": "63 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2011-2017, ex l w res and navi",
+   "send": {
+    "car type": "65 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2011-2017, lx",
+   "send": {
+    "car type": "60 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2011-2017, touring",
+   "send": {
+    "car type": "66 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2011-2017, touring elite",
+   "send": {
+    "car type": "67 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2015, all trims",
+   "send": {
+    "car type": "24 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2015-2018, high 360",
+   "send": {
+    "car type": "26 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2015-2018, second top",
+   "send": {
+    "car type": "31 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2015-2018, top 360",
+   "send": {
+    "car type": "27 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2018, all trims",
+   "send": {
+    "car type": "25 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2019~Present, all trims",
+   "send": {
+    "car type": "40 02"
+   }
+  },
+  {
+   "name": "Honda odyssey 2020, all trims",
+   "send": {
+    "car type": "33 02"
+   }
+  },
+  {
+   "name": "Honda Passport 2019~now, all trims",
+   "send": {
+    "car type": "39 02"
+   }
+  },
+  {
+   "name": "Honda Pilot 2015~now, all trims",
+   "send": {
+    "car type": "38 02"
+   }
+  },
+  {
+   "name": "Honda spirior 2015-2017, all trims",
+   "send": {
+    "car type": "5D 02"
+   }
+  },
+  {
+   "name": "Honda STEP WGN 2017-2021, all trims",
+   "send": {
+    "car type": "6B 02"
+   }
+  },
+  {
+   "name": "Honda STEP WGN 2022~Present, all trims",
+   "send": {
+    "car type": "34 02"
+   }
+  },
+  {
+   "name": "Honda urv 2017-now, high trim",
+   "send": {
+    "car type": "52 02"
+   }
+  },
+  {
+   "name": "Honda urv 2017-now, medium low",
+   "send": {
+    "car type": "52 02"
+   }
+  },
+  {
+   "name": "Honda urv 2017-now, top",
+   "send": {
+    "car type": "52 02"
+   }
+  },
+  {
+   "name": "Honda vezel 2014-now, all trims",
+   "send": {
+    "car type": "57 02"
+   }
+  },
+  {
+   "name": "Honda xrv 2014-now, all trims",
+   "send": {
+    "car type": "36 02"
+   }
+  },
+  {
+   "name": "Honda xrv 2023, all trims",
+   "send": {
+    "car type": "36 02"
+   }
+  },
+  {
+   "name": "Honda Zrv 2022~Present, all trims",
+   "send": {
+    "car type": "50 02"
+   }
+  }
+ ],
+ "wheel_keys": {
+  "cmd": "0x11",
+  "code_byte": 2,
+  "state_byte": 3,
+  "pressed": [
+   1
+  ],
+  "names": {
+   "1": "volume +",
+   "2": "volume -",
+   "4": "voice",
+   "5": "answer",
+   "6": "hang up / back",
+   "8": "previous",
+   "9": "next",
+   "10": "home / mode",
+   "11": "mode",
+   "12": "mode",
+   "13": "previous",
+   "14": "next",
+   "15": "play / pause",
+   "16": "back",
+   "34": "home",
+   "35": "FM",
+   "36": "AM",
+   "37": "music",
+   "38": "EQ",
+   "39": "EQ"
+  }
+ },
+ "messages": {
+  "0x11": {
+   "name": "State",
+   "signals": {
+    "status": {
+     "start_byte": 0,
+     "bits": {
+      "lights": {
+       "bit": 1,
+       "role": "lights.on"
+      },
+      "reverse": {
+       "bit": 2,
+       "role": "gear.reverse"
+      },
+      "handbrake": {
+       "bit": 3,
+       "role": "handbrake"
+      }
+     }
+    },
+    "speed": {
+     "start_byte": 1,
+     "unit": "km/h",
+     "label": "speed",
+     "role": "vehicle.speed"
+    },
+    "wheel_key": {
+     "start_byte": 2,
+     "label": "wheel key",
+     "values": {
+      "1": "volume +",
+      "2": "volume -",
+      "4": "voice",
+      "5": "answer",
+      "6": "hang up / back",
+      "8": "previous",
+      "9": "next",
+      "10": "home / mode",
+      "11": "mode",
+      "12": "mode",
+      "13": "previous",
+      "14": "next",
+      "15": "play / pause",
+      "16": "back",
+      "34": "home",
+      "35": "FM",
+      "36": "AM",
+      "37": "music",
+      "38": "EQ",
+      "39": "EQ"
+     }
+    },
+    "wheel_key_state": {
+     "start_byte": 3,
+     "label": "key state"
+    },
+    "steering": {
+     "start_byte": 6,
+     "size": 2,
+     "sign_magnitude": true,
+     "factor": -0.103846,
+     "unit": "°",
+     "label": "steering angle",
+     "role": "steering.angle"
+    }
+   }
+  },
+  "0x12": {
+   "name": "Doors",
+   "signals": {
+    "doors": {
+     "start_byte": 2,
+     "bits": {
+      "front left": {
+       "bit": 7,
+       "role": "door.front_left"
+      },
+      "front right": {
+       "bit": 6,
+       "role": "door.front_right"
+      },
+      "rear left": {
+       "bit": 5,
+       "role": "door.rear_left"
+      },
+      "rear right": {
+       "bit": 4,
+       "role": "door.rear_right"
+      },
+      "trunk": {
+       "bit": 3,
+       "role": "door.trunk"
+      },
+      "hood": {
+       "bit": 2,
+       "role": "door.hood"
+      }
+     }
+    }
+   }
+  },
+  "0x41": {
+   "name": "Parking radar",
+   "signals": {
+    "rear_left": {
+     "start_byte": 0,
+     "label": "rear L (raw)"
+    },
+    "rear_left_mid": {
+     "start_byte": 1,
+     "label": "rear LM (raw)"
+    },
+    "rear_right_mid": {
+     "start_byte": 2,
+     "label": "rear RM (raw)"
+    },
+    "rear_right": {
+     "start_byte": 3,
+     "label": "rear R (raw)"
+    },
+    "front_left": {
+     "start_byte": 4,
+     "label": "front L (raw)"
+    },
+    "front_left_mid": {
+     "start_byte": 5,
+     "label": "front LM (raw)"
+    },
+    "front_right": {
+     "start_byte": 6,
+     "label": "front R (raw)"
+    },
+    "front_right_mid": {
+     "start_byte": 7,
+     "label": "front RM (raw)"
+    },
+    "radar_mode": {
+     "start_byte": 10,
+     "label": "rear radar on"
+    }
+   }
+  },
+  "0xF0": {
+   "name": "Box version",
+   "signals": {
+    "version": {
+     "start_byte": 0,
+     "ascii": true,
+     "label": "version",
+     "role": "box.version"
+    }
+   }
+  }
+ },
+ "examples": [
+  {
+   "cmd": "0x11",
+   "data": "08 32 00 00 00 00 81 2C",
+   "expect": {
+    "handbrake": true,
+    "vehicle.speed": 50,
+    "steering.angle": 31.15
+   }
+  },
+  {
+   "cmd": "0x11",
+   "data": "00 00 00 00 00 00 01 2C",
+   "expect": {
+    "handbrake": false,
+    "steering.angle": -31.15
+   }
+  }
+ ]
+}

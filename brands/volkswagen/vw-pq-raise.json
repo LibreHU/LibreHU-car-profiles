@@ -1,0 +1,442 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.0",
+ "id": "vw-pq-raise",
+ "name": "Volkswagen, Skoda (Raise / Oudi, PQ)",
+ "description": "Raise (RZC) or Oudi box, older Volkswagen / Skoda (PQ platforms), from the decoder Hiworld's own app uses for these boxes (RePQProtocol); the cars are the ones that app decodes with it. The head unit says hello once (0x81 01) and acknowledges each message (FF); no car type. Not tried on a car yet.",
+ "box": "raise",
+ "baud": 38400,
+ "link": {
+  "ack": true,
+  "send": [
+   {
+    "name": "connect",
+    "cmd": "0x81",
+    "data": "01",
+    "first_ms": 500,
+    "every_ms": 0
+   }
+  ]
+ },
+ "variants": [
+  {
+   "name": "Skoda octavia 2002-2013, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda octavia 2007-2014, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda Octavia 2008-2017, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda rapid 2012-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda superb_supai 2013-2015, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda superb_supai 2015-2016, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda yeti 2009-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Skoda yeti 2014-2017, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen bora 2008-2010, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen bora 2013-2015, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen bora 2016-2018, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen caddy 2004-2010, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen cc 2009-2011, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen cc 2012-2014, high trim",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen cc 2012-2014, medium low",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Cross_Lavida 2013-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen golf 2003-2007, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen golf 2008-2012, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen golf 2014-2024, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen golf_6 2010-2012, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Grand_Lavida 2013-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen jetta 2007-2010, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen jetta 2011-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen jetta 2019-2023, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen jetta 2019-2024, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen jetta 2020-2024, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen lavida 2009-2012, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen lavida 2013-2017, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen LingYu 2007, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen magotan 2007-2011, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen magotan 2012-2015, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Multivan 2009-2018, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen passat 2002-2005, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen passat 2004, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen passat 2006-2011, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen passat 2013-2015, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen polo 2008-2018, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen polo 2010-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen pq 2017, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen sagitar 2006-2012, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen sagitar 2013-2018, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Santana 2013-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen Scirocco 2008-now, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen tiguan 2010-2015, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen touareg 2002-2010, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen touareg 2003-2010, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen touran 2008-2015, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen touran 2010-2014, all trims",
+   "send": {}
+  },
+  {
+   "name": "Volkswagen TREK 2017-now, all trims",
+   "send": {}
+  }
+ ],
+ "wheel_keys": {
+  "cmd": "0x20",
+  "code_byte": 0,
+  "state_byte": 1,
+  "pressed": [
+   1
+  ],
+  "names": {
+   "1": "volume +",
+   "2": "volume -",
+   "3": "next",
+   "4": "previous",
+   "5": "answer / hang up",
+   "6": "mute",
+   "7": "mode",
+   "8": "voice",
+   "9": "answer",
+   "10": "hang up",
+   "11": "phone mute",
+   "12": "OK"
+  }
+ },
+ "messages": {
+  "0x20": {
+   "name": "Wheel key",
+   "signals": {
+    "wheel_key": {
+     "start_byte": 0,
+     "label": "wheel key",
+     "values": {
+      "1": "volume +",
+      "2": "volume -",
+      "3": "next",
+      "4": "previous",
+      "5": "answer / hang up",
+      "6": "mute",
+      "7": "mode",
+      "8": "voice",
+      "9": "answer",
+      "10": "hang up",
+      "11": "phone mute",
+      "12": "OK"
+     }
+    },
+    "wheel_key_state": {
+     "start_byte": 1,
+     "label": "key state"
+    }
+   }
+  },
+  "0x16": {
+   "name": "Speed",
+   "signals": {
+    "speed": {
+     "start_byte": 0,
+     "size": 2,
+     "endian": "little",
+     "factor": 0.0625,
+     "unit": "km/h",
+     "label": "speed",
+     "role": "vehicle.speed"
+    }
+   }
+  },
+  "0x24": {
+   "name": "Lights and reverse",
+   "signals": {
+    "status": {
+     "start_byte": 1,
+     "bits": {
+      "lights": {
+       "bit": 2,
+       "role": "lights.on"
+      },
+      "handbrake": {
+       "bit": 1,
+       "role": "handbrake"
+      },
+      "reverse": {
+       "bit": 0,
+       "role": "gear.reverse"
+      }
+     }
+    }
+   }
+  },
+  "0x26": {
+   "name": "Steering",
+   "signals": {
+    "steering": {
+     "start_byte": 0,
+     "size": 2,
+     "endian": "little",
+     "signed": true,
+     "label": "steering angle",
+     "factor": 1.005587,
+     "unit": "°",
+     "role": "steering.angle"
+    }
+   }
+  },
+  "0x22": {
+   "name": "Parking radar",
+   "signals": {
+    "rear_L": {
+     "start_byte": 0,
+     "label": "rear L (raw, 0 = none)"
+    },
+    "rear_LM": {
+     "start_byte": 1,
+     "label": "rear LM (raw, 0 = none)"
+    },
+    "rear_RM": {
+     "start_byte": 2,
+     "label": "rear RM (raw, 0 = none)"
+    },
+    "rear_R": {
+     "start_byte": 3,
+     "label": "rear R (raw, 0 = none)"
+    }
+   }
+  },
+  "0x23": {
+   "name": "Front radar",
+   "signals": {
+    "front_L": {
+     "start_byte": 0,
+     "label": "front L (raw, 0 = none)"
+    },
+    "front_LM": {
+     "start_byte": 1,
+     "label": "front LM (raw, 0 = none)"
+    },
+    "front_RM": {
+     "start_byte": 2,
+     "label": "front RM (raw, 0 = none)"
+    },
+    "front_R": {
+     "start_byte": 3,
+     "label": "front R (raw, 0 = none)"
+    }
+   }
+  },
+  "0x32": {
+   "name": "Side radar",
+   "signals": {
+    "left_F": {
+     "start_byte": 0,
+     "label": "left front (raw, 0 = none)"
+    },
+    "left_FM": {
+     "start_byte": 1,
+     "label": "left front mid (raw, 0 = none)"
+    },
+    "left_RM": {
+     "start_byte": 2,
+     "label": "left rear mid (raw, 0 = none)"
+    },
+    "left_R": {
+     "start_byte": 3,
+     "label": "left rear (raw, 0 = none)"
+    }
+   }
+  },
+  "0x33": {
+   "name": "Side radar",
+   "signals": {
+    "right_F": {
+     "start_byte": 0,
+     "label": "right front (raw, 0 = none)"
+    },
+    "right_FM": {
+     "start_byte": 1,
+     "label": "right front mid (raw, 0 = none)"
+    },
+    "right_RM": {
+     "start_byte": 2,
+     "label": "right rear mid (raw, 0 = none)"
+    },
+    "right_R": {
+     "start_byte": 3,
+     "label": "right rear (raw, 0 = none)"
+    }
+   }
+  },
+  "0x30": {
+   "name": "Box version",
+   "signals": {
+    "version": {
+     "start_byte": 0,
+     "ascii": true,
+     "label": "version",
+     "role": "box.version"
+    }
+   }
+  }
+ },
+ "examples": [
+  {
+   "cmd": "0x16",
+   "data": "40 06",
+   "expect": {
+    "vehicle.speed": 100
+   }
+  },
+  {
+   "cmd": "0x26",
+   "data": "FE FF",
+   "expect": {
+    "steering.angle": -2.01
+   }
+  },
+  {
+   "cmd": "0x24",
+   "data": "00 05",
+   "expect": {
+    "lights.on": true,
+    "gear.reverse": true,
+    "handbrake": false
+   }
+  }
+ ]
+}
