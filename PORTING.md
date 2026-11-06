@@ -72,6 +72,20 @@ Un éditeur comme VS Code vérifie la fiche pendant la saisie, grâce à la lign
 - La CI vérifie la fiche (schéma, auto-tests avec le vrai moteur, version du moteur), puis reconstruit le **paquet de
   la marque** : LibreHU Apps le propose aux autoradios dont le service sait le lire, sans mise à jour du service.
 
+## Brouillons tirés de l'appli Car Info (outil en cours)
+
+`tools/carinfo/` lit le listage jadx « fallback » de l'appli Car Info d'origine (jamais exécutée) et rejoue son code
+dans un petit interpréteur pour savoir ce que fait chaque décodeur : quel décodeur pour quelle voiture, quels messages,
+quels octets, quelle formule. Mode d'emploi : [tools/carinfo/README.md](tools/carinfo/README.md).
+
+- État au 06/11/2026 : un décodeur trouvé pour 6 658 des 6 970 entrées du catalogue (532 décodeurs) ; mêmes résultats
+  que les analyses à la main pour PSA (111 / 111) et Volkswagen (174 / 174) ; pour `RePsaProtocol`, mêmes messages que
+  la fiche `psa-raise`.
+- Pas encore fait : l'écriture des fiches (famille de boîtier ou `framing`, rôles, noms des touches, type de voiture,
+  accusés, trames de démarrage) et leur vérification par le moteur (`librehu-car-tool.jar check`).
+- Une fiche tirée de ce code n'a jamais roulé : elle sera marquée **non testée** tant que personne ne l'a essayée sur
+  la voiture (comme toute fiche, à vérifier avec une capture, § 1).
+
 ## Règles
 
 - Une fiche = un protocole de boîtier (souvent plusieurs voitures dans `variants`).

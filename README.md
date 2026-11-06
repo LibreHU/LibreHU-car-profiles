@@ -14,6 +14,7 @@ by LibreHU Apps without updating the service. Guide to port a car (French): [POR
 | `schema/` | schéma JSON du format (copie de celui du service) |
 | `dist/` | **généré par la CI** : `index.json` et un paquet par marque (`<marque>.json`) |
 | `tools/build_packs.py` | vérification par le schéma et construction des paquets |
+| `tools/carinfo/` | **outil en cours** : rejoue les décodeurs de l'appli Car Info d'origine, à partir de son listage jadx « fallback » (l'appli n'est jamais exécutée), pour en tirer des brouillons de fiches ; voir [tools/carinfo/README.md](tools/carinfo/README.md) |
 
 - **Porter une voiture** : [PORTING.md](PORTING.md).
 - **Format** : [docs/can-vehicles.md](https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicles.md),
