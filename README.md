@@ -29,7 +29,21 @@ by LibreHU Apps without updating the service. Guide to port a car (French): [POR
   paquet `renault`.
 - **Voitures décodées** : <https://librehu.github.io/docs.html#can-cars>.
 
-Licence : GPL-2.0 (fichier `LICENSE`).
+
+## Licence
+
+Copyright (C) 2026 les contributeurs de LibreHU.
+
+Les outils de ce dépôt (`tools/`) et le schéma (`schema/`, copie de celui de LibreHU-service) sont sous **GNU AGPL v3 ou ultérieure** (`AGPL-3.0-or-later`, fichier [`LICENSE`](LICENSE)), avec les
+[termes additionnels](LICENSE-ADDITIONAL-TERMS.md) de son article 7 : garder la mention « Basé sur LibreHU –
+https://github.com/LibreHU » et marquer une version modifiée comme telle. Qui distribue une version modifiée, ou la
+fait utiliser à distance, doit en donner le code source complet sous la même licence.
+
+Les **fiches** (`brands/`, `template/`) et les **paquets** (`dist/`) sont sous **CC BY-SA 4.0**
+([`LICENSES/CC-BY-SA-4.0.txt`](LICENSES/CC-BY-SA-4.0.txt)) : les citer (« LibreHU car profiles –
+https://github.com/LibreHU/LibreHU-car-profiles ») et partager une fiche modifiée sous la même licence.
+Les décodages repris de l'appli d'origine d'un boîtier sont des relevés de comportement (aucun code copié), notés
+dans la `description` de chaque fiche.
 
 ## Contact
 
