@@ -12,9 +12,117 @@ _MAPS = ("android.util.SparseBooleanArray", "android.util.SparseIntArray", "andr
          "java.util.HashMap", "java.util.LinkedHashMap", "java.util.TreeMap", "android.util.ArrayMap", "java.util.concurrent.ConcurrentHashMap",
          "java.util.Hashtable")
 _SETS = ("java.util.HashSet", "java.util.LinkedHashSet", "java.util.TreeSet", "android.util.ArraySet")
-NATIVE_KINDS = {**{t: "list" for t in _LISTS}, **{t: "map" for t in _MAPS}, **{t: "set" for t in _SETS}}
+NATIVE_KINDS = {**{t: "list" for t in _LISTS}, **{t: "map" for t in _MAPS}, **{t: "set" for t in _SETS},
+                "java.lang.StringBuilder": "sb", "java.lang.StringBuffer": "sb"}
 _DEFAULTS = {"android.util.SparseBooleanArray": 0, "android.util.SparseIntArray": 0, "android.util.SparseLongArray": 0}
 MAX_DEPTH = 80
+_INT32 = 0xFFFFFFFF
+_HASHED = ("java.util.HashMap", "java.util.HashSet", "java.util.concurrent.ConcurrentHashMap")
+_SORTED = ("java.util.TreeMap", "java.util.TreeSet", "android.util.SparseBooleanArray", "android.util.SparseIntArray",
+           "android.util.SparseArray", "android.util.SparseLongArray")
+_BY_HASH = ("android.util.ArrayMap", "android.util.ArraySet")
+_MISSING = object()
+
+
+def _key(k):
+    return k if isinstance(k, (int, str, float)) else id(k)
+
+
+def _jhash(x):
+    """Java hashCode() of a boxed key (Integer, Long, String); None for any other object (identity hash)."""
+    if isinstance(x, int):
+        if -0x80000000 <= x <= 0x7FFFFFFF:
+            return x & _INT32
+        v = x & 0xFFFFFFFFFFFFFFFF
+        return (v ^ (v >> 32)) & _INT32
+    if isinstance(x, str):
+        h, b = 0, x.encode("utf-16-be", "surrogatepass")
+        for i in range(0, len(b), 2):
+            h = (31 * h + ((b[i] << 8) | b[i + 1])) & _INT32
+        return h
+    return None
+
+
+def _order(obj, keys):
+    """[keys], given in insertion order, in the order Java iterates [obj]: buckets of a HashMap / HashSet (by the
+    spread hash and the table size the collection reached), sorted for TreeMap / TreeSet / SparseArray, by hash code
+    for ArrayMap / ArraySet, insertion order otherwise (Linked*, or keys without a known hash)."""
+    if obj.cls in _SORTED:
+        try:
+            return sorted(keys)
+        except TypeError:
+            return list(keys)
+    hs = [_jhash(k) for k in keys]
+    if None in hs:
+        return list(keys)
+    if obj.cls in _BY_HASH:
+        signed = [h - (1 << 32) if h & 0x80000000 else h for h in hs]
+        return [k for _, k in sorted(zip(signed, keys), key=lambda p: p[0])]
+    if obj.cls in _HASHED:
+        cap = obj.fields.get("_cap", 16)
+        return [k for _, _, k in sorted(((h ^ (h >> 16)) & (cap - 1), i, k) for i, (h, k) in enumerate(zip(hs, keys)))]
+    return list(keys)
+
+
+def _grow(obj, size):
+    """Table size of a HashMap / HashSet after an insertion (doubles past 3/4 full, never shrinks)."""
+    cap = obj.fields.get("_cap", 16)
+    while size > cap * 0.75:
+        cap *= 2
+    obj.fields["_cap"] = cap
+
+
+def _table_size(n):
+    c = 1
+    while c < max(int(n), 1):
+        c <<= 1
+    return c
+
+
+def _map_items(obj):
+    """(key, value) of a native map, in Java's iteration order."""
+    d = obj.fields.get("_map", {})
+    keys = _order(obj, [k for k, _ in d.values()])
+    return [d[_key(k)] for k in keys]
+
+
+def _items(obj):
+    """What iterating a native list / set / map view gives, in Java's order."""
+    if obj.native == "list":
+        return list(obj.fields.get("_items", []))
+    if obj.native == "set":
+        vals = list(obj.fields.get("_set", {}).values())
+        return vals if obj.fields.get("_view") else _order(obj, vals)
+    return []
+
+
+def _iterator(items):
+    it = JObject("java.util.Iterator", native="iter")
+    it.fields.update(_items=items, _pos=0)
+    return it
+
+
+def _jstr(x):
+    """String.valueOf(x) as far as it is known; an unknown part shows as "?" (the text is then not empty)."""
+    if isinstance(x, str):
+        return x
+    if x is None:
+        return "null"
+    if isinstance(x, int):
+        return str(x)
+    if isinstance(x, float):
+        return f"{x:.1f}" if x.is_integer() else repr(x)
+    return "?"
+
+
+def _view(native, items):
+    """A snapshot of keySet() / entrySet() (a set) or values() (a list), already in the map's order."""
+    v = JObject("java.util.Collection", native=native)
+    if native == "list":
+        v.fields["_items"] = list(items)
+    else:
+        v.fields.update(_set={_key(x): x for x in items}, _view=True)
+    return v
 
 
 class Undecidable(Exception):
@@ -383,13 +491,67 @@ class VM:
             return self.outside(cls, name, this, args)
         return self.run(m, this, args)
 
+    def _coll_init(self, obj, arg):
+        """new ArrayList / HashSet / HashMap(...) with a capacity, a collection or a map."""
+        if isinstance(arg, int):
+            if obj.native in ("set", "map"):
+                obj.fields["_cap"] = _table_size(arg)
+            return
+        if not isinstance(arg, JObject) or arg.native not in ("list", "set", "map"):
+            return
+        if obj.native == "map" and arg.native == "map":
+            pairs = _map_items(arg)
+            if pairs:
+                obj.fields["_cap"] = _table_size(len(pairs) / 0.75 + 1)
+            obj.fields["_map"] = {_key(k): (k, v) for k, v in pairs}
+        elif obj.native in ("list", "set") and arg.native in ("list", "set"):
+            items = _items(arg)
+            if obj.native == "list":
+                obj.fields["_items"] = items
+            else:
+                obj.fields["_cap"] = _table_size(max(int(len(items) / 0.75) + 1, 16))
+                st = obj.fields["_set"] = {}
+                for x in items:
+                    st.setdefault(_key(x), x)
+
     def outside(self, cls, name, this, args):
         """What the app calls outside of its own code."""
         f = self.natives.get(("*", name))
         if f:
             return f(self, this, args)
         if name == "<init>":
+            if isinstance(this, JObject) and this.native in ("list", "set", "map") and args:
+                self._coll_init(this, args[0])
+            if isinstance(this, JObject) and this.native == "sb":
+                this.fields["_buf"] = [args[0] if isinstance(args[0], str) else ""] if args else []
             return None
+        if isinstance(this, JObject) and this.native == "sb":
+            buf = this.fields.setdefault("_buf", [])
+            if name == "append":
+                buf.append(_jstr(args[0]) if len(args) == 1 else "?")
+                return this
+            if name == "toString":
+                return "".join(buf)
+            if name == "length":
+                return len("".join(buf))
+            if name == "setLength" and args and args[0] == 0:
+                buf.clear()
+                return None
+            return UNKNOWN
+        if name == "toString" and not args and isinstance(this, (int, float, str)):
+            return _jstr(this)
+        if cls == "android.text.TextUtils" and name == "isEmpty" and len(args) == 1:
+            return 1 if args[0] is None or args[0] == "" else (0 if isinstance(args[0], str) else UNKNOWN)
+        if cls == "android.text.TextUtils" and name == "equals" and len(args) == 2:
+            a, b = args
+            if a is b:
+                return 1
+            if a is None or b is None:
+                return 0 if (isinstance(a, str) or isinstance(b, str)) else UNKNOWN
+            return (1 if a == b else 0) if isinstance(a, str) and isinstance(b, str) else UNKNOWN
+        if cls in ("java.lang.String", "java.lang.Integer") and name in ("valueOf", "toString") and len(args) == 1 \
+                and (cls == "java.lang.String" or name == "toString"):
+            return _jstr(args[0]) if isinstance(args[0], (str, int, float)) or args[0] is None else UNKNOWN
         if cls in ("java.lang.Integer", "java.lang.Byte", "java.lang.Short", "java.lang.Long") and name == "valueOf":
             return args[0]
         if name in ("intValue", "byteValue", "shortValue", "longValue") and isinstance(this, int):
@@ -466,12 +628,25 @@ class VM:
                 return 1 if not lst else 0
             if name == "contains":
                 return 1 if args[0] in lst else 0
+            if name in ("iterator", "listIterator") and not args:
+                return _iterator(list(lst))
+            if name == "indexOf":
+                return lst.index(args[0]) if args[0] in lst else -1
+            if name == "set" and isinstance(args[0], int) and 0 <= args[0] < len(lst):
+                old, lst[args[0]] = lst[args[0]], args[1]
+                return old
+            if name == "addAll" and len(args) == 1 and isinstance(args[0], JObject) and args[0].native in ("list", "set"):
+                lst.extend(_items(args[0]))
+                return 1
         if isinstance(this, JObject) and this.native == "map":
             d = this.fields.setdefault("_map", {})
-            key = lambda k: k if isinstance(k, (int, str, float)) else id(k)
+            key = _key
             if name in ("put", "append"):
-                d[key(args[0])] = (args[0], args[1])
-                return None
+                k = key(args[0])
+                old = d[k][1] if k in d else None
+                d[k] = (args[0], args[1])
+                _grow(this, len(d))
+                return old
             if name in ("get", "getOrDefault"):
                 k = key(args[0])
                 if k in d:
@@ -495,15 +670,67 @@ class VM:
                 return None
             if name == "isEmpty":
                 return 1 if not d else 0
+            if name == "keySet":
+                return _view("set", [k for k, _ in _map_items(this)])
+            if name == "values":
+                return _view("list", [v for _, v in _map_items(this)])
+            if name == "entrySet":
+                entries = []
+                for k, v in _map_items(this):
+                    e = JObject("java.util.Map$Entry", native="entry")
+                    e.fields.update(key=k, value=v, _map=this)
+                    entries.append(e)
+                return _view("set", entries)
+            if name == "containsValue":
+                return 1 if any(v == args[0] for _, v in d.values()) else 0
         if isinstance(this, JObject) and this.native == "set":
-            st = this.fields.setdefault("_set", set())
+            st = this.fields.setdefault("_set", {})
             if name == "add":
-                st.add(args[0])
+                if _key(args[0]) in st:
+                    return 0
+                st[_key(args[0])] = args[0]
+                _grow(this, len(st))
                 return 1
             if name == "contains":
-                return 1 if args[0] in st else 0
+                return 1 if _key(args[0]) in st else 0
             if name == "size":
                 return len(st)
+            if name == "remove":
+                return 0 if st.pop(_key(args[0]), _MISSING) is _MISSING else 1
+            if name == "isEmpty":
+                return 1 if not st else 0
+            if name == "clear":
+                st.clear()
+                return None
+            if name == "iterator" and not args:
+                return _iterator(_items(this))
+            if name == "addAll" and len(args) == 1 and isinstance(args[0], JObject) and args[0].native in ("list", "set"):
+                n = len(st)
+                for x in _items(args[0]):
+                    st.setdefault(_key(x), x)
+                _grow(this, len(st))
+                return 1 if len(st) > n else 0
+        if isinstance(this, JObject) and this.native == "iter":
+            items, pos = this.fields["_items"], this.fields["_pos"]
+            if name == "hasNext":
+                return 1 if pos < len(items) else 0
+            if name == "next":
+                if pos >= len(items):
+                    raise Undecidable("Iterator.next past the end")
+                this.fields["_pos"] = pos + 1
+                return items[pos]
+            if name == "remove":
+                raise Undecidable("Iterator.remove")
+        if isinstance(this, JObject) and this.native == "entry":
+            if name == "getKey":
+                return this.fields["key"]
+            if name == "getValue":
+                return this.fields["value"]
+            if name == "setValue":
+                old, this.fields["value"] = this.fields["value"], args[0]
+                m = this.fields["_map"]
+                m.fields.setdefault("_map", {})[_key(this.fields["key"])] = (this.fields["key"], args[0])
+                return old
         return UNKNOWN
 
     # --- running -------------------------------------------------------------------------------------------

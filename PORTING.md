@@ -80,7 +80,7 @@ quels octets, quelle formule. Mode d'emploi : [tools/carinfo/README.md](tools/ca
 
 - État au 06/11/2026 : un décodeur trouvé pour 6 658 des 6 970 entrées du catalogue (532 décodeurs) ; mêmes résultats
   que les analyses à la main pour PSA (111 / 111) et Volkswagen (174 / 174) ; pour `RePsaProtocol`, mêmes messages que
-  la fiche `psa-raise`.
+  la fiche `psa-raise` ; sondage de tous les décodeurs : 517 sur 532 donnent des messages (4 526 messages).
 - Pas encore fait : l'écriture des fiches (famille de boîtier ou `framing`, rôles, noms des touches, type de voiture,
   accusés, trames de démarrage) et leur vérification par le moteur (`librehu-car-tool.jar check`).
 - Une fiche tirée de ce code n'a jamais roulé : elle sera marquée **non testée** tant que personne ne l'a essayée sur

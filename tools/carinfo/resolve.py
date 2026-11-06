@@ -38,6 +38,22 @@ def natives():
             n[(logger, f)] = nothing
     n[("com.autoai.canbus.base.platform.XxxPlatform", "getInstance")] = single("com.autoai.canbus.base.platform.XxxPlatform")
     n[("stub.com.autoai.canbus.base.platform.XxxPlatform", "getCanDescribe")] = lambda vm, t, a: vm.current
+
+    def bean(vm, this, args):
+        """The platform keeps the ProtocolBean that ProtocolUtils.getProtocolBean chose for the car (its feature
+        bits say, for example, whether the car has a panoramic camera)."""
+        d = args[0] if args else vm.current
+        beans = vm.__dict__.setdefault("beans", {})
+        if id(d) not in beans:
+            beans[id(d)] = UNKNOWN  # a nested call while it is being made
+            steps = vm.steps
+            try:
+                beans[id(d)] = vm.run(vm.find(UTILS, "getProtocolBean", 1), None, [d])
+            except Undecidable:
+                pass
+            vm.steps = steps
+        return beans[id(d)]
+    n[("stub.com.autoai.canbus.base.platform.XxxPlatform", "getProtocolBean")] = bean
     for s in ("com.autoai.canbus.base.jancartools.HandlerMainServer",
               "com.autoai.canbus.base.protocol.manager.JancarGlobalDataManager"):
         n[(s, "get")] = single(s)
