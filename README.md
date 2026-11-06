@@ -30,3 +30,7 @@ by LibreHU Apps without updating the service. Guide to port a car (French): [POR
 - **Voitures décodées** : <https://librehu.github.io/docs.html#can-cars>.
 
 Licence : GPL-2.0 (fichier `LICENSE`).
+
+## Contact
+
+[librehu@proton.me](mailto:librehu@proton.me)
