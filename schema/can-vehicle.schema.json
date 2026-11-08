@@ -60,7 +60,9 @@
     "order": {
      "enum": [
       "len,cmd",
-      "cmd,len"
+      "cmd,len",
+      "len",
+      "cmd"
      ]
     },
     "len_offset": {
@@ -75,7 +77,8 @@
       "algo": {
        "enum": [
         "sum",
-        "xor"
+        "xor",
+        "none"
        ]
       },
       "over": {
@@ -150,6 +153,117 @@
     },
     "baud": {
      "type": "integer"
+    },
+    "data_len": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 64
+    },
+    "tail": {
+     "type": "string",
+     "pattern": "^(\\s*(0[xX])?[0-9A-Fa-f]{1,2}[\\s,]*)*$"
+    },
+    "starts": {
+     "type": "array",
+     "items": {
+      "oneOf": [
+       {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 255
+       },
+       {
+        "type": "string",
+        "pattern": "^(0[xX])?[0-9A-Fa-f]{1,2}$"
+       }
+      ]
+     }
+    },
+    "out": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "head"
+     ],
+     "properties": {
+      "head": {
+       "type": "string",
+       "pattern": "^(\\s*(0[xX])?[0-9A-Fa-f]{1,2}[\\s,]*)*$"
+      },
+      "order": {
+       "enum": [
+        "len,cmd",
+        "cmd,len",
+        "len",
+        "cmd"
+       ]
+      },
+      "len_offset": {
+       "type": "integer",
+       "minimum": -2,
+       "maximum": 8
+      },
+      "checksum": {
+       "type": "object",
+       "additionalProperties": false,
+       "properties": {
+        "algo": {
+         "enum": [
+          "sum",
+          "xor",
+          "none"
+         ]
+        },
+        "over": {
+         "type": "string"
+        },
+        "size": {
+         "enum": [
+          1,
+          2
+         ]
+        },
+        "add": {
+         "type": "integer"
+        },
+        "xor": {
+         "oneOf": [
+          {
+           "type": "integer"
+          },
+          {
+           "type": "string"
+          }
+         ]
+        }
+       }
+      },
+      "data_len": {
+       "type": "integer",
+       "minimum": 0,
+       "maximum": 64
+      },
+      "tail": {
+       "type": "string",
+       "pattern": "^(\\s*(0[xX])?[0-9A-Fa-f]{1,2}[\\s,]*)*$"
+      },
+      "starts": {
+       "type": "array",
+       "items": {
+        "oneOf": [
+         {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+         },
+         {
+          "type": "string",
+          "pattern": "^(0[xX])?[0-9A-Fa-f]{1,2}$"
+         }
+        ]
+       }
+      }
+     }
     }
    }
   },

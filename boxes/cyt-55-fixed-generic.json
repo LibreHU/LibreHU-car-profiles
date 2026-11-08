@@ -1,0 +1,45 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.7",
+ "id": "cyt-55-fixed-generic",
+ "name": "CYT (55, 8-byte frames): any car (raw messages)",
+ "description": "CYT box with 8-byte frames: 55 D0..D5 AA from the box (no length, no checksum, AA at the end; the message's command is 55), 55 CMD LEN data CS to it (CS = (CMD + LEN + data) xor FF). Read from Car Info's decoders CytBydF3Protocol and CytBydS6LowProtocol (their deframer, parsePacket). No acknowledgement. Any car: no decoding, raw messages. Also the description of this box type (\"box\": \"cyt-55-fixed\").",
+ "box": "cyt-55-fixed",
+ "box_type": {
+  "name": "CYT (55, 8-byte frames)",
+  "aliases": []
+ },
+ "framing": {
+  "head": "",
+  "starts": [
+   "0x55"
+  ],
+  "order": "cmd",
+  "data_len": 6,
+  "tail": "AA",
+  "checksum": {
+   "algo": "none"
+  },
+  "out": {
+   "head": "55",
+   "order": "cmd,len",
+   "len_offset": 0,
+   "checksum": {
+    "algo": "sum",
+    "over": "cmd,len,data",
+    "size": 1,
+    "add": 0,
+    "xor": "0xFF"
+   }
+  },
+  "no_ack_for": [],
+  "box_answers": [],
+  "baud": 38400
+ },
+ "link": {
+  "ack": false,
+  "send": []
+ },
+ "messages": {}
+}

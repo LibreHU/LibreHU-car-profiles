@@ -1,0 +1,45 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.7",
+ "id": "simple-aa55-len-generic",
+ "name": "Simple (AA 55, length as command): any car (raw messages)",
+ "description": "Simple box whose frames have no command byte: AA 55 LEN data CS from the box, 55 AA LEN data CS to it, CS = (LEN + data) - 1; the length tells the message (6: Audi's misc, keys and steering message). Read from Car Info's decoder SpAudiProtocol (its deframer, parsePacket). No acknowledgement. Any car: no decoding, raw messages. Also the description of this box type (\"box\": \"simple-aa55-len\").",
+ "box": "simple-aa55-len",
+ "box_type": {
+  "name": "Simple (AA 55, length as command)",
+  "aliases": []
+ },
+ "framing": {
+  "head": "AA 55",
+  "order": "len",
+  "len_offset": 0,
+  "checksum": {
+   "algo": "sum",
+   "over": "len,data",
+   "size": 1,
+   "add": -1,
+   "xor": 0
+  },
+  "out": {
+   "head": "55 AA",
+   "order": "len",
+   "len_offset": 0,
+   "checksum": {
+    "algo": "sum",
+    "over": "len,data",
+    "size": 1,
+    "add": -1,
+    "xor": 0
+   }
+  },
+  "no_ack_for": [],
+  "box_answers": [],
+  "baud": 38400
+ },
+ "link": {
+  "ack": false,
+  "send": []
+ },
+ "messages": {}
+}

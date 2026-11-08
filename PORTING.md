@@ -48,11 +48,13 @@ Dans l'onglet CAN, les octets qui changent apparaissent **en orange**. Pour chaq
 
 Un éditeur comme VS Code vérifie la fiche pendant la saisie, grâce à la ligne `$schema` du modèle.
 
-**Un boîtier que LibreHU ne connaît pas encore** (autre trame que Hiworld `5A A5` / `AA 55`, Raise `2E` ou `FD`) :
+**Un boîtier que LibreHU ne connaît pas encore** (autre trame que Hiworld `5A A5` / `AA 55`, Raise `2E` ou `FD`, CYT
+`55`, Simple `AA 55` sans commande) :
 ajouter son **type** dans `boxes/<box>-generic.json`, un profil générique avec `"box": "<box>"`, `"box_type"` (`name`
 affiché, `aliases` = fabricants qui l'utilisent) et sa `"framing"` (trame, somme de contrôle, accusé : format dans
 [docs/can-vehicles.md](https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicles.md#familles-de-boîtiers)),
-`"engine": ">=2.6"`, `"messages": {}`. Copier `boxes/raise-generic.json` pour commencer. Les fiches de voiture le nomment
+`"engine": ">=2.6"` (`">=2.7"` pour une trame sans CMD, LEN, en-tête ou somme, avec une fin ou une trame d'envoi à
+elle, `"out"`), `"messages": {}`. Copier `boxes/raise-generic.json` pour commencer. Les fiches de voiture le nomment
 ensuite par `"box": "<box>"`. Il arrive sur les autoradios par le paquet `boxes`, **sans nouveau service**.
 
 ## 4. Tester
@@ -88,10 +90,11 @@ quels octets, quelle formule. Mode d'emploi : [tools/carinfo/README.md](tools/ca
 - État au 08/11/2026 : un décodeur trouvé pour 6 658 des 6 970 entrées du catalogue (532 décodeurs ; les 312 autres
   n'en ont pas dans Car Info lui-même) ; mêmes résultats que les analyses à la main pour PSA (111 / 111) et Volkswagen
   (174 / 174) ; sondage : **528 décodeurs sur 532 donnent des messages** (4 861 messages).
-- **Générateur** (`tools/carinfo/generate.py`) : une fiche par décodeur (type de boîtier tiré de sa trame, voitures avec
-  le type de voiture rejoué pour chacune, rôles, touches du volant avec leurs noms, exemples) : **503 fiches, 5 314
-  voitures**, toutes acceptées par le moteur (`check`), **publiées dans `brands/`** le 08/11/2026 (111 marques, 6 073
-  voitures avec les fiches faites à la main). Jamais essayées sur une voiture : « NEVER TRIED ON A CAR » dans leur
+- **Générateur** (`tools/carinfo/generate.py`) : une fiche par décodeur (type de boîtier tiré de sa trame et vérifié
+  dans le sens boîtier → autoradio par `receive.py`, voitures avec le type de voiture rejoué pour chacune, rôles, touches
+  du volant avec leurs noms, exemples) : **510 fiches, 5 356 voitures**, toutes acceptées par le moteur 2.7 (`check`),
+  **publiées dans `brands/`** (111 marques, 6 115 voitures avec les fiches faites à la main), dont Mazda Raise et les
+  boîtiers CYT (BYD, Ford), Simple (Audi) et Besturn X80. Jamais essayées sur une voiture : « NEVER TRIED ON A CAR » dans leur
   description. Laissés de côté : les écrans arrière, engins de chantier et scooters de Car Info (pas des voitures).
 - Une fiche tirée de ce code n'a jamais roulé : elle sera marquée **non testée** tant que personne ne l'a essayée sur
   la voiture (comme toute fiche, à vérifier avec une capture, § 1).

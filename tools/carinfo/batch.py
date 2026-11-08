@@ -29,6 +29,11 @@ def one(job):
         idx = jvm.Index(src)
         vm0 = R.CarVM(idx, {})
         d = probe.Decoder(idx, cls, R.describe(vm0, car["box"], car["series"], car["model"], car["year"], car["config"], car["code"]))
+        # Frames as the box sends them when receive.py found a box type getPacket does not build (RX_BOX, environment).
+        rx = (json.load(open(os.environ["RX_BOX"])).get(cls, {}).get("accepts") or [None])[0] if os.environ.get("RX_BOX") else None
+        if rx in probe.RX:
+            d.rx = rx
+            res["rx"] = rx
         res["errors"] = d.errors
         res["registered"] = sorted(k for k in d.px.registered if isinstance(k, int))
         cmds = res["registered"]

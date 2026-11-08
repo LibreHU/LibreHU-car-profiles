@@ -13,12 +13,12 @@ v184 no car is built into it. Guide to port a car (French): [PORTING.md](PORTING
 | Dossier | Contenu |
 |---|---|
 | `brands/<marque>/` | les fiches de la marque (`<id>.json`) |
-| `boxes/` | **types de boîtiers** : le profil générique de chacun (`"box_type"` + sa `"framing"`, moteur 2.6 ; messages bruts, aucun décodage), paquet `boxes`. **Un nouveau boîtier = un fichier ici**, sans nouveau service ; une fiche le nomme par son `"box"` (ou par un de ses fabricants, `"aliases"`). Le service a les cinq actuels intégrés, en repli |
+| `boxes/` | **types de boîtiers** : le profil générique de chacun (`"box_type"` + sa `"framing"`, moteur 2.6 ; messages bruts, aucun décodage), paquet `boxes`. **Un nouveau boîtier = un fichier ici**, sans nouveau service ; une fiche le nomme par son `"box"` (ou par un de ses fabricants, `"aliases"`). Le service a les cinq premiers intégrés (Hiworld, Raise), en repli ; CYT (BYD, Ford) et Simple (Audi) viennent du paquet (moteur 2.7) |
 | `template/new-car.json` | fiche modèle à copier |
 | `schema/` | schéma JSON du format (copie de celui du service) |
 | `dist/` | **généré par la CI** : `index.json`, un paquet par marque (`<marque>.json`) et celui des types de boîtiers (`boxes.json`, installé avant les marques) |
 | `tools/build_packs.py` | vérification par le schéma et construction des paquets |
-| `tools/carinfo/` | rejoue les décodeurs de l'appli Car Info d'origine, à partir de son listage jadx « fallback » (l'appli n'est jamais exécutée), et en tire une fiche par décodeur : **503 fiches générées dans `brands/`**, jamais essayées sur une voiture (« NEVER TRIED ON A CAR » dans leur description) ; voir [tools/carinfo/README.md](tools/carinfo/README.md) |
+| `tools/carinfo/` | rejoue les décodeurs de l'appli Car Info d'origine, à partir de son listage jadx « fallback » (l'appli n'est jamais exécutée), et en tire une fiche par décodeur : **510 fiches générées dans `brands/`**, jamais essayées sur une voiture (« NEVER TRIED ON A CAR » dans leur description) ; voir [tools/carinfo/README.md](tools/carinfo/README.md) |
 
 - **Porter une voiture** : [PORTING.md](PORTING.md).
 - **Format** : [docs/can-vehicles.md](https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicles.md),

@@ -1,0 +1,33 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.7",
+ "id": "cyt-55-generic",
+ "name": "CYT (55 / 57, no checksum): any car (raw messages)",
+ "description": "CYT box whose frames have no head and no checksum: CMD LEN data, CMD 55 or 57 (both ways). Read from Car Info's decoders CytFordProtocol and CytAirFordProtocol (their deframer, parsePacket). No acknowledgement. Any car: no decoding, raw messages. Also the description of this box type (\"box\": \"cyt-55\").",
+ "box": "cyt-55",
+ "box_type": {
+  "name": "CYT (55 / 57, no checksum)",
+  "aliases": []
+ },
+ "framing": {
+  "head": "",
+  "starts": [
+   "0x55",
+   "0x57"
+  ],
+  "order": "cmd,len",
+  "len_offset": 0,
+  "checksum": {
+   "algo": "none"
+  },
+  "no_ack_for": [],
+  "box_answers": [],
+  "baud": 38400
+ },
+ "link": {
+  "ack": false,
+  "send": []
+ },
+ "messages": {}
+}

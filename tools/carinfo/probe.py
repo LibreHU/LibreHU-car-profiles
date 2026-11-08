@@ -30,6 +30,24 @@ def natives(px):
     return n
 
 
+def _cyt_fixed(cmd, data):
+    d = (data + [0] * 6)[:6]
+    return [0x55] + [b & 0xFF for b in d] + [0xAA], [None] + list(range(6)) + [None]
+
+
+def _cyt(cmd, data):
+    return [cmd, len(data)] + [b & 0xFF for b in data], [None, None] + list(range(len(data)))
+
+
+def _simple_len(cmd, data):
+    d = (data + [0] * cmd)[:cmd]
+    return [0xAA, 0x55, cmd] + [b & 0xFF for b in d] + [(cmd + sum(b & 0xFF for b in d) - 1) & 0xFF], [None] * 3 + list(range(cmd)) + [None]
+
+
+# Frames as the box sends them, for the box types whose frames getPacket does not build (box → head unit).
+RX = {"cyt-55-fixed": _cyt_fixed, "cyt-55": _cyt, "simple-aa55-len": _simple_len}
+
+
 class Decoder:
     def __init__(self, index, cls, describe=None):
         self.px = Proxy()
@@ -89,6 +107,11 @@ class Decoder:
             return None
 
     def frame(self, cmd, data):
+        # A box type whose frames from the box differ from what getPacket builds (receive.py): built as the box sends them.
+        rx = RX.get(getattr(self, "rx", None))
+        if rx:
+            items, origin = rx(cmd, list(data))
+            return JArray([b - 256 if b > 127 else b for b in items], "byte", origin)
         # The protocol's own parseRegisterCmdId says where the command must be: found once, then kept.
         if getattr(self, "layout", None) is None:
             first = None
