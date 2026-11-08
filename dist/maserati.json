@@ -3,7 +3,7 @@
  "version": 1,
  "id": "maserati",
  "name": "Maserati",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -71,6 +71,12 @@
         }
        }
       },
+      "max_defrost_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "max defrost on off": 1
+       }
+      },
       "hvac_dual": {
        "start_byte": 0,
        "bits": {
@@ -122,6 +128,18 @@
        "bit_length": 4,
        "role": "hvac.fan",
        "label": "front wind level"
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 4,
+       "bits": {
+        "auto recirc on off": 5
+       }
+      },
+      "front_wind_mode": {
+       "start_byte": 4,
+       "bits": {
+        "front wind mode": 7
+       }
       }
      }
     },
@@ -181,6 +199,50 @@
          "role": "door.front_right"
         }
        }
+      }
+     }
+    },
+    "0x35": {
+     "name": "Message 0x35",
+     "signals": {
+      "turn_left": {
+       "start_byte": 0,
+       "bits": {
+        "left turn light": {
+         "bit": 4,
+         "role": "turn.left"
+        }
+       }
+      },
+      "turn_right": {
+       "start_byte": 0,
+       "bits": {
+        "right turn light": {
+         "bit": 5,
+         "role": "turn.right"
+        }
+       }
+      },
+      "vehicle_speed": {
+       "start_byte": 1,
+       "role": "vehicle.speed",
+       "unit": "km/h",
+       "label": "current speed"
+      },
+      "engine_rpm": {
+       "start_byte": 4,
+       "size": 2,
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
+      },
+      "vehicle_odometer": {
+       "start_byte": 7,
+       "size": 4,
+       "signed": true,
+       "role": "vehicle.odometer",
+       "unit": "km",
+       "label": "total mileage"
       }
      }
     },
@@ -251,10 +313,10 @@
      }
     },
     {
-     "cmd": "0x02",
-     "data": "01",
+     "cmd": "0x35",
+     "data": "10",
      "expect": {
-      "wheel_key": "volume +"
+      "left turn light": true
      }
     }
    ]

@@ -3,7 +3,7 @@
  "version": 1,
  "id": "qoros",
  "name": "Qoros",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -303,6 +303,51 @@
          "role": "door.front_right"
         }
        }
+      },
+      "gear_reverse": {
+       "start_byte": 1,
+       "bits": {
+        "back state": {
+         "bit": 0,
+         "role": "gear.reverse"
+        }
+       }
+      },
+      "handbrake": {
+       "start_byte": 1,
+       "bits": {
+        "handbrake": {
+         "bit": 1,
+         "role": "handbrake"
+        }
+       }
+      }
+     }
+    },
+    "0x71": {
+     "name": "Message 0x71",
+     "signals": {
+      "engine_rpm": {
+       "start_byte": 0,
+       "size": 2,
+       "endian": "little",
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
+      }
+     }
+    },
+    "0xD1": {
+     "name": "Message 0xD1",
+     "signals": {
+      "turn_right": {
+       "start_byte": 1,
+       "bits": {
+        "right turn light": {
+         "bit": 7,
+         "role": "turn.right"
+        }
+       }
       }
      }
     },
@@ -372,17 +417,24 @@
      }
     },
     {
+     "cmd": "0x71",
+     "data": "23 01",
+     "expect": {
+      "engine_rpm": 291.0
+     }
+    },
+    {
+     "cmd": "0xD1",
+     "data": "00 80",
+     "expect": {
+      "right turn light": true
+     }
+    },
+    {
      "cmd": "0xD2",
      "data": "12",
      "expect": {
       "tpms_front_left_pressure": 24.71
-     }
-    },
-    {
-     "cmd": "0x20",
-     "data": "01",
-     "expect": {
-      "wheel_key": "volume +"
      }
     }
    ]

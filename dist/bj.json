@@ -3,7 +3,7 @@
  "version": 1,
  "id": "bj",
  "name": "BAIC BJ",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -107,6 +107,29 @@
       }
      }
     },
+    "0x18": {
+     "name": "Message 0x18",
+     "signals": {
+      "turn_left": {
+       "start_byte": 1,
+       "bits": {
+        "left turn light": {
+         "bit": 6,
+         "role": "turn.left"
+        }
+       }
+      },
+      "turn_right": {
+       "start_byte": 1,
+       "bits": {
+        "right turn light": {
+         "bit": 7,
+         "role": "turn.right"
+        }
+       }
+      }
+     }
+    },
     "0x31": {
      "name": "Message 0x31",
      "signals": {
@@ -117,6 +140,12 @@
          "bit": 3,
          "role": "hvac.auto"
         }
+       }
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 1,
+       "bits": {
+        "auto recirc on off": 0
        }
       },
       "hvac_recirculation": {
@@ -171,7 +200,7 @@
        "size": 2,
        "role": "engine.rpm",
        "unit": "rpm",
-       "label": "rotation rate"
+       "label": "rotationl speed"
       }
      }
     },
@@ -210,6 +239,13 @@
      }
     },
     {
+     "cmd": "0x18",
+     "data": "00 40",
+     "expect": {
+      "left turn light": true
+     }
+    },
+    {
      "cmd": "0x31",
      "data": "08",
      "expect": {
@@ -221,13 +257,6 @@
      "data": "00 00 01 23",
      "expect": {
       "engine_rpm": 291.0
-     }
-    },
-    {
-     "cmd": "0x41",
-     "data": "00 00 00 00 00 00 00 00 00 00 01",
-     "expect": {
-      "radar_shown": 1.0
      }
     }
    ]
@@ -332,6 +361,26 @@
        "role": "hvac.fan",
        "label": "front wind level"
       },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 4,
+       "bits": {
+        "auto recirc on off": 5
+       }
+      },
       "hvac_seat_heat_right": {
        "start_byte": 5,
        "start_bit": 0,
@@ -345,6 +394,18 @@
        "bit_length": 4,
        "role": "hvac.seat_heat_left",
        "label": "fl seat warmer level"
+      },
+      "fr_seat_blowing_level": {
+       "start_byte": 6,
+       "start_bit": 0,
+       "bit_length": 4,
+       "label": "fr seat blowing level"
+      },
+      "fl_seat_blowing_level": {
+       "start_byte": 6,
+       "start_bit": 4,
+       "bit_length": 4,
+       "label": "fl seat blowing level"
       },
       "outside_temp": {
        "start_byte": 7,
@@ -411,6 +472,24 @@
         "right front door": {
          "bit": 7,
          "role": "door.front_right"
+        }
+       }
+      },
+      "gear_reverse": {
+       "start_byte": 1,
+       "bits": {
+        "back state": {
+         "bit": 0,
+         "role": "gear.reverse"
+        }
+       }
+      },
+      "handbrake": {
+       "start_byte": 1,
+       "bits": {
+        "handbrake": {
+         "bit": 1,
+         "role": "handbrake"
         }
        }
       }
@@ -572,6 +651,24 @@
         "right front door": {
          "bit": 7,
          "role": "door.front_right"
+        }
+       }
+      },
+      "gear_reverse": {
+       "start_byte": 1,
+       "bits": {
+        "back state": {
+         "bit": 0,
+         "role": "gear.reverse"
+        }
+       }
+      },
+      "handbrake": {
+       "start_byte": 1,
+       "bits": {
+        "handbrake": {
+         "bit": 1,
+         "role": "handbrake"
         }
        }
       }
@@ -794,6 +891,18 @@
     "0x21": {
      "name": "Message 0x21",
      "signals": {
+      "rear_air_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "rear air on off": 0
+       }
+      },
+      "max_defrost_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "max defrost on off": 1
+       }
+      },
       "hvac_dual": {
        "start_byte": 0,
        "bits": {
@@ -846,6 +955,20 @@
        "role": "hvac.fan",
        "label": "front wind level"
       },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
+      },
       "hvac_temp_left": {
        "start_byte": 2,
        "role": "hvac.temp_left",
@@ -857,6 +980,24 @@
        "role": "hvac.temp_right",
        "unit": "°C",
        "label": "front right temp"
+      },
+      "max_acon_off": {
+       "start_byte": 4,
+       "bits": {
+        "max acon off": 3
+       }
+      },
+      "eco_on_off": {
+       "start_byte": 4,
+       "bits": {
+        "eco on off": 4
+       }
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 4,
+       "bits": {
+        "auto recirc on off": 5
+       }
       },
       "hvac_defrost_rear": {
        "start_byte": 4,
@@ -995,9 +1136,9 @@
    "examples": [
     {
      "cmd": "0x21",
-     "data": "04",
+     "data": "01",
      "expect": {
-      "dual on off": true
+      "rear air on off": true
      }
     },
     {

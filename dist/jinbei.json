@@ -3,7 +3,7 @@
  "version": 1,
  "id": "jinbei",
  "name": "Jinbei",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -52,6 +52,12 @@
          "bit": 1,
          "role": "hvac.defrost_rear"
         }
+       }
+      },
+      "rear_air_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "rear air on off": 2
        }
       },
       "hvac_auto": {

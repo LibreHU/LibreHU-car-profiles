@@ -3,7 +3,7 @@
  "version": 1,
  "id": "cnhtc",
  "name": "Sinotruk",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -95,6 +95,25 @@
       }
      }
     },
+    "0x46": {
+     "name": "Message 0x46",
+     "signals": {
+      "engine_rpm": {
+       "start_byte": 0,
+       "size": 2,
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
+      },
+      "vehicle_odometer": {
+       "start_byte": 5,
+       "size": 3,
+       "role": "vehicle.odometer",
+       "unit": "km",
+       "label": "total mileage"
+      }
+     }
+    },
     "0x20": {
      "name": "Wheel key",
      "signals": {
@@ -115,6 +134,13 @@
      "data": "04",
      "expect": {
       "front box door": true
+     }
+    },
+    {
+     "cmd": "0x46",
+     "data": "01 23",
+     "expect": {
+      "engine_rpm": 291.0
      }
     },
     {

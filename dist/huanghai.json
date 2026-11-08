@@ -3,7 +3,7 @@
  "version": 1,
  "id": "huanghai",
  "name": "Huanghai",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -36,6 +36,18 @@
     "0x21": {
      "name": "Message 0x21",
      "signals": {
+      "max_defrost_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "max defrost on off": 1
+       }
+      },
+      "sync_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "sync on off": 2
+       }
+      },
       "hvac_auto": {
        "start_byte": 0,
        "bits": {
@@ -78,6 +90,38 @@
        "bit_length": 4,
        "role": "hvac.fan",
        "label": "front wind level"
+      },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
+      },
+      "max_acon_off": {
+       "start_byte": 4,
+       "bits": {
+        "max acon off": 3
+       }
+      },
+      "eco_on_off": {
+       "start_byte": 4,
+       "bits": {
+        "eco on off": 4
+       }
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 4,
+       "bits": {
+        "auto recirc on off": 5
+       }
       },
       "hvac_defrost_rear": {
        "start_byte": 4,
@@ -138,9 +182,9 @@
    "examples": [
     {
      "cmd": "0x21",
-     "data": "08",
+     "data": "02",
      "expect": {
-      "auto light1": true
+      "max defrost on off": true
      }
     },
     {

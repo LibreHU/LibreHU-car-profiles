@@ -3,7 +3,7 @@
  "version": 1,
  "id": "lifan",
  "name": "Lifan",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -31,6 +31,15 @@
     "0x72": {
      "name": "Message 0x72",
      "signals": {
+      "ignition_acc": {
+       "start_byte": 0,
+       "bits": {
+        "acc": {
+         "bit": 0,
+         "role": "ignition.acc"
+        }
+       }
+      },
       "lights_parking": {
        "start_byte": 0,
        "bits": {
@@ -43,7 +52,7 @@
       "gear_reverse": {
        "start_byte": 0,
        "bits": {
-        "back car state": {
+        "rev": {
          "bit": 2,
          "role": "gear.reverse"
         }
@@ -260,9 +269,9 @@
    "examples": [
     {
      "cmd": "0x72",
-     "data": "02",
+     "data": "01",
      "expect": {
-      "illlight": true
+      "acc": true
      }
     },
     {
@@ -405,6 +414,31 @@
          "role": "door.front_left"
         }
        }
+      },
+      "turn_right": {
+       "start_byte": 2,
+       "bits": {
+        "right turn light": {
+         "bit": 0,
+         "role": "turn.right"
+        }
+       }
+      },
+      "turn_left": {
+       "start_byte": 2,
+       "bits": {
+        "left turn light": {
+         "bit": 1,
+         "role": "turn.left"
+        }
+       }
+      },
+      "vehicle_speed": {
+       "start_byte": 3,
+       "size": 2,
+       "role": "vehicle.speed",
+       "unit": "km/h",
+       "label": "current speed"
       }
      }
     }

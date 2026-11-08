@@ -3,7 +3,7 @@
  "version": 1,
  "id": "mg",
  "name": "MG",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -83,6 +83,28 @@
          "role": "hvac.power"
         }
        }
+      },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "2",
+        "1": "6",
+        "2": "4",
+        "3": "12",
+        "4": "8",
+        "5": "0",
+        "6": "0",
+        "7": "0",
+        "8": "0",
+        "9": "0",
+        "10": "0",
+        "11": "0",
+        "12": "0",
+        "13": "0",
+        "14": "0",
+        "15": "0"
+       },
+       "label": "front wind mode"
       },
       "hvac_defrost_rear": {
        "start_byte": 3,
@@ -403,6 +425,29 @@
        "label": "outside temp"
       }
      }
+    },
+    "0x36": {
+     "name": "Message 0x36",
+     "signals": {
+      "turn_left": {
+       "start_byte": 2,
+       "bits": {
+        "left turn light": {
+         "bit": 6,
+         "role": "turn.left"
+        }
+       }
+      },
+      "turn_right": {
+       "start_byte": 2,
+       "bits": {
+        "right turn light": {
+         "bit": 7,
+         "role": "turn.right"
+        }
+       }
+      }
+     }
     }
    },
    "wheel_keys": {
@@ -429,6 +474,13 @@
      "data": "01",
      "expect": {
       "ac on off": true
+     }
+    },
+    {
+     "cmd": "0x36",
+     "data": "00 00 40",
+     "expect": {
+      "left turn light": true
      }
     }
    ]
@@ -529,6 +581,18 @@
       }
      }
     },
+    "0x13": {
+     "name": "Message 0x13",
+     "signals": {
+      "vehicle_odometer": {
+       "start_byte": 4,
+       "size": 3,
+       "role": "vehicle.odometer",
+       "unit": "km",
+       "label": "total mileage"
+      }
+     }
+    },
     "0x31": {
      "name": "Message 0x31",
      "signals": {
@@ -603,6 +667,17 @@
       }
      }
     },
+    "0x32": {
+     "name": "Message 0x32",
+     "signals": {
+      "engine_rpm": {
+       "start_byte": 3,
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
+      }
+     }
+    },
     "0x21": {
      "name": "Wheel key",
      "signals": {
@@ -630,6 +705,13 @@
      }
     },
     {
+     "cmd": "0x13",
+     "data": "00 00 00 00 00 01 23",
+     "expect": {
+      "vehicle_odometer": 291.0
+     }
+    },
+    {
      "cmd": "0x31",
      "data": "08",
      "expect": {
@@ -637,10 +719,10 @@
      }
     },
     {
-     "cmd": "0x21",
-     "data": "12",
+     "cmd": "0x32",
+     "data": "00 00 00 12",
      "expect": {
-      "wheel_key": 18.0
+      "engine_rpm": 18.0
      }
     }
    ]
@@ -767,6 +849,28 @@
        "role": "hvac.fan",
        "label": "front wind level"
       },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "2",
+        "1": "6",
+        "2": "4",
+        "3": "5",
+        "4": "1",
+        "5": "0",
+        "6": "0",
+        "7": "0",
+        "8": "0",
+        "9": "0",
+        "10": "0",
+        "11": "0",
+        "12": "0",
+        "13": "0",
+        "14": "0",
+        "15": "16"
+       },
+       "label": "front wind mode"
+      },
       "hvac_defrost_rear": {
        "start_byte": 3,
        "bits": {
@@ -838,7 +942,7 @@
       "gear_reverse": {
        "start_byte": 1,
        "bits": {
-        "back car state": {
+        "rev": {
          "bit": 0,
          "role": "gear.reverse"
         }
@@ -850,6 +954,24 @@
         "pstop block state": {
          "bit": 1,
          "role": "handbrake"
+        }
+       }
+      },
+      "lights_parking": {
+       "start_byte": 1,
+       "bits": {
+        "illlight": {
+         "bit": 2,
+         "role": "lights.parking"
+        }
+       }
+      },
+      "ignition_acc": {
+       "start_byte": 1,
+       "bits": {
+        "acc": {
+         "bit": 3,
+         "role": "ignition.acc"
         }
        }
       },
@@ -1208,6 +1330,24 @@
     }
    ],
    "messages": {
+    "0x11": {
+     "name": "Message 0x11",
+     "signals": {
+      "rear_wind_level": {
+       "start_byte": 0,
+       "start_bit": 0,
+       "bit_length": 4,
+       "max_value": 14,
+       "label": "rear wind level"
+      },
+      "rear_air_on_off": {
+       "start_byte": 3,
+       "bits": {
+        "rear air on off": 7
+       }
+      }
+     }
+    },
     "0x21": {
      "name": "Message 0x21",
      "signals": {
@@ -1218,6 +1358,12 @@
          "bit": 1,
          "role": "hvac.recirculation"
         }
+       }
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "auto recirc on off": 1
        }
       },
       "hvac_dual": {
@@ -1264,6 +1410,28 @@
        "role": "hvac.fan",
        "label": "front wind level"
       },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "2",
+        "1": "6",
+        "2": "4",
+        "3": "5",
+        "4": "0",
+        "5": "0",
+        "6": "0",
+        "7": "0",
+        "8": "0",
+        "9": "0",
+        "10": "0",
+        "11": "0",
+        "12": "0",
+        "13": "0",
+        "14": "0",
+        "15": "16"
+       },
+       "label": "front wind mode"
+      },
       "hvac_seat_heat_right": {
        "start_byte": 3,
        "bits": {
@@ -1282,6 +1450,12 @@
         }
        }
       },
+      "eco_on_off": {
+       "start_byte": 3,
+       "bits": {
+        "eco on off": 5
+       }
+      },
       "hvac_defrost_rear": {
        "start_byte": 3,
        "bits": {
@@ -1298,6 +1472,12 @@
          "bit": 7,
          "role": "hvac.defrost_front"
         }
+       }
+      },
+      "sync_on_off": {
+       "start_byte": 5,
+       "bits": {
+        "sync on off": 6
        }
       }
      }
@@ -1436,6 +1616,13 @@
    },
    "examples": [
     {
+     "cmd": "0x11",
+     "data": "01",
+     "expect": {
+      "rear_wind_level": 1.0
+     }
+    },
+    {
      "cmd": "0x21",
      "data": "02",
      "expect": {
@@ -1454,13 +1641,6 @@
      "data": "12",
      "expect": {
       "outside_temp": 18.0
-     }
-    },
-    {
-     "cmd": "0x52",
-     "data": "00 00 00 00 00 00 12",
-     "expect": {
-      "tpms_front_left_temperature": -42.0
      }
     }
    ]

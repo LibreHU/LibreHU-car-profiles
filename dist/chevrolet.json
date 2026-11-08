@@ -3,7 +3,7 @@
  "version": 1,
  "id": "chevrolet",
  "name": "Chevrolet",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -192,6 +192,12 @@
     "0x03": {
      "name": "Message 0x03",
      "signals": {
+      "auto_recirc_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "auto recirc on off": 3
+       }
+      },
       "hvac_defrost_rear": {
        "start_byte": 0,
        "bits": {
@@ -228,6 +234,40 @@
         }
        }
       },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "16",
+        "2": "1",
+        "3": "4",
+        "4": "6",
+        "5": "2",
+        "6": "3",
+        "7": "1",
+        "8": "5",
+        "9": "7",
+        "10": "0",
+        "11": "0",
+        "12": "0",
+        "13": "0",
+        "14": "0",
+        "15": "0"
+       },
+       "label": "front wind mode"
+      },
+      "sync_on_off": {
+       "start_byte": 1,
+       "bits": {
+        "sync on off": 5
+       }
+      },
+      "eco_on_off": {
+       "start_byte": 1,
+       "bits": {
+        "eco on off": 6
+       }
+      },
       "hvac_seat_heat_right": {
        "start_byte": 4,
        "start_bit": 0,
@@ -259,6 +299,37 @@
          "role": "hvac.auto"
         }
        }
+      }
+     }
+    },
+    "0x1B": {
+     "name": "Message 0x1B",
+     "signals": {
+      "rear_air_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "rear air on off": 0
+       }
+      },
+      "rear_wind_mode": {
+       "start_byte": 0,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "16",
+        "5": "16",
+        "6": "16",
+        "7": "16"
+       },
+       "label": "rear wind mode"
+      },
+      "rear_wind_level": {
+       "start_byte": 2,
+       "start_bit": 0,
+       "bit_length": 4,
+       "label": "rear wind level"
       }
      }
     },
@@ -324,6 +395,18 @@
       }
      }
     },
+    "0x32": {
+     "name": "Message 0x32",
+     "signals": {
+      "engine_rpm": {
+       "start_byte": 0,
+       "size": 2,
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
+      }
+     }
+    },
     "0x33": {
      "name": "Message 0x33",
      "signals": {
@@ -361,7 +444,7 @@
        "size": 2,
        "role": "engine.rpm",
        "unit": "rpm",
-       "label": "rotation rate"
+       "label": "rotationl speed"
       },
       "vehicle_speed": {
        "start_byte": 2,
@@ -389,9 +472,16 @@
    "examples": [
     {
      "cmd": "0x03",
-     "data": "10",
+     "data": "08",
      "expect": {
-      "rear defrost on off": true
+      "auto recirc on off": true
+     }
+    },
+    {
+     "cmd": "0x1B",
+     "data": "01",
+     "expect": {
+      "rear air on off": true
      }
     },
     {
@@ -406,13 +496,6 @@
      "data": "23 01",
      "expect": {
       "steering_angle": 18.19
-     }
-    },
-    {
-     "cmd": "0x33",
-     "data": "01 23",
-     "expect": {
-      "tpms_front_left_pressure": 291.0
      }
     }
    ]
@@ -1260,6 +1343,42 @@
     "0x11": {
      "name": "Message 0x11",
      "signals": {
+      "ignition_acc": {
+       "start_byte": 0,
+       "bits": {
+        "acc": {
+         "bit": 0,
+         "role": "ignition.acc"
+        }
+       }
+      },
+      "lights_parking": {
+       "start_byte": 0,
+       "bits": {
+        "illlight": {
+         "bit": 1,
+         "role": "lights.parking"
+        }
+       }
+      },
+      "gear_reverse": {
+       "start_byte": 0,
+       "bits": {
+        "rev": {
+         "bit": 2,
+         "role": "gear.reverse"
+        }
+       }
+      },
+      "gear_park": {
+       "start_byte": 0,
+       "bits": {
+        "park": {
+         "bit": 3,
+         "role": "gear.park"
+        }
+       }
+      },
       "steering_angle": {
        "start_byte": 6,
        "size": 2,
@@ -1268,6 +1387,13 @@
        "role": "steering.angle",
        "unit": "°",
        "label": "eps"
+      },
+      "engine_rpm": {
+       "start_byte": 8,
+       "size": 2,
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
       },
       "wheel_key": {
        "start_byte": 2,
@@ -1331,6 +1457,12 @@
          "role": "door.front_left"
         }
        }
+      },
+      "handbrake": {
+       "start_byte": 8,
+       "signed": true,
+       "role": "handbrake",
+       "label": "handbrake"
       }
      }
     },
@@ -1346,6 +1478,18 @@
         }
        }
       },
+      "sync_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "sync on off": 2
+       }
+      },
+      "rear_air_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "rear air on off": 5
+       }
+      },
       "hvac_power": {
        "start_byte": 0,
        "bits": {
@@ -1353,6 +1497,12 @@
          "bit": 6,
          "role": "hvac.power"
         }
+       }
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 1,
+       "bits": {
+        "auto recirc on off": 3
        }
       },
       "hvac_recirculation": {
@@ -1363,6 +1513,19 @@
          "role": "hvac.recirculation"
         }
        }
+      },
+      "eco_on_off": {
+       "start_byte": 1,
+       "bits": {
+        "eco on off": 5
+       }
+      },
+      "fl_seat_blowing_level": {
+       "start_byte": 1,
+       "size": 2,
+       "factor": 0.0,
+       "offset": 2.7281,
+       "label": "fl seat blowing level"
       },
       "hvac_defrost_rear": {
        "start_byte": 2,
@@ -1412,9 +1575,9 @@
    "examples": [
     {
      "cmd": "0x11",
-     "data": "00 00 00 00 00 00 01 23",
+     "data": "01",
      "expect": {
-      "steering_angle": -291.0
+      "acc": true
      }
     },
     {
@@ -1563,6 +1726,24 @@
          "role": "door.front_right"
         }
        }
+      },
+      "gear_reverse": {
+       "start_byte": 1,
+       "bits": {
+        "back state": {
+         "bit": 0,
+         "role": "gear.reverse"
+        }
+       }
+      },
+      "handbrake": {
+       "start_byte": 1,
+       "bits": {
+        "handbrake": {
+         "bit": 1,
+         "role": "handbrake"
+        }
+       }
       }
      }
     },
@@ -1639,6 +1820,28 @@
        "role": "hvac.fan",
        "label": "front wind level"
       },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "16",
+        "2": "4",
+        "3": "16",
+        "4": "2",
+        "5": "16",
+        "6": "6",
+        "7": "16",
+        "8": "1",
+        "9": "16",
+        "10": "5",
+        "11": "16",
+        "12": "3",
+        "13": "16",
+        "14": "7",
+        "15": "16"
+       },
+       "label": "front wind mode"
+      },
       "hvac_temp_left": {
        "start_byte": 2,
        "max_value": 254,
@@ -1652,6 +1855,18 @@
        "role": "hvac.temp_right",
        "unit": "°C",
        "label": "front right temp"
+      },
+      "eco_on_off": {
+       "start_byte": 4,
+       "bits": {
+        "eco on off": 6
+       }
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 4,
+       "bits": {
+        "auto recirc on off": 7
+       }
       },
       "hvac_seat_heat_right": {
        "start_byte": 5,
@@ -1687,12 +1902,43 @@
     "0x35": {
      "name": "Message 0x35",
      "signals": {
+      "turn_left": {
+       "start_byte": 0,
+       "bits": {
+        "left turn light": {
+         "bit": 4,
+         "role": "turn.left"
+        }
+       }
+      },
+      "turn_right": {
+       "start_byte": 0,
+       "bits": {
+        "right turn light": {
+         "bit": 5,
+         "role": "turn.right"
+        }
+       }
+      },
+      "vehicle_speed": {
+       "start_byte": 1,
+       "role": "vehicle.speed",
+       "unit": "km/h",
+       "label": "current speed"
+      },
       "fuel_range": {
        "start_byte": 2,
        "size": 2,
        "role": "fuel.range",
        "unit": "km",
        "label": "cruising range"
+      },
+      "engine_rpm": {
+       "start_byte": 4,
+       "size": 2,
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
       },
       "outside_temp": {
        "start_byte": 6,
@@ -1701,6 +1947,13 @@
        "role": "outside.temp",
        "unit": "°C",
        "label": "ambient temp"
+      },
+      "vehicle_odometer": {
+       "start_byte": 7,
+       "size": 3,
+       "role": "vehicle.odometer",
+       "unit": "km",
+       "label": "total mileage"
       }
      }
     },
@@ -1762,9 +2015,9 @@
     },
     {
      "cmd": "0x35",
-     "data": "00 00 01 23",
+     "data": "10",
      "expect": {
-      "fuel_range": 291.0
+      "left turn light": true
      }
     }
    ]
@@ -1815,6 +2068,12 @@
          "bit": 2,
          "role": "hvac.dual"
         }
+       }
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "auto recirc on off": 3
        }
       },
       "hvac_recirculation": {
@@ -3236,6 +3495,12 @@
     "0x03": {
      "name": "Message 0x03",
      "signals": {
+      "auto_recirc_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "auto recirc on off": 3
+       }
+      },
       "hvac_defrost_rear": {
        "start_byte": 0,
        "bits": {
@@ -3272,6 +3537,28 @@
         }
        }
       },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "16",
+        "2": "1",
+        "3": "4",
+        "4": "6",
+        "5": "2",
+        "6": "3",
+        "7": "1",
+        "8": "5",
+        "9": "7",
+        "10": "0",
+        "11": "0",
+        "12": "0",
+        "13": "0",
+        "14": "0",
+        "15": "0"
+       },
+       "label": "front wind mode"
+      },
       "hvac_defrost_front": {
        "start_byte": 1,
        "bits": {
@@ -3279,6 +3566,12 @@
          "bit": 0,
          "role": "hvac.defrost_front"
         }
+       }
+      },
+      "sync_on_off": {
+       "start_byte": 1,
+       "bits": {
+        "sync on off": 5
        }
       },
       "hvac_seat_heat_right": {
@@ -3303,6 +3596,23 @@
          "role": "hvac.auto"
         }
        }
+      }
+     }
+    },
+    "0x13": {
+     "name": "Message 0x13",
+     "signals": {
+      "fr_seat_blowing_level": {
+       "start_byte": 0,
+       "start_bit": 0,
+       "bit_length": 4,
+       "label": "fr seat blowing level"
+      },
+      "fl_seat_blowing_level": {
+       "start_byte": 0,
+       "start_bit": 4,
+       "bit_length": 4,
+       "label": "fl seat blowing level"
       }
      }
     },
@@ -3380,6 +3690,46 @@
       }
      }
     },
+    "0x45": {
+     "name": "Message 0x45",
+     "signals": {
+      "rear_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "16",
+        "2": "2",
+        "3": "6",
+        "4": "4",
+        "5": "0",
+        "6": "0",
+        "7": "0",
+        "8": "0",
+        "9": "0",
+        "10": "0",
+        "11": "0",
+        "12": "0",
+        "13": "0",
+        "14": "0",
+        "15": "0"
+       },
+       "label": "rear wind mode"
+      },
+      "rear_wind_level": {
+       "start_byte": 1,
+       "start_bit": 4,
+       "bit_length": 4,
+       "max_value": 14,
+       "label": "rear wind level"
+      },
+      "rear_air_on_off": {
+       "start_byte": 1,
+       "bits": {
+        "rear air on off": 4
+       }
+      }
+     }
+    },
     "0x01": {
      "name": "Wheel key",
      "signals": {
@@ -3397,9 +3747,16 @@
    "examples": [
     {
      "cmd": "0x03",
-     "data": "10",
+     "data": "08",
      "expect": {
-      "rear defrost on off": true
+      "auto recirc on off": true
+     }
+    },
+    {
+     "cmd": "0x13",
+     "data": "01",
+     "expect": {
+      "fr_seat_blowing_level": 1.0
      }
     },
     {
@@ -3414,13 +3771,6 @@
      "data": "23 01",
      "expect": {
       "steering_angle": 18.19
-     }
-    },
-    {
-     "cmd": "0x01",
-     "data": "12",
-     "expect": {
-      "wheel_key": 18.0
      }
     }
    ]
@@ -3909,6 +4259,12 @@
     "0x03": {
      "name": "Message 0x03",
      "signals": {
+      "auto_recirc_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "auto recirc on off": 3
+       }
+      },
       "hvac_defrost_rear": {
        "start_byte": 0,
        "bits": {
@@ -3952,6 +4308,18 @@
          "bit": 0,
          "role": "hvac.defrost_front"
         }
+       }
+      },
+      "sync_on_off": {
+       "start_byte": 1,
+       "bits": {
+        "sync on off": 5
+       }
+      },
+      "eco_on_off": {
+       "start_byte": 1,
+       "bits": {
+        "eco on off": 6
        }
       },
       "hvac_seat_heat_right": {
@@ -4041,6 +4409,24 @@
         }
        }
       },
+      "gear_reverse": {
+       "start_byte": 1,
+       "bits": {
+        "rev": {
+         "bit": 0,
+         "role": "gear.reverse"
+        }
+       }
+      },
+      "gear_park": {
+       "start_byte": 1,
+       "bits": {
+        "park": {
+         "bit": 1,
+         "role": "gear.park"
+        }
+       }
+      },
       "door_hood": {
        "start_byte": 1,
        "bits": {
@@ -4064,6 +4450,49 @@
        "role": "steering.angle",
        "unit": "°",
        "label": "eps"
+      }
+     }
+    },
+    "0x31": {
+     "name": "Message 0x31",
+     "signals": {
+      "turn_right": {
+       "start_byte": 3,
+       "bits": {
+        "right turn light": {
+         "bit": 6,
+         "role": "turn.right"
+        }
+       }
+      },
+      "turn_left": {
+       "start_byte": 3,
+       "bits": {
+        "left turn light": {
+         "bit": 7,
+         "role": "turn.left"
+        }
+       }
+      },
+      "vehicle_odometer": {
+       "start_byte": 4,
+       "size": 4,
+       "signed": true,
+       "role": "vehicle.odometer",
+       "unit": "km",
+       "label": "total mileage"
+      }
+     }
+    },
+    "0x32": {
+     "name": "Message 0x32",
+     "signals": {
+      "engine_rpm": {
+       "start_byte": 0,
+       "size": 2,
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
       }
      }
     },
@@ -4093,6 +4522,45 @@
        "size": 2,
        "role": "tpms.rear_right.pressure",
        "label": "rear right tire pre value"
+      }
+     }
+    },
+    "0x45": {
+     "name": "Message 0x45",
+     "signals": {
+      "rear_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "16",
+        "2": "2",
+        "3": "6",
+        "4": "4",
+        "5": "0",
+        "6": "0",
+        "7": "0",
+        "8": "0",
+        "9": "0",
+        "10": "0",
+        "11": "0",
+        "12": "0",
+        "13": "0",
+        "14": "0",
+        "15": "0"
+       },
+       "label": "rear wind mode"
+      },
+      "rear_wind_level": {
+       "start_byte": 1,
+       "start_bit": 4,
+       "bit_length": 4,
+       "label": "rear wind level"
+      },
+      "rear_air_on_off": {
+       "start_byte": 2,
+       "bits": {
+        "rear air on off": 7
+       }
       }
      }
     },
@@ -4129,9 +4597,9 @@
    "examples": [
     {
      "cmd": "0x03",
-     "data": "10",
+     "data": "08",
      "expect": {
-      "rear defrost on off": true
+      "auto recirc on off": true
      }
     },
     {

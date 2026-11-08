@@ -3,7 +3,7 @@
  "version": 1,
  "id": "oushang",
  "name": "Changan Oshan",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -176,6 +176,25 @@
       }
      }
     },
+    "0x32": {
+     "name": "Message 0x32",
+     "signals": {
+      "engine_rpm": {
+       "start_byte": 2,
+       "size": 2,
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
+      },
+      "vehicle_speed": {
+       "start_byte": 4,
+       "size": 2,
+       "role": "vehicle.speed",
+       "unit": "km/h",
+       "label": "current speed"
+      }
+     }
+    },
     "0x41": {
      "name": "Message 0x41",
      "signals": {
@@ -280,10 +299,10 @@
      }
     },
     {
-     "cmd": "0x41",
-     "data": "00 00 00 00 00 00 00 00 00 00 12",
+     "cmd": "0x32",
+     "data": "00 00 01 23",
      "expect": {
-      "radar_shown": 18.0
+      "engine_rpm": 291.0
      }
     }
    ]
@@ -407,6 +426,12 @@
        "bit_length": 2,
        "role": "hvac.ac",
        "label": "ac on off"
+      },
+      "sync_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "sync on off": 2
+       }
       },
       "hvac_auto": {
        "start_byte": 0,
@@ -662,6 +687,15 @@
     "0x11": {
      "name": "Message 0x11",
      "signals": {
+      "ignition_acc": {
+       "start_byte": 0,
+       "bits": {
+        "acc": {
+         "bit": 0,
+         "role": "ignition.acc"
+        }
+       }
+      },
       "lights_parking": {
        "start_byte": 0,
        "bits": {
@@ -677,6 +711,15 @@
         "back car state": {
          "bit": 2,
          "role": "gear.reverse"
+        }
+       }
+      },
+      "gear_park": {
+       "start_byte": 0,
+       "bits": {
+        "park": {
+         "bit": 3,
+         "role": "gear.park"
         }
        }
       },
@@ -792,6 +835,12 @@
         }
        }
       },
+      "sync_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "sync on off": 2
+       }
+      },
       "hvac_auto": {
        "start_byte": 0,
        "bits": {
@@ -799,6 +848,18 @@
          "bit": 3,
          "role": "hvac.auto"
         }
+       }
+      },
+      "rear_air_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "rear air on off": 4
+       }
+      },
+      "max_acon_off": {
+       "start_byte": 0,
+       "bits": {
+        "max acon off": 5
        }
       },
       "hvac_power": {
@@ -853,6 +914,25 @@
        "role": "hvac.temp_left",
        "unit": "°C",
        "label": "front left temp"
+      }
+     }
+    },
+    "0x32": {
+     "name": "Message 0x32",
+     "signals": {
+      "engine_rpm": {
+       "start_byte": 2,
+       "size": 2,
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
+      },
+      "vehicle_speed": {
+       "start_byte": 4,
+       "size": 2,
+       "role": "vehicle.speed",
+       "unit": "km/h",
+       "label": "current speed"
       }
      }
     },
@@ -979,9 +1059,9 @@
    "examples": [
     {
      "cmd": "0x11",
-     "data": "02",
+     "data": "01",
      "expect": {
-      "illlight": true
+      "acc": true
      }
     },
     {
@@ -999,10 +1079,10 @@
      }
     },
     {
-     "cmd": "0x41",
-     "data": "12",
+     "cmd": "0x32",
+     "data": "00 00 01 23",
      "expect": {
-      "rear_left_distance": 17.0
+      "engine_rpm": 291.0
      }
     }
    ]
@@ -1120,6 +1200,12 @@
          "bit": 4,
          "role": "hvac.auto"
         }
+       }
+      },
+      "max_acon_off": {
+       "start_byte": 0,
+       "bits": {
+        "max acon off": 5
        }
       },
       "hvac_fan": {

@@ -3,7 +3,7 @@
  "version": 1,
  "id": "luxgen",
  "name": "Luxgen",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -73,6 +73,24 @@
         }
        }
       },
+      "turn_right": {
+       "start_byte": 2,
+       "bits": {
+        "right turn light": {
+         "bit": 0,
+         "role": "turn.right"
+        }
+       }
+      },
+      "turn_left": {
+       "start_byte": 2,
+       "bits": {
+        "left turn light": {
+         "bit": 1,
+         "role": "turn.left"
+        }
+       }
+      },
       "steering_angle": {
        "start_byte": 6,
        "size": 2,
@@ -81,6 +99,13 @@
        "role": "steering.angle",
        "unit": "°",
        "label": "eps"
+      },
+      "engine_rpm": {
+       "start_byte": 9,
+       "size": 2,
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
       }
      }
     },
@@ -404,6 +429,24 @@
         "right front door": {
          "bit": 7,
          "role": "door.front_right"
+        }
+       }
+      },
+      "handbrake": {
+       "start_byte": 1,
+       "bits": {
+        "handbrake": {
+         "bit": 4,
+         "role": "handbrake"
+        }
+       }
+      },
+      "gear_reverse": {
+       "start_byte": 1,
+       "bits": {
+        "rev": {
+         "bit": 6,
+         "role": "gear.reverse"
         }
        }
       }

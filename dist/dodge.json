@@ -3,7 +3,7 @@
  "version": 1,
  "id": "dodge",
  "name": "Dodge",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -111,12 +111,44 @@
        "role": "hvac.fan",
        "label": "front wind level"
       },
+      "sync_on_off": {
+       "start_byte": 1,
+       "start_bit": 6,
+       "bit_length": 2,
+       "label": "sync on off"
+      },
+      "front_wind_mode": {
+       "start_byte": 2,
+       "values": {
+        "0": "0",
+        "1": "2",
+        "2": "4",
+        "3": "6",
+        "4": "1",
+        "5": "3",
+        "6": "5",
+        "7": "7"
+       },
+       "label": "front wind mode"
+      },
+      "fr_seat_blowing_level": {
+       "start_byte": 5,
+       "start_bit": 0,
+       "bit_length": 2,
+       "label": "fr seat blowing level"
+      },
       "hvac_seat_heat_right": {
        "start_byte": 5,
        "start_bit": 2,
        "bit_length": 2,
        "role": "hvac.seat_heat_right",
        "label": "fr seat warmer level"
+      },
+      "fl_seat_blowing_level": {
+       "start_byte": 5,
+       "start_bit": 4,
+       "bit_length": 2,
+       "label": "fl seat blowing level"
       },
       "hvac_seat_heat_left": {
        "start_byte": 5,
@@ -133,6 +165,30 @@
        "role": "outside.temp",
        "unit": "°C",
        "label": "outside temp"
+      }
+     }
+    },
+    "0x06": {
+     "name": "Message 0x06",
+     "signals": {
+      "rear_wind_level": {
+       "start_byte": 0,
+       "start_bit": 0,
+       "bit_length": 4,
+       "label": "rear wind level"
+      },
+      "rear_air_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "rear air on off": 7
+       }
+      },
+      "rear_wind_mode": {
+       "start_byte": 1,
+       "start_bit": 6,
+       "bit_length": 2,
+       "factor": 2.0,
+       "label": "rear wind mode"
       }
      }
     },
@@ -236,17 +292,17 @@
      }
     },
     {
+     "cmd": "0x06",
+     "data": "01",
+     "expect": {
+      "rear_wind_level": 1.0
+     }
+    },
+    {
      "cmd": "0x0A",
      "data": "00 08",
      "expect": {
       "tail box door": true
-     }
-    },
-    {
-     "cmd": "0x01",
-     "data": "01",
-     "expect": {
-      "wheel_key": "volume +"
      }
     }
    ]
@@ -310,6 +366,28 @@
        "role": "hvac.fan",
        "label": "front wind level"
       },
+      "front_wind_mode": {
+       "start_byte": 2,
+       "values": {
+        "0": "0",
+        "1": "2",
+        "2": "6",
+        "3": "4",
+        "4": "5",
+        "5": "3",
+        "6": "1",
+        "7": "7",
+        "8": "0",
+        "9": "0",
+        "10": "0",
+        "11": "0",
+        "12": "0",
+        "13": "0",
+        "14": "0",
+        "15": "0"
+       },
+       "label": "front wind mode"
+      },
       "hvac_power": {
        "start_byte": 4,
        "bits": {
@@ -371,6 +449,12 @@
        "role": "outside.temp",
        "unit": "°C",
        "label": "outside temp"
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 5,
+       "bits": {
+        "auto recirc on off": 0
+       }
       }
      }
     }
@@ -557,6 +641,12 @@
         }
        }
       },
+      "max_acon_off": {
+       "start_byte": 0,
+       "bits": {
+        "max acon off": 5
+       }
+      },
       "hvac_ac": {
        "start_byte": 0,
        "bits": {
@@ -582,6 +672,40 @@
        "role": "hvac.fan",
        "label": "front wind level"
       },
+      "max_defrost_on_off": {
+       "start_byte": 1,
+       "bits": {
+        "max defrost on off": 5
+       }
+      },
+      "sync_on_off": {
+       "start_byte": 1,
+       "bits": {
+        "sync on off": 6
+       }
+      },
+      "front_wind_mode": {
+       "start_byte": 2,
+       "values": {
+        "0": "0",
+        "1": "2",
+        "2": "4",
+        "3": "6",
+        "4": "1",
+        "5": "3",
+        "6": "5",
+        "7": "7",
+        "8": "16",
+        "9": "16",
+        "10": "16",
+        "11": "16",
+        "12": "16",
+        "13": "16",
+        "14": "16",
+        "15": "16"
+       },
+       "label": "front wind mode"
+      },
       "hvac_temp_left": {
        "start_byte": 3,
        "factor": 0.5,
@@ -600,6 +724,12 @@
        "unit": "°C",
        "label": "front right temp"
       },
+      "fr_seat_blowing_level": {
+       "start_byte": 5,
+       "start_bit": 0,
+       "bit_length": 2,
+       "label": "fr seat blowing level"
+      },
       "hvac_seat_heat_right": {
        "start_byte": 5,
        "start_bit": 2,
@@ -607,12 +737,63 @@
        "role": "hvac.seat_heat_right",
        "label": "fr seat warmer level"
       },
+      "fl_seat_blowing_level": {
+       "start_byte": 5,
+       "start_bit": 4,
+       "bit_length": 2,
+       "label": "fl seat blowing level"
+      },
       "hvac_seat_heat_left": {
        "start_byte": 5,
        "start_bit": 6,
        "bit_length": 2,
        "role": "hvac.seat_heat_left",
        "label": "fl seat warmer level"
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "auto recirc on off": 2
+       }
+      }
+     }
+    },
+    "0x06": {
+     "name": "Message 0x06",
+     "signals": {
+      "rear_air_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "rear air on off": 7
+       }
+      },
+      "rear_wind_level": {
+       "start_byte": 1,
+       "start_bit": 0,
+       "bit_length": 4,
+       "label": "rear wind level"
+      },
+      "rear_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "2",
+        "2": "6",
+        "3": "4",
+        "4": "0",
+        "5": "0",
+        "6": "0",
+        "7": "0",
+        "8": "0",
+        "9": "0",
+        "10": "0",
+        "11": "0",
+        "12": "0",
+        "13": "0",
+        "14": "0",
+        "15": "0"
+       },
+       "label": "rear wind mode"
       }
      }
     },
@@ -749,17 +930,17 @@
      }
     },
     {
+     "cmd": "0x06",
+     "data": "80",
+     "expect": {
+      "rear air on off": true
+     }
+    },
+    {
      "cmd": "0x09",
      "data": "01 23",
      "expect": {
       "steering_angle": 291.0
-     }
-    },
-    {
-     "cmd": "0x0A",
-     "data": "04",
-     "expect": {
-      "illlight": true
      }
     }
    ]

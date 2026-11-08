@@ -3,7 +3,7 @@
  "version": 1,
  "id": "tata",
  "name": "Tata",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -37,6 +37,42 @@
     "0x11": {
      "name": "Message 0x11",
      "signals": {
+      "ignition_acc": {
+       "start_byte": 0,
+       "bits": {
+        "acc": {
+         "bit": 0,
+         "role": "ignition.acc"
+        }
+       }
+      },
+      "lights_parking": {
+       "start_byte": 0,
+       "bits": {
+        "illlight": {
+         "bit": 1,
+         "role": "lights.parking"
+        }
+       }
+      },
+      "gear_reverse": {
+       "start_byte": 0,
+       "bits": {
+        "rev": {
+         "bit": 2,
+         "role": "gear.reverse"
+        }
+       }
+      },
+      "gear_park": {
+       "start_byte": 0,
+       "bits": {
+        "park": {
+         "bit": 3,
+         "role": "gear.park"
+        }
+       }
+      },
       "steering_angle": {
        "start_byte": 6,
        "size": 2,
@@ -132,6 +168,12 @@
         }
        }
       },
+      "auto_recirc_on_off": {
+       "start_byte": 1,
+       "bits": {
+        "auto recirc on off": 4
+       }
+      },
       "hvac_ac": {
        "start_byte": 1,
        "bits": {
@@ -139,6 +181,12 @@
          "bit": 6,
          "role": "hvac.ac"
         }
+       }
+      },
+      "eco_on_off": {
+       "start_byte": 1,
+       "bits": {
+        "eco on off": 7
        }
       },
       "hvac_defrost_front": {
@@ -183,7 +231,7 @@
        "size": 2,
        "role": "engine.rpm",
        "unit": "rpm",
-       "label": "engine speed"
+       "label": "rotationl speed"
       },
       "vehicle_speed": {
        "start_byte": 4,
@@ -240,9 +288,9 @@
    "examples": [
     {
      "cmd": "0x11",
-     "data": "00 00 00 00 00 00 01 23",
+     "data": "01",
      "expect": {
-      "steering_angle": -291.0
+      "acc": true
      }
     },
     {
@@ -325,6 +373,12 @@
         }
        }
       },
+      "sync_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "sync on off": 2
+       }
+      },
       "hvac_auto": {
        "start_byte": 0,
        "bits": {
@@ -367,6 +421,26 @@
        "bit_length": 4,
        "role": "hvac.fan",
        "label": "front wind level"
+      },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
+      },
+      "eco_on_off": {
+       "start_byte": 4,
+       "bits": {
+        "eco on off": 1
+       }
       }
      }
     },

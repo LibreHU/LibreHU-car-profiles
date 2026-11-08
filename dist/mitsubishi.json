@@ -3,7 +3,7 @@
  "version": 1,
  "id": "mitsubishi",
  "name": "Mitsubishi",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -248,6 +248,32 @@
         }
        }
       },
+      "turn_right": {
+       "start_byte": 2,
+       "bits": {
+        "right turn light": {
+         "bit": 0,
+         "role": "turn.right"
+        }
+       }
+      },
+      "turn_left": {
+       "start_byte": 2,
+       "bits": {
+        "left turn light": {
+         "bit": 1,
+         "role": "turn.left"
+        }
+       }
+      },
+      "vehicle_speed": {
+       "start_byte": 3,
+       "size": 2,
+       "factor": 0.1,
+       "role": "vehicle.speed",
+       "unit": "km/h",
+       "label": "current speed"
+      },
       "steering_angle": {
        "start_byte": 6,
        "size": 2,
@@ -256,6 +282,13 @@
        "role": "steering.angle",
        "unit": "°",
        "label": "eps"
+      },
+      "engine_rpm": {
+       "start_byte": 9,
+       "size": 2,
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
       }
      }
     },
@@ -340,14 +373,14 @@
        "size": 2,
        "role": "engine.rpm",
        "unit": "rpm",
-       "label": "rotation rate"
+       "label": "rotationl speed"
       },
       "vehicle_speed": {
        "start_byte": 4,
        "size": 2,
        "role": "vehicle.speed",
        "unit": "km/h",
-       "label": "speed"
+       "label": "current speed"
       }
      }
     },
@@ -497,6 +530,33 @@
         "right front door": {
          "bit": 7,
          "role": "door.front_right"
+        }
+       }
+      },
+      "gear_reverse": {
+       "start_byte": 1,
+       "bits": {
+        "rev": {
+         "bit": 0,
+         "role": "gear.reverse"
+        }
+       }
+      },
+      "gear_park": {
+       "start_byte": 1,
+       "bits": {
+        "park": {
+         "bit": 1,
+         "role": "gear.park"
+        }
+       }
+      },
+      "lights_parking": {
+       "start_byte": 1,
+       "bits": {
+        "illlight": {
+         "bit": 2,
+         "role": "lights.parking"
         }
        }
       }
@@ -727,6 +787,18 @@
          "bit": 3,
          "role": "hvac.defrost_rear"
         }
+       }
+      },
+      "max_acon_off": {
+       "start_byte": 0,
+       "bits": {
+        "max acon off": 4
+       }
+      },
+      "sync_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "sync on off": 5
        }
       },
       "hvac_auto": {
@@ -1104,6 +1176,20 @@
        "role": "hvac.fan",
        "label": "front wind level"
       },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
+      },
       "hvac_defrost_rear": {
        "start_byte": 4,
        "bits": {
@@ -1121,9 +1207,18 @@
       "gear_reverse": {
        "start_byte": 1,
        "bits": {
-        "back car state": {
+        "rev": {
          "bit": 0,
          "role": "gear.reverse"
+        }
+       }
+      },
+      "gear_park": {
+       "start_byte": 1,
+       "bits": {
+        "park": {
+         "bit": 1,
+         "role": "gear.park"
         }
        }
       },
@@ -1133,6 +1228,15 @@
         "pstop block state": {
          "bit": 1,
          "role": "handbrake"
+        }
+       }
+      },
+      "lights_parking": {
+       "start_byte": 1,
+       "bits": {
+        "illlight": {
+         "bit": 2,
+         "role": "lights.parking"
         }
        }
       }
@@ -1179,7 +1283,7 @@
      "cmd": "0x24",
      "data": "00 01",
      "expect": {
-      "back car state": true
+      "rev": true
      }
     },
     {

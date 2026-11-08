@@ -3,7 +3,7 @@
  "version": 1,
  "id": "haima",
  "name": "Haima",
- "revision": 2,
+ "revision": 3,
  "engine": ">=2.7",
  "profiles": [
   {
@@ -429,6 +429,12 @@
         }
        }
       },
+      "rear_air_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "rear air on off": 7
+       }
+      },
       "hvac_recirculation": {
        "start_byte": 1,
        "bits": {
@@ -683,6 +689,32 @@
       }
      }
     },
+    "0x68": {
+     "name": "Message 0x68",
+     "signals": {
+      "engine_rpm": {
+       "start_byte": 0,
+       "size": 2,
+       "endian": "little",
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
+      }
+     }
+    },
+    "0x6A": {
+     "name": "Message 0x6A",
+     "signals": {
+      "vehicle_speed": {
+       "start_byte": 0,
+       "size": 2,
+       "endian": "little",
+       "role": "vehicle.speed",
+       "unit": "km/h",
+       "label": "current speed"
+      }
+     }
+    },
     "0x21": {
      "name": "Wheel key",
      "signals": {
@@ -763,10 +795,17 @@
      }
     },
     {
-     "cmd": "0x21",
-     "data": "01",
+     "cmd": "0x68",
+     "data": "23 01",
      "expect": {
-      "wheel_key": "volume +"
+      "engine_rpm": 291.0
+     }
+    },
+    {
+     "cmd": "0x6A",
+     "data": "23 01",
+     "expect": {
+      "vehicle_speed": 291.0
      }
     }
    ]
@@ -1071,6 +1110,20 @@
        "role": "hvac.fan",
        "label": "front wind level"
       },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
+      },
       "hvac_defrost_rear": {
        "start_byte": 4,
        "bits": {
@@ -1087,6 +1140,12 @@
          "bit": 7,
          "role": "hvac.defrost_front"
         }
+       }
+      },
+      "rear_air_on_off": {
+       "start_byte": 6,
+       "bits": {
+        "rear air on off": 7
        }
       }
      }
@@ -1246,6 +1305,28 @@
        "bit_length": 4,
        "role": "hvac.fan",
        "label": "front wind level"
+      },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "2",
+        "2": "6",
+        "3": "4",
+        "4": "5",
+        "5": "0",
+        "6": "0",
+        "7": "0",
+        "8": "0",
+        "9": "0",
+        "10": "0",
+        "11": "0",
+        "12": "0",
+        "13": "0",
+        "14": "0",
+        "15": "0"
+       },
+       "label": "front wind mode"
       }
      }
     },

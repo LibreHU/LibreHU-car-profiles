@@ -3,7 +3,7 @@
  "version": 1,
  "id": "hongqi",
  "name": "Hongqi",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -193,6 +193,18 @@
         }
        }
       },
+      "fl_seat_blowing_level": {
+       "start_byte": 3,
+       "start_bit": 0,
+       "bit_length": 2,
+       "label": "fl seat blowing level"
+      },
+      "fr_seat_blowing_level": {
+       "start_byte": 3,
+       "start_bit": 2,
+       "bit_length": 2,
+       "label": "fr seat blowing level"
+      },
       "hvac_fan": {
        "start_byte": 5,
        "role": "hvac.fan",
@@ -289,6 +301,42 @@
     "0x11": {
      "name": "Message 0x11",
      "signals": {
+      "ignition_acc": {
+       "start_byte": 0,
+       "bits": {
+        "acc": {
+         "bit": 0,
+         "role": "ignition.acc"
+        }
+       }
+      },
+      "lights_parking": {
+       "start_byte": 0,
+       "bits": {
+        "illlight": {
+         "bit": 1,
+         "role": "lights.parking"
+        }
+       }
+      },
+      "gear_reverse": {
+       "start_byte": 0,
+       "bits": {
+        "rev": {
+         "bit": 2,
+         "role": "gear.reverse"
+        }
+       }
+      },
+      "gear_park": {
+       "start_byte": 0,
+       "bits": {
+        "park": {
+         "bit": 3,
+         "role": "gear.park"
+        }
+       }
+      },
       "steering_angle": {
        "start_byte": 6,
        "size": 2,
@@ -366,6 +414,12 @@
     "0x31": {
      "name": "Message 0x31",
      "signals": {
+      "sync_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "sync on off": 2
+       }
+      },
       "hvac_auto": {
        "start_byte": 0,
        "bits": {
@@ -434,6 +488,18 @@
         }
        }
       },
+      "fl_seat_blowing_level": {
+       "start_byte": 3,
+       "start_bit": 4,
+       "bit_length": 2,
+       "label": "fl seat blowing level"
+      },
+      "fr_seat_blowing_level": {
+       "start_byte": 3,
+       "start_bit": 6,
+       "bit_length": 2,
+       "label": "fr seat blowing level"
+      },
       "hvac_fan": {
        "start_byte": 5,
        "role": "hvac.fan",
@@ -492,9 +558,9 @@
    "examples": [
     {
      "cmd": "0x11",
-     "data": "00 00 00 00 00 00 01 23",
+     "data": "01",
      "expect": {
-      "steering_angle": -291.0
+      "acc": true
      }
     },
     {
@@ -506,9 +572,9 @@
     },
     {
      "cmd": "0x31",
-     "data": "08",
+     "data": "04",
      "expect": {
-      "auto light1": true
+      "sync on off": true
      }
     },
     {
@@ -562,6 +628,12 @@
         }
        }
       },
+      "sync_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "sync on off": 2
+       }
+      },
       "hvac_auto": {
        "start_byte": 0,
        "bits": {
@@ -569,6 +641,12 @@
          "bit": 3,
          "role": "hvac.auto"
         }
+       }
+      },
+      "eco_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "eco on off": 4
        }
       },
       "hvac_recirculation": {

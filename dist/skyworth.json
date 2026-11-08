@@ -3,7 +3,7 @@
  "version": 1,
  "id": "skyworth",
  "name": "Skyworth",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -181,6 +181,18 @@
         }
        }
       },
+      "fl_seat_blowing_level": {
+       "start_byte": 3,
+       "start_bit": 4,
+       "bit_length": 2,
+       "label": "fl seat blowing level"
+      },
+      "fr_seat_blowing_level": {
+       "start_byte": 3,
+       "start_bit": 6,
+       "bit_length": 2,
+       "label": "fr seat blowing level"
+      },
       "hvac_fan": {
        "start_byte": 5,
        "signed": true,
@@ -195,6 +207,28 @@
        "role": "outside.temp",
        "unit": "°C",
        "label": "outside temp"
+      },
+      "front_wind_mode": {
+       "start_byte": 4,
+       "values": {
+        "0": "0",
+        "1": "0",
+        "2": "0",
+        "3": "4",
+        "4": "0",
+        "5": "6",
+        "6": "2",
+        "7": "0",
+        "8": "0",
+        "9": "0",
+        "10": "0",
+        "11": "0",
+        "12": "5",
+        "13": "0",
+        "14": "0",
+        "15": "0"
+       },
+       "label": "front wind mode"
       }
      }
     },
@@ -391,6 +425,12 @@
         }
        }
       },
+      "max_defrost_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "max defrost on off": 1
+       }
+      },
       "hvac_dual": {
        "start_byte": 0,
        "bits": {
@@ -407,6 +447,12 @@
          "bit": 3,
          "role": "hvac.auto"
         }
+       }
+      },
+      "max_acon_off": {
+       "start_byte": 0,
+       "bits": {
+        "max acon off": 4
        }
       },
       "hvac_recirculation": {
@@ -442,6 +488,20 @@
        "bit_length": 4,
        "role": "hvac.fan",
        "label": "front wind level"
+      },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
       },
       "outside_temp": {
        "start_byte": 5,
@@ -602,6 +662,12 @@
         }
        }
       },
+      "max_defrost_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "max defrost on off": 1
+       }
+      },
       "hvac_dual": {
        "start_byte": 0,
        "bits": {
@@ -618,6 +684,12 @@
          "bit": 3,
          "role": "hvac.auto"
         }
+       }
+      },
+      "max_acon_off": {
+       "start_byte": 0,
+       "bits": {
+        "max acon off": 4
        }
       },
       "hvac_recirculation": {
@@ -653,6 +725,20 @@
        "bit_length": 4,
        "role": "hvac.fan",
        "label": "front wind level"
+      },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
       },
       "outside_temp": {
        "start_byte": 5,

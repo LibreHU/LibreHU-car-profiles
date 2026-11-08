@@ -3,7 +3,7 @@
  "version": 1,
  "id": "kinglong",
  "name": "King Long",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -61,6 +61,12 @@
         }
        }
       },
+      "max_acon_off": {
+       "start_byte": 0,
+       "bits": {
+        "max acon off": 5
+       }
+      },
       "hvac_ac": {
        "start_byte": 0,
        "bits": {
@@ -86,6 +92,12 @@
        "role": "hvac.temp_left",
        "unit": "°C",
        "label": "front left temp"
+      },
+      "rear_temp": {
+       "start_byte": 3,
+       "offset": -40.0,
+       "max_value": 100,
+       "label": "rear temp"
       }
      }
     }

@@ -3,7 +3,7 @@
  "version": 1,
  "id": "mahindra",
  "name": "Mahindra",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -75,6 +75,15 @@
     "0x11": {
      "name": "Message 0x11",
      "signals": {
+      "ignition_acc": {
+       "start_byte": 0,
+       "bits": {
+        "acc": {
+         "bit": 0,
+         "role": "ignition.acc"
+        }
+       }
+      },
       "lights_parking": {
        "start_byte": 0,
        "bits": {
@@ -90,6 +99,15 @@
         "back car state": {
          "bit": 2,
          "role": "gear.reverse"
+        }
+       }
+      },
+      "gear_park": {
+       "start_byte": 0,
+       "bits": {
+        "park": {
+         "bit": 3,
+         "role": "gear.park"
         }
        }
       },
@@ -257,7 +275,7 @@
        "size": 2,
        "role": "engine.rpm",
        "unit": "rpm",
-       "label": "engine speed"
+       "label": "rotationl speed"
       },
       "vehicle_speed": {
        "start_byte": 4,
@@ -338,9 +356,9 @@
    "examples": [
     {
      "cmd": "0x11",
-     "data": "02",
+     "data": "01",
      "expect": {
-      "illlight": true
+      "acc": true
      }
     },
     {
@@ -531,6 +549,12 @@
         }
        }
       },
+      "eco_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "eco on off": 2
+       }
+      },
       "hvac_auto": {
        "start_byte": 0,
        "bits": {
@@ -566,6 +590,44 @@
          "role": "hvac.power"
         }
        }
+      },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "2",
+        "2": "4",
+        "3": "6",
+        "4": "4",
+        "5": "6",
+        "6": "4",
+        "7": "6",
+        "8": "1",
+        "9": "3",
+        "10": "5",
+        "11": "7",
+        "12": "5",
+        "13": "7",
+        "14": "5",
+        "15": "7",
+        "16": "1",
+        "17": "3",
+        "18": "5",
+        "19": "7",
+        "20": "5",
+        "21": "7",
+        "22": "5",
+        "23": "7",
+        "24": "1",
+        "25": "3",
+        "26": "5",
+        "27": "7",
+        "28": "5",
+        "29": "7",
+        "30": "5",
+        "31": "7"
+       },
+       "label": "front wind mode"
       },
       "hvac_fan": {
        "start_byte": 2,
@@ -651,6 +713,18 @@
        "offset": -40.0,
        "role": "tpms.rear_right.temperature",
        "label": "rear right tire temp value"
+      }
+     }
+    },
+    "0x60": {
+     "name": "Message 0x60",
+     "signals": {
+      "vehicle_speed": {
+       "start_byte": 15,
+       "size": 2,
+       "role": "vehicle.speed",
+       "unit": "km/h",
+       "label": "current speed"
       }
      }
     },

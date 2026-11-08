@@ -3,7 +3,7 @@
  "version": 1,
  "id": "psa",
  "name": "Peugeot, Citroën, DS",
- "revision": 2,
+ "revision": 3,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -429,6 +429,42 @@
     "0x11": {
      "name": "Message 0x11",
      "signals": {
+      "ignition_acc": {
+       "start_byte": 0,
+       "bits": {
+        "acc": {
+         "bit": 0,
+         "role": "ignition.acc"
+        }
+       }
+      },
+      "lights_parking": {
+       "start_byte": 0,
+       "bits": {
+        "illlight": {
+         "bit": 1,
+         "role": "lights.parking"
+        }
+       }
+      },
+      "gear_reverse": {
+       "start_byte": 0,
+       "bits": {
+        "rev": {
+         "bit": 2,
+         "role": "gear.reverse"
+        }
+       }
+      },
+      "gear_park": {
+       "start_byte": 0,
+       "bits": {
+        "park": {
+         "bit": 3,
+         "role": "gear.park"
+        }
+       }
+      },
       "steering_angle": {
        "start_byte": 6,
        "size": 2,
@@ -562,9 +598,9 @@
    "examples": [
     {
      "cmd": "0x11",
-     "data": "00 00 00 00 00 00 01 23",
+     "data": "01",
      "expect": {
-      "steering_angle": -291.0
+      "acc": true
      }
     },
     {
@@ -698,6 +734,32 @@
         "15": "14"
        },
        "label": "front wind level"
+      },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "16",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
+      },
+      "max_acon_off": {
+       "start_byte": 5,
+       "bits": {
+        "max acon off": 3
+       }
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 5,
+       "bits": {
+        "auto recirc on off": 5
+       }
       },
       "hvac_defrost_front": {
        "start_byte": 5,
@@ -947,6 +1009,33 @@
         "right front door": {
          "bit": 7,
          "role": "door.front_right"
+        }
+       }
+      },
+      "gear_reverse": {
+       "start_byte": 1,
+       "bits": {
+        "rev": {
+         "bit": 0,
+         "role": "gear.reverse"
+        }
+       }
+      },
+      "gear_park": {
+       "start_byte": 1,
+       "bits": {
+        "park": {
+         "bit": 1,
+         "role": "gear.park"
+        }
+       }
+      },
+      "lights_parking": {
+       "start_byte": 1,
+       "bits": {
+        "illlight": {
+         "bit": 2,
+         "role": "lights.parking"
         }
        }
       }
@@ -1528,6 +1617,32 @@
        },
        "label": "front wind level"
       },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "16",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
+      },
+      "max_acon_off": {
+       "start_byte": 4,
+       "bits": {
+        "max acon off": 3
+       }
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 4,
+       "bits": {
+        "auto recirc on off": 5
+       }
+      },
       "hvac_defrost_front": {
        "start_byte": 4,
        "bits": {
@@ -1536,6 +1651,12 @@
          "role": "hvac.defrost_front"
         }
        }
+      },
+      "rear_wind_level": {
+       "start_byte": 7,
+       "start_bit": 5,
+       "bit_length": 3,
+       "label": "rear wind level"
       }
      }
     },
@@ -1669,6 +1790,33 @@
         "tail box door": {
          "bit": 3,
          "role": "door.trunk"
+        }
+       }
+      },
+      "lights_parking": {
+       "start_byte": 2,
+       "bits": {
+        "illlight": {
+         "bit": 0,
+         "role": "lights.parking"
+        }
+       }
+      },
+      "gear_park": {
+       "start_byte": 2,
+       "bits": {
+        "park": {
+         "bit": 1,
+         "role": "gear.park"
+        }
+       }
+      },
+      "gear_reverse": {
+       "start_byte": 2,
+       "bits": {
+        "rev": {
+         "bit": 2,
+         "role": "gear.reverse"
         }
        }
       }

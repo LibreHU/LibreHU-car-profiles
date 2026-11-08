@@ -3,7 +3,7 @@
  "version": 1,
  "id": "hyundai-kia",
  "name": "Hyundai, Kia",
- "revision": 2,
+ "revision": 3,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -78,9 +78,46 @@
     }
    ],
    "messages": {
+    "0x1B": {
+     "name": "Message 0x1B",
+     "signals": {
+      "rear_air_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "rear air on off": 0
+       }
+      },
+      "rear_wind_mode": {
+       "start_byte": 0,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "16",
+        "5": "16",
+        "6": "16",
+        "7": "16"
+       },
+       "label": "rear wind mode"
+      },
+      "rear_wind_level": {
+       "start_byte": 2,
+       "start_bit": 0,
+       "bit_length": 4,
+       "label": "rear wind level"
+      }
+     }
+    },
     "0x21": {
      "name": "Message 0x21",
      "signals": {
+      "max_defrost_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "max defrost on off": 0
+       }
+      },
       "hvac_dual": {
        "start_byte": 0,
        "bits": {
@@ -285,10 +322,17 @@
    },
    "examples": [
     {
-     "cmd": "0x21",
-     "data": "04",
+     "cmd": "0x1B",
+     "data": "01",
      "expect": {
-      "dual on off": true
+      "rear air on off": true
+     }
+    },
+    {
+     "cmd": "0x21",
+     "data": "01",
+     "expect": {
+      "max defrost on off": true
      }
     },
     {
@@ -303,13 +347,6 @@
      "data": "12",
      "expect": {
       "outside_temp": 18.0
-     }
-    },
-    {
-     "cmd": "0x2A",
-     "data": "12",
-     "expect": {
-      "hvac_seat_heat_left": 18.0
      }
     }
    ]
@@ -404,6 +441,20 @@
          "role": "hvac.dual"
         }
        }
+      },
+      "front_wind_mode": {
+       "start_byte": 2,
+       "values": {
+        "0": "0",
+        "1": "2",
+        "2": "4",
+        "3": "6",
+        "4": "1",
+        "5": "3",
+        "6": "5",
+        "7": "7"
+       },
+       "label": "front wind mode"
       },
       "outside_temp": {
        "start_byte": 7,
@@ -651,6 +702,12 @@
         }
        }
       },
+      "max_defrost_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "max defrost on off": 1
+       }
+      },
       "hvac_dual": {
        "start_byte": 0,
        "bits": {
@@ -703,12 +760,32 @@
        "role": "hvac.fan",
        "label": "front wind level"
       },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
+      },
       "hvac_seat_heat_left": {
        "start_byte": 4,
        "start_bit": 4,
        "bit_length": 2,
        "role": "hvac.seat_heat_left",
        "label": "fl seat warmer level"
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 4,
+       "bits": {
+        "auto recirc on off": 7
+       }
       }
      }
     },
@@ -2186,6 +2263,12 @@
         }
        }
       },
+      "sync_on_off": {
+       "start_byte": 3,
+       "bits": {
+        "sync on off": 1
+       }
+      },
       "hvac_auto": {
        "start_byte": 3,
        "bits": {
@@ -2194,6 +2277,13 @@
          "role": "hvac.auto"
         }
        }
+      },
+      "front_wind_mode": {
+       "start_byte": 3,
+       "start_bit": 3,
+       "bit_length": 2,
+       "factor": 2.0,
+       "label": "front wind mode"
       },
       "hvac_defrost_rear": {
        "start_byte": 3,
@@ -2221,6 +2311,11 @@
          "role": "hvac.recirculation"
         }
        }
+      },
+      "auto_recirc_on_off": {
+       "start_byte": 6,
+       "signed": true,
+       "label": "auto recirc on off"
       }
      }
     },
@@ -3255,6 +3350,12 @@
         }
        }
       },
+      "sync_on_off": {
+       "start_byte": 3,
+       "bits": {
+        "sync on off": 1
+       }
+      },
       "hvac_auto": {
        "start_byte": 3,
        "bits": {
@@ -3263,6 +3364,12 @@
          "role": "hvac.auto"
         }
        }
+      },
+      "front_wind_mode": {
+       "start_byte": 3,
+       "size": 4,
+       "factor": 0.0,
+       "label": "front wind mode"
       },
       "hvac_defrost_rear": {
        "start_byte": 3,
@@ -3290,6 +3397,28 @@
          "role": "hvac.recirculation"
         }
        }
+      },
+      "rear_temp": {
+       "start_byte": 4,
+       "factor": 0.5,
+       "offset": 17.0,
+       "signed": true,
+       "label": "rear temp"
+      },
+      "rear_wind_level": {
+       "start_byte": 5,
+       "signed": true,
+       "label": "rear wind level"
+      },
+      "rear_wind_mode": {
+       "start_byte": 6,
+       "values": {
+        "0": "4",
+        "1": "2",
+        "2": "6",
+        "3": "4"
+       },
+       "label": "rear wind mode"
       }
      }
     },
@@ -3650,6 +3779,32 @@
        "bit_length": 4,
        "role": "hvac.fan",
        "label": "front wind level"
+      },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
+      },
+      "rear_wind_level": {
+       "start_byte": 5,
+       "start_bit": 0,
+       "bit_length": 4,
+       "label": "rear wind level"
+      },
+      "rear_air_on_off": {
+       "start_byte": 5,
+       "bits": {
+        "rear air on off": 7
+       }
       }
      }
     },
@@ -3659,9 +3814,18 @@
       "gear_reverse": {
        "start_byte": 0,
        "bits": {
-        "back car state": {
+        "rev": {
          "bit": 0,
          "role": "gear.reverse"
+        }
+       }
+      },
+      "gear_park": {
+       "start_byte": 0,
+       "bits": {
+        "park": {
+         "bit": 1,
+         "role": "gear.park"
         }
        }
       },
@@ -3671,6 +3835,15 @@
         "pstop block state": {
          "bit": 1,
          "role": "handbrake"
+        }
+       }
+      },
+      "lights_parking": {
+       "start_byte": 0,
+       "bits": {
+        "illlight": {
+         "bit": 2,
+         "role": "lights.parking"
         }
        }
       },
@@ -3768,7 +3941,7 @@
      "cmd": "0x24",
      "data": "01",
      "expect": {
-      "back car state": true
+      "rev": true
      }
     },
     {

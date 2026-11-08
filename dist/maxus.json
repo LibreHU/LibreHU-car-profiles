@@ -3,7 +3,7 @@
  "version": 1,
  "id": "maxus",
  "name": "Maxus",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -103,6 +103,23 @@
     }
    ],
    "messages": {
+    "0x22": {
+     "name": "Message 0x22",
+     "signals": {
+      "rear_wind_level": {
+       "start_byte": 0,
+       "start_bit": 0,
+       "bit_length": 4,
+       "label": "rear wind level"
+      },
+      "rear_air_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "rear air on off": 7
+       }
+      }
+     }
+    },
     "0x23": {
      "name": "Message 0x23",
      "signals": {
@@ -341,6 +358,13 @@
    },
    "examples": [
     {
+     "cmd": "0x22",
+     "data": "01",
+     "expect": {
+      "rear_wind_level": 1.0
+     }
+    },
+    {
      "cmd": "0x23",
      "data": "01",
      "expect": {
@@ -359,13 +383,6 @@
      "data": "12",
      "expect": {
       "tpms_front_left_pressure": 49.5
-     }
-    },
-    {
-     "cmd": "0x26",
-     "data": "12",
-     "expect": {
-      "front_left_distance": -12.0
      }
     }
    ]

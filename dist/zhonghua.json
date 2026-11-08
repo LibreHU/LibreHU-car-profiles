@@ -3,7 +3,7 @@
  "version": 1,
  "id": "zhonghua",
  "name": "Brilliance",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -141,6 +141,12 @@
          "bit": 0,
          "role": "hvac.ac"
         }
+       }
+      },
+      "rear_air_on_off": {
+       "start_byte": 0,
+       "bits": {
+        "rear air on off": 4
        }
       },
       "hvac_power": {
@@ -281,6 +287,12 @@
         }
        }
       },
+      "max_acon_off": {
+       "start_byte": 0,
+       "bits": {
+        "max acon off": 2
+       }
+      },
       "hvac_recirculation": {
        "start_byte": 0,
        "bits": {
@@ -314,6 +326,20 @@
        "bit_length": 4,
        "role": "hvac.fan",
        "label": "front wind level"
+      },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
       }
      }
     },
@@ -531,6 +557,26 @@
        "bit_length": 4,
        "role": "hvac.fan",
        "label": "front wind level"
+      },
+      "front_wind_mode": {
+       "start_byte": 1,
+       "values": {
+        "0": "0",
+        "1": "4",
+        "2": "2",
+        "3": "6",
+        "4": "1",
+        "5": "5",
+        "6": "3",
+        "7": "7"
+       },
+       "label": "front wind mode"
+      },
+      "max_acon_off": {
+       "start_byte": 5,
+       "bits": {
+        "max acon off": 7
+       }
       }
      }
     },

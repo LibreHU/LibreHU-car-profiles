@@ -3,7 +3,7 @@
  "version": 1,
  "id": "dayun",
  "name": "Dayun",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -165,6 +165,17 @@
       }
      }
     },
+    "0x25": {
+     "name": "Message 0x25",
+     "signals": {
+      "rear_wind_level": {
+       "start_byte": 0,
+       "start_bit": 0,
+       "bit_length": 4,
+       "label": "rear wind level"
+      }
+     }
+    },
     "0x29": {
      "name": "Message 0x29",
      "signals": {
@@ -210,17 +221,17 @@
      }
     },
     {
+     "cmd": "0x25",
+     "data": "01",
+     "expect": {
+      "rear_wind_level": 1.0
+     }
+    },
+    {
      "cmd": "0x29",
      "data": "23 01",
      "expect": {
       "steering_angle": 20.17
-     }
-    },
-    {
-     "cmd": "0x20",
-     "data": "12",
-     "expect": {
-      "wheel_key": 18.0
      }
     }
    ]

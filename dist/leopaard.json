@@ -3,7 +3,7 @@
  "version": 1,
  "id": "leopaard",
  "name": "Leopaard",
- "revision": 1,
+ "revision": 2,
  "engine": ">=2.0",
  "profiles": [
   {
@@ -484,6 +484,18 @@
          "role": "door.front_left"
         }
        }
+      }
+     }
+    },
+    "0x50": {
+     "name": "Message 0x50",
+     "signals": {
+      "engine_rpm": {
+       "start_byte": 0,
+       "size": 2,
+       "role": "engine.rpm",
+       "unit": "rpm",
+       "label": "rotationl speed"
       }
      }
     },
