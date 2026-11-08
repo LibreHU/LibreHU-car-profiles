@@ -465,6 +465,18 @@ def main():
     src = a[a.index("--src") + 1] if "--src" in a else None
     brands = a[a.index("--brands") + 1] if "--brands" in a else None
     receive = json.load(open(a[a.index("--receive") + 1], encoding="utf-8")) if "--receive" in a else {}
+    if "--coverage" in a:
+        # The catalogue side of the site's bars (tools/build_packs.py, dist/index.json « coverage »): numbers only, no
+        # names: each model (series:model) with its box makers, each decoder with its models.
+        models, decoders = collections.defaultdict(set), collections.defaultdict(set)
+        for r in json.load(open(resolve_json, encoding="utf-8")):
+            key = f"{r['series']}:{r['model']}"
+            models[key].add((r.get("boxName") or "").lower())
+            if r.get("protocol"):
+                decoders[r["protocol"].rsplit(".", 1)[-1]].add(key)
+        json.dump({"source": APP, "models": {k: sorted(v) for k, v in sorted(models.items())},
+                   "decoders": {k: sorted(v) for k, v in sorted(decoders.items())}},
+                  open(a[a.index("--coverage") + 1], "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
     rows = [r for r in json.load(open(resolve_json, encoding="utf-8")) if r.get("protocol")]
     by_cls = collections.defaultdict(list)
     for r in rows:
