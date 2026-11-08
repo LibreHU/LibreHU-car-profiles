@@ -4,7 +4,7 @@
  "engine": ">=2.0",
  "id": "hyundai-kia-hiworld",
  "name": "Hyundai, Kia (Hiworld HYP001)",
- "description": "Hiworld box, protocol HYP001 (Hyundai / Kia full compatible), from Hiworld's own app (HdKoreaProtocol). Choose your car: its box needs its car type. Not tried on a car yet. Cars marked « (guessed) » have no decoder in Car Info: this one is their make's with the same box maker, never checked for them.",
+ "description": "Hiworld box, protocol HYP001 (Hyundai / Kia full compatible), from Hiworld's own app (HdKoreaProtocol). Choose your car: its box needs its car type. Not tried on a car yet. Cars marked « (same protocol) » have no decoder in Car Info: their box maker's protocol document is the one this decoder implements.",
  "box": "hiworld",
  "baud": 38400,
  "link": {
@@ -933,28 +933,61 @@
    }
   },
   {
-   "name": "Hyundai tucson 2015-NOW, medium-low trim (guessed)"
+   "name": "Hyundai tucson 2015-NOW, medium-low trim (same protocol)"
   },
   {
-   "name": "Hyundai tucson 2015-NOW, high trim (guessed)"
+   "name": "Hyundai tucson 2015-NOW, high trim (same protocol)"
   },
   {
-   "name": "Hyundai ix35 2010-2015, high trim (guessed)"
+   "name": "Hyundai ix35 2010-2015, high trim (same protocol)"
   },
   {
-   "name": "Hyundai sonata 2010-2015, all trims (guessed)"
+   "name": "Hyundai sonata 2010-2015, all trims (same protocol)"
   },
   {
-   "name": "Hyundai lingdong 2016-now, high trim (guessed)"
+   "name": "Hyundai lingdong 2016-now, high trim (same protocol)"
   },
   {
-   "name": "Hyundai ix45 2015-2017, medium-low trim (guessed)"
+   "name": "Hyundai ix45 2015-2017, medium-low trim (same protocol)"
   },
   {
-   "name": "Hyundai ix45 2015-2017, high trim (guessed)"
+   "name": "Hyundai ix45 2015-2017, high trim (same protocol)"
   },
   {
-   "name": "Hyundai santafe 20062012, all trims (guessed)"
+   "name": "Hyundai santafe 20062012, all trims (same protocol)"
+  },
+  {
+   "name": "SsangYong Korando 2013, all trims (same protocol)"
+  },
+  {
+   "name": "SsangYong Korando 20112019, all trims (same protocol)"
+  },
+  {
+   "name": "SsangYong Korando 20192022, all trims (same protocol)"
+  },
+  {
+   "name": "SsangYong Korando Turismo 20102019, all trims (same protocol)"
+  },
+  {
+   "name": "SsangYong Tivoli 2015~Present, all trims (same protocol)"
+  },
+  {
+   "name": "SsangYong Tivoli Air 2016~Present, all trims (same protocol)"
+  },
+  {
+   "name": "SsangYong Actyon 20052011, all trims (same protocol)"
+  },
+  {
+   "name": "SsangYong Kyron 20052011, all trims (same protocol)"
+  },
+  {
+   "name": "SsangYong Rexton G4 20172021, all trims (same protocol)"
+  },
+  {
+   "name": "SsangYong Rexton Sports 2018~Present, all trims (same protocol)"
+  },
+  {
+   "name": "SsangYong Rodius 20042018, all trims (same protocol)"
   }
  ],
  "wheel_keys": {

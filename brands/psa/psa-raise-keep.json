@@ -4,7 +4,7 @@
  "engine": ">=2.0",
  "id": "psa-raise-keep",
  "name": "Peugeot, Citroën (Raise PSA, original screen kept)",
- "description": "Raise (RZC) box for PSA keeping the original small screen (RePsaProtocol_KeepOriginalDisplay). Car Info's decoder (com.can.activity 1.0.3991) for these boxes; cars and car types (0xA7) from its managers and buildCarTypePacket. FD framing, 19200 bit/s, no acknowledgement; car type 0xA7 [05, trim, 00] every second. Not tried on a car yet.",
+ "description": "Raise (RZC) box for PSA keeping the original small screen (RePsaProtocol_KeepOriginalDisplay). Car Info's decoder (com.can.activity 1.0.3991) for these boxes; cars and car types (0xA7) from its managers and buildCarTypePacket. FD framing, 19200 bit/s, no acknowledgement; car type 0xA7 [05, trim, 00] every second. Not tried on a car yet. Cars marked « (same protocol) » have no decoder in Car Info: their box maker's protocol document is the one this decoder implements.",
  "box": "raise-fd",
  "baud": 19200,
  "link": {
@@ -110,6 +110,15 @@
    "send": {
     "car type": "05 02 00"
    }
+  },
+  {
+   "name": "Citroën c quatre 20152018, all trims (same protocol)"
+  },
+  {
+   "name": "Citroën berlingo 2008201803, all trims (same protocol)"
+  },
+  {
+   "name": "Citroën berlingo 2017202103, all trims (same protocol)"
   }
  ],
  "wheel_keys": {
