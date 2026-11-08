@@ -2263,5 +2263,14 @@
    "size": 44486,
    "sha256": "9d1cc311bad493660e4588906bf9a2fe22bd4dcd80b629b98847da719804a3ce"
   }
- ]
+ ],
+ "coverage": {
+  "source": "Car Info 1.0.3991 (com.can.activity)",
+  "models": 1797,
+  "box_link": 1792,
+  "decoded": 1689,
+  "profiles": 520,
+  "generated": 510,
+  "cars": 6115
+ }
 }
