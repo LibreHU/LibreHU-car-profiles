@@ -3,6 +3,24 @@
  "version": 1,
  "packs": [
   {
+   "id": "boxes",
+   "name": "CAN box types",
+   "revision": 1,
+   "engine": ">=2.6",
+   "makes": [],
+   "profiles": [
+    "hiworld-aa55-generic",
+    "hiworld-generic",
+    "raise-fd-generic",
+    "raise-fd2-generic",
+    "raise-generic"
+   ],
+   "cars": 0,
+   "file": "boxes.json",
+   "size": 5406,
+   "sha256": "9bf5489274dc2a10ecfb5eda702025d559589d2d2ac1a04474dc56451b201883"
+  },
+  {
    "id": "honda",
    "name": "Honda",
    "revision": 1,

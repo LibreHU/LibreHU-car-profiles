@@ -1,0 +1,224 @@
+{
+ "format": "librehu-car-pack",
+ "version": 1,
+ "id": "boxes",
+ "name": "CAN box types",
+ "revision": 1,
+ "engine": ">=2.6",
+ "profiles": [
+  {
+   "format": "librehu-can-vehicle",
+   "version": 2,
+   "engine": ">=2.6",
+   "id": "hiworld-aa55-generic",
+   "name": "Hiworld (AA 55): any car (raw messages)",
+   "description": "Hiworld's other framing (AA 55 LEN CMD data CS, same checksum, no acknowledgement), any car: no decoding, raw messages. Also the description of this box type (\"box\": \"hiworld-aa55\").",
+   "box": "hiworld-aa55",
+   "box_type": {
+    "name": "Hiworld (AA 55)",
+    "aliases": []
+   },
+   "framing": {
+    "head": "AA 55",
+    "order": "len,cmd",
+    "len_offset": 0,
+    "checksum": {
+     "algo": "sum",
+     "over": "len,cmd,data",
+     "size": 1,
+     "add": -1,
+     "xor": 0
+    },
+    "no_ack_for": [],
+    "box_answers": [],
+    "baud": 38400
+   },
+   "link": {
+    "ack": false,
+    "send": []
+   },
+   "messages": {}
+  },
+  {
+   "format": "librehu-can-vehicle",
+   "version": 2,
+   "engine": ">=2.6",
+   "id": "hiworld-generic",
+   "name": "Hiworld (5A A5): any car (raw messages)",
+   "description": "Hiworld box (5A A5 LEN CMD data CS, CS = LEN + CMD + data - 1, 38400 bit/s), any car: no decoding, the CAN tab shows the raw messages. The head unit acknowledges every message of the box (FF <cmd>), as Hiworld's app does. Without a car profile the box gets no car type: it repeats its messages once a second and sends no steering wheel key. Also the description of this box type for the car profiles that name it (\"box\": \"hiworld\").",
+   "box": "hiworld",
+   "box_type": {
+    "name": "Hiworld (5A A5)",
+    "aliases": [
+     "wy"
+    ]
+   },
+   "framing": {
+    "head": "5A A5",
+    "order": "len,cmd",
+    "len_offset": 0,
+    "checksum": {
+     "algo": "sum",
+     "over": "len,cmd,data",
+     "size": 1,
+     "add": -1,
+     "xor": 0
+    },
+    "ack": {
+     "cmd": "0xFF"
+    },
+    "no_ack_for": [
+     "0xFF",
+     "0xFE"
+    ],
+    "box_answers": [],
+    "baud": 38400
+   },
+   "link": {
+    "ack": true,
+    "send": []
+   },
+   "messages": {}
+  },
+  {
+   "format": "librehu-can-vehicle",
+   "version": 2,
+   "engine": ">=2.6",
+   "id": "raise-fd-generic",
+   "name": "Raise (FD, 8-bit sum): any car (raw messages)",
+   "description": "Raise box with the FD framing (FD LEN CMD data CS, LEN = data + 3, CS = LEN + CMD + data), no acknowledgement, hello 81 01 at the start as the PSA Raise profiles do. Any car: no decoding, raw messages. Also the description of this box type (\"box\": \"raise-fd\").",
+   "box": "raise-fd",
+   "box_type": {
+    "name": "Raise (FD, 8-bit sum)",
+    "aliases": []
+   },
+   "framing": {
+    "head": "FD",
+    "order": "len,cmd",
+    "len_offset": 3,
+    "checksum": {
+     "algo": "sum",
+     "over": "len,cmd,data",
+     "size": 1,
+     "add": 0,
+     "xor": 0
+    },
+    "no_ack_for": [],
+    "box_answers": [],
+    "baud": 38400
+   },
+   "link": {
+    "ack": false,
+    "send": [
+     {
+      "name": "connect",
+      "cmd": "0x81",
+      "data": "01",
+      "first_ms": 500,
+      "every_ms": 0
+     }
+    ]
+   },
+   "messages": {}
+  },
+  {
+   "format": "librehu-can-vehicle",
+   "version": 2,
+   "engine": ">=2.6",
+   "id": "raise-fd2-generic",
+   "name": "Raise (FD, 16-bit sum): any car (raw messages)",
+   "description": "Raise box with the FD framing and a 16-bit sum (FD LEN CMD data CSH CSL, LEN = data + 4), no acknowledgement. Any car: no decoding, raw messages. Also the description of this box type (\"box\": \"raise-fd2\").",
+   "box": "raise-fd2",
+   "box_type": {
+    "name": "Raise (FD, 16-bit sum)",
+    "aliases": []
+   },
+   "framing": {
+    "head": "FD",
+    "order": "len,cmd",
+    "len_offset": 4,
+    "checksum": {
+     "algo": "sum",
+     "over": "len,cmd,data",
+     "size": 2,
+     "add": 0,
+     "xor": 0
+    },
+    "no_ack_for": [],
+    "box_answers": [],
+    "baud": 38400
+   },
+   "link": {
+    "ack": false,
+    "send": []
+   },
+   "messages": {}
+  },
+  {
+   "format": "librehu-can-vehicle",
+   "version": 2,
+   "engine": ">=2.6",
+   "id": "raise-generic",
+   "name": "Raise (2E): any car (raw messages)",
+   "description": "Raise (RZC) box and most other makers (Simple, Bagoo, Binary, Oudi, Luzheng…): 2E CMD LEN data CS, CS = (CMD + LEN + data) XOR FF, 38400 bit/s; the head unit acknowledges each message with the byte FF and says hello (81 01) at the start, as the Raise profiles do. Any car: no decoding, raw messages. Also the description of this box type (\"box\": \"raise\" or one of its makers).",
+   "box": "raise",
+   "box_type": {
+    "name": "Raise (2E)",
+    "aliases": [
+     "simple",
+     "bagoo",
+     "binary",
+     "oudi",
+     "luzheng",
+     "keyichuang",
+     "xinbas",
+     "dogen",
+     "hcy",
+     "bsj",
+     "cyt",
+     "autoai",
+     "rcw",
+     "hechi",
+     "xfy",
+     "hangdao"
+    ]
+   },
+   "framing": {
+    "head": "2E",
+    "order": "cmd,len",
+    "len_offset": 0,
+    "checksum": {
+     "algo": "sum",
+     "over": "cmd,len,data",
+     "size": 1,
+     "add": 0,
+     "xor": "0xFF"
+    },
+    "ack": {
+     "raw": "FF"
+    },
+    "no_ack_for": [],
+    "box_answers": [
+     "FF",
+     "F0",
+     "F3",
+     "FC"
+    ],
+    "baud": 38400
+   },
+   "link": {
+    "ack": true,
+    "send": [
+     {
+      "name": "connect",
+      "cmd": "0x81",
+      "data": "01",
+      "first_ms": 500,
+      "every_ms": 0
+     }
+    ]
+   },
+   "messages": {}
+  }
+ ]
+}
