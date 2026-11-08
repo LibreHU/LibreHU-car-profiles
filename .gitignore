@@ -1,0 +1,3 @@
+# Python bytecode of tools/ (written when the tools run)
+__pycache__/
+*.pyc
