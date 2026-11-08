@@ -5,7 +5,7 @@
   {
    "id": "boxes",
    "name": "CAN box types",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.7",
    "makes": [],
    "profiles": [
@@ -13,6 +13,7 @@
     "cyt-55-generic",
     "hiworld-aa55-generic",
     "hiworld-generic",
+    "ksw-mcu-generic",
     "raise-fd-generic",
     "raise-fd2-generic",
     "raise-generic",
@@ -20,8 +21,8 @@
    ],
    "cars": 0,
    "file": "boxes.json",
-   "size": 8832,
-   "sha256": "c8685deec29313a00a6ea074ae02ecec56ec6e8b8ee331a1a8299151da2d2ffe"
+   "size": 10093,
+   "sha256": "9ddfd63545e6614d83236f3de9db91705afad952f23e3a90b249cee1adbd5ffd"
   },
   {
    "id": "acura",
@@ -250,8 +251,8 @@
   {
    "id": "bmw",
    "name": "BMW",
-   "revision": 4,
-   "engine": ">=2.0",
+   "revision": 5,
+   "engine": ">=2.8",
    "makes": [
     "BMW"
    ],
@@ -259,6 +260,7 @@
     "bmw-hdbmw",
     "bmw-hdbmw02",
     "bmw-hdbmw03",
+    "bmw-ksw-cic",
     "bmw-lzbmwe46",
     "bmw-lzbmwe90",
     "bmw-lzbmwmini",
@@ -270,10 +272,10 @@
     "bmw-rebmw",
     "bmw-spbmw"
    ],
-   "cars": 76,
+   "cars": 77,
    "file": "bmw.json",
-   "size": 51322,
-   "sha256": "5cb8765fe0ae6db7f4fa7801acef29fa5aed4edb38bd851a6171ccd87f46d855"
+   "size": 60067,
+   "sha256": "f72befd692368ca6ea0f12ae667935275ddcdcbfb6ab501a7d362c912443e6a4"
   },
   {
    "id": "buick",
@@ -2284,8 +2286,8 @@
   "tried": [
    "Clio 3"
   ],
-  "profiles": 521,
+  "profiles": 522,
   "generated": 511,
-  "cars": 6415
+  "cars": 6416
  }
 }
