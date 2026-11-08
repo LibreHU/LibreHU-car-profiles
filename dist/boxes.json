@@ -3,9 +3,87 @@
  "version": 1,
  "id": "boxes",
  "name": "CAN box types",
- "revision": 1,
- "engine": ">=2.6",
+ "revision": 2,
+ "engine": ">=2.7",
  "profiles": [
+  {
+   "format": "librehu-can-vehicle",
+   "version": 2,
+   "engine": ">=2.7",
+   "id": "cyt-55-fixed-generic",
+   "name": "CYT (55, 8-byte frames): any car (raw messages)",
+   "description": "CYT box with 8-byte frames: 55 D0..D5 AA from the box (no length, no checksum, AA at the end; the message's command is 55), 55 CMD LEN data CS to it (CS = (CMD + LEN + data) xor FF). Read from Car Info's decoders CytBydF3Protocol and CytBydS6LowProtocol (their deframer, parsePacket). No acknowledgement. Any car: no decoding, raw messages. Also the description of this box type (\"box\": \"cyt-55-fixed\").",
+   "box": "cyt-55-fixed",
+   "box_type": {
+    "name": "CYT (55, 8-byte frames)",
+    "aliases": []
+   },
+   "framing": {
+    "head": "",
+    "starts": [
+     "0x55"
+    ],
+    "order": "cmd",
+    "data_len": 6,
+    "tail": "AA",
+    "checksum": {
+     "algo": "none"
+    },
+    "out": {
+     "head": "55",
+     "order": "cmd,len",
+     "len_offset": 0,
+     "checksum": {
+      "algo": "sum",
+      "over": "cmd,len,data",
+      "size": 1,
+      "add": 0,
+      "xor": "0xFF"
+     }
+    },
+    "no_ack_for": [],
+    "box_answers": [],
+    "baud": 38400
+   },
+   "link": {
+    "ack": false,
+    "send": []
+   },
+   "messages": {}
+  },
+  {
+   "format": "librehu-can-vehicle",
+   "version": 2,
+   "engine": ">=2.7",
+   "id": "cyt-55-generic",
+   "name": "CYT (55 / 57, no checksum): any car (raw messages)",
+   "description": "CYT box whose frames have no head and no checksum: CMD LEN data, CMD 55 or 57 (both ways). Read from Car Info's decoders CytFordProtocol and CytAirFordProtocol (their deframer, parsePacket). No acknowledgement. Any car: no decoding, raw messages. Also the description of this box type (\"box\": \"cyt-55\").",
+   "box": "cyt-55",
+   "box_type": {
+    "name": "CYT (55 / 57, no checksum)",
+    "aliases": []
+   },
+   "framing": {
+    "head": "",
+    "starts": [
+     "0x55",
+     "0x57"
+    ],
+    "order": "cmd,len",
+    "len_offset": 0,
+    "checksum": {
+     "algo": "none"
+    },
+    "no_ack_for": [],
+    "box_answers": [],
+    "baud": 38400
+   },
+   "link": {
+    "ack": false,
+    "send": []
+   },
+   "messages": {}
+  },
   {
    "format": "librehu-can-vehicle",
    "version": 2,
@@ -217,6 +295,51 @@
       "every_ms": 0
      }
     ]
+   },
+   "messages": {}
+  },
+  {
+   "format": "librehu-can-vehicle",
+   "version": 2,
+   "engine": ">=2.7",
+   "id": "simple-aa55-len-generic",
+   "name": "Simple (AA 55, length as command): any car (raw messages)",
+   "description": "Simple box whose frames have no command byte: AA 55 LEN data CS from the box, 55 AA LEN data CS to it, CS = (LEN + data) - 1; the length tells the message (6: Audi's misc, keys and steering message). Read from Car Info's decoder SpAudiProtocol (its deframer, parsePacket). No acknowledgement. Any car: no decoding, raw messages. Also the description of this box type (\"box\": \"simple-aa55-len\").",
+   "box": "simple-aa55-len",
+   "box_type": {
+    "name": "Simple (AA 55, length as command)",
+    "aliases": []
+   },
+   "framing": {
+    "head": "AA 55",
+    "order": "len",
+    "len_offset": 0,
+    "checksum": {
+     "algo": "sum",
+     "over": "len,data",
+     "size": 1,
+     "add": -1,
+     "xor": 0
+    },
+    "out": {
+     "head": "55 AA",
+     "order": "len",
+     "len_offset": 0,
+     "checksum": {
+      "algo": "sum",
+      "over": "len,data",
+      "size": 1,
+      "add": -1,
+      "xor": 0
+     }
+    },
+    "no_ack_for": [],
+    "box_answers": [],
+    "baud": 38400
+   },
+   "link": {
+    "ack": false,
+    "send": []
    },
    "messages": {}
   }

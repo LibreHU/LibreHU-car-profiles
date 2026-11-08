@@ -5,20 +5,23 @@
   {
    "id": "boxes",
    "name": "CAN box types",
-   "revision": 1,
-   "engine": ">=2.6",
+   "revision": 2,
+   "engine": ">=2.7",
    "makes": [],
    "profiles": [
+    "cyt-55-fixed-generic",
+    "cyt-55-generic",
     "hiworld-aa55-generic",
     "hiworld-generic",
     "raise-fd-generic",
     "raise-fd2-generic",
-    "raise-generic"
+    "raise-generic",
+    "simple-aa55-len-generic"
    ],
    "cars": 0,
    "file": "boxes.json",
-   "size": 5406,
-   "sha256": "9bf5489274dc2a10ecfb5eda702025d559589d2d2ac1a04474dc56451b201883"
+   "size": 8832,
+   "sha256": "c8685deec29313a00a6ea074ae02ecec56ec6e8b8ee331a1a8299151da2d2ffe"
   },
   {
    "id": "acura",
@@ -55,8 +58,8 @@
   {
    "id": "audi",
    "name": "Audi",
-   "revision": 1,
-   "engine": ">=2.0",
+   "revision": 2,
+   "engine": ">=2.7",
    "makes": [
     "Audi"
    ],
@@ -68,12 +71,13 @@
     "audi-oudiaudia6",
     "audi-oudiaudiq5",
     "audi-reaudi",
+    "audi-spaudi",
     "audi-spaudi2"
    ],
-   "cars": 42,
+   "cars": 49,
    "file": "audi.json",
-   "size": 35923,
-   "sha256": "8b0c47f06ce3c5236b1bcccb4a3aad1d3c19080a5cf8b19b81f09857f17dadb6"
+   "size": 37965,
+   "sha256": "4adff429c28cfbf84e2303b98a28bb91a7d96323825374a0d1b3bf98147ee1c2"
   },
   {
    "id": "baojun",
@@ -161,8 +165,8 @@
   {
    "id": "besturn",
    "name": "Besturn",
-   "revision": 1,
-   "engine": ">=2.0",
+   "revision": 2,
+   "engine": ">=2.7",
    "makes": [
     "Besturn"
    ],
@@ -178,12 +182,13 @@
     "besturn-hdbentengx40",
     "besturn-rebenteng",
     "besturn-rebenteng09b50",
-    "besturn-rebenteng14b70"
+    "besturn-rebenteng14b70",
+    "besturn-rebentengx80"
    ],
-   "cars": 35,
+   "cars": 36,
    "file": "besturn.json",
-   "size": 45956,
-   "sha256": "45a8d5120224116ba85c9dd507ee4997ae7bf113be919ea00710d1cfb9a02ff8"
+   "size": 49312,
+   "sha256": "86c19d0fc3027d8a767976ada0a61798435658e6704a8245b24aab59123d0a72"
   },
   {
    "id": "bisu",
@@ -294,13 +299,15 @@
   {
    "id": "byd",
    "name": "BYD",
-   "revision": 1,
-   "engine": ">=2.0",
+   "revision": 2,
+   "engine": ">=2.7",
    "makes": [
     "BYD"
    ],
    "profiles": [
+    "byd-cytbydf3",
     "byd-cytbydf6",
+    "byd-cytbyds6low",
     "byd-dgbydf6",
     "byd-dgbydg6",
     "byd-dgbydm6",
@@ -311,10 +318,10 @@
     "byd-oudibyd",
     "byd-rcwbyd"
    ],
-   "cars": 69,
+   "cars": 73,
    "file": "byd.json",
-   "size": 46323,
-   "sha256": "e63f6562e4f13bdc863d4889a6fd0bddd3c77a9c77022c2a6118c3df0e090de8"
+   "size": 51911,
+   "sha256": "928610dd2e5d015bba6cfc2b6472074d6def9d101972aab472e508826182ca14"
   },
   {
    "id": "cadillac",
@@ -651,8 +658,8 @@
   {
    "id": "ford",
    "name": "Ford",
-   "revision": 1,
-   "engine": ">=2.0",
+   "revision": 2,
+   "engine": ">=2.7",
    "makes": [
     "Ford",
     "Lincoln",
@@ -661,6 +668,8 @@
    "profiles": [
     "ford-binaryford",
     "ford-bsjford",
+    "ford-cytairford",
+    "ford-cytford",
     "ford-dogen",
     "ford-dogenzs",
     "ford-hd18ecosport",
@@ -681,10 +690,10 @@
     "ford-spford150fdss04a",
     "ford-spmondeo"
    ],
-   "cars": 428,
+   "cars": 445,
    "file": "ford.json",
-   "size": 144595,
-   "sha256": "df6865ac0e55c478ff9cb38a9aab349f96a8c490445953bf529768e27202d529"
+   "size": 150182,
+   "sha256": "f885c65527bb31f37b459798507fef05031c5e764b16dce9d7b8c4b639a1323f"
   },
   {
    "id": "foton",
@@ -787,8 +796,8 @@
   {
    "id": "haima",
    "name": "Haima",
-   "revision": 1,
-   "engine": ">=2.0",
+   "revision": 2,
+   "engine": ">=2.7",
    "makes": [
     "BYD",
     "Chery",
@@ -806,8 +815,8 @@
    ],
    "cars": 28,
    "file": "haima.json",
-   "size": 31784,
-   "sha256": "e0ea9ce5033468a10b2650f624e8f28cc180f55788016ebebfc7131e15856714"
+   "size": 32333,
+   "sha256": "038f962eccc37f1ce9fe3f57717506c4aa9e487078a5daafa41cf37df523da9f"
   },
   {
    "id": "hanteng",
@@ -1443,7 +1452,7 @@
   {
    "id": "mazda",
    "name": "Mazda",
-   "revision": 1,
+   "revision": 2,
    "engine": ">=2.0",
    "makes": [
     "Mazda"
@@ -1455,6 +1464,7 @@
     "mazda-lzmazda",
     "mazda-oudibt50",
     "mazda-rcwmzdprotok",
+    "mazda-remazda",
     "mazda-remazda2",
     "mazda-sp14mzd3cdprotok",
     "mazda-spmazda",
@@ -1463,10 +1473,10 @@
     "mazda-xbsmazda",
     "mazda-xbsmazda6"
    ],
-   "cars": 72,
+   "cars": 85,
    "file": "mazda.json",
-   "size": 46523,
-   "sha256": "36824eb00b674dd4cedfbad8b4e0126a57f0f040b4a3ca4e9d7b01a055680c94"
+   "size": 53120,
+   "sha256": "4c16bf53a7f1123ee1693fc001b17a458e9e344f816ced36489e778e98771c3c"
   },
   {
    "id": "mg",
