@@ -168,6 +168,25 @@
     }
    }
   },
+  "0x32": {
+   "name": "Message 0x32",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 2,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
+    "vehicle_speed": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    }
+   }
+  },
   "0x41": {
    "name": "Message 0x41",
    "signals": {
@@ -272,10 +291,10 @@
    }
   },
   {
-   "cmd": "0x41",
-   "data": "00 00 00 00 00 00 00 00 00 00 12",
+   "cmd": "0x32",
+   "data": "00 00 01 23",
    "expect": {
-    "radar_shown": 18.0
+    "engine_rpm": 291.0
    }
   }
  ]

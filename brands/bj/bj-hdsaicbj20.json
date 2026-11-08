@@ -99,6 +99,29 @@
     }
    }
   },
+  "0x18": {
+   "name": "Message 0x18",
+   "signals": {
+    "turn_left": {
+     "start_byte": 1,
+     "bits": {
+      "left turn light": {
+       "bit": 6,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 1,
+     "bits": {
+      "right turn light": {
+       "bit": 7,
+       "role": "turn.right"
+      }
+     }
+    }
+   }
+  },
   "0x31": {
    "name": "Message 0x31",
    "signals": {
@@ -109,6 +132,12 @@
        "bit": 3,
        "role": "hvac.auto"
       }
+     }
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "auto recirc on off": 0
      }
     },
     "hvac_recirculation": {
@@ -163,7 +192,7 @@
      "size": 2,
      "role": "engine.rpm",
      "unit": "rpm",
-     "label": "rotation rate"
+     "label": "rotationl speed"
     }
    }
   },
@@ -202,6 +231,13 @@
    }
   },
   {
+   "cmd": "0x18",
+   "data": "00 40",
+   "expect": {
+    "left turn light": true
+   }
+  },
+  {
    "cmd": "0x31",
    "data": "08",
    "expect": {
@@ -213,13 +249,6 @@
    "data": "00 00 01 23",
    "expect": {
     "engine_rpm": 291.0
-   }
-  },
-  {
-   "cmd": "0x41",
-   "data": "00 00 00 00 00 00 00 00 00 00 01",
-   "expect": {
-    "radar_shown": 1.0
    }
   }
  ]

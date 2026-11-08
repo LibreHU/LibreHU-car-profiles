@@ -135,6 +135,12 @@
       }
      }
     },
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 4
+     }
+    },
     "hvac_power": {
      "start_byte": 0,
      "bits": {

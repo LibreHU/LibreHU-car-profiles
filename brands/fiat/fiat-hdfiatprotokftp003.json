@@ -637,6 +637,42 @@
   "0x11": {
    "name": "Message 0x11",
    "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
+      }
+     }
+    },
     "steering_angle": {
      "start_byte": 6,
      "size": 2,
@@ -662,6 +698,12 @@
      "role": "hvac.ac",
      "label": "ac on off"
     },
+    "sync_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "sync on off": 2
+     }
+    },
     "hvac_auto": {
      "start_byte": 0,
      "bits": {
@@ -669,6 +711,12 @@
        "bit": 3,
        "role": "hvac.auto"
       }
+     }
+    },
+    "max_acon_off": {
+     "start_byte": 0,
+     "bits": {
+      "max acon off": 5
      }
     },
     "hvac_power": {
@@ -680,6 +728,12 @@
       }
      }
     },
+    "auto_recirc_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "auto recirc on off": 3
+     }
+    },
     "hvac_recirculation": {
      "start_byte": 1,
      "bits": {
@@ -687,6 +741,12 @@
        "bit": 4,
        "role": "hvac.recirculation"
       }
+     }
+    },
+    "rear_air_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "rear air on off": 7
      }
     },
     "hvac_seat_heat_left": {
@@ -727,6 +787,11 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "rear_wind_level": {
+     "start_byte": 9,
+     "signed": true,
+     "label": "rear wind level"
+    },
     "outside_temp": {
      "start_byte": 11,
      "factor": 0.9,
@@ -734,6 +799,28 @@
      "role": "outside.temp",
      "unit": "°C",
      "label": "outside temp"
+    },
+    "front_wind_mode": {
+     "start_byte": 4,
+     "values": {
+      "0": "0",
+      "1": "0",
+      "2": "0",
+      "3": "4",
+      "4": "0",
+      "5": "6",
+      "6": "2",
+      "7": "0",
+      "8": "0",
+      "9": "0",
+      "10": "0",
+      "11": "1",
+      "12": "5",
+      "13": "3",
+      "14": "7",
+      "15": "0"
+     },
+     "label": "front wind mode"
     }
    }
   },
@@ -774,9 +861,9 @@
  "examples": [
   {
    "cmd": "0x11",
-   "data": "00 00 00 00 00 00 01 23",
+   "data": "01",
    "expect": {
-    "steering_angle": -291.0
+    "acc": true
    }
   },
   {

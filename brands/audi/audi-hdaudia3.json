@@ -85,6 +85,39 @@
   "0x72": {
    "name": "Message 0x72",
    "signals": {
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
+      }
+     }
+    },
+    "vehicle_speed": {
+     "start_byte": 1,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    },
     "rear_left_distance": {
      "start_byte": 6,
      "size": 2,
@@ -164,12 +197,24 @@
       }
      }
     },
+    "max_acon_off": {
+     "start_byte": 1,
+     "bits": {
+      "max acon off": 7
+     }
+    },
     "hvac_fan": {
      "start_byte": 4,
      "start_bit": 0,
      "bit_length": 4,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "front_wind_mode": {
+     "start_byte": 4,
+     "start_bit": 4,
+     "bit_length": 3,
+     "label": "front wind mode"
     },
     "door_trunk": {
      "start_byte": 7,
@@ -215,6 +260,12 @@
        "role": "door.front_left"
       }
      }
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "auto recirc on off": 4
+     }
     }
    }
   },
@@ -235,9 +286,9 @@
  "examples": [
   {
    "cmd": "0x72",
-   "data": "00 00 00 00 00 00 01 23",
+   "data": "02",
    "expect": {
-    "rear_left_distance": 1.14
+    "illlight": true
    }
   },
   {

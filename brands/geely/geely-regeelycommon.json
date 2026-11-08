@@ -377,6 +377,29 @@
   }
  ],
  "messages": {
+  "0x22": {
+   "name": "Message 0x22",
+   "signals": {
+    "eco_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "eco on off": 7
+     }
+    },
+    "fr_seat_blowing_level": {
+     "start_byte": 1,
+     "start_bit": 0,
+     "bit_length": 2,
+     "label": "fr seat blowing level"
+    },
+    "fl_seat_blowing_level": {
+     "start_byte": 1,
+     "start_bit": 2,
+     "bit_length": 2,
+     "label": "fl seat blowing level"
+    }
+   }
+  },
   "0x23": {
    "name": "Message 0x23",
    "signals": {
@@ -414,6 +437,12 @@
        "bit": 3,
        "role": "hvac.auto"
       }
+     }
+    },
+    "max_acon_off": {
+     "start_byte": 0,
+     "bits": {
+      "max acon off": 4
      }
     },
     "hvac_recirculation": {
@@ -462,6 +491,12 @@
      "bit_length": 2,
      "role": "hvac.seat_heat_left",
      "label": "fl seat warmer level"
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 6,
+     "bits": {
+      "auto recirc on off": 7
+     }
     }
    }
   },
@@ -583,6 +618,13 @@
  },
  "examples": [
   {
+   "cmd": "0x22",
+   "data": "80",
+   "expect": {
+    "eco on off": true
+   }
+  },
+  {
    "cmd": "0x23",
    "data": "01",
    "expect": {
@@ -601,13 +643,6 @@
    "data": "01 23",
    "expect": {
     "steering_angle": 28.86
-   }
-  },
-  {
-   "cmd": "0x52",
-   "data": "00 00 00 00 00 00 12",
-   "expect": {
-    "tpms_front_left_temperature": -32.0
    }
   }
  ]

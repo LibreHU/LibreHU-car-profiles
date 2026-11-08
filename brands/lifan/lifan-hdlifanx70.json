@@ -129,6 +129,31 @@
        "role": "door.front_left"
       }
      }
+    },
+    "turn_right": {
+     "start_byte": 2,
+     "bits": {
+      "right turn light": {
+       "bit": 0,
+       "role": "turn.right"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 2,
+     "bits": {
+      "left turn light": {
+       "bit": 1,
+       "role": "turn.left"
+      }
+     }
+    },
+    "vehicle_speed": {
+     "start_byte": 3,
+     "size": 2,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
     }
    }
   }

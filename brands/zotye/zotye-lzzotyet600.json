@@ -101,6 +101,20 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
     "hvac_seat_heat_right": {
      "start_byte": 4,
      "start_bit": 0,
@@ -114,6 +128,12 @@
      "bit_length": 2,
      "role": "hvac.seat_heat_left",
      "label": "fl seat warmer level"
+    },
+    "max_acon_off": {
+     "start_byte": 4,
+     "bits": {
+      "max acon off": 4
+     }
     },
     "outside_temp": {
      "start_byte": 5,

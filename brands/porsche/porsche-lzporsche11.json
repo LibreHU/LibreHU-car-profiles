@@ -140,11 +140,29 @@
   "0x35": {
    "name": "Message 0x35",
    "signals": {
+    "turn_left": {
+     "start_byte": 0,
+     "bits": {
+      "left turn light": {
+       "bit": 4,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 0,
+     "bits": {
+      "right turn light": {
+       "bit": 5,
+       "role": "turn.right"
+      }
+     }
+    },
     "vehicle_speed": {
      "start_byte": 1,
      "role": "vehicle.speed",
      "unit": "km/h",
-     "label": "speed"
+     "label": "current speed"
     },
     "fuel_range": {
      "start_byte": 2,
@@ -158,7 +176,7 @@
      "size": 2,
      "role": "engine.rpm",
      "unit": "rpm",
-     "label": "rotation rate"
+     "label": "rotationl speed"
     },
     "outside_temp": {
      "start_byte": 6,
@@ -241,9 +259,9 @@
   },
   {
    "cmd": "0x35",
-   "data": "00 12",
+   "data": "10",
    "expect": {
-    "vehicle_speed": 18.0
+    "left turn light": true
    }
   },
   {

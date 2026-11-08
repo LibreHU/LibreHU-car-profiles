@@ -213,6 +213,12 @@
       }
      }
     },
+    "auto_recirc_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "auto recirc on off": 3
+     }
+    },
     "hvac_recirculation": {
      "start_byte": 1,
      "bits": {
@@ -229,6 +235,12 @@
        "bit": 6,
        "role": "hvac.ac"
       }
+     }
+    },
+    "eco_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "eco on off": 7
      }
     },
     "hvac_seat_heat_left": {
@@ -269,12 +281,25 @@
      "bit_length": 3,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "front_wind_mode": {
+     "start_byte": 4,
+     "start_bit": 4,
+     "bit_length": 3,
+     "label": "front wind mode"
     }
    }
   },
   "0x32": {
    "name": "Message 0x32",
    "signals": {
+    "engine_rpm": {
+     "start_byte": 2,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
     "vehicle_odometer": {
      "start_byte": 6,
      "size": 3,
@@ -313,9 +338,9 @@
   },
   {
    "cmd": "0x32",
-   "data": "00 00 00 00 00 00 00 01 23",
+   "data": "00 00 01 23",
    "expect": {
-    "vehicle_odometer": 291.0
+    "engine_rpm": 291.0
    }
   }
  ]

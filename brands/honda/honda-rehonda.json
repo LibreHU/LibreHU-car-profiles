@@ -893,9 +893,18 @@
     "gear_reverse": {
      "start_byte": 1,
      "bits": {
-      "back car state": {
+      "rev": {
        "bit": 0,
        "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 1,
+     "bits": {
+      "park": {
+       "bit": 1,
+       "role": "gear.park"
       }
      }
     },
@@ -905,6 +914,15 @@
       "pstop block state": {
        "bit": 1,
        "role": "handbrake"
+      }
+     }
+    },
+    "lights_parking": {
+     "start_byte": 1,
+     "bits": {
+      "illlight": {
+       "bit": 2,
+       "role": "lights.parking"
       }
      }
     }

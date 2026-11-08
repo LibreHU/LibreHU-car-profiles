@@ -152,6 +152,12 @@
       }
      }
     },
+    "max_acon_off": {
+     "start_byte": 0,
+     "bits": {
+      "max acon off": 4
+     }
+    },
     "hvac_recirculation": {
      "start_byte": 0,
      "bits": {
@@ -197,6 +203,30 @@
      "bit_length": 2,
      "role": "hvac.seat_heat_left",
      "label": "fl seat warmer level"
+    },
+    "eco_on_off": {
+     "start_byte": 6,
+     "bits": {
+      "eco on off": 5
+     }
+    },
+    "rear_air_on_off": {
+     "start_byte": 7,
+     "bits": {
+      "rear air on off": 6
+     }
+    },
+    "fr_seat_blowing_level": {
+     "start_byte": 9,
+     "start_bit": 0,
+     "bit_length": 2,
+     "label": "fr seat blowing level"
+    },
+    "fl_seat_blowing_level": {
+     "start_byte": 9,
+     "start_bit": 2,
+     "bit_length": 2,
+     "label": "fl seat blowing level"
     }
    }
   },

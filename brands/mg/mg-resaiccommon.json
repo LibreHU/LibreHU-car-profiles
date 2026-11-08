@@ -227,6 +227,24 @@
   }
  ],
  "messages": {
+  "0x11": {
+   "name": "Message 0x11",
+   "signals": {
+    "rear_wind_level": {
+     "start_byte": 0,
+     "start_bit": 0,
+     "bit_length": 4,
+     "max_value": 14,
+     "label": "rear wind level"
+    },
+    "rear_air_on_off": {
+     "start_byte": 3,
+     "bits": {
+      "rear air on off": 7
+     }
+    }
+   }
+  },
   "0x21": {
    "name": "Message 0x21",
    "signals": {
@@ -237,6 +255,12 @@
        "bit": 1,
        "role": "hvac.recirculation"
       }
+     }
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "auto recirc on off": 1
      }
     },
     "hvac_dual": {
@@ -283,6 +307,28 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "2",
+      "1": "6",
+      "2": "4",
+      "3": "5",
+      "4": "0",
+      "5": "0",
+      "6": "0",
+      "7": "0",
+      "8": "0",
+      "9": "0",
+      "10": "0",
+      "11": "0",
+      "12": "0",
+      "13": "0",
+      "14": "0",
+      "15": "16"
+     },
+     "label": "front wind mode"
+    },
     "hvac_seat_heat_right": {
      "start_byte": 3,
      "bits": {
@@ -301,6 +347,12 @@
       }
      }
     },
+    "eco_on_off": {
+     "start_byte": 3,
+     "bits": {
+      "eco on off": 5
+     }
+    },
     "hvac_defrost_rear": {
      "start_byte": 3,
      "bits": {
@@ -317,6 +369,12 @@
        "bit": 7,
        "role": "hvac.defrost_front"
       }
+     }
+    },
+    "sync_on_off": {
+     "start_byte": 5,
+     "bits": {
+      "sync on off": 6
      }
     }
    }
@@ -455,6 +513,13 @@
  },
  "examples": [
   {
+   "cmd": "0x11",
+   "data": "01",
+   "expect": {
+    "rear_wind_level": 1.0
+   }
+  },
+  {
    "cmd": "0x21",
    "data": "02",
    "expect": {
@@ -473,13 +538,6 @@
    "data": "12",
    "expect": {
     "outside_temp": 18.0
-   }
-  },
-  {
-   "cmd": "0x52",
-   "data": "00 00 00 00 00 00 12",
-   "expect": {
-    "tpms_front_left_temperature": -42.0
    }
   }
  ]

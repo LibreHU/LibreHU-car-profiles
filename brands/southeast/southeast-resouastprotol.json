@@ -100,7 +100,7 @@
     "handbrake": {
      "start_byte": 1,
      "bits": {
-      "pstop block state": {
+      "handbrake": {
        "bit": 1,
        "role": "handbrake"
       }
@@ -158,7 +158,7 @@
      "start_byte": 0,
      "role": "vehicle.speed",
      "unit": "km/h",
-     "label": "speed"
+     "label": "current speed"
     }
    }
   },

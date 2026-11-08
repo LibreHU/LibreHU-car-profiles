@@ -68,6 +68,11 @@
      "start_byte": 1,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "fl_seat_blowing_level": {
+     "start_byte": 5,
+     "signed": true,
+     "label": "fl seat blowing level"
     }
    }
   },
@@ -136,6 +141,20 @@
     }
    }
   },
+  "0x66": {
+   "name": "Message 0x66",
+   "signals": {
+    "handbrake": {
+     "start_byte": 6,
+     "bits": {
+      "handbrake": {
+       "bit": 3,
+       "role": "handbrake"
+      }
+     }
+    }
+   }
+  },
   "0x20": {
    "name": "Wheel key",
    "signals": {
@@ -173,10 +192,10 @@
    }
   },
   {
-   "cmd": "0x20",
-   "data": "12",
+   "cmd": "0x66",
+   "data": "00 00 00 00 00 00 08",
    "expect": {
-    "wheel_key": 18.0
+    "handbrake": true
    }
   }
  ]

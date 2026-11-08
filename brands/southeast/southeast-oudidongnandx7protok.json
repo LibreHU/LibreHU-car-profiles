@@ -103,7 +103,7 @@
     "handbrake": {
      "start_byte": 1,
      "bits": {
-      "pstop block state": {
+      "handbrake": {
        "bit": 1,
        "role": "handbrake"
       }
@@ -124,6 +124,15 @@
       "left safety belt": {
        "bit": 4,
        "role": "seatbelt.driver"
+      }
+     }
+    },
+    "ignition_acc": {
+     "start_byte": 1,
+     "bits": {
+      "acc": {
+       "bit": 5,
+       "role": "ignition.acc"
       }
      }
     }
@@ -204,6 +213,12 @@
        "bit": 4,
        "role": "hvac.auto"
       }
+     }
+    },
+    "max_acon_off": {
+     "start_byte": 0,
+     "bits": {
+      "max acon off": 5
      }
     },
     "hvac_dual": {

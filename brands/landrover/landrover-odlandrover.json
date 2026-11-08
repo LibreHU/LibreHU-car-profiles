@@ -89,6 +89,28 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 2,
+     "values": {
+      "0": "0",
+      "1": "2",
+      "2": "6",
+      "3": "4",
+      "4": "5",
+      "5": "0",
+      "6": "1",
+      "7": "0",
+      "8": "0",
+      "9": "0",
+      "10": "0",
+      "11": "0",
+      "12": "0",
+      "13": "0",
+      "14": "0",
+      "15": "0"
+     },
+     "label": "front wind mode"
+    },
     "hvac_seat_heat_left": {
      "start_byte": 3,
      "start_bit": 0,

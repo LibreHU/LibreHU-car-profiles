@@ -67,6 +67,12 @@
       }
      }
     },
+    "max_acon_off": {
+     "start_byte": 0,
+     "bits": {
+      "max acon off": 4
+     }
+    },
     "hvac_recirculation": {
      "start_byte": 0,
      "bits": {
@@ -112,6 +118,12 @@
      "bit_length": 2,
      "role": "hvac.seat_heat_left",
      "label": "fl seat warmer level"
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 6,
+     "bits": {
+      "auto recirc on off": 7
+     }
     }
    }
   },

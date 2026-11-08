@@ -38,6 +38,51 @@
   }
  ],
  "messages": {
+  "0x11": {
+   "name": "Message 0x11",
+   "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
+      }
+     }
+    },
+    "wheel_key": {
+     "start_byte": 2,
+     "label": "wheel key"
+    }
+   }
+  },
   "0x12": {
    "name": "Message 0x12",
    "signals": {
@@ -163,6 +208,25 @@
     }
    }
   },
+  "0x32": {
+   "name": "Message 0x32",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 2,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
+    "vehicle_speed": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    }
+   }
+  },
   "0x41": {
    "name": "Message 0x41",
    "signals": {
@@ -173,15 +237,6 @@
      "label": "radar show on off"
     }
    }
-  },
-  "0x11": {
-   "name": "Wheel key",
-   "signals": {
-    "wheel_key": {
-     "start_byte": 2,
-     "label": "wheel key"
-    }
-   }
   }
  },
  "wheel_keys": {
@@ -189,6 +244,13 @@
   "code_byte": 2
  },
  "examples": [
+  {
+   "cmd": "0x11",
+   "data": "01",
+   "expect": {
+    "acc": true
+   }
+  },
   {
    "cmd": "0x12",
    "data": "00 00 02",
@@ -204,17 +266,10 @@
    }
   },
   {
-   "cmd": "0x41",
-   "data": "00 00 00 00 00 00 00 00 00 00 12",
+   "cmd": "0x32",
+   "data": "00 00 01 23",
    "expect": {
-    "radar_shown": 18.0
-   }
-  },
-  {
-   "cmd": "0x11",
-   "data": "00 00 12",
-   "expect": {
-    "wheel_key": 18.0
+    "engine_rpm": 291.0
    }
   }
  ]

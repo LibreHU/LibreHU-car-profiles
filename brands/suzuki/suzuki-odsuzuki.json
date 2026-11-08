@@ -25,6 +25,29 @@
   }
  ],
  "messages": {
+  "0x24": {
+   "name": "Message 0x24",
+   "signals": {
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "back state": {
+       "bit": 0,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "handbrake": {
+     "start_byte": 0,
+     "bits": {
+      "handbrake": {
+       "bit": 1,
+       "role": "handbrake"
+      }
+     }
+    }
+   }
+  },
   "0x26": {
    "name": "Message 0x26",
    "signals": {
@@ -54,6 +77,13 @@
   "code_byte": 0
  },
  "examples": [
+  {
+   "cmd": "0x24",
+   "data": "01",
+   "expect": {
+    "back state": true
+   }
+  },
   {
    "cmd": "0x26",
    "data": "23 01",

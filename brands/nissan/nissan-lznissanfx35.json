@@ -40,7 +40,7 @@
     "handbrake": {
      "start_byte": 1,
      "bits": {
-      "pstop block state": {
+      "handbrake": {
        "bit": 1,
        "role": "handbrake"
       }
@@ -61,6 +61,24 @@
       "left safety belt": {
        "bit": 3,
        "role": "seatbelt.driver"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 1,
+     "bits": {
+      "left turn light": {
+       "bit": 4,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 1,
+     "bits": {
+      "right turn light": {
+       "bit": 4,
+       "role": "turn.right"
       }
      }
     }
@@ -114,6 +132,23 @@
       }
      }
     },
+    "max_defrost_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "max defrost on off": 4
+     }
+    },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "mask": "0xA0",
+     "values": {
+      "0": "0",
+      "32": "4",
+      "128": "1",
+      "160": "5"
+     },
+     "label": "front wind mode"
+    },
     "hvac_defrost_rear": {
      "start_byte": 4,
      "bits": {
@@ -159,6 +194,19 @@
   "0x35": {
    "name": "Message 0x35",
    "signals": {
+    "vehicle_speed": {
+     "start_byte": 1,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    },
+    "engine_rpm": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
     "outside_temp": {
      "start_byte": 6,
      "offset": -40.0,
@@ -230,9 +278,9 @@
   },
   {
    "cmd": "0x35",
-   "data": "00 00 00 00 00 00 12",
+   "data": "00 12",
    "expect": {
-    "outside_temp": -22.0
+    "vehicle_speed": 18.0
    }
   }
  ]

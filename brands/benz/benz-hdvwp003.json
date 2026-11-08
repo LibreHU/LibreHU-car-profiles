@@ -77,9 +77,35 @@
   }
  ],
  "messages": {
+  "0x13": {
+   "name": "Message 0x13",
+   "signals": {
+    "vehicle_speed": {
+     "start_byte": 3,
+     "size": 2,
+     "factor": 0.1,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    },
+    "engine_rpm": {
+     "start_byte": 8,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
   "0x73": {
    "name": "Message 0x73",
    "signals": {
+    "max_acon_off": {
+     "start_byte": 0,
+     "bits": {
+      "max acon off": 1
+     }
+    },
     "hvac_dual": {
      "start_byte": 0,
      "bits": {
@@ -129,6 +155,12 @@
      "role": "hvac.seat_heat_left",
      "label": "fl seat warmer level"
     },
+    "max_defrost_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "max defrost on off": 4
+     }
+    },
     "hvac_defrost_rear": {
      "start_byte": 1,
      "bits": {
@@ -153,6 +185,12 @@
      "bit_length": 4,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "front_wind_mode": {
+     "start_byte": 4,
+     "start_bit": 4,
+     "bit_length": 3,
+     "label": "front wind mode"
     },
     "outside_temp": {
      "start_byte": 6,
@@ -215,6 +253,12 @@
        "role": "door.front_right"
       }
      }
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "auto recirc on off": 4
+     }
     }
    }
   },
@@ -234,10 +278,17 @@
  },
  "examples": [
   {
-   "cmd": "0x73",
-   "data": "04",
+   "cmd": "0x13",
+   "data": "00 00 00 01 23",
    "expect": {
-    "dual on off": true
+    "vehicle_speed": 29.1
+   }
+  },
+  {
+   "cmd": "0x73",
+   "data": "02",
+   "expect": {
+    "max acon off": true
    }
   },
   {

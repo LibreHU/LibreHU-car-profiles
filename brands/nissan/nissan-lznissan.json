@@ -28,6 +28,29 @@
   }
  ],
  "messages": {
+  "0x24": {
+   "name": "Message 0x24",
+   "signals": {
+    "turn_left": {
+     "start_byte": 1,
+     "bits": {
+      "left turn light": {
+       "bit": 4,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 1,
+     "bits": {
+      "right turn light": {
+       "bit": 4,
+       "role": "turn.right"
+      }
+     }
+    }
+   }
+  },
   "0x27": {
    "name": "Message 0x27",
    "signals": {
@@ -66,6 +89,17 @@
        "role": "hvac.power"
       }
      }
+    },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "mask": "0xA0",
+     "values": {
+      "0": "0",
+      "32": "4",
+      "128": "1",
+      "160": "5"
+     },
+     "label": "front wind mode"
     },
     "hvac_defrost_rear": {
      "start_byte": 4,
@@ -109,6 +143,31 @@
     }
    }
   },
+  "0x35": {
+   "name": "Message 0x35",
+   "signals": {
+    "vehicle_speed": {
+     "start_byte": 1,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    },
+    "engine_rpm": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
+    "vehicle_odometer": {
+     "start_byte": 7,
+     "size": 3,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
+    }
+   }
+  },
   "0x20": {
    "name": "Wheel key",
    "signals": {
@@ -149,6 +208,13 @@
  },
  "examples": [
   {
+   "cmd": "0x24",
+   "data": "00 10",
+   "expect": {
+    "left turn light": true
+   }
+  },
+  {
    "cmd": "0x27",
    "data": "08",
    "expect": {
@@ -163,10 +229,10 @@
    }
   },
   {
-   "cmd": "0x20",
-   "data": "01",
+   "cmd": "0x35",
+   "data": "00 12",
    "expect": {
-    "wheel_key": "volume +"
+    "vehicle_speed": 18.0
    }
   }
  ]

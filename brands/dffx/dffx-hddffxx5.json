@@ -26,6 +26,15 @@
   "0x11": {
    "name": "Message 0x11",
    "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
     "lights_parking": {
      "start_byte": 0,
      "bits": {
@@ -41,6 +50,15 @@
       "back car state": {
        "bit": 2,
        "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
       }
      }
     },
@@ -191,6 +209,18 @@
     }
    }
   },
+  "0x34": {
+   "name": "Message 0x34",
+   "signals": {
+    "vehicle_odometer": {
+     "start_byte": 4,
+     "size": 3,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
+    }
+   }
+  },
   "0x41": {
    "name": "Message 0x41",
    "signals": {
@@ -228,9 +258,9 @@
  "examples": [
   {
    "cmd": "0x11",
-   "data": "02",
+   "data": "01",
    "expect": {
-    "illlight": true
+    "acc": true
    }
   },
   {
@@ -248,10 +278,10 @@
    }
   },
   {
-   "cmd": "0x41",
-   "data": "12",
+   "cmd": "0x34",
+   "data": "00 00 00 00 00 01 23",
    "expect": {
-    "rear_left_distance": 17.0
+    "vehicle_odometer": 291.0
    }
   }
  ]

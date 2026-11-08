@@ -62,6 +62,12 @@
   "0x23": {
    "name": "Message 0x23",
    "signals": {
+    "max_acon_off": {
+     "start_byte": 0,
+     "bits": {
+      "max acon off": 1
+     }
+    },
     "hvac_defrost_rear": {
      "start_byte": 0,
      "bits": {
@@ -213,9 +219,9 @@
  "examples": [
   {
    "cmd": "0x23",
-   "data": "08",
+   "data": "02",
    "expect": {
-    "rear defrost on off": true
+    "max acon off": true
    }
   },
   {

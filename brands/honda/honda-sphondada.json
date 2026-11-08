@@ -109,6 +109,12 @@
   "0x21": {
    "name": "Message 0x21",
    "signals": {
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 0
+     }
+    },
     "hvac_dual": {
      "start_byte": 0,
      "bits": {
@@ -125,6 +131,12 @@
        "bit": 3,
        "role": "hvac.auto"
       }
+     }
+    },
+    "sync_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "sync on off": 4
      }
     },
     "hvac_recirculation": {
@@ -161,6 +173,20 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
     "hvac_defrost_front": {
      "start_byte": 4,
      "bits": {
@@ -169,6 +195,26 @@
        "role": "hvac.defrost_front"
       }
      }
+    },
+    "rear_wind_level": {
+     "start_byte": 7,
+     "start_bit": 0,
+     "bit_length": 4,
+     "label": "rear wind level"
+    },
+    "rear_wind_mode": {
+     "start_byte": 7,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "rear wind mode"
     }
    }
   },
@@ -232,9 +278,18 @@
     "gear_reverse": {
      "start_byte": 1,
      "bits": {
-      "back car state": {
+      "rev": {
        "bit": 0,
        "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 1,
+     "bits": {
+      "park": {
+       "bit": 1,
+       "role": "gear.park"
       }
      }
     },
@@ -244,6 +299,15 @@
       "pstop block state": {
        "bit": 1,
        "role": "handbrake"
+      }
+     }
+    },
+    "lights_parking": {
+     "start_byte": 1,
+     "bits": {
+      "illlight": {
+       "bit": 2,
+       "role": "lights.parking"
       }
      }
     }
@@ -261,6 +325,20 @@
      "role": "steering.angle",
      "unit": "°",
      "label": "eps"
+    }
+   }
+  },
+  "0xD1": {
+   "name": "Message 0xD1",
+   "signals": {
+    "turn_right": {
+     "start_byte": 1,
+     "bits": {
+      "right turn light": {
+       "bit": 7,
+       "role": "turn.right"
+      }
+     }
     }
    }
   },
@@ -315,9 +393,9 @@
  "examples": [
   {
    "cmd": "0x21",
-   "data": "04",
+   "data": "01",
    "expect": {
-    "dual on off": true
+    "rear air on off": true
    }
   },
   {
@@ -335,10 +413,10 @@
    }
   },
   {
-   "cmd": "0x20",
-   "data": "01",
+   "cmd": "0xD1",
+   "data": "00 80",
    "expect": {
-    "wheel_key": "volume +"
+    "right turn light": true
    }
   }
  ]

@@ -28,6 +28,29 @@
   }
  ],
  "messages": {
+  "0x25": {
+   "name": "Message 0x25",
+   "signals": {
+    "turn_right": {
+     "start_byte": 0,
+     "bits": {
+      "right turn light": {
+       "bit": 0,
+       "role": "turn.right"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 0,
+     "bits": {
+      "left turn light": {
+       "bit": 0,
+       "role": "turn.left"
+      }
+     }
+    }
+   }
+  },
   "0x28": {
    "name": "Message 0x28",
    "signals": {
@@ -126,6 +149,13 @@
   "code_byte": 0
  },
  "examples": [
+  {
+   "cmd": "0x25",
+   "data": "01",
+   "expect": {
+    "right turn light": true
+   }
+  },
   {
    "cmd": "0x28",
    "data": "04",

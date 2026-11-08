@@ -172,7 +172,14 @@
      "start_byte": 1,
      "role": "vehicle.speed",
      "unit": "km/h",
-     "label": "speed"
+     "label": "current speed"
+    },
+    "engine_rpm": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
     },
     "vehicle_odometer": {
      "start_byte": 7,

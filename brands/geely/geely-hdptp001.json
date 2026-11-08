@@ -141,6 +141,29 @@
     }
    }
   },
+  "0x18": {
+   "name": "Message 0x18",
+   "signals": {
+    "turn_left": {
+     "start_byte": 1,
+     "bits": {
+      "left turn light": {
+       "bit": 6,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 1,
+     "bits": {
+      "right turn light": {
+       "bit": 7,
+       "role": "turn.right"
+      }
+     }
+    }
+   }
+  },
   "0x1A": {
    "name": "Message 0x1A",
    "signals": {
@@ -207,6 +230,31 @@
       }
      }
     },
+    "turn_right": {
+     "start_byte": 2,
+     "bits": {
+      "right turn light": {
+       "bit": 0,
+       "role": "turn.right"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 2,
+     "bits": {
+      "left turn light": {
+       "bit": 1,
+       "role": "turn.left"
+      }
+     }
+    },
+    "vehicle_speed": {
+     "start_byte": 3,
+     "size": 2,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    },
     "steering_angle": {
      "start_byte": 6,
      "size": 2,
@@ -215,6 +263,13 @@
      "role": "steering.angle",
      "unit": "°",
      "label": "eps"
+    },
+    "engine_rpm": {
+     "start_byte": 9,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
     }
    }
   },
@@ -230,6 +285,12 @@
       }
      }
     },
+    "max_acon_off": {
+     "start_byte": 0,
+     "bits": {
+      "max acon off": 5
+     }
+    },
     "hvac_power": {
      "start_byte": 0,
      "bits": {
@@ -237,6 +298,12 @@
        "bit": 6,
        "role": "hvac.power"
       }
+     }
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "auto recirc on off": 0
      }
     },
     "hvac_dual": {
@@ -255,6 +322,12 @@
        "bit": 4,
        "role": "hvac.recirculation"
       }
+     }
+    },
+    "eco_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "eco on off": 5
      }
     },
     "hvac_ac": {
@@ -303,6 +376,11 @@
      "signed": true,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "rear_wind_level": {
+     "start_byte": 9,
+     "signed": true,
+     "label": "rear wind level"
     }
    }
   },
@@ -380,17 +458,17 @@
    }
   },
   {
+   "cmd": "0x18",
+   "data": "00 40",
+   "expect": {
+    "left turn light": true
+   }
+  },
+  {
    "cmd": "0x1A",
    "data": "00 02",
    "expect": {
     "back car state": true
-   }
-  },
-  {
-   "cmd": "0x31",
-   "data": "08",
-   "expect": {
-    "auto light1": true
    }
   }
  ]

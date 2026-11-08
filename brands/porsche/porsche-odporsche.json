@@ -37,6 +37,18 @@
   "0x21": {
    "name": "Message 0x21",
    "signals": {
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 0
+     }
+    },
+    "max_defrost_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "max defrost on off": 1
+     }
+    },
     "hvac_dual": {
      "start_byte": 0,
      "bits": {
@@ -87,6 +99,12 @@
        "bit": 6,
        "role": "hvac.ac"
       }
+     }
+    },
+    "max_acon_off": {
+     "start_byte": 4,
+     "bits": {
+      "max acon off": 3
      }
     },
     "hvac_defrost_rear": {
@@ -204,9 +222,9 @@
  "examples": [
   {
    "cmd": "0x21",
-   "data": "04",
+   "data": "01",
    "expect": {
-    "dual on off": true
+    "rear air on off": true
    }
   },
   {

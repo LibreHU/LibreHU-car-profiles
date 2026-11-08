@@ -93,6 +93,19 @@
     }
    }
   },
+  "0x68": {
+   "name": "Message 0x68",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 0,
+     "size": 2,
+     "endian": "little",
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
   "0x01": {
    "name": "Wheel key",
    "signals": {
@@ -113,6 +126,13 @@
    "data": "04",
    "expect": {
     "front box door": true
+   }
+  },
+  {
+   "cmd": "0x68",
+   "data": "23 01",
+   "expect": {
+    "engine_rpm": 291.0
    }
   },
   {

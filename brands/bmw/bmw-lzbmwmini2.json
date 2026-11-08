@@ -31,6 +31,24 @@
   "0x10": {
    "name": "Message 0x10",
    "signals": {
+    "handbrake": {
+     "start_byte": 0,
+     "bits": {
+      "handbrake": {
+       "bit": 4,
+       "role": "handbrake"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 6,
+       "role": "gear.reverse"
+      }
+     }
+    },
     "door_hood": {
      "start_byte": 1,
      "bits": {
@@ -87,6 +105,18 @@
     }
    }
   },
+  "0x11": {
+   "name": "Message 0x11",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 0,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
   "0x12": {
    "name": "Message 0x12",
    "signals": {
@@ -97,6 +127,29 @@
      "role": "outside.temp",
      "unit": "°C",
      "label": "outside temp"
+    }
+   }
+  },
+  "0x41": {
+   "name": "Message 0x41",
+   "signals": {
+    "turn_right": {
+     "start_byte": 3,
+     "bits": {
+      "right turn light": {
+       "bit": 6,
+       "role": "turn.right"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 3,
+     "bits": {
+      "left turn light": {
+       "bit": 7,
+       "role": "turn.left"
+      }
+     }
     }
    }
   },
@@ -154,9 +207,16 @@
  "examples": [
   {
    "cmd": "0x10",
-   "data": "00 04",
+   "data": "10",
    "expect": {
-    "front box door": true
+    "handbrake": true
+   }
+  },
+  {
+   "cmd": "0x11",
+   "data": "01 23",
+   "expect": {
+    "engine_rpm": 291.0
    }
   },
   {
@@ -167,17 +227,10 @@
    }
   },
   {
-   "cmd": "0x49",
-   "data": "00 00 00 00 00 23 01",
+   "cmd": "0x41",
+   "data": "00 00 00 40",
    "expect": {
-    "tpms_front_left_pressure": 29.1
-   }
-  },
-  {
-   "cmd": "0x21",
-   "data": "12",
-   "expect": {
-    "wheel_key": 18.0
+    "right turn light": true
    }
   }
  ]

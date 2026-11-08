@@ -57,6 +57,12 @@
      },
      "label": "air recirc on off"
     },
+    "auto_recirc_on_off": {
+     "start_byte": 3,
+     "bits": {
+      "auto recirc on off": 2
+     }
+    },
     "hvac_defrost_front": {
      "start_byte": 3,
      "bits": {
@@ -92,6 +98,28 @@
        "role": "hvac.defrost_rear"
       }
      }
+    },
+    "front_wind_mode": {
+     "start_byte": 0,
+     "values": {
+      "0": "0",
+      "1": "2",
+      "2": "6",
+      "3": "4",
+      "4": "5",
+      "5": "1",
+      "6": "0",
+      "7": "0",
+      "8": "0",
+      "9": "0",
+      "10": "0",
+      "11": "0",
+      "12": "0",
+      "13": "0",
+      "14": "0",
+      "15": "0"
+     },
+     "label": "front wind mode"
     }
    }
   },

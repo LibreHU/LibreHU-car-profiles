@@ -121,6 +121,24 @@
        "role": "door.front_right"
       }
      }
+    },
+    "gear_reverse": {
+     "start_byte": 1,
+     "bits": {
+      "back state": {
+       "bit": 0,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "handbrake": {
+     "start_byte": 1,
+     "bits": {
+      "handbrake": {
+       "bit": 1,
+       "role": "handbrake"
+      }
+     }
     }
    }
   },
@@ -197,6 +215,28 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "16",
+      "2": "4",
+      "3": "16",
+      "4": "2",
+      "5": "16",
+      "6": "6",
+      "7": "16",
+      "8": "1",
+      "9": "16",
+      "10": "5",
+      "11": "16",
+      "12": "3",
+      "13": "16",
+      "14": "7",
+      "15": "16"
+     },
+     "label": "front wind mode"
+    },
     "hvac_temp_left": {
      "start_byte": 2,
      "max_value": 254,
@@ -210,6 +250,18 @@
      "role": "hvac.temp_right",
      "unit": "°C",
      "label": "front right temp"
+    },
+    "eco_on_off": {
+     "start_byte": 4,
+     "bits": {
+      "eco on off": 6
+     }
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 4,
+     "bits": {
+      "auto recirc on off": 7
+     }
     },
     "hvac_seat_heat_right": {
      "start_byte": 5,
@@ -245,12 +297,43 @@
   "0x35": {
    "name": "Message 0x35",
    "signals": {
+    "turn_left": {
+     "start_byte": 0,
+     "bits": {
+      "left turn light": {
+       "bit": 4,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 0,
+     "bits": {
+      "right turn light": {
+       "bit": 5,
+       "role": "turn.right"
+      }
+     }
+    },
+    "vehicle_speed": {
+     "start_byte": 1,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    },
     "fuel_range": {
      "start_byte": 2,
      "size": 2,
      "role": "fuel.range",
      "unit": "km",
      "label": "cruising range"
+    },
+    "engine_rpm": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
     },
     "outside_temp": {
      "start_byte": 6,
@@ -259,6 +342,13 @@
      "role": "outside.temp",
      "unit": "°C",
      "label": "ambient temp"
+    },
+    "vehicle_odometer": {
+     "start_byte": 7,
+     "size": 3,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
     }
    }
   },
@@ -320,9 +410,9 @@
   },
   {
    "cmd": "0x35",
-   "data": "00 00 01 23",
+   "data": "10",
    "expect": {
-    "fuel_range": 291.0
+    "left turn light": true
    }
   }
  ]

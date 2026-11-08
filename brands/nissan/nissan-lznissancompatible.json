@@ -81,6 +81,24 @@
        "role": "door.front_right"
       }
      }
+    },
+    "turn_left": {
+     "start_byte": 1,
+     "bits": {
+      "left turn light": {
+       "bit": 4,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 1,
+     "bits": {
+      "right turn light": {
+       "bit": 4,
+       "role": "turn.right"
+      }
+     }
     }
    }
   },
@@ -132,6 +150,20 @@
       }
      }
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
     "hvac_defrost_rear": {
      "start_byte": 4,
      "bits": {
@@ -171,6 +203,31 @@
      "role": "steering.angle",
      "unit": "°",
      "label": "eps"
+    }
+   }
+  },
+  "0x35": {
+   "name": "Message 0x35",
+   "signals": {
+    "vehicle_speed": {
+     "start_byte": 1,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    },
+    "engine_rpm": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
+    "vehicle_odometer": {
+     "start_byte": 7,
+     "size": 3,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
     }
    }
   },
@@ -319,10 +376,10 @@
    }
   },
   {
-   "cmd": "0x20",
-   "data": "01",
+   "cmd": "0x35",
+   "data": "00 12",
    "expect": {
-    "wheel_key": "volume +"
+    "vehicle_speed": 18.0
    }
   }
  ]

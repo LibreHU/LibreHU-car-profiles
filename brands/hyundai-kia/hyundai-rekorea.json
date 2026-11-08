@@ -856,6 +856,12 @@
       }
      }
     },
+    "sync_on_off": {
+     "start_byte": 3,
+     "bits": {
+      "sync on off": 1
+     }
+    },
     "hvac_auto": {
      "start_byte": 3,
      "bits": {
@@ -864,6 +870,12 @@
        "role": "hvac.auto"
       }
      }
+    },
+    "front_wind_mode": {
+     "start_byte": 3,
+     "size": 4,
+     "factor": 0.0,
+     "label": "front wind mode"
     },
     "hvac_defrost_rear": {
      "start_byte": 3,
@@ -891,6 +903,28 @@
        "role": "hvac.recirculation"
       }
      }
+    },
+    "rear_temp": {
+     "start_byte": 4,
+     "factor": 0.5,
+     "offset": 17.0,
+     "signed": true,
+     "label": "rear temp"
+    },
+    "rear_wind_level": {
+     "start_byte": 5,
+     "signed": true,
+     "label": "rear wind level"
+    },
+    "rear_wind_mode": {
+     "start_byte": 6,
+     "values": {
+      "0": "4",
+      "1": "2",
+      "2": "6",
+      "3": "4"
+     },
+     "label": "rear wind mode"
     }
    }
   },

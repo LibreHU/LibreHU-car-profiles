@@ -18,8 +18,35 @@
  ],
  "messages": {
   "0x81": {
-   "name": "Wheel key",
+   "name": "Message 0x81",
    "signals": {
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
+      }
+     }
+    },
     "wheel_key": {
      "start_byte": 2,
      "label": "wheel key",
@@ -56,9 +83,9 @@
  "examples": [
   {
    "cmd": "0x81",
-   "data": "00 00 01",
+   "data": "02",
    "expect": {
-    "wheel_key": "volume +"
+    "illlight": true
    }
   }
  ]

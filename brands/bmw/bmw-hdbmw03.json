@@ -17,6 +17,58 @@
   }
  ],
  "messages": {
+  "0x11": {
+   "name": "Message 0x11",
+   "signals": {
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
+      }
+     }
+    },
+    "wheel_key": {
+     "start_byte": 2,
+     "label": "wheel key",
+     "values": {
+      "1": "volume +",
+      "2": "volume -",
+      "3": "mute",
+      "4": "",
+      "5": "answer",
+      "6": "hang up",
+      "7": "",
+      "8": "next",
+      "9": "previous",
+      "10": "",
+      "16": "back",
+      "17": "",
+      "24": "voice",
+      "25": ""
+     }
+    }
+   }
+  },
   "0x12": {
    "name": "Message 0x12",
    "signals": {
@@ -36,31 +88,6 @@
        "bit": 7,
        "role": "door.front_left"
       }
-     }
-    }
-   }
-  },
-  "0x11": {
-   "name": "Wheel key",
-   "signals": {
-    "wheel_key": {
-     "start_byte": 2,
-     "label": "wheel key",
-     "values": {
-      "1": "volume +",
-      "2": "volume -",
-      "3": "mute",
-      "4": "",
-      "5": "answer",
-      "6": "hang up",
-      "7": "",
-      "8": "next",
-      "9": "previous",
-      "10": "",
-      "16": "back",
-      "17": "",
-      "24": "voice",
-      "25": ""
      }
     }
    }
@@ -88,17 +115,17 @@
  },
  "examples": [
   {
+   "cmd": "0x11",
+   "data": "02",
+   "expect": {
+    "illlight": true
+   }
+  },
+  {
    "cmd": "0x12",
    "data": "00 00 40",
    "expect": {
     "right front door": true
-   }
-  },
-  {
-   "cmd": "0x11",
-   "data": "00 00 01",
-   "expect": {
-    "wheel_key": "volume +"
    }
   }
  ]

@@ -155,6 +155,18 @@
     }
    }
   },
+  "0x41": {
+   "name": "Message 0x41",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 5,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
   "0x20": {
    "name": "Wheel key",
    "signals": {
@@ -214,10 +226,10 @@
    }
   },
   {
-   "cmd": "0x20",
-   "data": "01",
+   "cmd": "0x41",
+   "data": "00 00 00 00 00 01 23",
    "expect": {
-    "wheel_key": "volume +"
+    "engine_rpm": 291.0
    }
   }
  ]

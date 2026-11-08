@@ -34,6 +34,20 @@
   "0x02": {
    "name": "Message 0x02",
    "signals": {
+    "front_wind_mode": {
+     "start_byte": 2,
+     "values": {
+      "0": "0",
+      "1": "2",
+      "2": "6",
+      "3": "4",
+      "4": "5",
+      "5": "1",
+      "6": "0",
+      "7": "0"
+     },
+     "label": "front wind mode"
+    },
     "hvac_fan": {
      "start_byte": 2,
      "start_bit": 3,
@@ -127,9 +141,9 @@
  "examples": [
   {
    "cmd": "0x02",
-   "data": "00 00 08",
+   "data": "00 00 00",
    "expect": {
-    "hvac_fan": 1.0
+    "front_wind_mode": "0"
    }
   },
   {

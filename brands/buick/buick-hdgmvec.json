@@ -253,6 +253,42 @@
   "0x11": {
    "name": "Message 0x11",
    "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
+      }
+     }
+    },
     "steering_angle": {
      "start_byte": 6,
      "size": 2,
@@ -324,6 +360,12 @@
        "role": "door.front_left"
       }
      }
+    },
+    "handbrake": {
+     "start_byte": 8,
+     "signed": true,
+     "role": "handbrake",
+     "label": "handbrake"
     }
    }
   },
@@ -339,6 +381,12 @@
       }
      }
     },
+    "sync_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "sync on off": 2
+     }
+    },
     "hvac_auto": {
      "start_byte": 0,
      "bits": {
@@ -346,6 +394,12 @@
        "bit": 4,
        "role": "hvac.auto"
       }
+     }
+    },
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 5
      }
     },
     "hvac_power": {
@@ -357,6 +411,12 @@
       }
      }
     },
+    "auto_recirc_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "auto recirc on off": 3
+     }
+    },
     "hvac_recirculation": {
      "start_byte": 1,
      "bits": {
@@ -364,6 +424,12 @@
        "bit": 4,
        "role": "hvac.recirculation"
       }
+     }
+    },
+    "eco_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "eco on off": 5
      }
     },
     "hvac_defrost_rear": {
@@ -385,14 +451,14 @@
      "size": 2,
      "role": "engine.rpm",
      "unit": "rpm",
-     "label": "rotation rate"
+     "label": "rotationl speed"
     },
     "vehicle_speed": {
      "start_byte": 4,
      "size": 2,
      "role": "vehicle.speed",
      "unit": "km/h",
-     "label": "speed"
+     "label": "current speed"
     },
     "engine_throttle": {
      "start_byte": 7,
@@ -454,9 +520,9 @@
  "examples": [
   {
    "cmd": "0x11",
-   "data": "00 00 00 00 00 00 01 23",
+   "data": "01",
    "expect": {
-    "steering_angle": -291.0
+    "acc": true
    }
   },
   {

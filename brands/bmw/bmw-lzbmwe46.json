@@ -112,11 +112,54 @@
     "handbrake": {
      "start_byte": 1,
      "bits": {
-      "pstop block state": {
+      "handbrake": {
        "bit": 1,
        "role": "handbrake"
       }
      }
+    },
+    "turn_left": {
+     "start_byte": 1,
+     "bits": {
+      "left turn light": {
+       "bit": 4,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 1,
+     "bits": {
+      "right turn light": {
+       "bit": 5,
+       "role": "turn.right"
+      }
+     }
+    }
+   }
+  },
+  "0x35": {
+   "name": "Message 0x35",
+   "signals": {
+    "vehicle_speed": {
+     "start_byte": 1,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    },
+    "engine_rpm": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
+    "vehicle_odometer": {
+     "start_byte": 7,
+     "size": 3,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
     }
    }
   },
@@ -178,6 +221,13 @@
    "data": "04",
    "expect": {
     "front box door": true
+   }
+  },
+  {
+   "cmd": "0x35",
+   "data": "00 12",
+   "expect": {
+    "vehicle_speed": 18.0
    }
   },
   {

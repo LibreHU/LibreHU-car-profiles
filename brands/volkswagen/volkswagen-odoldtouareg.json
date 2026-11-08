@@ -25,6 +25,20 @@
   }
  ],
  "messages": {
+  "0x16": {
+   "name": "Message 0x16",
+   "signals": {
+    "vehicle_speed": {
+     "start_byte": 0,
+     "size": 2,
+     "endian": "little",
+     "factor": 0.0625,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    }
+   }
+  },
   "0x21": {
    "name": "Message 0x21",
    "signals": {
@@ -70,6 +84,16 @@
        "role": "hvac.power"
       }
      }
+    },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "4",
+      "1": "2",
+      "2": "1",
+      "3": "1"
+     },
+     "label": "front wind mode"
     },
     "hvac_seat_heat_right": {
      "start_byte": 4,
@@ -148,6 +172,13 @@
  },
  "examples": [
   {
+   "cmd": "0x16",
+   "data": "23 01",
+   "expect": {
+    "vehicle_speed": 18.19
+   }
+  },
+  {
    "cmd": "0x21",
    "data": "04",
    "expect": {
@@ -166,13 +197,6 @@
    "data": "23 01",
    "expect": {
     "steering_angle": 291.0
-   }
-  },
-  {
-   "cmd": "0x20",
-   "data": "12",
-   "expect": {
-    "wheel_key": 18.0
    }
   }
  ]

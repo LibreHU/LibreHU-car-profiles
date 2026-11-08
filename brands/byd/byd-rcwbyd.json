@@ -64,6 +64,12 @@
       }
      }
     },
+    "auto_recirc_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "auto recirc on off": 4
+     }
+    },
     "hvac_recirculation": {
      "start_byte": 0,
      "bits": {
@@ -97,6 +103,20 @@
      "bit_length": 4,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
     }
    }
   },
@@ -192,6 +212,32 @@
        "role": "handbrake"
       }
      }
+    },
+    "turn_left": {
+     "start_byte": 1,
+     "bits": {
+      "left turn light": {
+       "bit": 6,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 1,
+     "bits": {
+      "right turn light": {
+       "bit": 7,
+       "role": "turn.right"
+      }
+     }
+    },
+    "engine_rpm": {
+     "start_byte": 4,
+     "size": 2,
+     "endian": "little",
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
     }
    }
   },

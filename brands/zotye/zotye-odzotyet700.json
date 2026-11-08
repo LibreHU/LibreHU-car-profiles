@@ -37,6 +37,12 @@
       }
      }
     },
+    "max_defrost_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "max defrost on off": 1
+     }
+    },
     "hvac_dual": {
      "start_byte": 0,
      "bits": {
@@ -79,6 +85,27 @@
      "bit_length": 4,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
+    "max_acon_off": {
+     "start_byte": 4,
+     "start_bit": 3,
+     "bit_length": 5,
+     "signed": true,
+     "label": "max acon off"
     },
     "hvac_seat_heat_right": {
      "start_byte": 5,

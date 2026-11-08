@@ -76,6 +76,12 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 4,
+     "start_bit": 4,
+     "bit_length": 3,
+     "label": "front wind mode"
+    },
     "outside_temp": {
      "start_byte": 6,
      "start_bit": 0,
@@ -84,6 +90,12 @@
      "role": "outside.temp",
      "unit": "°C",
      "label": "outside temp"
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "auto recirc on off": 4
+     }
     }
    }
   },

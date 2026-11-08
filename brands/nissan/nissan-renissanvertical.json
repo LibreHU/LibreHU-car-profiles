@@ -128,6 +128,12 @@
   "0x21": {
    "name": "Message 0x21",
    "signals": {
+    "max_defrost_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "max defrost on off": 1
+     }
+    },
     "hvac_dual": {
      "start_byte": 0,
      "bits": {
@@ -188,6 +194,26 @@
      "bit_length": 4,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
+    "max_acon_off": {
+     "start_byte": 4,
+     "bits": {
+      "max acon off": 2
+     }
     },
     "hvac_defrost_front": {
      "start_byte": 4,
@@ -282,9 +308,9 @@
  "examples": [
   {
    "cmd": "0x21",
-   "data": "04",
+   "data": "02",
    "expect": {
-    "dual on off": true
+    "max defrost on off": true
    }
   },
   {

@@ -200,6 +200,29 @@
      "label": "outside temp"
     }
    }
+  },
+  "0x36": {
+   "name": "Message 0x36",
+   "signals": {
+    "turn_left": {
+     "start_byte": 2,
+     "bits": {
+      "left turn light": {
+       "bit": 6,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 2,
+     "bits": {
+      "right turn light": {
+       "bit": 7,
+       "role": "turn.right"
+      }
+     }
+    }
+   }
   }
  },
  "wheel_keys": {
@@ -226,6 +249,13 @@
    "data": "01",
    "expect": {
     "ac on off": true
+   }
+  },
+  {
+   "cmd": "0x36",
+   "data": "00 00 40",
+   "expect": {
+    "left turn light": true
    }
   }
  ]

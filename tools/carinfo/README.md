@@ -36,5 +36,8 @@ not `FD`); 6 framings the engine 2.7 reads (box types `cyt-55-fixed`, `cyt-55`, 
 **510 profiles, 5 356 cars** (6 115 with the hand-made ones, 111 makes), all checked by the engine 2.7 (`check`:
 528 / 528). Left out: `KlydeRentProtocol` (scooters), 7 decoders with nothing LibreHU reads (`ReBaicM20Protocol` and
 `Panoramic360SerialProtocol` empty, `HangDaoProtocol`, `ReJacProtocolSingle`, `OdJacShaiLingProtocol`, two rear
-screens / machines), 4 series that are no cars. Make names: from the protocol documents Car Info lists (« 东风风神 » →
-Dongfeng Aeolus…), `MAKES` in `generate.py`. Never tried on a car.
+screens / machines), 4 series that are no cars. Values: Car Info's « general info » (`CarinfoGeneralBean`: rpm, speed, odometer, turn signals,
+reverse, handbrake, park, lights, ACC) mapped to LibreHU roles, and twelve A/C values LibreHU has no role for shown with
+their label (airflow mode, max A/C, rear A/C…): 9 337 signals in 2 058 messages (engine rpm in 120 profiles, speed in
+118, odometer in 54). Make names: from the protocol documents Car Info lists (« 东风风神 » → Dongfeng Aeolus…), `MAKES`
+in `generate.py`. Never tried on a car.

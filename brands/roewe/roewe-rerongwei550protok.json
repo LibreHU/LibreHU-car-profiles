@@ -37,6 +37,18 @@
   "0x21": {
    "name": "Message 0x21",
    "signals": {
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 0
+     }
+    },
+    "max_defrost_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "max defrost on off": 1
+     }
+    },
     "hvac_dual": {
      "start_byte": 0,
      "bits": {
@@ -79,6 +91,46 @@
      "bit_length": 4,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "5",
+      "2": "4",
+      "3": "5",
+      "4": "2",
+      "5": "7",
+      "6": "6",
+      "7": "7",
+      "8": "6",
+      "9": "7",
+      "10": "6",
+      "11": "7",
+      "12": "6",
+      "13": "7",
+      "14": "6",
+      "15": "7"
+     },
+     "label": "front wind mode"
+    },
+    "max_acon_off": {
+     "start_byte": 4,
+     "bits": {
+      "max acon off": 3
+     }
+    },
+    "eco_on_off": {
+     "start_byte": 4,
+     "bits": {
+      "eco on off": 4
+     }
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 4,
+     "bits": {
+      "auto recirc on off": 5
+     }
     },
     "hvac_defrost_rear": {
      "start_byte": 4,
@@ -221,9 +273,9 @@
  "examples": [
   {
    "cmd": "0x21",
-   "data": "04",
+   "data": "01",
    "expect": {
-    "dual on off": true
+    "rear air on off": true
    }
   },
   {

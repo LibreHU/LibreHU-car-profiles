@@ -23,6 +23,24 @@
   "0x11": {
    "name": "Message 0x11",
    "signals": {
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "back state": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "handbrake": {
+     "start_byte": 0,
+     "bits": {
+      "handbrake": {
+       "bit": 3,
+       "role": "handbrake"
+      }
+     }
+    },
     "door_hood": {
      "start_byte": 2,
      "bits": {
@@ -159,9 +177,9 @@
  "examples": [
   {
    "cmd": "0x11",
-   "data": "00 00 04",
+   "data": "04",
    "expect": {
-    "front box door": true
+    "back state": true
    }
   },
   {

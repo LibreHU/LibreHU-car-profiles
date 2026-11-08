@@ -235,6 +235,18 @@
     }
    }
   },
+  "0x50": {
+   "name": "Message 0x50",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 0,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
   "0x20": {
    "name": "Wheel key",
    "signals": {

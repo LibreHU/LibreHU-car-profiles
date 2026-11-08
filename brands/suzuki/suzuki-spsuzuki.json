@@ -63,6 +63,24 @@
        "role": "door.front_right"
       }
      }
+    },
+    "gear_reverse": {
+     "start_byte": 1,
+     "bits": {
+      "back state": {
+       "bit": 0,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "handbrake": {
+     "start_byte": 1,
+     "bits": {
+      "handbrake": {
+       "bit": 1,
+       "role": "handbrake"
+      }
+     }
     }
    }
   },

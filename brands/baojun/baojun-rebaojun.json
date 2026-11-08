@@ -140,6 +140,12 @@
   "0x20": {
    "name": "Message 0x20",
    "signals": {
+    "max_acon_off": {
+     "start_byte": 0,
+     "bits": {
+      "max acon off": 0
+     }
+    },
     "hvac_defrost_rear": {
      "start_byte": 0,
      "bits": {
@@ -373,9 +379,9 @@
  "examples": [
   {
    "cmd": "0x20",
-   "data": "02",
+   "data": "01",
    "expect": {
-    "rear defrost on off": true
+    "max acon off": true
    }
   },
   {

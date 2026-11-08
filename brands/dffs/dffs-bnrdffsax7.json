@@ -107,6 +107,29 @@
     }
    }
   },
+  "0x67": {
+   "name": "Message 0x67",
+   "signals": {
+    "turn_left": {
+     "start_byte": 0,
+     "bits": {
+      "left turn light": {
+       "bit": 0,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 0,
+     "bits": {
+      "right turn light": {
+       "bit": 0,
+       "role": "turn.right"
+      }
+     }
+    }
+   }
+  },
   "0x20": {
    "name": "Wheel key",
    "signals": {
@@ -162,10 +185,10 @@
    }
   },
   {
-   "cmd": "0x20",
+   "cmd": "0x67",
    "data": "01",
    "expect": {
-    "wheel_key": "volume +"
+    "left turn light": true
    }
   }
  ]

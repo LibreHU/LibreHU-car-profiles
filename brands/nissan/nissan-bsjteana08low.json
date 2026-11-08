@@ -28,6 +28,20 @@
   "0x02": {
    "name": "Message 0x02",
    "signals": {
+    "front_wind_mode": {
+     "start_byte": 2,
+     "values": {
+      "0": "0",
+      "1": "2",
+      "2": "6",
+      "3": "4",
+      "4": "5",
+      "5": "1",
+      "6": "0",
+      "7": "0"
+     },
+     "label": "front wind mode"
+    },
     "hvac_fan": {
      "start_byte": 2,
      "start_bit": 3,
@@ -162,6 +176,68 @@
     }
    }
   },
+  "0x52": {
+   "name": "Message 0x52",
+   "signals": {
+    "turn_left": {
+     "start_byte": 0,
+     "bits": {
+      "left turn light": {
+       "bit": 6,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 0,
+     "bits": {
+      "right turn light": {
+       "bit": 7,
+       "role": "turn.right"
+      }
+     }
+    }
+   }
+  },
+  "0x68": {
+   "name": "Message 0x68",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 0,
+     "size": 2,
+     "endian": "little",
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
+  "0x6A": {
+   "name": "Message 0x6A",
+   "signals": {
+    "vehicle_speed": {
+     "start_byte": 0,
+     "size": 2,
+     "endian": "little",
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    }
+   }
+  },
+  "0x6B": {
+   "name": "Message 0x6B",
+   "signals": {
+    "vehicle_odometer": {
+     "start_byte": 0,
+     "size": 3,
+     "endian": "little",
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
+    }
+   }
+  },
   "0x11": {
    "name": "Wheel key",
    "signals": {
@@ -191,9 +267,9 @@
  "examples": [
   {
    "cmd": "0x02",
-   "data": "00 00 08",
+   "data": "00 00 00",
    "expect": {
-    "hvac_fan": 1.0
+    "front_wind_mode": "0"
    }
   },
   {
@@ -211,10 +287,10 @@
    }
   },
   {
-   "cmd": "0x11",
-   "data": "01",
+   "cmd": "0x52",
+   "data": "40",
    "expect": {
-    "wheel_key": "previous"
+    "left turn light": true
    }
   }
  ]

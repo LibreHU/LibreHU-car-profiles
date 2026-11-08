@@ -131,6 +131,13 @@
   "0x35": {
    "name": "Message 0x35",
    "signals": {
+    "engine_rpm": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
     "vehicle_odometer": {
      "start_byte": 7,
      "size": 4,
@@ -216,9 +223,9 @@
   },
   {
    "cmd": "0x35",
-   "data": "00 00 00 00 00 00 00 00 00 01 23",
+   "data": "00 00 00 00 01 23",
    "expect": {
-    "vehicle_odometer": 291.0
+    "engine_rpm": 291.0
    }
   },
   {

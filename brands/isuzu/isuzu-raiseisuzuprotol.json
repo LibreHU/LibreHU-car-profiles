@@ -172,6 +172,12 @@
       }
      }
     },
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 2
+     }
+    },
     "hvac_auto": {
      "start_byte": 0,
      "bits": {
@@ -227,6 +233,12 @@
      "role": "hvac.temp_left",
      "unit": "°C",
      "label": "front left temp"
+    },
+    "max_acon_off": {
+     "start_byte": 4,
+     "bits": {
+      "max acon off": 3
+     }
     }
    }
   },

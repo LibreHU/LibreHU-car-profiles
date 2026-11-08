@@ -20,6 +20,15 @@
   "0x11": {
    "name": "Message 0x11",
    "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
     "lights_parking": {
      "start_byte": 0,
      "bits": {
@@ -41,7 +50,7 @@
     "handbrake": {
      "start_byte": 0,
      "bits": {
-      "pstop block state": {
+      "handbrake": {
        "bit": 3,
        "role": "handbrake"
       }
@@ -116,6 +125,29 @@
     }
    }
   },
+  "0x18": {
+   "name": "Message 0x18",
+   "signals": {
+    "turn_right": {
+     "start_byte": 1,
+     "bits": {
+      "right turn light": {
+       "bit": 6,
+       "role": "turn.right"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 1,
+     "bits": {
+      "left turn light": {
+       "bit": 7,
+       "role": "turn.left"
+      }
+     }
+    }
+   }
+  },
   "0x41": {
    "name": "Message 0x41",
    "signals": {
@@ -175,9 +207,16 @@
  "examples": [
   {
    "cmd": "0x11",
-   "data": "02",
+   "data": "01",
    "expect": {
-    "illlight": true
+    "acc": true
+   }
+  },
+  {
+   "cmd": "0x18",
+   "data": "00 40",
+   "expect": {
+    "right turn light": true
    }
   },
   {

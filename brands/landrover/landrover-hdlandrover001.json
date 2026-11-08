@@ -143,6 +143,12 @@
       }
      }
     },
+    "max_acon_off": {
+     "start_byte": 0,
+     "bits": {
+      "max acon off": 5
+     }
+    },
     "hvac_power": {
      "start_byte": 0,
      "bits": {

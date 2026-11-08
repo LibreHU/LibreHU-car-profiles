@@ -96,6 +96,20 @@
       }
      }
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
     "hvac_defrost_rear": {
      "start_byte": 4,
      "bits": {
@@ -120,6 +134,32 @@
      "bit_length": 4,
      "role": "hvac.fan",
      "label": "front wind level"
+    }
+   }
+  },
+  "0x35": {
+   "name": "Message 0x35",
+   "signals": {
+    "vehicle_speed": {
+     "start_byte": 1,
+     "signed": true,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    },
+    "engine_rpm": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
+    "vehicle_odometer": {
+     "start_byte": 7,
+     "size": 3,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
     }
    }
   },
@@ -202,17 +242,17 @@
    }
   },
   {
+   "cmd": "0x35",
+   "data": "00 12",
+   "expect": {
+    "vehicle_speed": 18.0
+   }
+  },
+  {
    "cmd": "0x36",
    "data": "12",
    "expect": {
     "tpms_front_right_pressure": 18.0
-   }
-  },
-  {
-   "cmd": "0x20",
-   "data": "01",
-   "expect": {
-    "wheel_key": "volume +"
    }
   }
  ]

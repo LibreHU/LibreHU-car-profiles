@@ -152,6 +152,12 @@
       }
      }
     },
+    "max_defrost_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "max defrost on off": 1
+     }
+    },
     "hvac_dual": {
      "start_byte": 0,
      "bits": {
@@ -204,6 +210,20 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
     "hvac_seat_heat_right": {
      "start_byte": 4,
      "start_bit": 0,
@@ -217,6 +237,12 @@
      "bit_length": 2,
      "role": "hvac.seat_heat_left",
      "label": "fl seat warmer level"
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 4,
+     "bits": {
+      "auto recirc on off": 7
+     }
     }
    }
   },
@@ -226,9 +252,18 @@
     "gear_reverse": {
      "start_byte": 0,
      "bits": {
-      "back car state": {
+      "rev": {
        "bit": 0,
        "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 1,
+       "role": "gear.park"
       }
      }
     },
@@ -238,6 +273,24 @@
       "pstop block state": {
        "bit": 1,
        "role": "handbrake"
+      }
+     }
+    },
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 2,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 3,
+       "role": "ignition.acc"
       }
      }
     }
@@ -291,7 +344,7 @@
    "cmd": "0x24",
    "data": "01",
    "expect": {
-    "back car state": true
+    "rev": true
    }
   },
   {

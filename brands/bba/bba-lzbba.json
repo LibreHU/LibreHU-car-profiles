@@ -253,12 +253,36 @@
        "role": "door.front_right"
       }
      }
+    },
+    "gear_reverse": {
+     "start_byte": 1,
+     "bits": {
+      "back state": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "handbrake": {
+     "start_byte": 1,
+     "bits": {
+      "handbrake": {
+       "bit": 3,
+       "role": "handbrake"
+      }
+     }
     }
    }
   },
   "0x27": {
    "name": "Message 0x27",
    "signals": {
+    "sync_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "sync on off": 0
+     }
+    },
     "hvac_defrost_rear": {
      "start_byte": 0,
      "bits": {
@@ -313,6 +337,28 @@
       }
      }
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "16",
+      "2": "4",
+      "3": "16",
+      "4": "2",
+      "5": "16",
+      "6": "6",
+      "7": "16",
+      "8": "1",
+      "9": "16",
+      "10": "5",
+      "11": "16",
+      "12": "3",
+      "13": "16",
+      "14": "7",
+      "15": "16"
+     },
+     "label": "front wind mode"
+    },
     "hvac_fan": {
      "start_byte": 4,
      "start_bit": 0,
@@ -334,6 +380,31 @@
      "bit_length": 3,
      "role": "hvac.seat_heat_left",
      "label": "fl seat warmer level"
+    }
+   }
+  },
+  "0x35": {
+   "name": "Message 0x35",
+   "signals": {
+    "vehicle_speed": {
+     "start_byte": 1,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    },
+    "engine_rpm": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
+    "vehicle_odometer": {
+     "start_byte": 7,
+     "size": 3,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
     }
    }
   },
@@ -361,9 +432,16 @@
   },
   {
    "cmd": "0x27",
-   "data": "02",
+   "data": "01",
    "expect": {
-    "rear defrost on off": true
+    "sync on off": true
+   }
+  },
+  {
+   "cmd": "0x35",
+   "data": "00 12",
+   "expect": {
+    "vehicle_speed": 18.0
    }
   },
   {

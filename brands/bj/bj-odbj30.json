@@ -98,6 +98,26 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 4,
+     "bits": {
+      "auto recirc on off": 5
+     }
+    },
     "hvac_seat_heat_right": {
      "start_byte": 5,
      "start_bit": 0,
@@ -111,6 +131,18 @@
      "bit_length": 4,
      "role": "hvac.seat_heat_left",
      "label": "fl seat warmer level"
+    },
+    "fr_seat_blowing_level": {
+     "start_byte": 6,
+     "start_bit": 0,
+     "bit_length": 4,
+     "label": "fr seat blowing level"
+    },
+    "fl_seat_blowing_level": {
+     "start_byte": 6,
+     "start_bit": 4,
+     "bit_length": 4,
+     "label": "fl seat blowing level"
     },
     "outside_temp": {
      "start_byte": 7,
@@ -177,6 +209,24 @@
       "right front door": {
        "bit": 7,
        "role": "door.front_right"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 1,
+     "bits": {
+      "back state": {
+       "bit": 0,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "handbrake": {
+     "start_byte": 1,
+     "bits": {
+      "handbrake": {
+       "bit": 1,
+       "role": "handbrake"
       }
      }
     }

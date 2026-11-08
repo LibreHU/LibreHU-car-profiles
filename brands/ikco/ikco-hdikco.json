@@ -61,6 +61,24 @@
   "0x11": {
    "name": "Message 0x11",
    "signals": {
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "back state": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "handbrake": {
+     "start_byte": 0,
+     "bits": {
+      "handbrake": {
+       "bit": 3,
+       "role": "handbrake"
+      }
+     }
+    },
     "door_hood": {
      "start_byte": 4,
      "bits": {
@@ -124,6 +142,12 @@
   "0x31": {
    "name": "Message 0x31",
    "signals": {
+    "sync_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "sync on off": 0
+     }
+    },
     "hvac_auto": {
      "start_byte": 0,
      "bits": {
@@ -177,6 +201,28 @@
        "role": "hvac.defrost_rear"
       }
      }
+    },
+    "front_wind_mode": {
+     "start_byte": 4,
+     "values": {
+      "0": "0",
+      "1": "16",
+      "2": "16",
+      "3": "4",
+      "4": "4",
+      "5": "6",
+      "6": "2",
+      "7": "2",
+      "8": "2",
+      "9": "2",
+      "10": "2",
+      "11": "1",
+      "12": "5",
+      "13": "3",
+      "14": "7",
+      "15": "7"
+     },
+     "label": "front wind mode"
     },
     "hvac_fan": {
      "start_byte": 5,
@@ -260,16 +306,16 @@
  "examples": [
   {
    "cmd": "0x11",
-   "data": "00 00 00 00 04",
+   "data": "04",
    "expect": {
-    "front box door": true
+    "back state": true
    }
   },
   {
    "cmd": "0x31",
-   "data": "08",
+   "data": "01",
    "expect": {
-    "auto light1": true
+    "sync on off": true
    }
   },
   {

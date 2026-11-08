@@ -175,6 +175,12 @@
      "signed": true,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "max_acon_off": {
+     "start_byte": 4,
+     "bits": {
+      "max acon off": 3
+     }
     }
    }
   },

@@ -77,6 +77,13 @@
       }
      }
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "start_bit": 3,
+     "bit_length": 2,
+     "factor": 2.0,
+     "label": "front wind mode"
+    },
     "hvac_defrost_rear": {
      "start_byte": 1,
      "bits": {
@@ -144,6 +151,12 @@
        "bit": 0,
        "role": "hvac.defrost_front"
       }
+     }
+    },
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 1
      }
     },
     "hvac_dual": {

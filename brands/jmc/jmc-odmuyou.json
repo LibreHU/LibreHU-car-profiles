@@ -193,6 +193,29 @@
     }
    }
   },
+  "0x7D": {
+   "name": "Message 0x7D",
+   "signals": {
+    "turn_right": {
+     "start_byte": 1,
+     "bits": {
+      "right turn light": {
+       "bit": 3,
+       "role": "turn.right"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 1,
+     "bits": {
+      "left turn light": {
+       "bit": 4,
+       "role": "turn.left"
+      }
+     }
+    }
+   }
+  },
   "0x21": {
    "name": "Wheel key",
    "signals": {
@@ -230,10 +253,10 @@
    }
   },
   {
-   "cmd": "0x21",
-   "data": "12",
+   "cmd": "0x7D",
+   "data": "00 08",
    "expect": {
-    "wheel_key": 18.0
+    "right turn light": true
    }
   }
  ]

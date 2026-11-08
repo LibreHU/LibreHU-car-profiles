@@ -20,6 +20,24 @@
   }
  ],
  "messages": {
+  "0x11": {
+   "name": "Message 0x11",
+   "signals": {
+    "handbrake": {
+     "start_byte": 0,
+     "bits": {
+      "handbrake": {
+       "bit": 3,
+       "role": "handbrake"
+      }
+     }
+    },
+    "wheel_key": {
+     "start_byte": 2,
+     "label": "wheel key"
+    }
+   }
+  },
   "0x31": {
    "name": "Message 0x31",
    "signals": {
@@ -93,15 +111,6 @@
      "label": "radar show on off"
     }
    }
-  },
-  "0x11": {
-   "name": "Wheel key",
-   "signals": {
-    "wheel_key": {
-     "start_byte": 2,
-     "label": "wheel key"
-    }
-   }
   }
  },
  "wheel_keys": {
@@ -109,6 +118,13 @@
   "code_byte": 2
  },
  "examples": [
+  {
+   "cmd": "0x11",
+   "data": "08",
+   "expect": {
+    "handbrake": true
+   }
+  },
   {
    "cmd": "0x31",
    "data": "08",
@@ -121,13 +137,6 @@
    "data": "00 00 00 00 00 00 00 00 00 00 12",
    "expect": {
     "radar_shown": 18.0
-   }
-  },
-  {
-   "cmd": "0x11",
-   "data": "00 00 12",
-   "expect": {
-    "wheel_key": 18.0
    }
   }
  ]

@@ -146,6 +146,12 @@
       }
      }
     },
+    "max_acon_off": {
+     "start_byte": 0,
+     "bits": {
+      "max acon off": 4
+     }
+    },
     "hvac_recirculation": {
      "start_byte": 0,
      "bits": {

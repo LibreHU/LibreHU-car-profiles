@@ -77,6 +77,20 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "2",
+      "2": "6",
+      "3": "4",
+      "4": "5",
+      "5": "1",
+      "6": "0",
+      "7": "0"
+     },
+     "label": "front wind mode"
+    },
     "hvac_ac": {
      "start_byte": 3,
      "bits": {
@@ -95,6 +109,12 @@
       "3": "-2147483648"
      },
      "label": "air recirc on off"
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 3,
+     "bits": {
+      "auto recirc on off": 2
+     }
     },
     "hvac_dual": {
      "start_byte": 3,

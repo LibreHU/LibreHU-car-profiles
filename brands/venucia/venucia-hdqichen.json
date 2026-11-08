@@ -154,6 +154,12 @@
       }
      }
     },
+    "auto_recirc_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "auto recirc on off": 3
+     }
+    },
     "hvac_recirculation": {
      "start_byte": 1,
      "bits": {

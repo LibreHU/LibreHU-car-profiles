@@ -31,9 +31,49 @@
   }
  ],
  "messages": {
+  "0x16": {
+   "name": "Message 0x16",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 2,
+     "size": 2,
+     "endian": "little",
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
   "0x24": {
    "name": "Message 0x24",
    "signals": {
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 0,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 1,
+       "role": "gear.park"
+      }
+     }
+    },
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 2,
+       "role": "lights.parking"
+      }
+     }
+    },
     "door_front_left": {
      "start_byte": 1,
      "bits": {
@@ -147,10 +187,17 @@
  },
  "examples": [
   {
-   "cmd": "0x24",
-   "data": "00 01",
+   "cmd": "0x16",
+   "data": "00 00 23 01",
    "expect": {
-    "left front door": true
+    "engine_rpm": 291.0
+   }
+  },
+  {
+   "cmd": "0x24",
+   "data": "01",
+   "expect": {
+    "rev": true
    }
   },
   {

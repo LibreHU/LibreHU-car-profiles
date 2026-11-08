@@ -64,6 +64,51 @@
   }
  ],
  "messages": {
+  "0x72": {
+   "name": "Message 0x72",
+   "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
+      }
+     }
+    },
+    "wheel_key": {
+     "start_byte": 2,
+     "label": "wheel key"
+    }
+   }
+  },
   "0x73": {
    "name": "Message 0x73",
    "signals": {
@@ -137,6 +182,12 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 4,
+     "start_bit": 4,
+     "bit_length": 3,
+     "label": "front wind mode"
+    },
     "door_front_right": {
      "start_byte": 7,
      "bits": {
@@ -192,15 +243,6 @@
      }
     }
    }
-  },
-  "0x72": {
-   "name": "Wheel key",
-   "signals": {
-    "wheel_key": {
-     "start_byte": 2,
-     "label": "wheel key"
-    }
-   }
   }
  },
  "wheel_keys": {
@@ -209,17 +251,17 @@
  },
  "examples": [
   {
+   "cmd": "0x72",
+   "data": "01",
+   "expect": {
+    "acc": true
+   }
+  },
+  {
    "cmd": "0x73",
    "data": "04",
    "expect": {
     "dual on off": true
-   }
-  },
-  {
-   "cmd": "0x72",
-   "data": "00 00 12",
-   "expect": {
-    "wheel_key": 18.0
    }
   }
  ]

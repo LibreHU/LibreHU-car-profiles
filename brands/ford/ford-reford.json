@@ -803,6 +803,12 @@
       }
      }
     },
+    "max_defrost_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "max defrost on off": 1
+     }
+    },
     "hvac_dual": {
      "start_byte": 0,
      "bits": {
@@ -856,6 +862,36 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "16",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
+    "rear_wind_mode": {
+     "start_byte": 4,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6"
+     },
+     "label": "rear wind mode"
+    },
+    "max_acon_off": {
+     "start_byte": 4,
+     "bits": {
+      "max acon off": 2
+     }
+    },
     "hvac_defrost_front": {
      "start_byte": 4,
      "bits": {
@@ -864,6 +900,17 @@
        "role": "hvac.defrost_front"
       }
      }
+    },
+    "rear_air_on_off": {
+     "start_byte": 4,
+     "bits": {
+      "rear air on off": 7
+     }
+    },
+    "rear_wind_level": {
+     "start_byte": 6,
+     "max_value": 7,
+     "label": "rear wind level"
     },
     "hvac_seat_heat_left": {
      "start_byte": 8,
@@ -996,6 +1043,13 @@
   "0x63": {
    "name": "Message 0x63",
    "signals": {
+    "vehicle_odometer": {
+     "start_byte": 0,
+     "size": 3,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
+    },
     "tpms_front_left_temperature": {
      "start_byte": 11,
      "offset": -60.0,
@@ -1060,9 +1114,9 @@
   },
   {
    "cmd": "0x63",
-   "data": "00 00 00 00 00 00 00 00 00 00 00 12",
+   "data": "00 01 23",
    "expect": {
-    "tpms_front_left_temperature": -42.0
+    "vehicle_odometer": 291.0
    }
   }
  ]

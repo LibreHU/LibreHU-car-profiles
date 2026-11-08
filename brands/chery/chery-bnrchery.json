@@ -173,6 +173,55 @@
     }
    }
   },
+  "0x25": {
+   "name": "Message 0x25",
+   "signals": {
+    "turn_right": {
+     "start_byte": 0,
+     "bits": {
+      "right turn light": {
+       "bit": 0,
+       "role": "turn.right"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 0,
+     "bits": {
+      "left turn light": {
+       "bit": 0,
+       "role": "turn.left"
+      }
+     }
+    }
+   }
+  },
+  "0x68": {
+   "name": "Message 0x68",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 0,
+     "size": 2,
+     "endian": "little",
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
+  "0x6A": {
+   "name": "Message 0x6A",
+   "signals": {
+    "vehicle_speed": {
+     "start_byte": 0,
+     "size": 2,
+     "endian": "little",
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    }
+   }
+  },
   "0x02": {
    "name": "Wheel key",
    "signals": {
@@ -203,10 +252,17 @@
    }
   },
   {
-   "cmd": "0x02",
-   "data": "12",
+   "cmd": "0x25",
+   "data": "01",
    "expect": {
-    "wheel_key": 18.0
+    "right turn light": true
+   }
+  },
+  {
+   "cmd": "0x68",
+   "data": "23 01",
+   "expect": {
+    "engine_rpm": 291.0
    }
   }
  ]

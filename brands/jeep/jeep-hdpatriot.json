@@ -119,6 +119,12 @@
      },
      "label": "air recirc on off"
     },
+    "auto_recirc_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "auto recirc on off": 3
+     }
+    },
     "hvac_ac": {
      "start_byte": 1,
      "bits": {
@@ -126,6 +132,12 @@
        "bit": 6,
        "role": "hvac.ac"
       }
+     }
+    },
+    "eco_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "eco on off": 7
      }
     },
     "hvac_defrost_front": {
@@ -146,6 +158,28 @@
       }
      }
     },
+    "front_wind_mode": {
+     "start_byte": 4,
+     "values": {
+      "0": "0",
+      "1": "16",
+      "2": "0",
+      "3": "4",
+      "4": "0",
+      "5": "6",
+      "6": "2",
+      "7": "0",
+      "8": "0",
+      "9": "0",
+      "10": "0",
+      "11": "1",
+      "12": "5",
+      "13": "0",
+      "14": "0",
+      "15": "0"
+     },
+     "label": "front wind mode"
+    },
     "outside_temp": {
      "start_byte": 11,
      "factor": 0.5,
@@ -154,6 +188,25 @@
      "role": "outside.temp",
      "unit": "°C",
      "label": "outside temp"
+    }
+   }
+  },
+  "0x32": {
+   "name": "Message 0x32",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 2,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
+    "vehicle_speed": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
     }
    }
   }
@@ -182,6 +235,13 @@
    "data": "08",
    "expect": {
     "auto light1": true
+   }
+  },
+  {
+   "cmd": "0x32",
+   "data": "00 00 01 23",
+   "expect": {
+    "engine_rpm": 291.0
    }
   }
  ]

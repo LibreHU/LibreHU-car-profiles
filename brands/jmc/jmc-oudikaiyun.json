@@ -52,6 +52,12 @@
       }
      }
     },
+    "sync_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "sync on off": 2
+     }
+    },
     "hvac_auto": {
      "start_byte": 0,
      "bits": {

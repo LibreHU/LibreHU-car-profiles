@@ -203,6 +203,29 @@
     }
    }
   },
+  "0x18": {
+   "name": "Message 0x18",
+   "signals": {
+    "turn_left": {
+     "start_byte": 1,
+     "bits": {
+      "left turn light": {
+       "bit": 6,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 1,
+     "bits": {
+      "right turn light": {
+       "bit": 7,
+       "role": "turn.right"
+      }
+     }
+    }
+   }
+  },
   "0x31": {
    "name": "Message 0x31",
    "signals": {
@@ -284,14 +307,14 @@
      "size": 2,
      "role": "engine.rpm",
      "unit": "rpm",
-     "label": "rotation rate"
+     "label": "rotationl speed"
     },
     "vehicle_speed": {
      "start_byte": 4,
      "size": 2,
      "role": "vehicle.speed",
      "unit": "km/h",
-     "label": "speed"
+     "label": "current speed"
     }
    }
   },
@@ -352,10 +375,10 @@
    }
   },
   {
-   "cmd": "0x31",
-   "data": "08",
+   "cmd": "0x18",
+   "data": "00 40",
    "expect": {
-    "auto light1": true
+    "left turn light": true
    }
   }
  ]

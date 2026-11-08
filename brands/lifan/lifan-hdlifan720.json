@@ -23,6 +23,15 @@
   "0x72": {
    "name": "Message 0x72",
    "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
     "lights_parking": {
      "start_byte": 0,
      "bits": {
@@ -35,7 +44,7 @@
     "gear_reverse": {
      "start_byte": 0,
      "bits": {
-      "back car state": {
+      "rev": {
        "bit": 2,
        "role": "gear.reverse"
       }
@@ -252,9 +261,9 @@
  "examples": [
   {
    "cmd": "0x72",
-   "data": "02",
+   "data": "01",
    "expect": {
-    "illlight": true
+    "acc": true
    }
   },
   {

@@ -28,6 +28,35 @@
   }
  ],
  "messages": {
+  "0x21": {
+   "name": "Message 0x21",
+   "signals": {
+    "vehicle_speed": {
+     "start_byte": 0,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    },
+    "turn_left": {
+     "start_byte": 3,
+     "bits": {
+      "left turn light": {
+       "bit": 6,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 3,
+     "bits": {
+      "right turn light": {
+       "bit": 7,
+       "role": "turn.right"
+      }
+     }
+    }
+   }
+  },
   "0x20": {
    "name": "Wheel key",
    "signals": {
@@ -75,6 +104,13 @@
   }
  },
  "examples": [
+  {
+   "cmd": "0x21",
+   "data": "12",
+   "expect": {
+    "vehicle_speed": 18.0
+   }
+  },
   {
    "cmd": "0x20",
    "data": "01",

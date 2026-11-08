@@ -25,6 +25,33 @@
   }
  ],
  "messages": {
+  "0x1B": {
+   "name": "Message 0x1B",
+   "signals": {
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 0
+     }
+    },
+    "rear_wind_mode": {
+     "start_byte": 0,
+     "values": {
+      "0": "0",
+      "1": "1",
+      "2": "1",
+      "3": "2"
+     },
+     "label": "rear wind mode"
+    },
+    "rear_wind_level": {
+     "start_byte": 2,
+     "start_bit": 0,
+     "bit_length": 4,
+     "label": "rear wind level"
+    }
+   }
+  },
   "0x24": {
    "name": "Message 0x24",
    "signals": {
@@ -118,6 +145,13 @@
  },
  "examples": [
   {
+   "cmd": "0x1B",
+   "data": "01",
+   "expect": {
+    "rear air on off": true
+   }
+  },
+  {
    "cmd": "0x24",
    "data": "08",
    "expect": {
@@ -136,13 +170,6 @@
    "data": "00 00 01 23",
    "expect": {
     "vehicle_speed": 291.0
-   }
-  },
-  {
-   "cmd": "0x01",
-   "data": "12",
-   "expect": {
-    "wheel_key": 18.0
    }
   }
  ]

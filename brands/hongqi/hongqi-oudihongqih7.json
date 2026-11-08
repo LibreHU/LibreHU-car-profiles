@@ -40,6 +40,12 @@
       }
      }
     },
+    "sync_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "sync on off": 2
+     }
+    },
     "hvac_auto": {
      "start_byte": 0,
      "bits": {
@@ -47,6 +53,12 @@
        "bit": 3,
        "role": "hvac.auto"
       }
+     }
+    },
+    "eco_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "eco on off": 4
      }
     },
     "hvac_recirculation": {

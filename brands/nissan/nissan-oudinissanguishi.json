@@ -80,6 +80,12 @@
       }
      }
     },
+    "auto_recirc_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "auto recirc on off": 5
+     }
+    },
     "hvac_ac": {
      "start_byte": 0,
      "bits": {
@@ -89,10 +95,60 @@
       }
      }
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "2",
+      "2": "6",
+      "3": "4",
+      "4": "5",
+      "5": "1",
+      "6": "0",
+      "7": "0",
+      "8": "0",
+      "9": "0",
+      "10": "0",
+      "11": "0",
+      "12": "0",
+      "13": "0",
+      "14": "0",
+      "15": "0"
+     },
+     "label": "front wind mode"
+    },
     "hvac_fan": {
      "start_byte": 2,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "rear_wind_level": {
+     "start_byte": 6,
+     "start_bit": 0,
+     "bit_length": 4,
+     "label": "rear wind level"
+    },
+    "rear_wind_mode": {
+     "start_byte": 6,
+     "values": {
+      "0": "0",
+      "1": "2",
+      "2": "6",
+      "3": "4",
+      "4": "16",
+      "5": "16",
+      "6": "16",
+      "7": "16",
+      "8": "16",
+      "9": "16",
+      "10": "16",
+      "11": "16",
+      "12": "16",
+      "13": "16",
+      "14": "16",
+      "15": "16"
+     },
+     "label": "rear wind mode"
     },
     "hvac_seat_heat_right": {
      "start_byte": 8,
@@ -165,6 +221,22 @@
      "factor": -1.0,
      "offset": 4.0,
      "label": "front right distance"
+    }
+   }
+  },
+  "0x27": {
+   "name": "Message 0x27",
+   "signals": {
+    "vehicle_odometer": {
+     "start_byte": 1,
+     "size": 4,
+     "endian": "little",
+     "factor": 0.1,
+     "offset": 0.1,
+     "signed": true,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
     }
    }
   },
@@ -317,10 +389,10 @@
    }
   },
   {
-   "cmd": "0x28",
-   "data": "04",
+   "cmd": "0x27",
+   "data": "00 23 01 00 00",
    "expect": {
-    "front box door": true
+    "vehicle_odometer": 29.2
    }
   }
  ]

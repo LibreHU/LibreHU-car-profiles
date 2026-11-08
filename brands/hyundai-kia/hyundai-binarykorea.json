@@ -70,9 +70,46 @@
   }
  ],
  "messages": {
+  "0x1B": {
+   "name": "Message 0x1B",
+   "signals": {
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 0
+     }
+    },
+    "rear_wind_mode": {
+     "start_byte": 0,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "16",
+      "5": "16",
+      "6": "16",
+      "7": "16"
+     },
+     "label": "rear wind mode"
+    },
+    "rear_wind_level": {
+     "start_byte": 2,
+     "start_bit": 0,
+     "bit_length": 4,
+     "label": "rear wind level"
+    }
+   }
+  },
   "0x21": {
    "name": "Message 0x21",
    "signals": {
+    "max_defrost_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "max defrost on off": 0
+     }
+    },
     "hvac_dual": {
      "start_byte": 0,
      "bits": {
@@ -277,10 +314,17 @@
  },
  "examples": [
   {
-   "cmd": "0x21",
-   "data": "04",
+   "cmd": "0x1B",
+   "data": "01",
    "expect": {
-    "dual on off": true
+    "rear air on off": true
+   }
+  },
+  {
+   "cmd": "0x21",
+   "data": "01",
+   "expect": {
+    "max defrost on off": true
    }
   },
   {
@@ -295,13 +339,6 @@
    "data": "12",
    "expect": {
     "outside_temp": 18.0
-   }
-  },
-  {
-   "cmd": "0x2A",
-   "data": "12",
-   "expect": {
-    "hvac_seat_heat_left": 18.0
    }
   }
  ]

@@ -306,6 +306,20 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
     "hvac_defrost_rear": {
      "start_byte": 4,
      "bits": {
@@ -323,9 +337,18 @@
     "gear_reverse": {
      "start_byte": 1,
      "bits": {
-      "back car state": {
+      "rev": {
        "bit": 0,
        "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 1,
+     "bits": {
+      "park": {
+       "bit": 1,
+       "role": "gear.park"
       }
      }
     },
@@ -335,6 +358,15 @@
       "pstop block state": {
        "bit": 1,
        "role": "handbrake"
+      }
+     }
+    },
+    "lights_parking": {
+     "start_byte": 1,
+     "bits": {
+      "illlight": {
+       "bit": 2,
+       "role": "lights.parking"
       }
      }
     }
@@ -381,7 +413,7 @@
    "cmd": "0x24",
    "data": "00 01",
    "expect": {
-    "back car state": true
+    "rev": true
    }
   },
   {

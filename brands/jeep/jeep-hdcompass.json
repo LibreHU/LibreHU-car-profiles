@@ -76,9 +76,39 @@
     }
    }
   },
+  "0x32": {
+   "name": "Message 0x32",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 2,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
   "0x72": {
    "name": "Message 0x72",
    "signals": {
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
     "steering_angle": {
      "start_byte": 4,
      "size": 2,
@@ -136,10 +166,17 @@
    }
   },
   {
-   "cmd": "0x72",
-   "data": "00 00 00 00 01 23",
+   "cmd": "0x32",
+   "data": "00 00 01 23",
    "expect": {
-    "steering_angle": -291.0
+    "engine_rpm": 291.0
+   }
+  },
+  {
+   "cmd": "0x72",
+   "data": "02",
+   "expect": {
+    "illlight": true
    }
   }
  ]

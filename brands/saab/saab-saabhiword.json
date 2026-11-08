@@ -23,12 +23,30 @@
   "0x11": {
    "name": "Message 0x11",
    "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
     "gear_reverse": {
      "start_byte": 0,
      "bits": {
       "back car state": {
        "bit": 2,
        "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
       }
      }
     },
@@ -153,9 +171,9 @@
  "examples": [
   {
    "cmd": "0x11",
-   "data": "04",
+   "data": "01",
    "expect": {
-    "back car state": true
+    "acc": true
    }
   },
   {

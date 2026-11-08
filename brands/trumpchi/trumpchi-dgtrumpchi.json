@@ -64,6 +64,21 @@
       }
      }
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "mask": "0x58",
+     "values": {
+      "0": "0",
+      "8": "2",
+      "16": "4",
+      "24": "6",
+      "64": "1",
+      "72": "3",
+      "80": "5",
+      "88": "7"
+     },
+     "label": "front wind mode"
+    },
     "hvac_defrost_rear": {
      "start_byte": 1,
      "bits": {
@@ -114,6 +129,12 @@
        "bit": 6,
        "role": "hvac.dual"
       }
+     }
+    },
+    "max_acon_off": {
+     "start_byte": 2,
+     "bits": {
+      "max acon off": 7
      }
     }
    }

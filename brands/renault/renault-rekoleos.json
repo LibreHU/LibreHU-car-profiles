@@ -546,6 +546,30 @@
        "role": "hvac.ac"
       }
      }
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "auto recirc on off": 7
+     }
+    },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "start_bit": 0,
+     "bit_length": 3,
+     "label": "front wind mode"
+    },
+    "max_acon_off": {
+     "start_byte": 1,
+     "bits": {
+      "max acon off": 3
+     }
+    },
+    "eco_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "eco on off": 7
+     }
     }
    }
   },

@@ -140,6 +140,12 @@
      "bit_length": 2,
      "role": "hvac.seat_heat_left",
      "label": "fl seat warmer level"
+    },
+    "fl_seat_blowing_level": {
+     "start_byte": 5,
+     "start_bit": 6,
+     "bit_length": 2,
+     "label": "fl seat blowing level"
     }
    }
   },
@@ -239,6 +245,24 @@
       "right front door": {
        "bit": 7,
        "role": "door.front_right"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 1,
+     "bits": {
+      "back state": {
+       "bit": 0,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "handbrake": {
+     "start_byte": 1,
+     "bits": {
+      "handbrake": {
+       "bit": 1,
+       "role": "handbrake"
       }
      }
     }

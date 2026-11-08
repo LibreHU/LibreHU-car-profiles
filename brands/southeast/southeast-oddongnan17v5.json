@@ -140,6 +140,29 @@
     }
    }
   },
+  "0x33": {
+   "name": "Message 0x33",
+   "signals": {
+    "vehicle_odometer": {
+     "start_byte": 6,
+     "size": 3,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
+    }
+   }
+  },
+  "0x41": {
+   "name": "Message 0x41",
+   "signals": {
+    "vehicle_speed": {
+     "start_byte": 0,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    }
+   }
+  },
   "0x20": {
    "name": "Wheel key",
    "signals": {
@@ -200,10 +223,17 @@
    }
   },
   {
-   "cmd": "0x20",
-   "data": "01",
+   "cmd": "0x33",
+   "data": "00 00 00 00 00 00 00 01 23",
    "expect": {
-    "wheel_key": "volume +"
+    "vehicle_odometer": 291.0
+   }
+  },
+  {
+   "cmd": "0x41",
+   "data": "12",
+   "expect": {
+    "vehicle_speed": 18.0
    }
   }
  ]

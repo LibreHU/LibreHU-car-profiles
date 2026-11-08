@@ -31,9 +31,28 @@
   }
  ],
  "messages": {
+  "0x16": {
+   "name": "Message 0x16",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 2,
+     "size": 2,
+     "endian": "little",
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
   "0x21": {
    "name": "Message 0x21",
    "signals": {
+    "max_defrost_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "max defrost on off": 1
+     }
+    },
     "hvac_dual": {
      "start_byte": 0,
      "bits": {
@@ -86,6 +105,26 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
+    "max_acon_off": {
+     "start_byte": 4,
+     "bits": {
+      "max acon off": 3
+     }
+    },
     "hvac_defrost_rear": {
      "start_byte": 4,
      "bits": {
@@ -124,6 +163,18 @@
      "bit_length": 2,
      "role": "hvac.seat_heat_right",
      "label": "fr seat warmer level"
+    },
+    "fl_seat_blowing_level": {
+     "start_byte": 6,
+     "start_bit": 4,
+     "bit_length": 2,
+     "label": "fl seat blowing level"
+    },
+    "fr_seat_blowing_level": {
+     "start_byte": 6,
+     "start_bit": 6,
+     "bit_length": 2,
+     "label": "fr seat blowing level"
     }
    }
   },
@@ -181,6 +232,42 @@
       "right front door": {
        "bit": 7,
        "role": "door.front_right"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 1,
+     "bits": {
+      "rev": {
+       "bit": 0,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "handbrake": {
+     "start_byte": 1,
+     "bits": {
+      "handbrake": {
+       "bit": 3,
+       "role": "handbrake"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 1,
+     "bits": {
+      "left turn light": {
+       "bit": 6,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 1,
+     "bits": {
+      "right turn light": {
+       "bit": 7,
+       "role": "turn.right"
       }
      }
     }
@@ -369,10 +456,17 @@
  },
  "examples": [
   {
-   "cmd": "0x21",
-   "data": "04",
+   "cmd": "0x16",
+   "data": "00 00 23 01",
    "expect": {
-    "dual on off": true
+    "engine_rpm": 291.0
+   }
+  },
+  {
+   "cmd": "0x21",
+   "data": "02",
+   "expect": {
+    "max defrost on off": true
    }
   },
   {
@@ -387,13 +481,6 @@
    "data": "23 01",
    "expect": {
     "steering_angle": 15.71
-   }
-  },
-  {
-   "cmd": "0x20",
-   "data": "01",
-   "expect": {
-    "wheel_key": "volume +"
    }
   }
  ]

@@ -96,6 +96,19 @@
     }
    }
   },
+  "0x13": {
+   "name": "Message 0x13",
+   "signals": {
+    "vehicle_odometer": {
+     "start_byte": 2,
+     "size": 3,
+     "factor": 0.1,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
+    }
+   }
+  },
   "0x1A": {
    "name": "Message 0x1A",
    "signals": {
@@ -296,6 +309,13 @@
    }
   },
   {
+   "cmd": "0x13",
+   "data": "00 00 00 01 23",
+   "expect": {
+    "vehicle_odometer": 29.1
+   }
+  },
+  {
    "cmd": "0x1A",
    "data": "00 00 00 00 00 00 01 23",
    "expect": {
@@ -307,13 +327,6 @@
    "data": "01",
    "expect": {
     "ac on off": true
-   }
-  },
-  {
-   "cmd": "0x41",
-   "data": "12",
-   "expect": {
-    "rear_left_distance": 18.0
    }
   }
  ]

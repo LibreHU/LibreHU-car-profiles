@@ -173,6 +173,18 @@
     }
    }
   },
+  "0x32": {
+   "name": "Message 0x32",
+   "signals": {
+    "vehicle_odometer": {
+     "start_byte": 10,
+     "size": 3,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
+    }
+   }
+  },
   "0x41": {
    "name": "Message 0x41",
    "signals": {
@@ -295,10 +307,10 @@
    }
   },
   {
-   "cmd": "0x41",
-   "data": "12",
+   "cmd": "0x32",
+   "data": "00 00 00 00 00 00 00 00 00 00 00 01 23",
    "expect": {
-    "rear_left_distance": 17.0
+    "vehicle_odometer": 291.0
    }
   }
  ]

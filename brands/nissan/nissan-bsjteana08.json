@@ -96,6 +96,24 @@
        "role": "door.front_left"
       }
      }
+    },
+    "turn_left": {
+     "start_byte": 2,
+     "bits": {
+      "left turn light": {
+       "bit": 0,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 2,
+     "bits": {
+      "right turn light": {
+       "bit": 0,
+       "role": "turn.right"
+      }
+     }
     }
    }
   },
@@ -171,6 +189,52 @@
        "role": "hvac.power"
       }
      }
+    },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "2",
+      "2": "6",
+      "3": "4",
+      "4": "5",
+      "5": "1",
+      "6": "0",
+      "7": "0",
+      "8": "0",
+      "9": "0",
+      "10": "0",
+      "11": "0",
+      "12": "0",
+      "13": "0",
+      "14": "0",
+      "15": "0"
+     },
+     "label": "front wind mode"
+    }
+   }
+  },
+  "0x06": {
+   "name": "Message 0x06",
+   "signals": {
+    "rear_wind_level": {
+     "start_byte": 0,
+     "start_bit": 0,
+     "bit_length": 4,
+     "label": "rear wind level"
+    },
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 7
+     }
+    },
+    "rear_wind_mode": {
+     "start_byte": 1,
+     "start_bit": 6,
+     "bit_length": 2,
+     "factor": 2.0,
+     "label": "rear wind mode"
     }
    }
   },
@@ -181,7 +245,7 @@
      "start_byte": 2,
      "role": "engine.rpm",
      "unit": "rpm",
-     "label": "rotation rate"
+     "label": "rotationl speed"
     }
    }
   },
@@ -215,17 +279,17 @@
    }
   },
   {
+   "cmd": "0x06",
+   "data": "01",
+   "expect": {
+    "rear_wind_level": 1.0
+   }
+  },
+  {
    "cmd": "0x0B",
    "data": "00 00 12",
    "expect": {
     "engine_rpm": 18.0
-   }
-  },
-  {
-   "cmd": "0x01",
-   "data": "12",
-   "expect": {
-    "wheel_key": 18.0
    }
   }
  ]

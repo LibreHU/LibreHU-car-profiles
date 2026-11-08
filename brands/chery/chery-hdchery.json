@@ -59,6 +59,42 @@
   "0x11": {
    "name": "Message 0x11",
    "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
+      }
+     }
+    },
     "steering_angle": {
      "start_byte": 6,
      "size": 2,
@@ -141,6 +177,25 @@
      }
     }
    }
+  },
+  "0x32": {
+   "name": "Message 0x32",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 2,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
+    "vehicle_speed": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    }
+   }
   }
  },
  "wheel_keys": {
@@ -150,9 +205,9 @@
  "examples": [
   {
    "cmd": "0x11",
-   "data": "00 00 00 00 00 00 01 23",
+   "data": "01",
    "expect": {
-    "steering_angle": -15.71
+    "acc": true
    }
   },
   {
@@ -160,6 +215,13 @@
    "data": "00 00 01",
    "expect": {
     "front box door": true
+   }
+  },
+  {
+   "cmd": "0x32",
+   "data": "00 00 01 23",
+   "expect": {
+    "engine_rpm": 291.0
    }
   }
  ]

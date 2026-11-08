@@ -163,6 +163,18 @@
       }
      }
     },
+    "sync_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "sync on off": 2
+     }
+    },
+    "eco_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "eco on off": 3
+     }
+    },
     "hvac_auto": {
      "start_byte": 0,
      "bits": {
@@ -206,6 +218,28 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "16",
+      "2": "4",
+      "3": "16",
+      "4": "2",
+      "5": "16",
+      "6": "6",
+      "7": "16",
+      "8": "1",
+      "9": "16",
+      "10": "5",
+      "11": "16",
+      "12": "3",
+      "13": "16",
+      "14": "7",
+      "15": "16"
+     },
+     "label": "front wind mode"
+    },
     "hvac_seat_heat_right": {
      "start_byte": 5,
      "start_bit": 0,
@@ -219,6 +253,47 @@
      "bit_length": 2,
      "role": "hvac.seat_heat_left",
      "label": "fl seat warmer level"
+    },
+    "max_acon_off": {
+     "start_byte": 6,
+     "bits": {
+      "max acon off": 5
+     }
+    },
+    "rear_wind_mode": {
+     "start_byte": 10,
+     "mask": "0x72",
+     "values": {
+      "0": "0",
+      "2": "16",
+      "16": "4",
+      "18": "16",
+      "32": "2",
+      "34": "16",
+      "48": "6",
+      "50": "16",
+      "64": "1",
+      "66": "16",
+      "80": "5",
+      "82": "16",
+      "96": "3",
+      "98": "16",
+      "112": "7",
+      "114": "16"
+     },
+     "label": "rear wind mode"
+    },
+    "rear_wind_level": {
+     "start_byte": 13,
+     "start_bit": 0,
+     "bit_length": 3,
+     "label": "rear wind level"
+    },
+    "rear_air_on_off": {
+     "start_byte": 13,
+     "bits": {
+      "rear air on off": 3
+     }
     }
    }
   },
@@ -244,7 +319,14 @@
      "start_byte": 1,
      "role": "vehicle.speed",
      "unit": "km/h",
-     "label": "speed"
+     "label": "current speed"
+    },
+    "engine_rpm": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
     }
    }
   },

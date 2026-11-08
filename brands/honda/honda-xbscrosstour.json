@@ -81,6 +81,15 @@
        "role": "door.front_left"
       }
      }
+    },
+    "turn_left": {
+     "start_byte": 1,
+     "bits": {
+      "left turn light": {
+       "bit": 4,
+       "role": "turn.left"
+      }
+     }
     }
    }
   },

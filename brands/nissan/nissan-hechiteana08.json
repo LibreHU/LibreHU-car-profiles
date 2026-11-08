@@ -72,6 +72,24 @@
        "role": "door.front_left"
       }
      }
+    },
+    "turn_left": {
+     "start_byte": 2,
+     "bits": {
+      "left turn light": {
+       "bit": 0,
+       "role": "turn.left"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 2,
+     "bits": {
+      "right turn light": {
+       "bit": 0,
+       "role": "turn.right"
+      }
+     }
     }
    }
   },
@@ -147,6 +165,28 @@
        "role": "hvac.power"
       }
      }
+    },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "2",
+      "2": "6",
+      "3": "4",
+      "4": "5",
+      "5": "1",
+      "6": "0",
+      "7": "0",
+      "8": "0",
+      "9": "0",
+      "10": "0",
+      "11": "0",
+      "12": "0",
+      "13": "0",
+      "14": "0",
+      "15": "0"
+     },
+     "label": "front wind mode"
     }
    }
   },
@@ -157,7 +197,7 @@
      "start_byte": 2,
      "role": "engine.rpm",
      "unit": "rpm",
-     "label": "rotation rate"
+     "label": "rotationl speed"
     }
    }
   },

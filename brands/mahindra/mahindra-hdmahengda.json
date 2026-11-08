@@ -67,6 +67,15 @@
   "0x11": {
    "name": "Message 0x11",
    "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
     "lights_parking": {
      "start_byte": 0,
      "bits": {
@@ -82,6 +91,15 @@
       "back car state": {
        "bit": 2,
        "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
       }
      }
     },
@@ -249,7 +267,7 @@
      "size": 2,
      "role": "engine.rpm",
      "unit": "rpm",
-     "label": "engine speed"
+     "label": "rotationl speed"
     },
     "vehicle_speed": {
      "start_byte": 4,
@@ -330,9 +348,9 @@
  "examples": [
   {
    "cmd": "0x11",
-   "data": "02",
+   "data": "01",
    "expect": {
-    "illlight": true
+    "acc": true
    }
   },
   {

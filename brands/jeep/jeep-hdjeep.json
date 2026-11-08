@@ -253,6 +253,42 @@
   "0x12": {
    "name": "Message 0x12",
    "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
+      }
+     }
+    },
     "seatbelt_driver": {
      "start_byte": 2,
      "bits": {
@@ -312,6 +348,12 @@
   "0x31": {
    "name": "Message 0x31",
    "signals": {
+    "sync_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "sync on off": 2
+     }
+    },
     "hvac_auto": {
      "start_byte": 0,
      "bits": {
@@ -319,6 +361,18 @@
        "bit": 3,
        "role": "hvac.auto"
       }
+     }
+    },
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 4
+     }
+    },
+    "max_acon_off": {
+     "start_byte": 0,
+     "bits": {
+      "max acon off": 5
      }
     },
     "hvac_power": {
@@ -380,6 +434,44 @@
       }
      }
     },
+    "fl_seat_blowing_level": {
+     "start_byte": 3,
+     "start_bit": 0,
+     "bit_length": 2,
+     "label": "fl seat blowing level"
+    },
+    "fr_seat_blowing_level": {
+     "start_byte": 3,
+     "start_bit": 2,
+     "bit_length": 2,
+     "label": "fr seat blowing level"
+    },
+    "front_wind_mode": {
+     "start_byte": 4,
+     "values": {
+      "0": "0",
+      "1": "16",
+      "2": "0",
+      "3": "4",
+      "4": "0",
+      "5": "6",
+      "6": "2",
+      "7": "0",
+      "8": "0",
+      "9": "0",
+      "10": "0",
+      "11": "1",
+      "12": "5",
+      "13": "0",
+      "14": "0",
+      "15": "0"
+     },
+     "label": "front wind mode"
+    },
+    "rear_wind_level": {
+     "start_byte": 9,
+     "label": "rear wind level"
+    },
     "outside_temp": {
      "start_byte": 11,
      "factor": 0.5,
@@ -388,6 +480,25 @@
      "role": "outside.temp",
      "unit": "°C",
      "label": "outside temp"
+    }
+   }
+  },
+  "0x32": {
+   "name": "Message 0x32",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 2,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
+    "vehicle_speed": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
     }
    }
   }
@@ -406,16 +517,23 @@
   },
   {
    "cmd": "0x12",
-   "data": "00 00 02",
+   "data": "01",
    "expect": {
-    "left safety belt": true
+    "acc": true
    }
   },
   {
    "cmd": "0x31",
-   "data": "08",
+   "data": "04",
    "expect": {
-    "auto light1": true
+    "sync on off": true
+   }
+  },
+  {
+   "cmd": "0x32",
+   "data": "00 00 01 23",
+   "expect": {
+    "engine_rpm": 291.0
    }
   }
  ]

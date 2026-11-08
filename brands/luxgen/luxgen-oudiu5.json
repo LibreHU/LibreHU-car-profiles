@@ -230,6 +230,24 @@
        "role": "door.front_right"
       }
      }
+    },
+    "handbrake": {
+     "start_byte": 1,
+     "bits": {
+      "handbrake": {
+       "bit": 4,
+       "role": "handbrake"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 1,
+     "bits": {
+      "rev": {
+       "bit": 6,
+       "role": "gear.reverse"
+      }
+     }
     }
    }
   },

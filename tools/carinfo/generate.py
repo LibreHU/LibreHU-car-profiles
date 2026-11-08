@@ -128,10 +128,23 @@ for pos, car in (("front_left", "frontLeft"), ("front_right", "frontRight"), ("r
     ROLES[f"TpmsInfo.{car}TirePreValue"] = f"tpms.{pos}.pressure"
     ROLES[f"TpmsInfo.{car}TireTempValue"] = f"tpms.{pos}.temperature"
 ROLES["RadarInfo.radarShowOnOff"] = "radar.shown"
+# CarinfoGeneralBean (Car Info's « general info », about a hundred decoders): the same values as DDef$CarInfo's.
+ROLES.update({
+    "CarinfoGeneralBean.mRotationlSpeed": "engine.rpm", "CarinfoGeneralBean.mCurrentSpeed": "vehicle.speed",
+    "CarinfoGeneralBean.mLeftTurnLight": "turn.left", "CarinfoGeneralBean.mRightTurnLight": "turn.right",
+    "CarinfoGeneralBean.mREV": "gear.reverse", "CarinfoGeneralBean.mBackState": "gear.reverse",
+    "CarinfoGeneralBean.mHandbrake": "handbrake", "CarinfoGeneralBean.mPark": "gear.park",
+    "CarinfoGeneralBean.mILLLight": "lights.parking", "CarinfoGeneralBean.mACC": "ignition.acc",
+    "CarinfoGeneralBean.mTotalMileage": "vehicle.odometer",
+})
 
 # Kept with their label only: Car Info's radar gives a distance step (0..max), LibreHU's radar roles a proximity in %.
 LABEL_ONLY = {f"RadarInfo.{z}{c}Distance" for z in ("front", "rear") for c in ("Left", "LeftMid", "RightMid", "Right")} | \
     {f"RadarInfo.{z}{c}Distance" for z in ("left", "right") for c in ("Front", "FrontMid", "RearMid", "Rear")}
+# A/C values LibreHU has no role for, shown with their label in the CAN tab (read by many decoders).
+LABEL_ONLY |= {f"HvacInfo.{f}" for f in ("frontWindMode", "maxACOnOff", "maxDefrostOnOff", "rearAirOnOff", "autoRecircOnOff",
+                                          "syncOnOff", "ecoOnOff", "rearTemp", "rearWindLevel", "rearWindMode",
+                                          "flSeatBlowingLevel", "frSeatBlowingLevel")}
 
 UNITS = {"vehicle.speed": "km/h", "engine.rpm": "rpm", "outside.temp": "°C", "engine.coolant_temp": "°C", "engine.oil_temp": "°C",
          "fuel.range": "km", "vehicle.odometer": "km", "fuel.instant": "L/100 km", "fuel.average": "L/100 km", "fuel.level": "%",

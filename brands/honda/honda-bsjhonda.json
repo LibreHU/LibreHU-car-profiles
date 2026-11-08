@@ -91,6 +91,34 @@
      "bit_length": 4,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    }
+   }
+  },
+  "0x0E": {
+   "name": "Message 0x0E",
+   "signals": {
+    "vehicle_odometer": {
+     "start_byte": 10,
+     "size": 4,
+     "endian": "little",
+     "signed": true,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
     }
    }
   },
@@ -191,6 +219,13 @@
    }
   },
   {
+   "cmd": "0x0E",
+   "data": "00 00 00 00 00 00 00 00 00 00 23 01 00 00",
+   "expect": {
+    "vehicle_odometer": 291.0
+   }
+  },
+  {
    "cmd": "0x0F",
    "data": "23 01",
    "expect": {
@@ -202,13 +237,6 @@
    "data": "04",
    "expect": {
     "front box door": true
-   }
-  },
-  {
-   "cmd": "0x01",
-   "data": "12",
-   "expect": {
-    "wheel_key": 18.0
    }
   }
  ]

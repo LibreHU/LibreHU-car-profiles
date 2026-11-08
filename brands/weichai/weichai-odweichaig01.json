@@ -173,6 +173,34 @@
     }
    }
   },
+  "0x40": {
+   "name": "Message 0x40",
+   "signals": {
+    "handbrake": {
+     "start_byte": 0,
+     "bits": {
+      "handbrake": {
+       "bit": 6,
+       "role": "handbrake"
+      }
+     }
+    },
+    "engine_rpm": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
+    "vehicle_odometer": {
+     "start_byte": 8,
+     "size": 3,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
+    }
+   }
+  },
   "0x21": {
    "name": "Wheel key",
    "signals": {
@@ -210,10 +238,10 @@
    }
   },
   {
-   "cmd": "0x21",
-   "data": "12",
+   "cmd": "0x40",
+   "data": "40",
    "expect": {
-    "wheel_key": 18.0
+    "handbrake": true
    }
   }
  ]

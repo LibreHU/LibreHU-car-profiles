@@ -47,6 +47,38 @@
   }
  ],
  "messages": {
+  "0x72": {
+   "name": "Message 0x72",
+   "signals": {
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
+      }
+     }
+    }
+   }
+  },
   "0x73": {
    "name": "Message 0x73",
    "signals": {
@@ -110,6 +142,12 @@
      "bit_length": 4,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "front_wind_mode": {
+     "start_byte": 4,
+     "start_bit": 4,
+     "bit_length": 3,
+     "label": "front wind mode"
     }
    }
   },
@@ -128,6 +166,13 @@
   "code_byte": 0
  },
  "examples": [
+  {
+   "cmd": "0x72",
+   "data": "02",
+   "expect": {
+    "illlight": true
+   }
+  },
   {
    "cmd": "0x73",
    "data": "04",

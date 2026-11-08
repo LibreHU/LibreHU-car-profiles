@@ -97,6 +97,15 @@
   "0x11": {
    "name": "Message 0x11",
    "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
     "steering_angle": {
      "start_byte": 6,
      "size": 2,
@@ -278,9 +287,9 @@
  "examples": [
   {
    "cmd": "0x11",
-   "data": "00 00 00 00 00 00 01 23",
+   "data": "01",
    "expect": {
-    "steering_angle": -291.0
+    "acc": true
    }
   },
   {

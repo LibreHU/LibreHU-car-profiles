@@ -52,6 +52,12 @@
   "0x24": {
    "name": "Message 0x24",
    "signals": {
+    "max_defrost_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "max defrost on off": 0
+     }
+    },
     "hvac_defrost_rear": {
      "start_byte": 0,
      "bits": {
@@ -197,9 +203,9 @@
  "examples": [
   {
    "cmd": "0x24",
-   "data": "02",
+   "data": "01",
    "expect": {
-    "rear defrost on off": true
+    "max defrost on off": true
    }
   },
   {

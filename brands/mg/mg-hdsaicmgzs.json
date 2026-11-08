@@ -94,6 +94,18 @@
     }
    }
   },
+  "0x13": {
+   "name": "Message 0x13",
+   "signals": {
+    "vehicle_odometer": {
+     "start_byte": 4,
+     "size": 3,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
+    }
+   }
+  },
   "0x31": {
    "name": "Message 0x31",
    "signals": {
@@ -168,6 +180,17 @@
     }
    }
   },
+  "0x32": {
+   "name": "Message 0x32",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 3,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
   "0x21": {
    "name": "Wheel key",
    "signals": {
@@ -195,6 +218,13 @@
    }
   },
   {
+   "cmd": "0x13",
+   "data": "00 00 00 00 00 01 23",
+   "expect": {
+    "vehicle_odometer": 291.0
+   }
+  },
+  {
    "cmd": "0x31",
    "data": "08",
    "expect": {
@@ -202,10 +232,10 @@
    }
   },
   {
-   "cmd": "0x21",
-   "data": "12",
+   "cmd": "0x32",
+   "data": "00 00 00 12",
    "expect": {
-    "wheel_key": 18.0
+    "engine_rpm": 18.0
    }
   }
  ]

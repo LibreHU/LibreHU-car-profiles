@@ -137,6 +137,17 @@
     }
    }
   },
+  "0x1B": {
+   "name": "Message 0x1B",
+   "signals": {
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 5
+     }
+    }
+   }
+  },
   "0x1E": {
    "name": "Message 0x1E",
    "signals": {
@@ -231,6 +242,12 @@
   "0x28": {
    "name": "Message 0x28",
    "signals": {
+    "max_defrost_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "max defrost on off": 1
+     }
+    },
     "hvac_dual": {
      "start_byte": 0,
      "bits": {
@@ -283,6 +300,20 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
     "hvac_defrost_rear": {
      "start_byte": 4,
      "bits": {
@@ -326,6 +357,13 @@
    }
   },
   {
+   "cmd": "0x1B",
+   "data": "20",
+   "expect": {
+    "rear air on off": true
+   }
+  },
+  {
    "cmd": "0x1E",
    "data": "00 00 00 00 80",
    "expect": {
@@ -337,13 +375,6 @@
    "data": "08",
    "expect": {
     "tail box door": true
-   }
-  },
-  {
-   "cmd": "0x28",
-   "data": "04",
-   "expect": {
-    "dual on off": true
    }
   }
  ]

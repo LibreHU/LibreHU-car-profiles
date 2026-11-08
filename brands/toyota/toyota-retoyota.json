@@ -1586,6 +1586,12 @@
   "0x28": {
    "name": "Message 0x28",
    "signals": {
+    "max_defrost_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "max defrost on off": 1
+     }
+    },
     "hvac_dual": {
      "start_byte": 0,
      "bits": {
@@ -1638,6 +1644,20 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
     "outside_temp": {
      "start_byte": 5,
      "factor": 0.5,
@@ -1646,6 +1666,26 @@
      "role": "outside.temp",
      "unit": "°C",
      "label": "outside temp"
+    },
+    "rear_wind_level": {
+     "start_byte": 7,
+     "start_bit": 0,
+     "bit_length": 3,
+     "label": "rear wind level"
+    },
+    "rear_wind_mode": {
+     "start_byte": 7,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "rear wind mode"
     }
    }
   },
@@ -1665,6 +1705,18 @@
      "bit_length": 4,
      "role": "hvac.seat_heat_left",
      "label": "fl seat warmer level"
+    },
+    "fr_seat_blowing_level": {
+     "start_byte": 2,
+     "start_bit": 0,
+     "bit_length": 4,
+     "label": "fr seat blowing level"
+    },
+    "fl_seat_blowing_level": {
+     "start_byte": 2,
+     "start_bit": 4,
+     "bit_length": 4,
+     "label": "fl seat blowing level"
     }
    }
   }
@@ -1672,9 +1724,9 @@
  "examples": [
   {
    "cmd": "0x28",
-   "data": "04",
+   "data": "02",
    "expect": {
-    "dual on off": true
+    "max defrost on off": true
    }
   },
   {

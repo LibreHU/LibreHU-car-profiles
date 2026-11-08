@@ -53,6 +53,51 @@
   "0x11": {
    "name": "Message 0x11",
    "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "rev": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "handbrake": {
+     "start_byte": 0,
+     "bits": {
+      "handbrake": {
+       "bit": 3,
+       "role": "handbrake"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
+      }
+     }
+    },
     "steering_angle": {
      "start_byte": 6,
      "size": 2,
@@ -123,6 +168,27 @@
        "role": "door.front_left"
       }
      }
+    }
+   }
+  },
+  "0x1A": {
+   "name": "Message 0x1A",
+   "signals": {
+    "turn_left": {
+     "start_byte": 0,
+     "size": 3,
+     "factor": 0.0,
+     "offset": 0.458,
+     "role": "turn.left",
+     "label": "left turn light"
+    },
+    "turn_right": {
+     "start_byte": 0,
+     "size": 3,
+     "factor": 0.0,
+     "offset": 0.4551,
+     "role": "turn.right",
+     "label": "right turn light"
     }
    }
   },
@@ -219,6 +285,25 @@
     }
    }
   },
+  "0x32": {
+   "name": "Message 0x32",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 2,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
+    "vehicle_speed": {
+     "start_byte": 4,
+     "size": 2,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    }
+   }
+  },
   "0x41": {
    "name": "Message 0x41",
    "signals": {
@@ -294,9 +379,9 @@
  "examples": [
   {
    "cmd": "0x11",
-   "data": "00 00 00 00 00 00 01 23",
+   "data": "01",
    "expect": {
-    "steering_angle": 291.0
+    "acc": true
    }
   },
   {
@@ -307,17 +392,17 @@
    }
   },
   {
+   "cmd": "0x1A",
+   "data": "00 01 23",
+   "expect": {
+    "turn_left": 0.46
+   }
+  },
+  {
    "cmd": "0x31",
    "data": "01",
    "expect": {
     "hvac_ac": 1.0
-   }
-  },
-  {
-   "cmd": "0x41",
-   "data": "00 00 00 00 00 00 00 00 00 00 12",
-   "expect": {
-    "radar_shown": 18.0
    }
   }
  ]

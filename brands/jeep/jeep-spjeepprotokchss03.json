@@ -164,6 +164,12 @@
   "0x21": {
    "name": "Message 0x21",
    "signals": {
+    "sync_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "sync on off": 2
+     }
+    },
     "hvac_auto": {
      "start_byte": 0,
      "bits": {
@@ -207,6 +213,20 @@
      "role": "hvac.fan",
      "label": "front wind level"
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
     "hvac_temp_left": {
      "start_byte": 2,
      "factor": 0.5,
@@ -234,6 +254,18 @@
      "bit_length": 3,
      "role": "hvac.seat_heat_left",
      "label": "fl seat warmer level"
+    },
+    "fr_seat_blowing_level": {
+     "start_byte": 7,
+     "start_bit": 0,
+     "bit_length": 2,
+     "label": "fr seat blowing level"
+    },
+    "fl_seat_blowing_level": {
+     "start_byte": 7,
+     "start_bit": 4,
+     "bit_length": 2,
+     "label": "fl seat blowing level"
     }
    }
   },
@@ -243,9 +275,18 @@
     "gear_reverse": {
      "start_byte": 1,
      "bits": {
-      "back car state": {
+      "rev": {
        "bit": 0,
        "role": "gear.reverse"
+      }
+     }
+    },
+    "gear_park": {
+     "start_byte": 1,
+     "bits": {
+      "park": {
+       "bit": 1,
+       "role": "gear.park"
       }
      }
     },
@@ -286,7 +327,7 @@
      "endian": "little",
      "role": "engine.rpm",
      "unit": "rpm",
-     "label": "rotation rate"
+     "label": "rotationl speed"
     }
    }
   },
@@ -302,6 +343,63 @@
      "role": "steering.angle",
      "unit": "°",
      "label": "eps"
+    }
+   }
+  },
+  "0x41": {
+   "name": "Message 0x41",
+   "signals": {
+    "turn_right": {
+     "start_byte": 0,
+     "bits": {
+      "right turn light": {
+       "bit": 6,
+       "role": "turn.right"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 0,
+     "bits": {
+      "left turn light": {
+       "bit": 7,
+       "role": "turn.left"
+      }
+     }
+    }
+   }
+  },
+  "0x48": {
+   "name": "Message 0x48",
+   "signals": {
+    "rear_wind_mode": {
+     "start_byte": 0,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6"
+     },
+     "label": "rear wind mode"
+    },
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 7
+     }
+    },
+    "rear_wind_level": {
+     "start_byte": 1,
+     "start_bit": 0,
+     "bit_length": 4,
+     "label": "rear wind level"
+    },
+    "rear_temp": {
+     "start_byte": 2,
+     "factor": 0.5,
+     "offset": -8.0,
+     "signed": true,
+     "label": "rear temp"
     }
    }
   },
@@ -322,16 +420,16 @@
  "examples": [
   {
    "cmd": "0x21",
-   "data": "08",
+   "data": "04",
    "expect": {
-    "auto light1": true
+    "sync on off": true
    }
   },
   {
    "cmd": "0x24",
    "data": "00 01",
    "expect": {
-    "back car state": true
+    "rev": true
    }
   },
   {

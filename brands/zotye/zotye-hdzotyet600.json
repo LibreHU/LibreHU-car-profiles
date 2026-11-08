@@ -55,6 +55,15 @@
       }
      }
     },
+    "gear_park": {
+     "start_byte": 0,
+     "bits": {
+      "park": {
+       "bit": 3,
+       "role": "gear.park"
+      }
+     }
+    },
     "handbrake": {
      "start_byte": 0,
      "bits": {

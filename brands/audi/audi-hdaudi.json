@@ -17,6 +17,39 @@
   }
  ],
  "messages": {
+  "0x01": {
+   "name": "Message 0x01",
+   "signals": {
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "wheel_key": {
+     "start_byte": 3,
+     "label": "wheel key",
+     "values": {
+      "1": "volume +",
+      "2": "volume -",
+      "3": "mute",
+      "4": "",
+      "8": "previous",
+      "9": "next",
+      "10": "",
+      "11": "voice",
+      "12": "play / pause",
+      "13": "",
+      "16": "mode",
+      "17": "navigation",
+      "18": ""
+     }
+    }
+   }
+  },
   "0x31": {
    "name": "Message 0x31",
    "signals": {
@@ -37,30 +70,6 @@
      "signed": true,
      "role": "hvac.seat_heat_right",
      "label": "fr seat warmer level"
-    }
-   }
-  },
-  "0x01": {
-   "name": "Wheel key",
-   "signals": {
-    "wheel_key": {
-     "start_byte": 3,
-     "label": "wheel key",
-     "values": {
-      "1": "volume +",
-      "2": "volume -",
-      "3": "mute",
-      "4": "",
-      "8": "previous",
-      "9": "next",
-      "10": "",
-      "11": "voice",
-      "12": "play / pause",
-      "13": "",
-      "16": "mode",
-      "17": "navigation",
-      "18": ""
-     }
     }
    }
   }
@@ -86,17 +95,17 @@
  },
  "examples": [
   {
+   "cmd": "0x01",
+   "data": "02",
+   "expect": {
+    "illlight": true
+   }
+  },
+  {
    "cmd": "0x31",
    "data": "00 00 12",
    "expect": {
     "hvac_fan": 18.0
-   }
-  },
-  {
-   "cmd": "0x01",
-   "data": "00 00 00 01",
-   "expect": {
-    "wheel_key": "volume +"
    }
   }
  ]

@@ -91,6 +91,12 @@
       }
      }
     },
+    "auto_recirc_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "auto recirc on off": 5
+     }
+    },
     "hvac_ac": {
      "start_byte": 0,
      "bits": {
@@ -99,6 +105,12 @@
        "role": "hvac.ac"
       }
      }
+    },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "start_bit": 0,
+     "bit_length": 3,
+     "label": "front wind mode"
     },
     "hvac_fan": {
      "start_byte": 2,

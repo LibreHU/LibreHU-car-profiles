@@ -38,6 +38,42 @@
   "0x06": {
    "name": "Message 0x06",
    "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "back state": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "handbrake": {
+     "start_byte": 0,
+     "bits": {
+      "handbrake": {
+       "bit": 3,
+       "role": "handbrake"
+      }
+     }
+    },
     "vehicle_speed": {
      "start_byte": 1,
      "max_value": 254,
@@ -88,9 +124,9 @@
  "examples": [
   {
    "cmd": "0x06",
-   "data": "00 12",
+   "data": "01",
    "expect": {
-    "vehicle_speed": 18.0
+    "acc": true
    }
   }
  ]

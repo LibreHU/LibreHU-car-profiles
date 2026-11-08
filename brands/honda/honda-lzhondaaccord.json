@@ -28,6 +28,20 @@
   "0x01": {
    "name": "Message 0x01",
    "signals": {
+    "front_wind_mode": {
+     "start_byte": 0,
+     "values": {
+      "0": "0",
+      "1": "2",
+      "2": "6",
+      "3": "4",
+      "4": "5",
+      "5": "0",
+      "6": "0",
+      "7": "0"
+     },
+     "label": "front wind mode"
+    },
     "hvac_fan": {
      "start_byte": 0,
      "start_bit": 3,
@@ -41,6 +55,12 @@
      "bit_length": 2,
      "role": "hvac.ac",
      "label": "ac on off"
+    },
+    "auto_recirc_on_off": {
+     "start_byte": 3,
+     "bits": {
+      "auto recirc on off": 7
+     }
     }
    }
   },
@@ -93,14 +113,59 @@
      }
     }
    }
+  },
+  "0x61": {
+   "name": "Message 0x61",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 0,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    },
+    "vehicle_speed": {
+     "start_byte": 4,
+     "size": 2,
+     "factor": 0.062486,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    },
+    "vehicle_odometer": {
+     "start_byte": 6,
+     "size": 3,
+     "role": "vehicle.odometer",
+     "unit": "km",
+     "label": "total mileage"
+    },
+    "turn_right": {
+     "start_byte": 10,
+     "bits": {
+      "right turn light": {
+       "bit": 1,
+       "role": "turn.right"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 10,
+     "bits": {
+      "left turn light": {
+       "bit": 2,
+       "role": "turn.left"
+      }
+     }
+    }
+   }
   }
  },
  "examples": [
   {
    "cmd": "0x01",
-   "data": "08",
+   "data": "00",
    "expect": {
-    "hvac_fan": 1.0
+    "front_wind_mode": "0"
    }
   },
   {
@@ -108,6 +173,13 @@
    "data": "08",
    "expect": {
     "tail box door": true
+   }
+  },
+  {
+   "cmd": "0x61",
+   "data": "01 23",
+   "expect": {
+    "engine_rpm": 291.0
    }
   }
  ]

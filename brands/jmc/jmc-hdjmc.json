@@ -124,6 +124,12 @@
       }
      }
     },
+    "max_acon_off": {
+     "start_byte": 1,
+     "bits": {
+      "max acon off": 6
+     }
+    },
     "hvac_seat_heat_left": {
      "start_byte": 2,
      "start_bit": 0,
@@ -138,6 +144,12 @@
      "role": "hvac.seat_heat_right",
      "label": "fr seat warmer level"
     },
+    "max_defrost_on_off": {
+     "start_byte": 2,
+     "bits": {
+      "max defrost on off": 4
+     }
+    },
     "hvac_defrost_rear": {
      "start_byte": 2,
      "bits": {
@@ -147,10 +159,36 @@
       }
      }
     },
+    "fl_seat_blowing_level": {
+     "start_byte": 3,
+     "start_bit": 0,
+     "bit_length": 2,
+     "label": "fl seat blowing level"
+    },
+    "fr_seat_blowing_level": {
+     "start_byte": 3,
+     "start_bit": 2,
+     "bit_length": 2,
+     "label": "fr seat blowing level"
+    },
     "hvac_fan": {
      "start_byte": 5,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "rear_air_on_off": {
+     "start_byte": 8,
+     "bits": {
+      "rear air on off": 6
+     }
+    },
+    "rear_wind_level": {
+     "start_byte": 9,
+     "label": "rear wind level"
+    },
+    "rear_temp": {
+     "start_byte": 10,
+     "label": "rear temp"
     },
     "outside_temp": {
      "start_byte": 11,

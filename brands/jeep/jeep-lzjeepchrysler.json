@@ -100,9 +100,27 @@
     "handbrake": {
      "start_byte": 1,
      "bits": {
-      "pstop block state": {
+      "handbrake": {
        "bit": 1,
        "role": "handbrake"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 1,
+     "bits": {
+      "right turn light": {
+       "bit": 6,
+       "role": "turn.right"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 1,
+     "bits": {
+      "left turn light": {
+       "bit": 7,
+       "role": "turn.left"
       }
      }
     }

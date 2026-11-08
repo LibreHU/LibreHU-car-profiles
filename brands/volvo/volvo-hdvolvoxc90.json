@@ -108,6 +108,12 @@
   "0x31": {
    "name": "Message 0x31",
    "signals": {
+    "sync_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "sync on off": 2
+     }
+    },
     "hvac_auto": {
      "start_byte": 0,
      "bits": {
@@ -181,6 +187,28 @@
      "signed": true,
      "role": "hvac.fan",
      "label": "front wind level"
+    },
+    "front_wind_mode": {
+     "start_byte": 4,
+     "values": {
+      "0": "0",
+      "1": "0",
+      "2": "0",
+      "3": "4",
+      "4": "4",
+      "5": "6",
+      "6": "2",
+      "7": "2",
+      "8": "2",
+      "9": "2",
+      "10": "2",
+      "11": "1",
+      "12": "5",
+      "13": "3",
+      "14": "7",
+      "15": "7"
+     },
+     "label": "front wind mode"
     }
    }
   },
@@ -268,9 +296,9 @@
   },
   {
    "cmd": "0x31",
-   "data": "08",
+   "data": "04",
    "expect": {
-    "auto light1": true
+    "sync on off": true
    }
   },
   {

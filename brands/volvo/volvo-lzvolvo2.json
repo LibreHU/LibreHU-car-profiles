@@ -107,6 +107,20 @@
       }
      }
     },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "values": {
+      "0": "0",
+      "1": "4",
+      "2": "2",
+      "3": "6",
+      "4": "1",
+      "5": "5",
+      "6": "3",
+      "7": "7"
+     },
+     "label": "front wind mode"
+    },
     "hvac_defrost_front": {
      "start_byte": 4,
      "bits": {
@@ -220,6 +234,68 @@
     }
    }
   },
+  "0x7D": {
+   "name": "Message 0x7D",
+   "signals": {
+    "handbrake": {
+     "start_byte": 0,
+     "bits": {
+      "handbrake": {
+       "bit": 3,
+       "role": "handbrake"
+      }
+     }
+    },
+    "turn_right": {
+     "start_byte": 2,
+     "bits": {
+      "right turn light": {
+       "bit": 2,
+       "role": "turn.right"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 2,
+     "bits": {
+      "left turn light": {
+       "bit": 3,
+       "role": "turn.left"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 3,
+     "bits": {
+      "rev": {
+       "bit": 6,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "ignition_acc": {
+     "start_byte": 3,
+     "bits": {
+      "acc": {
+       "bit": 7,
+       "role": "ignition.acc"
+      }
+     }
+    }
+   }
+  },
+  "0x7E": {
+   "name": "Message 0x7E",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 1,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
   "0x21": {
    "name": "Wheel key",
    "signals": {
@@ -285,10 +361,10 @@
    }
   },
   {
-   "cmd": "0x21",
-   "data": "01",
+   "cmd": "0x7D",
+   "data": "08",
    "expect": {
-    "wheel_key": "volume +"
+    "handbrake": true
    }
   }
  ]

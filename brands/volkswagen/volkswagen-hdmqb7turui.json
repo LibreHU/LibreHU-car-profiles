@@ -149,12 +149,24 @@
      "role": "hvac.seat_heat_left",
      "label": "fl seat warmer level"
     },
+    "fl_seat_blowing_level": {
+     "start_byte": 3,
+     "start_bit": 0,
+     "bit_length": 2,
+     "label": "fl seat blowing level"
+    },
     "hvac_seat_heat_right": {
      "start_byte": 3,
      "start_bit": 2,
      "bit_length": 2,
      "role": "hvac.seat_heat_right",
      "label": "fr seat warmer level"
+    },
+    "fr_seat_blowing_level": {
+     "start_byte": 3,
+     "start_bit": 2,
+     "bit_length": 2,
+     "label": "fr seat blowing level"
     },
     "hvac_defrost_front": {
      "start_byte": 3,

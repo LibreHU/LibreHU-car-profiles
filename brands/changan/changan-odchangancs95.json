@@ -167,6 +167,28 @@
     }
    }
   },
+  "0x24": {
+   "name": "Message 0x24",
+   "signals": {
+    "rear_air_on_off": {
+     "start_byte": 0,
+     "bits": {
+      "rear air on off": 7
+     }
+    },
+    "rear_wind_level": {
+     "start_byte": 1,
+     "label": "rear wind level"
+    },
+    "rear_temp": {
+     "start_byte": 2,
+     "factor": 0.5,
+     "offset": 17.5,
+     "signed": true,
+     "label": "rear temp"
+    }
+   }
+  },
   "0x29": {
    "name": "Message 0x29",
    "signals": {
@@ -250,6 +272,18 @@
     }
    }
   },
+  "0x50": {
+   "name": "Message 0x50",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 0,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
   "0x20": {
    "name": "Wheel key",
    "signals": {
@@ -319,10 +353,10 @@
    }
   },
   {
-   "cmd": "0x29",
-   "data": "23 01",
+   "cmd": "0x24",
+   "data": "80",
    "expect": {
-    "steering_angle": 17.02
+    "rear air on off": true
    }
   }
  ]

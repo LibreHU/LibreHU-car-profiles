@@ -58,6 +58,13 @@
      "role": "hvac.ac",
      "label": "ac on off"
     },
+    "eco_on_off": {
+     "start_byte": 1,
+     "size": 4,
+     "factor": -0.0,
+     "offset": 0.6542,
+     "label": "eco on off"
+    },
     "hvac_auto": {
      "start_byte": 1,
      "size": 4,
@@ -103,6 +110,17 @@
      "offset": -0.6224,
      "signed": true,
      "label": "rear left mid distance"
+    }
+   }
+  },
+  "0x45": {
+   "name": "Message 0x45",
+   "signals": {
+    "vehicle_speed": {
+     "start_byte": 7,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
     }
    }
   },
@@ -159,6 +177,13 @@
    "data": "23 01 00 00",
    "expect": {
     "rear_left_mid_distance": -0.62
+   }
+  },
+  {
+   "cmd": "0x45",
+   "data": "00 00 00 00 00 00 00 12",
+   "expect": {
+    "vehicle_speed": 18.0
    }
   },
   {

@@ -31,6 +31,33 @@
   "0x11": {
    "name": "Message 0x11",
    "signals": {
+    "ignition_acc": {
+     "start_byte": 0,
+     "bits": {
+      "acc": {
+       "bit": 0,
+       "role": "ignition.acc"
+      }
+     }
+    },
+    "gear_reverse": {
+     "start_byte": 0,
+     "bits": {
+      "back state": {
+       "bit": 2,
+       "role": "gear.reverse"
+      }
+     }
+    },
+    "handbrake": {
+     "start_byte": 0,
+     "bits": {
+      "handbrake": {
+       "bit": 3,
+       "role": "handbrake"
+      }
+     }
+    },
     "door_hood": {
      "start_byte": 4,
      "bits": {
@@ -108,9 +135,9 @@
  "examples": [
   {
    "cmd": "0x11",
-   "data": "00 00 00 00 04",
+   "data": "01",
    "expect": {
-    "front box door": true
+    "acc": true
    }
   }
  ]

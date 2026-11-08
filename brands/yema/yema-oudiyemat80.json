@@ -28,6 +28,18 @@
   }
  ],
  "messages": {
+  "0x10": {
+   "name": "Message 0x10",
+   "signals": {
+    "vehicle_speed": {
+     "start_byte": 0,
+     "size": 2,
+     "role": "vehicle.speed",
+     "unit": "km/h",
+     "label": "current speed"
+    }
+   }
+  },
   "0x15": {
    "name": "Message 0x15",
    "signals": {
@@ -37,6 +49,15 @@
       "back car state": {
        "bit": 0,
        "role": "gear.reverse"
+      }
+     }
+    },
+    "handbrake": {
+     "start_byte": 0,
+     "bits": {
+      "handbrake": {
+       "bit": 1,
+       "role": "handbrake"
       }
      }
     },
@@ -105,6 +126,18 @@
     }
    }
   },
+  "0x19": {
+   "name": "Message 0x19",
+   "signals": {
+    "engine_rpm": {
+     "start_byte": 0,
+     "size": 2,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
   "0x11": {
    "name": "Wheel key",
    "signals": {
@@ -141,10 +174,24 @@
  },
  "examples": [
   {
+   "cmd": "0x10",
+   "data": "01 23",
+   "expect": {
+    "vehicle_speed": 291.0
+   }
+  },
+  {
    "cmd": "0x15",
    "data": "01",
    "expect": {
     "back car state": true
+   }
+  },
+  {
+   "cmd": "0x19",
+   "data": "01 23",
+   "expect": {
+    "engine_rpm": 291.0
    }
   },
   {

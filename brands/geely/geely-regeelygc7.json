@@ -40,6 +40,12 @@
       }
      }
     },
+    "eco_on_off": {
+     "start_byte": 1,
+     "bits": {
+      "eco on off": 1
+     }
+    },
     "hvac_auto": {
      "start_byte": 1,
      "bits": {
@@ -48,6 +54,13 @@
        "role": "hvac.auto"
       }
      }
+    },
+    "front_wind_mode": {
+     "start_byte": 1,
+     "start_bit": 3,
+     "bit_length": 2,
+     "factor": 2.0,
+     "label": "front wind mode"
     },
     "hvac_defrost_rear": {
      "start_byte": 1,

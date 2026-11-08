@@ -23,6 +23,15 @@
   "0x11": {
    "name": "Message 0x11",
    "signals": {
+    "lights_parking": {
+     "start_byte": 0,
+     "bits": {
+      "illlight": {
+       "bit": 1,
+       "role": "lights.parking"
+      }
+     }
+    },
     "gear_reverse": {
      "start_byte": 0,
      "bits": {
@@ -99,9 +108,9 @@
  "examples": [
   {
    "cmd": "0x11",
-   "data": "04",
+   "data": "02",
    "expect": {
-    "back car state": true
+    "illlight": true
    }
   },
   {

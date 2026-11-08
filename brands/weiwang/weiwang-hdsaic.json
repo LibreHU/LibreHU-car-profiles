@@ -129,6 +129,35 @@
     }
    }
   },
+  "0x1A": {
+   "name": "Message 0x1A",
+   "signals": {
+    "turn_right": {
+     "start_byte": 2,
+     "bits": {
+      "right turn light": {
+       "bit": 0,
+       "role": "turn.right"
+      }
+     }
+    },
+    "turn_left": {
+     "start_byte": 2,
+     "bits": {
+      "left turn light": {
+       "bit": 1,
+       "role": "turn.left"
+      }
+     }
+    },
+    "engine_rpm": {
+     "start_byte": 10,
+     "role": "engine.rpm",
+     "unit": "rpm",
+     "label": "rotationl speed"
+    }
+   }
+  },
   "0x31": {
    "name": "Message 0x31",
    "signals": {
@@ -212,6 +241,13 @@
    "data": "00 00 04",
    "expect": {
     "front box door": true
+   }
+  },
+  {
+   "cmd": "0x1A",
+   "data": "00 00 01",
+   "expect": {
+    "right turn light": true
    }
   },
   {
