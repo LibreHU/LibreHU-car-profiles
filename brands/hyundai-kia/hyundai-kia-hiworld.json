@@ -4,7 +4,7 @@
  "engine": ">=2.0",
  "id": "hyundai-kia-hiworld",
  "name": "Hyundai, Kia (Hiworld HYP001)",
- "description": "Hiworld box, protocol HYP001 (Hyundai / Kia full compatible), from Hiworld's own app (HdKoreaProtocol). Choose your car: its box needs its car type. Not tried on a car yet.",
+ "description": "Hiworld box, protocol HYP001 (Hyundai / Kia full compatible), from Hiworld's own app (HdKoreaProtocol). Choose your car: its box needs its car type. Not tried on a car yet. Cars marked « (guessed) » have no decoder in Car Info: this one is their make's with the same box maker, never checked for them.",
  "box": "hiworld",
  "baud": 38400,
  "link": {
@@ -931,6 +931,30 @@
    "send": {
     "car type": "55 09"
    }
+  },
+  {
+   "name": "Hyundai tucson 2015-NOW, medium-low trim (guessed)"
+  },
+  {
+   "name": "Hyundai tucson 2015-NOW, high trim (guessed)"
+  },
+  {
+   "name": "Hyundai ix35 2010-2015, high trim (guessed)"
+  },
+  {
+   "name": "Hyundai sonata 2010-2015, all trims (guessed)"
+  },
+  {
+   "name": "Hyundai lingdong 2016-now, high trim (guessed)"
+  },
+  {
+   "name": "Hyundai ix45 2015-2017, medium-low trim (guessed)"
+  },
+  {
+   "name": "Hyundai ix45 2015-2017, high trim (guessed)"
+  },
+  {
+   "name": "Hyundai santafe 20062012, all trims (guessed)"
   }
  ],
  "wheel_keys": {

@@ -4,7 +4,7 @@
  "engine": ">=2.0",
  "id": "vw-pq-raise",
  "name": "Volkswagen, Skoda (Raise / Oudi, PQ)",
- "description": "Raise (RZC) or Oudi box, older Volkswagen / Skoda (PQ platforms), from the decoder Hiworld's own app uses for these boxes (RePQProtocol); the cars are the ones that app decodes with it. The head unit says hello once (0x81 01) and acknowledges each message (FF); no car type. Not tried on a car yet.",
+ "description": "Raise (RZC) or Oudi box, older Volkswagen / Skoda (PQ platforms), from the decoder Hiworld's own app uses for these boxes (RePQProtocol); the cars are the ones that app decodes with it. The head unit says hello once (0x81 01) and acknowledges each message (FF); no car type. Not tried on a car yet. Cars marked « (guessed) » have no decoder in Car Info: this one is their make's with the same box maker, never checked for them.",
  "box": "raise",
  "baud": 38400,
  "link": {
@@ -215,6 +215,12 @@
   {
    "name": "Volkswagen TREK 2017-now, all trims",
    "send": {}
+  },
+  {
+   "name": "Skoda Spaceback 2014-2019, all trims (guessed)"
+  },
+  {
+   "name": "Skoda superb haorui 2009-2013, all trims (guessed)"
   }
  ],
  "wheel_keys": {

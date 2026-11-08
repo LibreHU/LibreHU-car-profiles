@@ -4,7 +4,7 @@
  "engine": ">=2.0",
  "id": "toyota-hiworld",
  "name": "Toyota, Lexus ES (Hiworld TYP001)",
- "description": "Hiworld box, protocol TYP001 (Toyota full compatible, Lexus ES), from Hiworld's own app (HdToyotaProtocol). Choose your car: its box needs its car type. Not tried on a car yet.",
+ "description": "Hiworld box, protocol TYP001 (Toyota full compatible, Lexus ES), from Hiworld's own app (HdToyotaProtocol). Choose your car: its box needs its car type. Not tried on a car yet. Cars marked « (guessed) » have no decoder in Car Info: this one is their make's with the same box maker, never checked for them.",
  "box": "hiworld",
  "baud": 38400,
  "link": {
@@ -871,6 +871,9 @@
    "send": {
     "car type": "AD 01"
    }
+  },
+  {
+   "name": "Toyota sienna 2021, all trims (guessed)"
   }
  ],
  "wheel_keys": {

@@ -18,7 +18,7 @@ v184 no car is built into it. Guide to port a car (French): [PORTING.md](PORTING
 | `schema/` | schéma JSON du format (copie de celui du service) |
 | `dist/` | **généré par la CI** : `index.json`, un paquet par marque (`<marque>.json`) et celui des types de boîtiers (`boxes.json`, installé avant les marques) |
 | `tools/build_packs.py` | vérification par le schéma et construction des paquets |
-| `tools/carinfo/` | rejoue les décodeurs de l'appli Car Info d'origine, à partir de son listage jadx « fallback » (l'appli n'est jamais exécutée), et en tire une fiche par décodeur : **510 fiches générées dans `brands/`**, jamais essayées sur une voiture (« NEVER TRIED ON A CAR » dans leur description) ; voir [tools/carinfo/README.md](tools/carinfo/README.md) |
+| `tools/carinfo/` | rejoue les décodeurs de l'appli Car Info d'origine, à partir de son listage jadx « fallback » (l'appli n'est jamais exécutée), et en tire une fiche par décodeur : **511 fiches générées dans `brands/`**, jamais essayées sur une voiture (« NEVER TRIED ON A CAR » dans leur description) ; les voitures sans décodeur dans Car Info y sont ajoutées, marquées « (guessed) », au décodeur de la même marque et du même boîtier : chaque modèle de voiture du catalogue a un profil ; voir [tools/carinfo/README.md](tools/carinfo/README.md) |
 
 - **Porter une voiture** : [PORTING.md](PORTING.md).
 - **Format** : [docs/can-vehicles.md](https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicles.md),

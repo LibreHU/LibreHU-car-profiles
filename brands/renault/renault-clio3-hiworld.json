@@ -4,7 +4,7 @@
  "engine": ">=2.0",
  "id": "renault-clio3-hiworld",
  "name": "Renault, Dacia, LADA, Samsung, Nissan, Mercedes (Hiworld LNP002)",
- "description": "Hiworld box, protocol LNP002 (Renault / LADA / Samsung full compatible): Clio 3 by default, the other models in the list (car type from Hiworld's own app, HdRenaultProtocolLNP002). Like that app, the head unit also sends its audio source (0xE1, AUX here) and Bluetooth state (0xCD, not connected) for the car's display, and asks the box for its version (0x6A [5, 1, 0xF0], the Hiworld request, HdProtocol.txRequestCmdId) every 30 s: an F0 message right after each request shows that the box hears the head unit.",
+ "description": "Hiworld box, protocol LNP002 (Renault / LADA / Samsung full compatible): Clio 3 by default, the other models in the list (car type from Hiworld's own app, HdRenaultProtocolLNP002). Like that app, the head unit also sends its audio source (0xE1, AUX here) and Bluetooth state (0xCD, not connected) for the car's display, and asks the box for its version (0x6A [5, 1, 0xF0], the Hiworld request, HdProtocol.txRequestCmdId) every 30 s: an F0 message right after each request shows that the box hears the head unit. Cars marked « (guessed) » have no decoder in Car Info: this one is their make's with the same box maker, never checked for them.",
  "box": "hiworld",
  "baud": 38400,
  "link": {
@@ -604,6 +604,9 @@
    "send": {
     "car type": "00 31"
    }
+  },
+  {
+   "name": "Renault Samsung sm7 20042011, all trims (guessed)"
   }
  ],
  "wheel_keys": {
