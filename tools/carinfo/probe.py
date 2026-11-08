@@ -47,18 +47,80 @@ class Decoder:
                 fn()
             except Undecidable as x:
                 self.errors.append(f"{step}: {getattr(x, 'where', '?')}: {x}")
+        # Car Info's second way in (JancarRx.toDoWork): a decoder with isSupportHandlePacketV2() gets each message of a
+        # command it registered (registerCanMsg(cmd, callback)) through handlePacket2(proxy, data, cmd, callback),
+        # its own handlePacket being empty.
+        self.v2 = False
+        try:
+            self.vm.steps = 0
+            self.v2 = self.vm.invoke(self.obj, "isSupportHandlePacketV2", []) in (1, True)
+        except Exception:
+            pass
+
+    def _build(self, layout, cmd, data):
+        """getPacket with the command where this protocol takes it: as its first argument (most), as the first data
+        byte (getPacket writes no command: Simple's 55 AA …), as the second argument, or written over the byte
+        parseRegisterCmdId reads ("patch": the box's frames differ from the head unit's, as Simple Audi's)."""
+        sc = cmd - 256 if cmd > 127 else cmd
+        a, b, d = {"arg": (cmd, 0, list(data)), "data": (cmd, 0, [sc] + list(data)), "sub": (0, cmd, list(data)),
+                   "patch": (cmd, 0, list(data))}[layout]
+        self.vm.steps = 0
+        f = self.vm.invoke(self.obj, "getPacket", [a, b, JArray(d, "byte", list(range(len(d))))])
+        if layout == "patch" and isinstance(f, JArray):
+            k = self._cmd_index(len(f.items))
+            if k is not None and 0 <= k < len(f.items):
+                items = list(f.items)
+                items[k] = sc
+                f = JArray(items, "byte", list(range(len(items))))
+        return f
+
+    def _cmd_index(self, n):
+        """Which byte of a frame parseRegisterCmdId reads: asked with a frame whose bytes are their own index."""
+        if getattr(self, "cmd_index", None) is None:
+            got = self._cmd_of(JArray([i & 0x7F for i in range(n)], "byte", list(range(n))))
+            self.cmd_index = got if isinstance(got, int) else -1
+        return self.cmd_index if self.cmd_index >= 0 else None
+
+    def _cmd_of(self, f):
+        try:
+            self.vm.steps = 0
+            return self.vm.invoke(self.obj, "parseRegisterCmdId", [f, 0])
+        except Exception:
+            return None
 
     def frame(self, cmd, data):
-        self.vm.steps = 0
-        f = self.vm.invoke(self.obj, "getPacket", [cmd, 0, JArray(list(data), "byte", list(range(len(data))))])
-        return f
+        # The protocol's own parseRegisterCmdId says where the command must be: found once, then kept.
+        if getattr(self, "layout", None) is None:
+            first = None
+            for layout in ("arg", "data", "sub", "patch"):
+                try:
+                    f = self._build(layout, cmd, data)
+                except Undecidable:
+                    continue
+                if first is None:
+                    first = (layout, f)
+                got = self._cmd_of(f) if isinstance(f, JArray) else None
+                if got is None or got == cmd:
+                    self.layout = layout
+                    return f
+            self.layout = first[0] if first else "arg"
+            return first[1] if first else self._build("arg", cmd, data)
+        return self._build(self.layout, cmd, data)
 
     def handle(self, frame):
         self.px.sent.clear()
         self.vm.trace.clear()
         self.vm.reads.clear()
         self.vm.steps = 0
-        self.vm.invoke(self.obj, "handlePacket", [self.proxy, frame])
+        callbacks = []
+        if self.v2:
+            cmd = self.vm.invoke(self.obj, "parseRegisterCmdId", [frame, 0])
+            callbacks = [c for c in self.px.registered.get(cmd, []) if isinstance(c, JObject)]
+            self.vm.steps = 0
+            for cb in callbacks:
+                self.vm.invoke(self.obj, "handlePacket2", [self.proxy, frame, cmd, cb])
+        if not callbacks:
+            self.vm.invoke(self.obj, "handlePacket", [self.proxy, frame])
         # Everything ever reported, as it is now (a decoder may report a value only when it changes).
         return [(t, o) for (t, _), o in self.px.known.items()] + [x for x in self.px.sent if not isinstance(x[1], JObject)], list(self.vm.trace)
 

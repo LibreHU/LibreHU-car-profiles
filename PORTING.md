@@ -85,11 +85,12 @@ ensuite par `"box": "<box>"`. Il arrive sur les autoradios par le paquet `boxes`
 dans un petit interpréteur pour savoir ce que fait chaque décodeur : quel décodeur pour quelle voiture, quels messages,
 quels octets, quelle formule. Mode d'emploi : [tools/carinfo/README.md](tools/carinfo/README.md).
 
-- État au 06/11/2026 : un décodeur trouvé pour 6 658 des 6 970 entrées du catalogue (532 décodeurs) ; mêmes résultats
-  que les analyses à la main pour PSA (111 / 111) et Volkswagen (174 / 174) ; pour `RePsaProtocol`, mêmes messages que
-  la fiche `psa-raise` ; sondage de tous les décodeurs : 517 sur 532 donnent des messages (4 526 messages).
-- Pas encore fait : l'écriture des fiches (famille de boîtier ou `framing`, rôles, noms des touches, type de voiture,
-  accusés, trames de démarrage) et leur vérification par le moteur (`librehu-car-tool.jar check`).
+- État au 08/11/2026 : un décodeur trouvé pour 6 658 des 6 970 entrées du catalogue (532 décodeurs ; les 312 autres
+  n'en ont pas dans Car Info lui-même) ; mêmes résultats que les analyses à la main pour PSA (111 / 111) et Volkswagen
+  (174 / 174) ; sondage : **528 décodeurs sur 532 donnent des messages** (4 861 messages).
+- **Générateur** (`tools/carinfo/generate.py`) : une fiche par décodeur (type de boîtier tiré de sa trame, voitures avec
+  le type de voiture rejoué pour chacune, rôles, touches du volant avec leurs noms, exemples) : **507 fiches, 5 319
+  voitures**, toutes acceptées par le moteur (`check`). Jamais essayées sur une voiture : marquées comme telles.
 - Une fiche tirée de ce code n'a jamais roulé : elle sera marquée **non testée** tant que personne ne l'a essayée sur
   la voiture (comme toute fiche, à vérifier avec une capture, § 1).
 
