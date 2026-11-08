@@ -58,7 +58,7 @@
   {
    "id": "audi",
    "name": "Audi",
-   "revision": 3,
+   "revision": 4,
    "engine": ">=2.7",
    "makes": [
     "Audi"
@@ -74,10 +74,10 @@
     "audi-spaudi",
     "audi-spaudi2"
    ],
-   "cars": 49,
+   "cars": 53,
    "file": "audi.json",
-   "size": 44921,
-   "sha256": "bb3b5352fbb16b245a46b7aef9fcee83d2c387842fc52c2b0fecb7cdf3d00812"
+   "size": 45458,
+   "sha256": "c823f94f8b94cee15d2f16d311fa31bbd80addd9a1084027795b6186fc417cbe"
   },
   {
    "id": "baojun",
@@ -102,7 +102,7 @@
   {
    "id": "bba",
    "name": "BMW, Mercedes-Benz, Audi (BBA box)",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Audi",
@@ -112,10 +112,10 @@
    "profiles": [
     "bba-lzbba"
    ],
-   "cars": 28,
+   "cars": 31,
    "file": "bba.json",
-   "size": 8850,
-   "sha256": "4243f8d3fe6759a27714d5204c2560e0f9b358741853fdf426ab304c16faabc0"
+   "size": 9212,
+   "sha256": "0065a4ecf7287a27771d9bc551b58e0d2db226532171cc72aabf32ba660bd362"
   },
   {
    "id": "bentley",
@@ -165,7 +165,7 @@
   {
    "id": "besturn",
    "name": "Besturn",
-   "revision": 3,
+   "revision": 4,
    "engine": ">=2.7",
    "makes": [
     "Besturn"
@@ -185,10 +185,10 @@
     "besturn-rebenteng14b70",
     "besturn-rebentengx80"
    ],
-   "cars": 36,
+   "cars": 38,
    "file": "besturn.json",
-   "size": 52081,
-   "sha256": "3c0cfcdb36ea4b389c18aaf88cc9e8cbdcece1fb3e8fb1ee53eebd82f9585b50"
+   "size": 52494,
+   "sha256": "510a0723520b6edd16cd24d462bbdd471960a7d2a47e88c5eb1d4cf8620db2bd"
   },
   {
    "id": "bisu",
@@ -210,7 +210,7 @@
   {
    "id": "bj",
    "name": "BAIC BJ",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "BAIC",
@@ -223,15 +223,15 @@
     "bj-rebaic",
     "bj-rebaicd50"
    ],
-   "cars": 27,
+   "cars": 34,
    "file": "bj.json",
-   "size": 24072,
-   "sha256": "1038d522b1ac92427fd2923d084ba5a6e109cfae265e60329b28444e53914e38"
+   "size": 24894,
+   "sha256": "55ae62e6534516a8728581fb5e1c7a5656747988bf3eb0da646d15451fd3a023"
   },
   {
    "id": "bjev",
    "name": "BAIC BJEV",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "BAIC"
@@ -241,15 +241,15 @@
     "bjev-odbaicev160",
     "bjev-rebaicev"
    ],
-   "cars": 11,
+   "cars": 12,
    "file": "bjev.json",
-   "size": 12598,
-   "sha256": "fe8befe9f3624562fb7edf5c8d4d7d3b50db7e1cd5be0a7e77b5f7c681f566e8"
+   "size": 12799,
+   "sha256": "260bbb6e2c1eba6903d6d8b058f3d60ee3603ceebba439cda92b6789f9ffaa0b"
   },
   {
    "id": "bmw",
    "name": "BMW",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "BMW"
@@ -269,10 +269,10 @@
     "bmw-rebmw",
     "bmw-spbmw"
    ],
-   "cars": 60,
+   "cars": 76,
    "file": "bmw.json",
-   "size": 49998,
-   "sha256": "1f1a40dbffca417dea4c3e2b4dab3b2d0f3b8fcb56beb4ea8ed5bfb46df13c0e"
+   "size": 51222,
+   "sha256": "dfdc78846d23c66bcbdf84e2b144c99b173f4b7610660d3ee3e722f46e33a813"
   },
   {
    "id": "buick",
@@ -385,7 +385,7 @@
   {
    "id": "chery",
    "name": "Chery",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Chery",
@@ -404,15 +404,15 @@
     "chery-odmaserati",
     "chery-rechery"
    ],
-   "cars": 78,
+   "cars": 83,
    "file": "chery.json",
-   "size": 64734,
-   "sha256": "ad00bc14130330d25040a83390ba2a8cd716dd7975d93652a446d12c98dd6563"
+   "size": 65202,
+   "sha256": "ac7042d0ba6f06e975bcb452c531ee85421076738d2c234d2ea9fd2661e9bf63"
   },
   {
    "id": "chevrolet",
    "name": "Chevrolet",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Buick",
@@ -430,10 +430,10 @@
     "chevrolet-regm",
     "chevrolet-spgmprotok"
    ],
-   "cars": 533,
+   "cars": 565,
    "file": "chevrolet.json",
-   "size": 90380,
-   "sha256": "87ca56aeb47b36a449f077ab13376e033841d9624fd251875ef8f8c2b47842ba"
+   "size": 92980,
+   "sha256": "7f496a7cfc8057eaa44be278229e1769ab9e577fc932a0a26c4f9773e0187bf3"
   },
   {
    "id": "chrysler",
@@ -519,7 +519,7 @@
   {
    "id": "dffg",
    "name": "Dongfeng Fengguang",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Dongfeng"
@@ -529,10 +529,10 @@
     "dffg-oddf580protol",
     "dffg-redf580protol"
    ],
-   "cars": 24,
+   "cars": 25,
    "file": "dffg.json",
-   "size": 19071,
-   "sha256": "8470fc19dcee1532cb9f68133486e0d77a4a2c59fbd2107fc321189b35a07f43"
+   "size": 19279,
+   "sha256": "d7159f35af980c442918301fc540a0241792dc66cb06957c49c292c1e71272b5"
   },
   {
    "id": "dffs",
@@ -629,7 +629,7 @@
   {
    "id": "fiat",
    "name": "Fiat",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Alfa",
@@ -650,15 +650,15 @@
     "fiat-refiat",
     "fiat-sp14fiatprotok"
    ],
-   "cars": 222,
+   "cars": 224,
    "file": "fiat.json",
-   "size": 57624,
-   "sha256": "c6737d9fe564af92f46af89868859b95cbc2b6ac449bd94b0635a8195cf8e235"
+   "size": 57906,
+   "sha256": "9b2fe6223d73388883509116b623a0df9be7325d3d3e1449560d9efcbf0e34eb"
   },
   {
    "id": "ford",
    "name": "Ford",
-   "revision": 3,
+   "revision": 4,
    "engine": ">=2.7",
    "makes": [
     "Ford",
@@ -690,10 +690,10 @@
     "ford-spford150fdss04a",
     "ford-spmondeo"
    ],
-   "cars": 445,
+   "cars": 481,
    "file": "ford.json",
-   "size": 170252,
-   "sha256": "67adde8f6c408d1016240de750405ca5c35af4bc7e6eb409f4fe047f9616cfe5"
+   "size": 173187,
+   "sha256": "becf87747f5d7c80ce2dc52632bb8d7fcf0f56008d72ad9be1c73c0baee7c202"
   },
   {
    "id": "foton",
@@ -715,7 +715,7 @@
   {
    "id": "geely",
    "name": "Geely",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Geely",
@@ -734,10 +734,10 @@
     "geely-regeelycommon",
     "geely-regeelygc7"
    ],
-   "cars": 114,
+   "cars": 124,
    "file": "geely.json",
-   "size": 72284,
-   "sha256": "db127c3372269a9a1801fbf0f33557a4a02cd7db3babd90304d8455de33f68be"
+   "size": 73212,
+   "sha256": "c09806e91fe8cc08cdbdfb4a228b3ae1a3f6ea0747000d3a4e4a9d6ff5ff2c40"
   },
   {
    "id": "gmc",
@@ -775,7 +775,7 @@
   {
    "id": "greatwall",
    "name": "Great Wall",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Great",
@@ -788,10 +788,10 @@
     "greatwall-regreatwallw6",
     "greatwall-rehaval"
    ],
-   "cars": 19,
+   "cars": 20,
    "file": "greatwall.json",
-   "size": 18199,
-   "sha256": "32a47ac55a302964f2f2839b97bd0e16a63edb7b83d8ac0e84975e420f6f36c2"
+   "size": 18399,
+   "sha256": "dfa11599277ba9c15026272d498c93c4d72c8ed152c72cfbb5acb64616ae25b1"
   },
   {
    "id": "haima",
@@ -839,7 +839,7 @@
   {
    "id": "haval",
    "name": "Haval",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Great",
@@ -860,10 +860,10 @@
     "haval-rehavalh9",
     "haval-rehavalm6plus"
    ],
-   "cars": 151,
+   "cars": 164,
    "file": "haval.json",
-   "size": 79885,
-   "sha256": "edcba714037617f7e33393b1d2f499e33265b83a0d7e1ff4e7d0b5787b6e8a3e"
+   "size": 81086,
+   "sha256": "e1e593e28c56b60df58e3561a5f4f1ca0c00f7d676e97883f0ecc7d62babdceb"
   },
   {
    "id": "hezhong",
@@ -884,7 +884,7 @@
   {
    "id": "honda",
    "name": "Honda",
-   "revision": 3,
+   "revision": 4,
    "engine": ">=2.0",
    "makes": [
     "Honda"
@@ -916,10 +916,10 @@
     "honda-xbscrosstour",
     "honda-xbshonda"
    ],
-   "cars": 308,
+   "cars": 331,
    "file": "honda.json",
-   "size": 128722,
-   "sha256": "ebf339ae33a48cda791a6854663e89f8bd6ce1a73972b50a5800cb450dad4eeb"
+   "size": 131015,
+   "sha256": "e6fc6d76cbc6ac0289becda8b129879cd032c3c869973307f3bdd1070aaf6e2c"
   },
   {
    "id": "hongqi",
@@ -991,7 +991,7 @@
   {
    "id": "hyundai-kia",
    "name": "Hyundai, Kia",
-   "revision": 3,
+   "revision": 4,
    "engine": ">=2.0",
    "makes": [
     "Hyundai",
@@ -1006,10 +1006,10 @@
     "hyundai-rekorea",
     "kia-spkorea"
    ],
-   "cars": 410,
+   "cars": 437,
    "file": "hyundai-kia.json",
-   "size": 78411,
-   "sha256": "bce1510e46c114c8f77c7a1ac80622dc2f0a73d273025c35ac2f7e0013111f87"
+   "size": 80793,
+   "sha256": "f65ad24d286d2b5d1e865541b31235ad0e6b1a94629fd4577375ec38d773d156"
   },
   {
    "id": "ikco",
@@ -1033,7 +1033,7 @@
   {
    "id": "isuzu",
    "name": "Isuzu",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Isuzu"
@@ -1043,10 +1043,10 @@
     "isuzu-odlsuzuprotol",
     "isuzu-raiseisuzuprotol"
    ],
-   "cars": 15,
+   "cars": 20,
    "file": "isuzu.json",
-   "size": 18774,
-   "sha256": "88729696ddbcabf2db2907dd81dd3bba55102509e11843706f63d41cba3519db"
+   "size": 19258,
+   "sha256": "b14fa448d11643c6245da4ba6a79f92666bb09d8c84752c6aa0355447ea3f4c7"
   },
   {
    "id": "iveco",
@@ -1069,7 +1069,7 @@
   {
    "id": "jac",
    "name": "JAC",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "JAC"
@@ -1081,13 +1081,14 @@
     "jac-odjaca5",
     "jac-odjaciev7",
     "jac-odjacruifengs7",
+    "jac-odjacshailing",
     "jac-odjacsurpass",
     "jac-rejac"
    ],
-   "cars": 47,
+   "cars": 50,
    "file": "jac.json",
-   "size": 52716,
-   "sha256": "7f8276c6e4ea01f69bdc0e6e4af511522b1c1f809df35a0bc993dc4e249412d1"
+   "size": 54031,
+   "sha256": "3c8426d8dbfe6193ba600508d7b3e2c4d2a7c8a459a1a6a97ec7c200cf3e4d2c"
   },
   {
    "id": "jaguar",
@@ -1109,7 +1110,7 @@
   {
    "id": "jeep",
    "name": "Jeep",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Chrysler",
@@ -1132,10 +1133,10 @@
     "jeep-spjeepprotokchss03",
     "jeep-xbsjeep"
    ],
-   "cars": 190,
+   "cars": 215,
    "file": "jeep.json",
-   "size": 83628,
-   "sha256": "416ab0fe25854894b0c69e65ce59db94e150d475c63dc95366aeaf01f124f667"
+   "size": 85664,
+   "sha256": "e104c076c4c02bd88dbd7e32ad974211d8b2c9856fb915a773c3b711ab3d622b"
   },
   {
    "id": "jiefang",
@@ -1172,7 +1173,7 @@
   {
    "id": "jmc",
    "name": "JMC",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "JMC"
@@ -1186,10 +1187,10 @@
     "jmc-oudinewenergy",
     "jmc-raisejmcisuzuprotol"
    ],
-   "cars": 19,
+   "cars": 20,
    "file": "jmc.json",
-   "size": 38347,
-   "sha256": "3ce8e0f9588c98234411bbd1d5f3dbd217c7182653754effb4d3714486a0bfca"
+   "size": 38544,
+   "sha256": "bfb7c67d52e46891378b9215dadf6b1f6f5ba0409ebe8c3e38576a86c1913c9f"
   },
   {
    "id": "kawei",
@@ -1452,7 +1453,7 @@
   {
    "id": "mazda",
    "name": "Mazda",
-   "revision": 3,
+   "revision": 4,
    "engine": ">=2.0",
    "makes": [
     "Mazda"
@@ -1473,15 +1474,15 @@
     "mazda-xbsmazda",
     "mazda-xbsmazda6"
    ],
-   "cars": 85,
+   "cars": 87,
    "file": "mazda.json",
-   "size": 58638,
-   "sha256": "5f33428daa652af921ff70b76ed3e88e3e91bdfa13840c29a89f61a1efed16be"
+   "size": 58914,
+   "sha256": "1f9c2b218ab33aa982145c0c6ef6affea47cd9d5c104f900d06c7131204ab184"
   },
   {
    "id": "mg",
    "name": "MG",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "MG",
@@ -1495,10 +1496,10 @@
     "mg-odmgzs",
     "mg-resaiccommon"
    ],
-   "cars": 55,
+   "cars": 57,
    "file": "mg.json",
-   "size": 31681,
-   "sha256": "c7f193c3ef155e2bbb2c5118a9fca83fca4fe4d31e45f940ed68da417d85cbbc"
+   "size": 31942,
+   "sha256": "c9a6f9052277a0e6f071afef35eab150b172f86cf0958261dd8bc0a4f3cf9bbb"
   },
   {
    "id": "mitsubishi",
@@ -1577,7 +1578,7 @@
   {
    "id": "opel",
    "name": "Opel",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Opel"
@@ -1589,10 +1590,10 @@
     "opel-spopel",
     "opel-sprp5op002"
    ],
-   "cars": 33,
+   "cars": 36,
    "file": "opel.json",
-   "size": 21129,
-   "sha256": "6d0f2858a5e9abbb2b6487d260682e893d8382d1193bc626e5fee536b41a5309"
+   "size": 21460,
+   "sha256": "1c279d7dfb4183496ec8cc941734747b94720294c5cb5112d0375f89c7e5a3f4"
   },
   {
    "id": "oushang",
@@ -1670,7 +1671,7 @@
   {
    "id": "psa",
    "name": "Peugeot, Citroën, DS",
-   "revision": 3,
+   "revision": 4,
    "engine": ">=2.0",
    "makes": [
     "Citroën",
@@ -1686,10 +1687,10 @@
     "psa-raise-keep",
     "psa-raise"
    ],
-   "cars": 234,
+   "cars": 261,
    "file": "psa.json",
-   "size": 66811,
-   "sha256": "aaf114f8bba504aac08d0c62e3c0e673499f5363636b11ca328dfc3c2b1a625a"
+   "size": 69152,
+   "sha256": "821f1f95ab5b2828df4fa7a43d143a29915784922b9cae677a515bba1fa8be95"
   },
   {
    "id": "qoros",
@@ -1728,11 +1729,12 @@
   {
    "id": "renault",
    "name": "Renault",
-   "revision": 3,
+   "revision": 4,
    "engine": ">=2.0",
    "makes": [
     "Dacia",
     "LADA",
+    "Lada",
     "Mercedes-Benz",
     "Nissan",
     "Renault",
@@ -1749,15 +1751,15 @@
     "renault-xpkoleos",
     "renault-xprenault"
    ],
-   "cars": 328,
+   "cars": 337,
    "file": "renault.json",
-   "size": 68724,
-   "sha256": "1635bcde3e636e69063da9fb074306036a0cc5d8891960ccc826d595ff658bd0"
+   "size": 69783,
+   "sha256": "e13996726c2f1ba5174ec8f2473cfcad432b67f163e18fff5d2ca38785585331"
   },
   {
    "id": "roewe",
    "name": "Roewe",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "MG",
@@ -1775,10 +1777,10 @@
     "roewe-odroewe550",
     "roewe-rerongwei550protok"
    ],
-   "cars": 50,
+   "cars": 51,
    "file": "roewe.json",
-   "size": 50957,
-   "sha256": "007dc9be9f83f1993e588a414f2c814facae898db9a031cc402486472f5aed76"
+   "size": 51148,
+   "sha256": "895906c37051f58357f5ae2a4bb5aa887a42b1b1a84abaf1917fc1234af3cccf"
   },
   {
    "id": "saab",
@@ -1800,7 +1802,7 @@
   {
    "id": "senova",
    "name": "BAIC Senova",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "BAIC",
@@ -1810,10 +1812,10 @@
     "senova-hdbqzhixing",
     "senova-odsaic"
    ],
-   "cars": 16,
+   "cars": 17,
    "file": "senova.json",
-   "size": 14351,
-   "sha256": "007a3ca4a04206fbf94e2c501a9b3791a1ce36027488e6614ada8c12c867eeef"
+   "size": 14569,
+   "sha256": "003d3f62aa0f8c26dbc960e610dab93f0755229a7d44642d5027ab7a28cecfc1"
   },
   {
    "id": "shacman",
@@ -1889,7 +1891,7 @@
   {
    "id": "ssangyong",
    "name": "SsangYong",
-   "revision": 1,
+   "revision": 2,
    "engine": ">=2.0",
    "makes": [
     "SsangYong"
@@ -1897,10 +1899,10 @@
    "profiles": [
     "ssangyong-ssongyong"
    ],
-   "cars": 1,
+   "cars": 12,
    "file": "ssangyong.json",
-   "size": 2106,
-   "sha256": "bab46a79f61daaa29d4e95feccc7bae051d642a6787eab03ef813ec842f40a8e"
+   "size": 3095,
+   "sha256": "c37974e3a8438365a7e969854ce4f1ced816a951b6fee2cbad6678a455b47349"
   },
   {
    "id": "subaru",
@@ -1927,7 +1929,7 @@
   {
    "id": "suzuki",
    "name": "Suzuki",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Suzuki"
@@ -1938,10 +1940,10 @@
     "suzuki-resuzuki",
     "suzuki-spsuzuki"
    ],
-   "cars": 10,
+   "cars": 12,
    "file": "suzuki.json",
-   "size": 17086,
-   "sha256": "38ebd3616ec32ee7239f4d1edcbee0d04c789a21f2f8b975060c8a25f623ba3c"
+   "size": 17364,
+   "sha256": "fcb4bd5af89887da4dde7718d3c2b9e248ff2889a3faad4723fced9b6efd34df"
   },
   {
    "id": "swm",
@@ -1982,7 +1984,7 @@
   {
    "id": "toyota",
    "name": "Toyota",
-   "revision": 3,
+   "revision": 4,
    "engine": ">=2.0",
    "makes": [
     "Toyota"
@@ -2008,15 +2010,15 @@
     "toyota-xfytoyota",
     "toyota-xinbastoyota"
    ],
-   "cars": 598,
+   "cars": 607,
    "file": "toyota.json",
-   "size": 162743,
-   "sha256": "b5e6745f1679864d9246bda35c49cea52b494b0b9853b93a74409773cbf6f5dc"
+   "size": 163775,
+   "sha256": "b25a830dfba50c2f2df5d66d56dcd0ebd12dace152338b1cd9341014fd529b18"
   },
   {
    "id": "trumpchi",
    "name": "GAC Trumpchi",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "GAC"
@@ -2028,10 +2030,10 @@
     "trumpchi-odtrumpchi",
     "trumpchi-retrumpchi"
    ],
-   "cars": 114,
+   "cars": 118,
    "file": "trumpchi.json",
-   "size": 34417,
-   "sha256": "afabac3186124f58d74f8c375aff4e83d8d3c280a32f75589743dd8a51c19ed6"
+   "size": 34971,
+   "sha256": "2c9f3ea3627c753f9d5a4de66a0d78288b80d9372cd2372d8e1dfb12e58355c4"
   },
   {
    "id": "uaz",
@@ -2052,7 +2054,7 @@
   {
    "id": "venucia",
    "name": "Venucia",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Venucia"
@@ -2065,15 +2067,15 @@
     "venucia-odqichenm50v",
     "venucia-reqichent70"
    ],
-   "cars": 19,
+   "cars": 20,
    "file": "venucia.json",
-   "size": 22369,
-   "sha256": "6ce1794a74d17f7eb0d72a81ca2d0a508b9d25c8602cc61c25545e3fface9a79"
+   "size": 22572,
+   "sha256": "c854ab66d5606c4fa0da7ee1b34bb12894e6368fcce481302cf1d92e140cdfdd"
   },
   {
    "id": "volkswagen",
    "name": "Volkswagen group",
-   "revision": 3,
+   "revision": 4,
    "engine": ">=2.1",
    "makes": [
     "Mercedes-Benz",
@@ -2096,10 +2098,10 @@
     "vw-pq-hiworld",
     "vw-pq-raise"
    ],
-   "cars": 358,
+   "cars": 366,
    "file": "volkswagen.json",
-   "size": 99118,
-   "sha256": "246ba094e7adc49f8394a88860244eb9b32800518f27446f39f0fe6055724011"
+   "size": 100123,
+   "sha256": "830fae0c3a57170ba53d8f4eeb13d37907521012bda694d49082fdf7f23457ab"
   },
   {
    "id": "volvo",
@@ -2244,7 +2246,7 @@
   {
    "id": "zotye",
    "name": "Zotye",
-   "revision": 2,
+   "revision": 3,
    "engine": ">=2.0",
    "makes": [
     "Zotye"
@@ -2258,19 +2260,20 @@
     "zotye-odzotyet700",
     "zotye-rezotyet"
    ],
-   "cars": 25,
+   "cars": 26,
    "file": "zotye.json",
-   "size": 44486,
-   "sha256": "9d1cc311bad493660e4588906bf9a2fe22bd4dcd80b629b98847da719804a3ce"
+   "size": 44687,
+   "sha256": "80b1128c9f95a68824a98530858851299403f2c1a9541c499f6f30f190c2f2ed"
   }
  ],
  "coverage": {
   "source": "Car Info 1.0.3991 (com.can.activity)",
-  "models": 1797,
-  "box_link": 1792,
-  "decoded": 1689,
-  "profiles": 520,
-  "generated": 510,
-  "cars": 6115
+  "models": 1785,
+  "box_link": 1785,
+  "decoded": 1785,
+  "guessed": 95,
+  "profiles": 521,
+  "generated": 511,
+  "cars": 6413
  }
 }
