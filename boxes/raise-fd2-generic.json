@@ -1,0 +1,33 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.6",
+ "id": "raise-fd2-generic",
+ "name": "Raise (FD, 16-bit sum): any car (raw messages)",
+ "description": "Raise box with the FD framing and a 16-bit sum (FD LEN CMD data CSH CSL, LEN = data + 4), no acknowledgement. Any car: no decoding, raw messages. Also the description of this box type (\"box\": \"raise-fd2\").",
+ "box": "raise-fd2",
+ "box_type": {
+  "name": "Raise (FD, 16-bit sum)",
+  "aliases": []
+ },
+ "framing": {
+  "head": "FD",
+  "order": "len,cmd",
+  "len_offset": 4,
+  "checksum": {
+   "algo": "sum",
+   "over": "len,cmd,data",
+   "size": 2,
+   "add": 0,
+   "xor": 0
+  },
+  "no_ack_for": [],
+  "box_answers": [],
+  "baud": 38400
+ },
+ "link": {
+  "ack": false,
+  "send": []
+ },
+ "messages": {}
+}

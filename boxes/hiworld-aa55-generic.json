@@ -1,0 +1,33 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.6",
+ "id": "hiworld-aa55-generic",
+ "name": "Hiworld (AA 55): any car (raw messages)",
+ "description": "Hiworld's other framing (AA 55 LEN CMD data CS, same checksum, no acknowledgement), any car: no decoding, raw messages. Also the description of this box type (\"box\": \"hiworld-aa55\").",
+ "box": "hiworld-aa55",
+ "box_type": {
+  "name": "Hiworld (AA 55)",
+  "aliases": []
+ },
+ "framing": {
+  "head": "AA 55",
+  "order": "len,cmd",
+  "len_offset": 0,
+  "checksum": {
+   "algo": "sum",
+   "over": "len,cmd,data",
+   "size": 1,
+   "add": -1,
+   "xor": 0
+  },
+  "no_ack_for": [],
+  "box_answers": [],
+  "baud": 38400
+ },
+ "link": {
+  "ack": false,
+  "send": []
+ },
+ "messages": {}
+}

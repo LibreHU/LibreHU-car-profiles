@@ -153,6 +153,25 @@
     }
    }
   },
+  "box_type": {
+   "type": "object",
+   "description": "This profile is the generic one of the box type named by \"box\" (engine 2.6): its \"framing\" describes the box for every car profile naming it; raw messages, no decoding. Box types are published in boxes/ (pack \"boxes\").",
+   "additionalProperties": false,
+   "properties": {
+    "name": {
+     "type": "string",
+     "description": "Shown for the box, e.g. \"Hiworld (5A A5)\""
+    },
+    "aliases": {
+     "type": "array",
+     "description": "Box makers that use this type (a car profile may name one: \"box\": \"simple\")",
+     "items": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,31}$"
+     }
+    }
+   }
+  },
   "link": {
    "type": "object",
    "additionalProperties": false,

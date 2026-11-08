@@ -1,0 +1,66 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.6",
+ "id": "raise-generic",
+ "name": "Raise (2E): any car (raw messages)",
+ "description": "Raise (RZC) box and most other makers (Simple, Bagoo, Binary, Oudi, Luzheng…): 2E CMD LEN data CS, CS = (CMD + LEN + data) XOR FF, 38400 bit/s; the head unit acknowledges each message with the byte FF and says hello (81 01) at the start, as the Raise profiles do. Any car: no decoding, raw messages. Also the description of this box type (\"box\": \"raise\" or one of its makers).",
+ "box": "raise",
+ "box_type": {
+  "name": "Raise (2E)",
+  "aliases": [
+   "simple",
+   "bagoo",
+   "binary",
+   "oudi",
+   "luzheng",
+   "keyichuang",
+   "xinbas",
+   "dogen",
+   "hcy",
+   "bsj",
+   "cyt",
+   "autoai",
+   "rcw",
+   "hechi",
+   "xfy",
+   "hangdao"
+  ]
+ },
+ "framing": {
+  "head": "2E",
+  "order": "cmd,len",
+  "len_offset": 0,
+  "checksum": {
+   "algo": "sum",
+   "over": "cmd,len,data",
+   "size": 1,
+   "add": 0,
+   "xor": "0xFF"
+  },
+  "ack": {
+   "raw": "FF"
+  },
+  "no_ack_for": [],
+  "box_answers": [
+   "FF",
+   "F0",
+   "F3",
+   "FC"
+  ],
+  "baud": 38400
+ },
+ "link": {
+  "ack": true,
+  "send": [
+   {
+    "name": "connect",
+    "cmd": "0x81",
+    "data": "01",
+    "first_ms": 500,
+    "every_ms": 0
+   }
+  ]
+ },
+ "messages": {}
+}

@@ -1,0 +1,41 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.6",
+ "id": "hiworld-generic",
+ "name": "Hiworld (5A A5): any car (raw messages)",
+ "description": "Hiworld box (5A A5 LEN CMD data CS, CS = LEN + CMD + data - 1, 38400 bit/s), any car: no decoding, the CAN tab shows the raw messages. The head unit acknowledges every message of the box (FF <cmd>), as Hiworld's app does. Without a car profile the box gets no car type: it repeats its messages once a second and sends no steering wheel key. Also the description of this box type for the car profiles that name it (\"box\": \"hiworld\").",
+ "box": "hiworld",
+ "box_type": {
+  "name": "Hiworld (5A A5)",
+  "aliases": [
+   "wy"
+  ]
+ },
+ "framing": {
+  "head": "5A A5",
+  "order": "len,cmd",
+  "len_offset": 0,
+  "checksum": {
+   "algo": "sum",
+   "over": "len,cmd,data",
+   "size": 1,
+   "add": -1,
+   "xor": 0
+  },
+  "ack": {
+   "cmd": "0xFF"
+  },
+  "no_ack_for": [
+   "0xFF",
+   "0xFE"
+  ],
+  "box_answers": [],
+  "baud": 38400
+ },
+ "link": {
+  "ack": true,
+  "send": []
+ },
+ "messages": {}
+}

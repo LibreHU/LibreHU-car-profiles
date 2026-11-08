@@ -1,0 +1,41 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.6",
+ "id": "raise-fd-generic",
+ "name": "Raise (FD, 8-bit sum): any car (raw messages)",
+ "description": "Raise box with the FD framing (FD LEN CMD data CS, LEN = data + 3, CS = LEN + CMD + data), no acknowledgement, hello 81 01 at the start as the PSA Raise profiles do. Any car: no decoding, raw messages. Also the description of this box type (\"box\": \"raise-fd\").",
+ "box": "raise-fd",
+ "box_type": {
+  "name": "Raise (FD, 8-bit sum)",
+  "aliases": []
+ },
+ "framing": {
+  "head": "FD",
+  "order": "len,cmd",
+  "len_offset": 3,
+  "checksum": {
+   "algo": "sum",
+   "over": "len,cmd,data",
+   "size": 1,
+   "add": 0,
+   "xor": 0
+  },
+  "no_ack_for": [],
+  "box_answers": [],
+  "baud": 38400
+ },
+ "link": {
+  "ack": false,
+  "send": [
+   {
+    "name": "connect",
+    "cmd": "0x81",
+    "data": "01",
+    "first_ms": 500,
+    "every_ms": 0
+   }
+  ]
+ },
+ "messages": {}
+}

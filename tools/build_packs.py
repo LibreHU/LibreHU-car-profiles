@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Checks the car profiles against the JSON Schema and builds one pack per make (dist/<make>.json) and the index
-LibreHU Apps and LibreHU service read (dist/index.json). No dependency but `jsonschema` (pip install jsonschema).
+"""Checks the car profiles and the box types against the JSON Schema and builds one pack per make (dist/<make>.json),
+the pack of the box types (dist/boxes.json, from boxes/) and the index LibreHU service and LibreHU Apps read
+(dist/index.json). No dependency but `jsonschema` (pip install jsonschema).
 
     python3 tools/build_packs.py           # check + build dist/
     python3 tools/build_packs.py --check   # check only (pull requests)
 
-A pack's revision is the number of commits that touched its folder (brands/<make>/): it only moves when that make
-changes, so fixing a Renault updates the Renault pack and nothing else. Its "engine" is the highest one its profiles
+A pack's revision is the number of commits that touched its folder (brands/<make>/, boxes/): it only moves when that
+make changes, so fixing a Renault updates the Renault pack and nothing else. A box type (boxes/<id>.json) is the
+generic profile of that type ("box_type" and its "framing", engine 2.6): a new box needs that file, not a new service. Its "engine" is the highest one its profiles
 ask for (Semantic Versioning, see the "engine" field of each profile).
 """
 import hashlib
@@ -18,8 +20,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 BRANDS = ROOT / "brands"
+BOXES = ROOT / "boxes"
 DIST = ROOT / "dist"
-NAMES = {"renault": "Renault", "hyundai-kia": "Hyundai, Kia", "toyota": "Toyota", "honda": "Honda", "volkswagen": "Volkswagen group", "psa": "Peugeot, Citroën, DS"}
+NAMES = {"boxes": "CAN box types", "renault": "Renault", "hyundai-kia": "Hyundai, Kia", "toyota": "Toyota", "honda": "Honda", "volkswagen": "Volkswagen group", "psa": "Peugeot, Citroën, DS"}
 
 
 def version(req: str):
@@ -40,7 +43,7 @@ def check(schema) -> list:
 
     v = jsonschema.Draft202012Validator(schema)
     errors, ids = [], {}
-    for f in sorted(BRANDS.rglob("*.json")):
+    for f in sorted(BOXES.glob("*.json")) + sorted(BRANDS.rglob("*.json")):
         rel = f.relative_to(ROOT)
         try:
             d = json.loads(f.read_text(encoding="utf-8"))
@@ -57,7 +60,13 @@ def check(schema) -> list:
             errors.append(f"{rel}: the file name must be its id ({pid}.json)")
         if not d.get("engine"):
             errors.append(f"{rel}: no \"engine\" (the engine version it needs, e.g. \">=2.0\")")
-        if not d.get("examples"):
+        is_box = f.parent == BOXES
+        if is_box != ("box_type" in d):
+            errors.append(f"{rel}: " + ("a box type in boxes/ needs \"box_type\" and \"framing\"" if is_box else "\"box_type\": box types go in boxes/"))
+        if is_box and "framing" not in d:
+            errors.append(f"{rel}: a box type needs its \"framing\"")
+        # A box type's generic profile decodes nothing: no examples to give.
+        if not is_box and not d.get("examples"):
             errors.append(f"{rel}: no \"examples\" (at least one message and the values it gives)")
     return errors
 
@@ -65,7 +74,8 @@ def check(schema) -> list:
 def build() -> dict:
     DIST.mkdir(exist_ok=True)
     packs = []
-    for folder in sorted(p for p in BRANDS.iterdir() if p.is_dir()):
+    # The box types first (a make's profiles may name one of them), then the makes.
+    for folder in [BOXES] + sorted(p for p in BRANDS.iterdir() if p.is_dir()):
         profiles = [json.loads(f.read_text(encoding="utf-8")) for f in sorted(folder.glob("*.json"))]
         if not profiles:
             continue
@@ -113,7 +123,7 @@ def main() -> int:
         print("FAIL", e)
     if errors:
         return 1
-    print(f"{len(list(BRANDS.rglob('*.json')))} profiles match the schema")
+    print(f"{len(list(BRANDS.rglob('*.json')))} car profiles and {len(list(BOXES.glob('*.json')))} box types match the schema")
     if "--check" not in sys.argv:
         index = build()
         for p in index["packs"]:

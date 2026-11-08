@@ -48,6 +48,13 @@ Dans l'onglet CAN, les octets qui changent apparaissent **en orange**. Pour chaq
 
 Un éditeur comme VS Code vérifie la fiche pendant la saisie, grâce à la ligne `$schema` du modèle.
 
+**Un boîtier que LibreHU ne connaît pas encore** (autre trame que Hiworld `5A A5` / `AA 55`, Raise `2E` ou `FD`) :
+ajouter son **type** dans `boxes/<box>-generic.json`, un profil générique avec `"box": "<box>"`, `"box_type"` (`name`
+affiché, `aliases` = fabricants qui l'utilisent) et sa `"framing"` (trame, somme de contrôle, accusé : format dans
+[docs/can-vehicles.md](https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicles.md#familles-de-boîtiers)),
+`"engine": ">=2.6"`, `"messages": {}`. Copier `boxes/raise-generic.json` pour commencer. Les fiches de voiture le nomment
+ensuite par `"box": "<box>"`. Il arrive sur les autoradios par le paquet `boxes`, **sans nouveau service**.
+
 ## 4. Tester
 
 1. Ajouter des **`examples`** : un message réel (copié de votre export) et les valeurs qu'il doit donner. Ce sont les

@@ -45,7 +45,7 @@ jobs:
             cp "$RUNNER_TEMP/service/core/build/libs/librehu-car-tool.jar" .
           fi
           java -jar librehu-car-tool.jar version
-          java -jar librehu-car-tool.jar check brands/
+          java -jar librehu-car-tool.jar check boxes/ brands/
 
       - name: Packs by make
         if: github.event_name != 'pull_request'
