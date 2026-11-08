@@ -21,42 +21,1646 @@
    "sha256": "9bf5489274dc2a10ecfb5eda702025d559589d2d2ac1a04474dc56451b201883"
   },
   {
+   "id": "acura",
+   "name": "Acura",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Acura"
+   ],
+   "profiles": [
+    "acura-oudiacura"
+   ],
+   "cars": 1,
+   "file": "acura.json",
+   "size": 3020,
+   "sha256": "a1cc1a49079eca52c5c9f631e135ff5314d56b07a8242b43ca9397b1981f83ee"
+  },
+  {
+   "id": "alfa",
+   "name": "Alfa Romeo",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Alfa"
+   ],
+   "profiles": [
+    "alfa-bagooalfa"
+   ],
+   "cars": 1,
+   "file": "alfa.json",
+   "size": 2742,
+   "sha256": "94d96aae3e721d0bf10b91e25e710014184814e87286eefeca73b8296cf15f34"
+  },
+  {
+   "id": "audi",
+   "name": "Audi",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Audi"
+   ],
+   "profiles": [
+    "audi-hdaudi",
+    "audi-hdaudia3",
+    "audi-lzaudi",
+    "audi-oudiaudi",
+    "audi-oudiaudia6",
+    "audi-oudiaudiq5",
+    "audi-reaudi",
+    "audi-spaudi2"
+   ],
+   "cars": 42,
+   "file": "audi.json",
+   "size": 35923,
+   "sha256": "8b0c47f06ce3c5236b1bcccb4a3aad1d3c19080a5cf8b19b81f09857f17dadb6"
+  },
+  {
+   "id": "baojun",
+   "name": "Baojun",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Baojun",
+    "Wuling"
+   ],
+   "profiles": [
+    "baojun-bnrbaojunprotol",
+    "baojun-hdbaojun",
+    "baojun-oudibaojunprotol",
+    "baojun-rebaojun"
+   ],
+   "cars": 46,
+   "file": "baojun.json",
+   "size": 24578,
+   "sha256": "42c92d58993411551d4022cb8d936442ec91e061a72bd945eca7aebd0e0d91e7"
+  },
+  {
+   "id": "bba",
+   "name": "BMW, Mercedes-Benz, Audi (BBA box)",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Audi",
+    "BMW",
+    "Mercedes-Benz"
+   ],
+   "profiles": [
+    "bba-lzbba"
+   ],
+   "cars": 28,
+   "file": "bba.json",
+   "size": 7347,
+   "sha256": "d4e0a0bbb4e6d2e3515b2e285116950c3853c336838053a63c81739df3b46eb5"
+  },
+  {
+   "id": "bentley",
+   "name": "Bentley",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Bentley"
+   ],
+   "profiles": [
+    "bentley-lzbentley"
+   ],
+   "cars": 3,
+   "file": "bentley.json",
+   "size": 6343,
+   "sha256": "726de0b5e90769ab7e2b8557db270db58e27761de9d8cf61c4b95c30ea32f56c"
+  },
+  {
+   "id": "benz",
+   "name": "Mercedes-Benz",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "BAIC",
+    "Mercedes-Benz"
+   ],
+   "profiles": [
+    "benz-dgbenz",
+    "benz-hdbenz",
+    "benz-hdbenzbzp002",
+    "benz-hdbenzbzp003",
+    "benz-hdvwp003",
+    "benz-lzbenz",
+    "benz-lzbenzsmart",
+    "benz-odbenz",
+    "benz-odbenzsmart",
+    "benz-raisebenz",
+    "benz-spbenz",
+    "benz-spbenzvito",
+    "benz-xbsbenzvito"
+   ],
+   "cars": 131,
+   "file": "benz.json",
+   "size": 60812,
+   "sha256": "6a943409879f126d983b2bad875092cc15d71d5e63ab160a52d8f80a1d4c468c"
+  },
+  {
+   "id": "besturn",
+   "name": "Besturn",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Besturn"
+   ],
+   "profiles": [
+    "besturn-dgbentengb70",
+    "besturn-hdbengteng09b70",
+    "besturn-hdbengteng14b70",
+    "besturn-hdbenteng13x80",
+    "besturn-hdbenteng16b50",
+    "besturn-hdbenteng17x80",
+    "besturn-hdbentengb50",
+    "besturn-hdbentengb90",
+    "besturn-hdbentengx40",
+    "besturn-rebenteng",
+    "besturn-rebenteng09b50",
+    "besturn-rebenteng14b70"
+   ],
+   "cars": 35,
+   "file": "besturn.json",
+   "size": 45956,
+   "sha256": "45a8d5120224116ba85c9dd507ee4997ae7bf113be919ea00710d1cfb9a02ff8"
+  },
+  {
+   "id": "bisu",
+   "name": "Bisu",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Bisu"
+   ],
+   "profiles": [
+    "bisu-oudibisuprotok",
+    "bisu-raisebisu"
+   ],
+   "cars": 10,
+   "file": "bisu.json",
+   "size": 10815,
+   "sha256": "ba13c2735838a8ca5d32668d238606da21b9da884b5ed483cbd76ff4734a31df"
+  },
+  {
+   "id": "bj",
+   "name": "BAIC BJ",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "BAIC",
+    "Changhe"
+   ],
+   "profiles": [
+    "bj-hdsaicbj20",
+    "bj-odbj30",
+    "bj-odbj80",
+    "bj-rebaic",
+    "bj-rebaicd50"
+   ],
+   "cars": 27,
+   "file": "bj.json",
+   "size": 21368,
+   "sha256": "cb8a50511c5ca019005d866b58bebcc6ef0430e85d15e9a5c84c3ea0367e34cf"
+  },
+  {
+   "id": "bjev",
+   "name": "BAIC BJEV",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "BAIC"
+   ],
+   "profiles": [
+    "bjev-odbaicev",
+    "bjev-odbaicev160",
+    "bjev-rebaicev"
+   ],
+   "cars": 11,
+   "file": "bjev.json",
+   "size": 11443,
+   "sha256": "a35e98c2603874252b1c6b7c401c0086ab46ef120bdd39aca8ac5bd9297174bc"
+  },
+  {
+   "id": "bmw",
+   "name": "BMW",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "BMW"
+   ],
+   "profiles": [
+    "bmw-hdbmw",
+    "bmw-hdbmw02",
+    "bmw-hdbmw03",
+    "bmw-lzbmwe46",
+    "bmw-lzbmwe90",
+    "bmw-lzbmwmini",
+    "bmw-lzbmwmini2",
+    "bmw-odbmw318i",
+    "bmw-odbmwe39",
+    "bmw-odbmwmini",
+    "bmw-odbmwnbt",
+    "bmw-rebmw",
+    "bmw-spbmw"
+   ],
+   "cars": 60,
+   "file": "bmw.json",
+   "size": 42711,
+   "sha256": "ca4f97405df6929d2d307f173093c4cfa6e062d1cf2a7af67336ad68dd06e9bf"
+  },
+  {
+   "id": "buick",
+   "name": "Buick",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Buick",
+    "Cadillac",
+    "Chevrolet"
+   ],
+   "profiles": [
+    "buick-binarygm",
+    "buick-bsjgm",
+    "buick-hdgmvec",
+    "buick-oudigm",
+    "buick-oudigmc"
+   ],
+   "cars": 127,
+   "file": "buick.json",
+   "size": 36208,
+   "sha256": "391ec81c9c37e650a27d04144f658e1fcb3a7626e4da289f732609e3e9fdbfcf"
+  },
+  {
+   "id": "byd",
+   "name": "BYD",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "BYD"
+   ],
+   "profiles": [
+    "byd-cytbydf6",
+    "byd-dgbydf6",
+    "byd-dgbydg6",
+    "byd-dgbydm6",
+    "byd-dgbyds6",
+    "byd-dgbydsurui",
+    "byd-hdbyd",
+    "byd-huachenyubydall",
+    "byd-oudibyd",
+    "byd-rcwbyd"
+   ],
+   "cars": 69,
+   "file": "byd.json",
+   "size": 46323,
+   "sha256": "e63f6562e4f13bdc863d4889a6fd0bddd3c77a9c77022c2a6118c3df0e090de8"
+  },
+  {
+   "id": "cadillac",
+   "name": "Cadillac",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Cadillac"
+   ],
+   "profiles": [
+    "cadillac-hdcadillac",
+    "cadillac-lzcadillac",
+    "cadillac-odkaired"
+   ],
+   "cars": 17,
+   "file": "cadillac.json",
+   "size": 13421,
+   "sha256": "da507554281378ae3ef55dd9297c7ad89d45a09263d21adf126c623787aea54d"
+  },
+  {
+   "id": "changan",
+   "name": "Changan",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Changan",
+    "Fiat"
+   ],
+   "profiles": [
+    "changan-bnrchangancs75",
+    "changan-hdchangancs75",
+    "changan-hdchanganv7",
+    "changan-odchangancs95",
+    "changan-odchanganlumin",
+    "changan-odchanganyx",
+    "changan-oudichangancs75",
+    "changan-rechangancs75",
+    "changan-rechanganv7"
+   ],
+   "cars": 108,
+   "file": "changan.json",
+   "size": 60452,
+   "sha256": "9dea978979bc8ca09d4c8b5e3cb91462a73145e7d226f724d9b3c67dc4fba471"
+  },
+  {
+   "id": "changhe",
+   "name": "Changhe",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Changhe"
+   ],
+   "profiles": [
+    "changhe-odchangheq7"
+   ],
+   "cars": 1,
+   "file": "changhe.json",
+   "size": 4256,
+   "sha256": "1e2c4fcfc8807481f7f9c7f02239945785e2c824910fdfeb831a447c3b08d909"
+  },
+  {
+   "id": "chery",
+   "name": "Chery",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Chery",
+    "Sinogold"
+   ],
+   "profiles": [
+    "chery-bnrchery",
+    "chery-djcheryprotol",
+    "chery-hdchery",
+    "chery-hdjetour",
+    "chery-odcheryant",
+    "chery-odcheryprotol",
+    "chery-odcheryqq",
+    "chery-odkaiyix3",
+    "chery-odkaiyixuanjie",
+    "chery-odmaserati",
+    "chery-rechery"
+   ],
+   "cars": 78,
+   "file": "chery.json",
+   "size": 57324,
+   "sha256": "37352f6732cd6b96e0fccfbfe46b4535fb531d5560ce20e661298b428999b6d8"
+  },
+  {
+   "id": "chevrolet",
+   "name": "Chevrolet",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Buick",
+    "Cadillac",
+    "Chevrolet",
+    "GMC",
+    "Hummer",
+    "Opel"
+   ],
+   "profiles": [
+    "chevrolet-dggm",
+    "chevrolet-hdgm",
+    "chevrolet-lzchevrolet",
+    "chevrolet-odkopacprotol",
+    "chevrolet-regm",
+    "chevrolet-spgmprotok"
+   ],
+   "cars": 533,
+   "file": "chevrolet.json",
+   "size": 81355,
+   "sha256": "a4e25ed9bef1d709ed24f8caf29024fce078831f8cf42eff42f14e86fa8962f0"
+  },
+  {
+   "id": "chrysler",
+   "name": "Chrysler",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Chrysler"
+   ],
+   "profiles": [
+    "chrysler-lzchrysler"
+   ],
+   "cars": 2,
+   "file": "chrysler.json",
+   "size": 5746,
+   "sha256": "3a7a226eea3bc2884792a9c25709074879c38d25764562d52abbdb7ff6e38f60"
+  },
+  {
+   "id": "cnhtc",
+   "name": "Sinotruk",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Sinotruk"
+   ],
+   "profiles": [
+    "cnhtc-odcnhtc"
+   ],
+   "cars": 2,
+   "file": "cnhtc.json",
+   "size": 2490,
+   "sha256": "377a06c07a48e5f26f3e62e462bfc2c0a0bd7f11fcfaf2033bbc5ae61dcbfd39"
+  },
+  {
+   "id": "daihatsu",
+   "name": "Daihatsu",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Daihatsu"
+   ],
+   "profiles": [
+    "daihatsu-hddaihatsu"
+   ],
+   "cars": 2,
+   "file": "daihatsu.json",
+   "size": 2632,
+   "sha256": "6634ede4da04383e17ba5e65f8743d6915050569bb289df82a1f50adb26b59fd"
+  },
+  {
+   "id": "dayun",
+   "name": "Dayun",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Dayun"
+   ],
+   "profiles": [
+    "dayun-oudidayun"
+   ],
+   "cars": 1,
+   "file": "dayun.json",
+   "size": 4459,
+   "sha256": "2486dec3079bfbf941e74123f249694d11d215c8d59c6dd0b4d9d5403e0b6eba"
+  },
+  {
+   "id": "dffd",
+   "name": "Dongfeng Fengdu",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Dongfeng"
+   ],
+   "profiles": [
+    "dffd-hddfmx6",
+    "dffd-oddffev"
+   ],
+   "cars": 6,
+   "file": "dffd.json",
+   "size": 6371,
+   "sha256": "4c60f17757d499725ade2f92222fab448cc2d91a1e33b231b752d7d198b2ff9d"
+  },
+  {
+   "id": "dffg",
+   "name": "Dongfeng Fengguang",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Dongfeng"
+   ],
+   "profiles": [
+    "dffg-hddffg580",
+    "dffg-oddf580protol",
+    "dffg-redf580protol"
+   ],
+   "cars": 24,
+   "file": "dffg.json",
+   "size": 17735,
+   "sha256": "228937efe0fd0044f5157cd641f4852669c5ce666c885fc931613ea1c2d4ff7f"
+  },
+  {
+   "id": "dffs",
+   "name": "Dongfeng Aeolus",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Dongfeng"
+   ],
+   "profiles": [
+    "dffs-bnrdffsax7",
+    "dffs-hddf03",
+    "dffs-oddffs18ax7",
+    "dffs-oudidffsax7",
+    "dffs-redfprotol"
+   ],
+   "cars": 59,
+   "file": "dffs.json",
+   "size": 29453,
+   "sha256": "968983ccae5a109069eff5838ffca4722bfbd3ca94f3b6ef308ba30a0e7423f3"
+  },
+  {
+   "id": "dffx",
+   "name": "Dongfeng Forthing",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Dongfeng"
+   ],
+   "profiles": [
+    "dffx-hddffxx5",
+    "dffx-oddffxt5",
+    "dffx-oddffxx5",
+    "dffx-oddffxx5x6",
+    "dffx-rejoyearx5"
+   ],
+   "cars": 24,
+   "file": "dffx.json",
+   "size": 21362,
+   "sha256": "b36b0d3d8d2db32136d8de35f683fe2438e4b717b2d354e1c62d183938e12d6a"
+  },
+  {
+   "id": "dftl",
+   "name": "Dongfeng Tianlong",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Dongfeng"
+   ],
+   "profiles": [
+    "dftl-oddftl"
+   ],
+   "cars": 1,
+   "file": "dftl.json",
+   "size": 3966,
+   "sha256": "fdfefb0e79585be4092bbe1e3cc26dc95a51a9442a026b4209ef2489b3f7fffc"
+  },
+  {
+   "id": "dodge",
+   "name": "Dodge",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Dodge",
+    "Fiat"
+   ],
+   "profiles": [
+    "dodge-bsjfiat",
+    "dodge-cytdaoqi",
+    "dodge-hechidodge",
+    "dodge-rewrangler"
+   ],
+   "cars": 9,
+   "file": "dodge.json",
+   "size": 15338,
+   "sha256": "942b00c65772eafb305300b55a95a83a0ee34f9b5b0fe9a5b6b49c5287b4d448"
+  },
+  {
+   "id": "ferrari",
+   "name": "Ferrari",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Ferrari"
+   ],
+   "profiles": [
+    "ferrari-odferrari"
+   ],
+   "cars": 1,
+   "file": "ferrari.json",
+   "size": 2539,
+   "sha256": "d5a3e2002f6a97c752370c5464460f1920f61077c680a621cf94c88325734629"
+  },
+  {
+   "id": "fiat",
+   "name": "Fiat",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Alfa",
+    "Chrysler",
+    "Dodge",
+    "Fiat",
+    "Jeep",
+    "Maserati"
+   ],
+   "profiles": [
+    "fiat-dgdodge",
+    "fiat-hdfiatprotokftp001",
+    "fiat-hdfiatprotokftp002",
+    "fiat-hdfiatprotokftp003",
+    "fiat-lzfiat",
+    "fiat-odfiat",
+    "fiat-odfiatviaggio",
+    "fiat-refiat",
+    "fiat-sp14fiatprotok"
+   ],
+   "cars": 222,
+   "file": "fiat.json",
+   "size": 53081,
+   "sha256": "dc09d28d3834f7d0ba869883a9f556791db186e353b6a831fb119e92089d8cc9"
+  },
+  {
+   "id": "ford",
+   "name": "Ford",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Ford",
+    "Lincoln",
+    "Mazda"
+   ],
+   "profiles": [
+    "ford-binaryford",
+    "ford-bsjford",
+    "ford-dogen",
+    "ford-dogenzs",
+    "ford-hd18ecosport",
+    "ford-hdedge",
+    "ford-hdfiesta",
+    "ford-hdford",
+    "ford-hdfordsmax",
+    "ford-hdmondeo",
+    "ford-lzford",
+    "ford-lzfordfalcon",
+    "ford-lzfordsmax",
+    "ford-oudinewtransit",
+    "ford-ouditransit",
+    "ford-reford",
+    "ford-spedgeprotok",
+    "ford-spedgeprotoknew",
+    "ford-spford",
+    "ford-spford150fdss04a",
+    "ford-spmondeo"
+   ],
+   "cars": 428,
+   "file": "ford.json",
+   "size": 144595,
+   "sha256": "df6865ac0e55c478ff9cb38a9aab349f96a8c490445953bf529768e27202d529"
+  },
+  {
+   "id": "foton",
+   "name": "Foton",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Foton"
+   ],
+   "profiles": [
+    "foton-hdfoton",
+    "foton-ouditunand"
+   ],
+   "cars": 11,
+   "file": "foton.json",
+   "size": 8097,
+   "sha256": "e410cfb3dcce578734ba455a501c2865b87ad31a98c58a82d5324341c2bdc553"
+  },
+  {
+   "id": "geely",
+   "name": "Geely",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Geely",
+    "Maple"
+   ],
+   "profiles": [
+    "geely-bnrgeely",
+    "geely-hdgeely",
+    "geely-hdgeelygc7",
+    "geely-hdgeelygsboyue",
+    "geely-hdptp001",
+    "geely-lzgeely",
+    "geely-odgeelycommon",
+    "geely-odgeelynewenergy",
+    "geely-oudigeely",
+    "geely-regeelycommon",
+    "geely-regeelygc7"
+   ],
+   "cars": 114,
+   "file": "geely.json",
+   "size": 66652,
+   "sha256": "41ecb7f7270d84d57a4ee29039ccd05ea6c78807d7abd36a1e1295457e217f0d"
+  },
+  {
+   "id": "gmc",
+   "name": "GMC",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Buick",
+    "GMC"
+   ],
+   "profiles": [
+    "gmc-spgmenclave"
+   ],
+   "cars": 9,
+   "file": "gmc.json",
+   "size": 2481,
+   "sha256": "8b4f7ff7aff0fad45de659ae1245858659d339f3736ded49318a594c68560b0d"
+  },
+  {
+   "id": "gpatton",
+   "name": "George Patton",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "George"
+   ],
+   "profiles": [
+    "gpatton-oudigpatton"
+   ],
+   "cars": 1,
+   "file": "gpatton.json",
+   "size": 2734,
+   "sha256": "7b217e2471ba7598c5bb7595aa5f772dd95d8178565dd142872d2fe69d9865e2"
+  },
+  {
+   "id": "greatwall",
+   "name": "Great Wall",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Great",
+    "Haval"
+   ],
+   "profiles": [
+    "greatwall-odgreatwallc30",
+    "greatwall-odgreatwallw6",
+    "greatwall-regreatwallc30",
+    "greatwall-regreatwallw6",
+    "greatwall-rehaval"
+   ],
+   "cars": 19,
+   "file": "greatwall.json",
+   "size": 17315,
+   "sha256": "62ac02de1d4f514aabafb08bc44b11ed4a98c27bdd06cea07e5052d44f2a8fc4"
+  },
+  {
+   "id": "haima",
+   "name": "Haima",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "BYD",
+    "Chery",
+    "Haima"
+   ],
+   "profiles": [
+    "haima-hdhaimafamily",
+    "haima-hdhaimam3",
+    "haima-hdhaimav70",
+    "haima-odhaimafamily",
+    "haima-rehaimafamily",
+    "haima-rehaimam5",
+    "haima-rehaimam8",
+    "haima-rehaimas5"
+   ],
+   "cars": 28,
+   "file": "haima.json",
+   "size": 31784,
+   "sha256": "e0ea9ce5033468a10b2650f624e8f28cc180f55788016ebebfc7131e15856714"
+  },
+  {
+   "id": "hanteng",
+   "name": "Hanteng",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Hanteng",
+    "Mitsubishi"
+   ],
+   "profiles": [
+    "hanteng-odhantengx5",
+    "hanteng-rehanteng"
+   ],
+   "cars": 10,
+   "file": "hanteng.json",
+   "size": 11551,
+   "sha256": "f35d8999ca02b454388c72b25049814f7a22f3f6075f4842004ef3ad24ca04c5"
+  },
+  {
+   "id": "haval",
+   "name": "Haval",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Great",
+    "Haval"
+   ],
+   "profiles": [
+    "haval-djhava",
+    "haval-hdhavah1",
+    "haval-hdhavah9",
+    "haval-hdhavalccp002",
+    "haval-hdhavalccp003",
+    "haval-hdhavalh2",
+    "haval-odhavalh3",
+    "haval-odhavalh9",
+    "haval-rehavalh2",
+    "haval-rehavalh2s",
+    "haval-rehavalh6couplesportpro",
+    "haval-rehavalh9",
+    "haval-rehavalm6plus"
+   ],
+   "cars": 151,
+   "file": "haval.json",
+   "size": 75357,
+   "sha256": "f1fe89167f286d5658b5759ad2f4b6b394949f64e46c4f62702e60e23f14100f"
+  },
+  {
+   "id": "hezhong",
+   "name": "Neta",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Neta"
+   ],
+   "profiles": [
+    "hezhong-oudihezhong"
+   ],
+   "cars": 1,
+   "file": "hezhong.json",
+   "size": 3504,
+   "sha256": "d78781dccdf551c27d54a63083fbe8498e7fa135a2d0dc23adc9de690247f0f1"
+  },
+  {
    "id": "honda",
    "name": "Honda",
-   "revision": 1,
+   "revision": 2,
    "engine": ">=2.0",
    "makes": [
     "Honda"
    ],
    "profiles": [
-    "honda-hiworld"
+    "honda-bnraccord",
+    "honda-bnrhonda",
+    "honda-bnrodyssey",
+    "honda-bsjhonda",
+    "honda-dogenaccord",
+    "honda-dogenspirior",
+    "honda-hd12crv",
+    "honda-hd15crv",
+    "honda-hdaccord",
+    "honda-hdhonda002",
+    "honda-hdhondaaccord008",
+    "honda-hiworld",
+    "honda-lzhonda",
+    "honda-lzhondaaccord",
+    "honda-ododyssey",
+    "honda-re12crv",
+    "honda-re15crv",
+    "honda-rehonda",
+    "honda-sp12civic",
+    "honda-sphondada",
+    "honda-xbsaccord9",
+    "honda-xbsaccord92014",
+    "honda-xbsaccord92016",
+    "honda-xbscrosstour",
+    "honda-xbshonda"
    ],
-   "cars": 79,
+   "cars": 308,
    "file": "honda.json",
-   "size": 13584,
-   "sha256": "20794fe0b2074ea6e7179fa6102bec510ffce867cc41973f8d34f3023e12f0f9"
+   "size": 119096,
+   "sha256": "35b131a2d1c153513872cf56e37b79a9b52b90b8bd7dde2bd79b17eb445205fc"
+  },
+  {
+   "id": "hongqi",
+   "name": "Hongqi",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Hongqi"
+   ],
+   "profiles": [
+    "hongqi-hdhongqih5",
+    "hongqi-hdhongqihqp001",
+    "hongqi-oudihongqih7",
+    "hongqi-raisehongqih5"
+   ],
+   "cars": 8,
+   "file": "hongqi.json",
+   "size": 20036,
+   "sha256": "f2cd41d746adaaff4896e5e1cbd8e5065a21cf3e4dbdd2a2131bb314f8850323"
+  },
+  {
+   "id": "hongyan",
+   "name": "SAIC Hongyan",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "SAIC"
+   ],
+   "profiles": [
+    "hongyan-oudihongyan"
+   ],
+   "cars": 1,
+   "file": "hongyan.json",
+   "size": 4214,
+   "sha256": "dee5c4d5c8b78bc4e9b739fcf6ca8f3a1896e88fa6aceea46551bb4bdf5ffc90"
+  },
+  {
+   "id": "huanghai",
+   "name": "Huanghai",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Huanghai"
+   ],
+   "profiles": [
+    "huanghai-rehuanghai"
+   ],
+   "cars": 1,
+   "file": "huanghai.json",
+   "size": 3038,
+   "sha256": "bdac9abbf7f2bd4a5ae1744b0a0f32e0785fc0e4765fc7956ce4c6a8fac33b4b"
+  },
+  {
+   "id": "hummer",
+   "name": "Hummer",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Hummer"
+   ],
+   "profiles": [
+    "hummer-oudihummerh2"
+   ],
+   "cars": 2,
+   "file": "hummer.json",
+   "size": 1657,
+   "sha256": "113a15ce6920b7d33a4ec344b560b39d878e98876dcd449e2ee78bf166d1c09d"
   },
   {
    "id": "hyundai-kia",
    "name": "Hyundai, Kia",
-   "revision": 1,
+   "revision": 2,
    "engine": ">=2.0",
    "makes": [
     "Hyundai",
     "Kia"
    ],
    "profiles": [
-    "hyundai-kia-hiworld"
+    "hyundai-binarykorea",
+    "hyundai-bsjsuolantuoprotok",
+    "hyundai-dgkorea",
+    "hyundai-kia-hiworld",
+    "hyundai-odkorea",
+    "hyundai-rekorea",
+    "kia-spkorea"
    ],
-   "cars": 152,
+   "cars": 410,
    "file": "hyundai-kia.json",
-   "size": 22577,
-   "sha256": "a4bb153a3adb4d5b27e17b92385c6aa95d99cfe01bc6b4e3323e33d0d940b0ed"
+   "size": 74996,
+   "sha256": "1a79dfcaf902d178b4c97677ab0ef7c576ae961abca9072d584000bb1d024e98"
+  },
+  {
+   "id": "ikco",
+   "name": "IKCO",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "AMICO",
+    "IKCO",
+    "Peugeot",
+    "SAIPA"
+   ],
+   "profiles": [
+    "ikco-hdikco"
+   ],
+   "cars": 6,
+   "file": "ikco.json",
+   "size": 6270,
+   "sha256": "bb1af07c641621fcfa22ab3ed298d43db2807e704ade918be18287fa4ea4e20b"
+  },
+  {
+   "id": "isuzu",
+   "name": "Isuzu",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Isuzu"
+   ],
+   "profiles": [
+    "isuzu-hdisuzu",
+    "isuzu-odlsuzuprotol",
+    "isuzu-raiseisuzuprotol"
+   ],
+   "cars": 15,
+   "file": "isuzu.json",
+   "size": 17766,
+   "sha256": "74f1bbcf593ceec07b782034bed590a0cef069eaa52063131c963c9b5054322e"
+  },
+  {
+   "id": "iveco",
+   "name": "Iveco",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Iveco"
+   ],
+   "profiles": [
+    "iveco-hdiveco",
+    "iveco-oudiiveco",
+    "iveco-raiseiveco"
+   ],
+   "cars": 4,
+   "file": "iveco.json",
+   "size": 8626,
+   "sha256": "b9b2a017fef76b24adccb6eb6601a4d5ded23ac7cd5185414dbc718c7489300c"
+  },
+  {
+   "id": "jac",
+   "name": "JAC",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "JAC"
+   ],
+   "profiles": [
+    "jac-bnrjac",
+    "jac-hdjac",
+    "jac-odjac",
+    "jac-odjaca5",
+    "jac-odjaciev7",
+    "jac-odjacruifengs7",
+    "jac-odjacsurpass",
+    "jac-rejac"
+   ],
+   "cars": 47,
+   "file": "jac.json",
+   "size": 49257,
+   "sha256": "aea5216276015ccae92f0c59c782b22cba37b1ec4306ea5d2e9fdae591d1feb8"
+  },
+  {
+   "id": "jaguar",
+   "name": "Jaguar",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Jaguar"
+   ],
+   "profiles": [
+    "jaguar-lzjaguar",
+    "jaguar-lzjaguarxf"
+   ],
+   "cars": 8,
+   "file": "jaguar.json",
+   "size": 13106,
+   "sha256": "87961880f5fe0fc31cc04a99751a66a14f3f09e86d87a34d9acaddb9855967ab"
+  },
+  {
+   "id": "jeep",
+   "name": "Jeep",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Chrysler",
+    "Dodge",
+    "Fiat",
+    "Hummer",
+    "Jeep"
+   ],
+   "profiles": [
+    "jeep-bagoojeep",
+    "jeep-bnrjeep",
+    "jeep-hdcompass",
+    "jeep-hdjeep",
+    "jeep-hdpatriot",
+    "jeep-lzjeepchrysler",
+    "jeep-odjeepchallenger",
+    "jeep-rejeep",
+    "jeep-spchrysler",
+    "jeep-spcompass",
+    "jeep-spjeepprotokchss03",
+    "jeep-xbsjeep"
+   ],
+   "cars": 190,
+   "file": "jeep.json",
+   "size": 69744,
+   "sha256": "9bfdb86704e61fc3864a406b4b653565d31ce350809d0cd7fda9ea2bb680b4de"
+  },
+  {
+   "id": "jiefang",
+   "name": "FAW Jiefang",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "FAW"
+   ],
+   "profiles": [
+    "jiefang-odjiefang"
+   ],
+   "cars": 3,
+   "file": "jiefang.json",
+   "size": 3621,
+   "sha256": "ceba7777178e34a43f55837d93d7f572af91ca8b29d20b51d08c2f20d5452037"
+  },
+  {
+   "id": "jinbei",
+   "name": "Jinbei",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Jinbei"
+   ],
+   "profiles": [
+    "jinbei-rejinbei"
+   ],
+   "cars": 1,
+   "file": "jinbei.json",
+   "size": 5992,
+   "sha256": "514543ec26e0b3e1e04953fb2c98d71e6e40618ec87a89e5ea75d8473a89c611"
+  },
+  {
+   "id": "jmc",
+   "name": "JMC",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "JMC"
+   ],
+   "profiles": [
+    "jmc-bnrjmcprotol",
+    "jmc-hdjmc",
+    "jmc-odmuyou",
+    "jmc-oudijmc",
+    "jmc-oudikaiyun",
+    "jmc-oudinewenergy",
+    "jmc-raisejmcisuzuprotol"
+   ],
+   "cars": 19,
+   "file": "jmc.json",
+   "size": 36658,
+   "sha256": "3df1476de8db9a53b4c555821814878ee83c04a2023dc3dadfcff33adb0fd4c3"
+  },
+  {
+   "id": "kawei",
+   "name": "Kawei",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Kawei"
+   ],
+   "profiles": [
+    "kawei-hdkawei"
+   ],
+   "cars": 2,
+   "file": "kawei.json",
+   "size": 2819,
+   "sha256": "babc2eb7be41a202818078ec8dad7d0fccd241ab80248c9019894107ace93e2d"
+  },
+  {
+   "id": "kinglong",
+   "name": "King Long",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "King"
+   ],
+   "profiles": [
+    "kinglong-oudikinglong"
+   ],
+   "cars": 1,
+   "file": "kinglong.json",
+   "size": 2114,
+   "sha256": "9454c9e5776bce786ddab415216528fef7df812289e17af51945b08f5aad85c7"
+  },
+  {
+   "id": "knowbeans",
+   "name": "Zhidou",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Zhidou"
+   ],
+   "profiles": [
+    "knowbeans-oudiknowbeans"
+   ],
+   "cars": 3,
+   "file": "knowbeans.json",
+   "size": 3020,
+   "sha256": "88fc157f1805d11e8688d02ea95cae1b2d8f276bf4e9ff19de31114bea1b2cae"
+  },
+  {
+   "id": "lamborghini",
+   "name": "Lamborghini",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Lamborghini"
+   ],
+   "profiles": [
+    "lamborghini-odlamborghini"
+   ],
+   "cars": 2,
+   "file": "lamborghini.json",
+   "size": 4374,
+   "sha256": "a5f1abcc91140c805dcdb8df9cb88258c951838c3789efcc5f9e2cc3759b623e"
+  },
+  {
+   "id": "landrover",
+   "name": "Land Rover",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Land"
+   ],
+   "profiles": [
+    "landrover-hdlandrover001",
+    "landrover-lzfreelander",
+    "landrover-lzlandrover",
+    "landrover-odlandrover",
+    "landrover-relandrover",
+    "landrover-relandroverplus"
+   ],
+   "cars": 13,
+   "file": "landrover.json",
+   "size": 28454,
+   "sha256": "3ebcd2241b2e33d2f5ae6c3227a3d3c7ca57ed70ca6ac4654181a25bb83a96a2"
+  },
+  {
+   "id": "landwind",
+   "name": "Landwind",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Landwind"
+   ],
+   "profiles": [
+    "landwind-odlufeng",
+    "landwind-relufeng"
+   ],
+   "cars": 4,
+   "file": "landwind.json",
+   "size": 11018,
+   "sha256": "99688d4c8467a72bf174c7f9dde05c2bbed905d7b19acb7e8af2a2f8b64c2a13"
+  },
+  {
+   "id": "leepmotor",
+   "name": "Leapmotor",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Leapmotor"
+   ],
+   "profiles": [
+    "leepmotor-hdleepmotor"
+   ],
+   "cars": 3,
+   "file": "leepmotor.json",
+   "size": 6403,
+   "sha256": "46e4e5a136dfbd38b4c3491dd68056b33df03a211b3a48fbd45d8cdce57b0803"
+  },
+  {
+   "id": "leopaard",
+   "name": "Leopaard",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Leopaard"
+   ],
+   "profiles": [
+    "leopaard-hdblackgiant",
+    "leopaard-hdcs9",
+    "leopaard-odcheetahprotool"
+   ],
+   "cars": 6,
+   "file": "leopaard.json",
+   "size": 11595,
+   "sha256": "d4a023d62da5f8e11682090a3b8d85304a9aee71a66f8bdc29336baa30efa52d"
+  },
+  {
+   "id": "levdeo",
+   "name": "Levdeo",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Levdeo"
+   ],
+   "profiles": [
+    "levdeo-oudilevdeo",
+    "levdeo-relevdeo"
+   ],
+   "cars": 3,
+   "file": "levdeo.json",
+   "size": 5665,
+   "sha256": "25c9ed58a5a654322bdf2540bebe2b61c724758792a55df8d16d5c91ee1bc4f0"
+  },
+  {
+   "id": "lifan",
+   "name": "Lifan",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Lifan"
+   ],
+   "profiles": [
+    "lifan-hdlifan720",
+    "lifan-hdlifanx70",
+    "lifan-relifan720"
+   ],
+   "cars": 7,
+   "file": "lifan.json",
+   "size": 13713,
+   "sha256": "126cd9bccdf2dbc2467bee45d936463d79c0a954b2bf413610fe221b977128c3"
+  },
+  {
+   "id": "lincoln",
+   "name": "Lincoln",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Lincoln"
+   ],
+   "profiles": [
+    "lincoln-oudilincoln"
+   ],
+   "cars": 1,
+   "file": "lincoln.json",
+   "size": 1662,
+   "sha256": "18203241fc90cbb1c9ef975aca6955a4b3f2ba0c98acda6b42afe0c93135c441"
+  },
+  {
+   "id": "luxgen",
+   "name": "Luxgen",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Luxgen"
+   ],
+   "profiles": [
+    "luxgen-nazhijieu6",
+    "luxgen-oudiu5",
+    "luxgen-raiseu6"
+   ],
+   "cars": 8,
+   "file": "luxgen.json",
+   "size": 11500,
+   "sha256": "2adedc3e4c8b77b3ab41f4632b8e8194c701840376bffde7e83a5500a53b28f2"
+  },
+  {
+   "id": "mahindra",
+   "name": "Mahindra",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Mahindra",
+    "Tata"
+   ],
+   "profiles": [
+    "mahindra-hdmahengda",
+    "mahindra-ramahengda"
+   ],
+   "cars": 11,
+   "file": "mahindra.json",
+   "size": 14739,
+   "sha256": "e8975211e71942a5c3aeff1ba451c2f6196c1c505de1dfea46009edfb56e20ab"
+  },
+  {
+   "id": "maserati",
+   "name": "Maserati",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Maserati"
+   ],
+   "profiles": [
+    "maserati-lzmaserati"
+   ],
+   "cars": 2,
+   "file": "maserati.json",
+   "size": 5016,
+   "sha256": "4d6718ffeaaa35eb4647dbcd08f378d6706d6e54697795cab3138a7c3cddbf79"
+  },
+  {
+   "id": "maxus",
+   "name": "Maxus",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Maxus"
+   ],
+   "profiles": [
+    "maxus-odsaicmaxusg50",
+    "maxus-odsaicmaxust60",
+    "maxus-oudisaicmaxus",
+    "maxus-resaicmaxus"
+   ],
+   "cars": 21,
+   "file": "maxus.json",
+   "size": 16572,
+   "sha256": "ce12fc9428b3e9e0978a70b377e38ade28f1b263108d0dd2d5a9cab286f61f63"
+  },
+  {
+   "id": "mazda",
+   "name": "Mazda",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Mazda"
+   ],
+   "profiles": [
+    "mazda-bnrmazda",
+    "mazda-dgmazda6",
+    "mazda-hdmazda",
+    "mazda-lzmazda",
+    "mazda-oudibt50",
+    "mazda-rcwmzdprotok",
+    "mazda-remazda2",
+    "mazda-sp14mzd3cdprotok",
+    "mazda-spmazda",
+    "mazda-spmazdabt50protok",
+    "mazda-spmzd6protok",
+    "mazda-xbsmazda",
+    "mazda-xbsmazda6"
+   ],
+   "cars": 72,
+   "file": "mazda.json",
+   "size": 46523,
+   "sha256": "36824eb00b674dd4cedfbad8b4e0126a57f0f040b4a3ca4e9d7b01a055680c94"
+  },
+  {
+   "id": "mg",
+   "name": "MG",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "MG",
+    "Maxus",
+    "Roewe"
+   ],
+   "profiles": [
+    "mg-bnrsaicmg",
+    "mg-hd15mingjuesap003",
+    "mg-hdsaicmgzs",
+    "mg-odmgzs",
+    "mg-resaiccommon"
+   ],
+   "cars": 55,
+   "file": "mg.json",
+   "size": 28341,
+   "sha256": "c32d3f4ecb22f5283cce19da7c533f6a6ca134b21e80449380013aadf70a91d7"
+  },
+  {
+   "id": "mitsubishi",
+   "name": "Mitsubishi",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Mitsubishi"
+   ],
+   "profiles": [
+    "mitsubishi-hdmitsubishi",
+    "mitsubishi-odmitsubishi",
+    "mitsubishi-remitsubishi",
+    "mitsubishi-spmitsubishi"
+   ],
+   "cars": 72,
+   "file": "mitsubishi.json",
+   "size": 23545,
+   "sha256": "230353c779398b2e3822457564052fbb006c08701fbf24565dc699398390c700"
+  },
+  {
+   "id": "nissan",
+   "name": "Nissan",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Nissan"
+   ],
+   "profiles": [
+    "nissan-bnrnissan",
+    "nissan-bsjinfinitifx35",
+    "nissan-bsjpatrol",
+    "nissan-bsjteana05",
+    "nissan-bsjteana08",
+    "nissan-bsjteana08low",
+    "nissan-dogennissan",
+    "nissan-hdifp001",
+    "nissan-hdnissan",
+    "nissan-hdnissanprotokdfp008",
+    "nissan-hdteana08",
+    "nissan-hechiteana08",
+    "nissan-lznissan",
+    "nissan-lznissancompatible",
+    "nissan-lznissanfx35",
+    "nissan-lznissangtr",
+    "nissan-oudinissan",
+    "nissan-oudinissanguishi",
+    "nissan-oudinissanpatrol",
+    "nissan-reinfinitiqx50",
+    "nissan-renissan",
+    "nissan-renissanvertical",
+    "nissan-sp13teana",
+    "nissan-xbsteana08"
+   ],
+   "cars": 320,
+   "file": "nissan.json",
+   "size": 155015,
+   "sha256": "5efe4482c8e30740fd06b072b5c9a338c198bf6ad63a2621fa55838e9975d450"
+  },
+  {
+   "id": "nlmmotor",
+   "name": "New Longma",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "New"
+   ],
+   "profiles": [
+    "nlmmotor-nlmmotorod"
+   ],
+   "cars": 1,
+   "file": "nlmmotor.json",
+   "size": 4604,
+   "sha256": "540c2f34ff18d2405b6413ccab93f9d3aea6e8d267261fe1ec758b85eb8e717e"
+  },
+  {
+   "id": "opel",
+   "name": "Opel",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Opel"
+   ],
+   "profiles": [
+    "opel-hdopel",
+    "opel-lzopel",
+    "opel-oudiopel",
+    "opel-spopel",
+    "opel-sprp5op002"
+   ],
+   "cars": 33,
+   "file": "opel.json",
+   "size": 19177,
+   "sha256": "0966d7f75a7b6048e3ab766897b7b6845e7473d9f36833da61a39d1fea175d19"
+  },
+  {
+   "id": "oushang",
+   "name": "Changan Oshan",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Changan"
+   ],
+   "profiles": [
+    "oushang-hdcnp002changan",
+    "oushang-hdcnp003changan",
+    "oushang-hdcnp005changan",
+    "oushang-odchanganx"
+   ],
+   "cars": 19,
+   "file": "oushang.json",
+   "size": 30664,
+   "sha256": "e8c2a768ec9fb5b99fed6c180877d78f9bb07dfea285f809477f24fb0c61f870"
+  },
+  {
+   "id": "perodua",
+   "name": "Perodua",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Perodua"
+   ],
+   "profiles": [
+    "perodua-peroduahd",
+    "perodua-peroduaraise"
+   ],
+   "cars": 10,
+   "file": "perodua.json",
+   "size": 8633,
+   "sha256": "f95ff5b7b4d55a75cdf05967b2fb6ba4716c4fcef64e1a4cbcbe5119141ff06b"
+  },
+  {
+   "id": "phantom",
+   "name": "BAIC Huansu",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "BAIC"
+   ],
+   "profiles": [
+    "phantom-hdsaics6",
+    "phantom-odbaics6"
+   ],
+   "cars": 3,
+   "file": "phantom.json",
+   "size": 8883,
+   "sha256": "753b7293c5d3ed5cd262ea18190cefd8cdad8d022dc1cc949936085ca78468a2"
+  },
+  {
+   "id": "porsche",
+   "name": "Porsche",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Porsche"
+   ],
+   "profiles": [
+    "porsche-lzporsche",
+    "porsche-lzporsche11",
+    "porsche-od1520porsche",
+    "porsche-odporsche",
+    "porsche-odporscheold"
+   ],
+   "cars": 13,
+   "file": "porsche.json",
+   "size": 16069,
+   "sha256": "2d8ae634053cba62b8f5c8526e813477c93e8e0e4611df97dc9b3564d84c08e4"
   },
   {
    "id": "psa",
    "name": "Peugeot, Citroën, DS",
-   "revision": 1,
+   "revision": 2,
    "engine": ">=2.0",
    "makes": [
     "Citroën",
@@ -64,69 +1668,590 @@
     "Peugeot"
    ],
    "profiles": [
+    "peugeot-hdpsa",
+    "peugeot-lzpeugeot407",
+    "peugeot-spnew206protok",
+    "peugeot-spold206protok",
+    "peugeot-sppsa",
     "psa-raise-keep",
     "psa-raise"
    ],
-   "cars": 111,
+   "cars": 234,
    "file": "psa.json",
-   "size": 31745,
-   "sha256": "bb958ba02ef17d58bdbe65ef34efd149ca14ba061ed5d9a3e9a3755710e97a82"
+   "size": 64088,
+   "sha256": "36eee4950df320d6f4feb03598d458ba4f9cd47498a6affe6185944e1a403098"
+  },
+  {
+   "id": "qoros",
+   "name": "Qoros",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Qoros"
+   ],
+   "profiles": [
+    "qoros-bnrqoros",
+    "qoros-oudiqoros"
+   ],
+   "cars": 6,
+   "file": "qoros.json",
+   "size": 7749,
+   "sha256": "986f323ff71233d8291f08de6f7385774aefc514f714e7fde00efe185a00781b"
+  },
+  {
+   "id": "racing",
+   "name": "Ruichi",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Ruichi"
+   ],
+   "profiles": [
+    "racing-odracing",
+    "racing-racingraise"
+   ],
+   "cars": 5,
+   "file": "racing.json",
+   "size": 10416,
+   "sha256": "ecf6e985c4e8618b31bb43d3965ee10bd6139e5c11dd054e4ea03e64bf29f39f"
   },
   {
    "id": "renault",
    "name": "Renault",
-   "revision": 1,
+   "revision": 2,
    "engine": ">=2.0",
    "makes": [
+    "Dacia",
     "LADA",
     "Mercedes-Benz",
     "Nissan",
-    "Renault"
+    "Renault",
+    "UAZ",
+    "VinFast"
    ],
    "profiles": [
-    "renault-clio3-hiworld"
+    "renault-binarykoleos",
+    "renault-clio3-hiworld",
+    "renault-hdkoleos",
+    "renault-oudikoleos",
+    "renault-oudirenault",
+    "renault-rekoleos",
+    "renault-xpkoleos",
+    "renault-xprenault"
    ],
-   "cars": 94,
+   "cars": 328,
    "file": "renault.json",
-   "size": 24906,
-   "sha256": "855aef2129fa0023cac7cd943bf2202cd56edb2dcac3332ae71725e4be0209ac"
+   "size": 65823,
+   "sha256": "94283ae7f6e535038e1a96942aa76614ee1053ad5741bb56b3442fead55cc2ef"
+  },
+  {
+   "id": "roewe",
+   "name": "Roewe",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "MG",
+    "Maxus",
+    "Roewe"
+   ],
+   "profiles": [
+    "roewe-bnrsaicroewe",
+    "roewe-daojunroewe",
+    "roewe-hd11roewe550",
+    "roewe-hd15rongwei360",
+    "roewe-hdsaicmg",
+    "roewe-hdsap007saicall",
+    "roewe-hechiroewe",
+    "roewe-odroewe550",
+    "roewe-rerongwei550protok"
+   ],
+   "cars": 50,
+   "file": "roewe.json",
+   "size": 43203,
+   "sha256": "48151fc683704628153403d7266829330616a8a1863d6c3be35c348fa19eb4da"
+  },
+  {
+   "id": "saab",
+   "name": "Saab",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Saab"
+   ],
+   "profiles": [
+    "saab-saabhiword",
+    "saab-saabraise"
+   ],
+   "cars": 4,
+   "file": "saab.json",
+   "size": 6198,
+   "sha256": "5b2f28b154621edbebd15cba33003915adfb7e2e7bb6123b2bb49f9d20736ab7"
+  },
+  {
+   "id": "senova",
+   "name": "BAIC Senova",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "BAIC",
+    "Changhe"
+   ],
+   "profiles": [
+    "senova-hdbqzhixing",
+    "senova-odsaic"
+   ],
+   "cars": 16,
+   "file": "senova.json",
+   "size": 13241,
+   "sha256": "2e1bdfccd090e9f80a78cc41734dd883285d21142048f80829a8a89a528dfa5d"
+  },
+  {
+   "id": "shacman",
+   "name": "Shacman",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Shacman",
+    "Sinotruk"
+   ],
+   "profiles": [
+    "shacman-odshacman",
+    "shacman-reshacman"
+   ],
+   "cars": 9,
+   "file": "shacman.json",
+   "size": 7407,
+   "sha256": "f6d54e28c4010635869e05c86623ce63175b63a2489964df3696ed8803446566"
+  },
+  {
+   "id": "sitech",
+   "name": "Sitech",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Sitech"
+   ],
+   "profiles": [
+    "sitech-odsitech"
+   ],
+   "cars": 2,
+   "file": "sitech.json",
+   "size": 3668,
+   "sha256": "88462fe487a29b844b88d87fbf260efbb85863c34b4e55862853edd0a98db1f9"
+  },
+  {
+   "id": "skyworth",
+   "name": "Skyworth",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Skyworth"
+   ],
+   "profiles": [
+    "skyworth-hiwordswp001",
+    "skyworth-oudiskyworth",
+    "skyworth-reskyworth"
+   ],
+   "cars": 4,
+   "file": "skyworth.json",
+   "size": 14655,
+   "sha256": "1b9c5e8811fb14cfe759111d0d4e780619b453f3337049d560da5e9b9641a23a"
+  },
+  {
+   "id": "southeast",
+   "name": "Soueast",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Soueast"
+   ],
+   "profiles": [
+    "southeast-oddongnan17v5",
+    "southeast-oudidongnana5",
+    "southeast-oudidongnandx7protok",
+    "southeast-resouastprotol"
+   ],
+   "cars": 11,
+   "file": "southeast.json",
+   "size": 19044,
+   "sha256": "940d2a8946588c6298987fd020669009ee74f180103dbcf39df7343a739f6f3c"
+  },
+  {
+   "id": "ssangyong",
+   "name": "SsangYong",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "SsangYong"
+   ],
+   "profiles": [
+    "ssangyong-ssongyong"
+   ],
+   "cars": 1,
+   "file": "ssangyong.json",
+   "size": 2106,
+   "sha256": "bab46a79f61daaa29d4e95feccc7bae051d642a6787eab03ef813ec842f40a8e"
+  },
+  {
+   "id": "subaru",
+   "name": "Subaru",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Subaru"
+   ],
+   "profiles": [
+    "subaru-hdsubarusrp001",
+    "subaru-lzsubarutribeca",
+    "subaru-lzsubaruxv",
+    "subaru-odsubaruxv",
+    "subaru-resubaru001",
+    "subaru-resubaruslr",
+    "subaru-spsubaru"
+   ],
+   "cars": 24,
+   "file": "subaru.json",
+   "size": 28538,
+   "sha256": "f743c30006a27d547b3cb7f0cbbbd3d3f8dbbfbf07580c558219e9fff4e1cbaf"
+  },
+  {
+   "id": "suzuki",
+   "name": "Suzuki",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Suzuki"
+   ],
+   "profiles": [
+    "suzuki-hdsuzuki",
+    "suzuki-odsuzuki",
+    "suzuki-resuzuki",
+    "suzuki-spsuzuki"
+   ],
+   "cars": 10,
+   "file": "suzuki.json",
+   "size": 14453,
+   "sha256": "1ba53251a4c65f5faf9f3b96fe8483207139b27fa2066edb29ed089b0a17c8d5"
+  },
+  {
+   "id": "swm",
+   "name": "SWM",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "SWM"
+   ],
+   "profiles": [
+    "swm-lzswmx7",
+    "swm-odswmg01",
+    "swm-odswmx7",
+    "swm-raiseswmg01"
+   ],
+   "cars": 14,
+   "file": "swm.json",
+   "size": 19630,
+   "sha256": "acfe5bea1aaa3afe2b41a60e443efb341b5e8888fe46dd5d2604dbc67f8d930d"
+  },
+  {
+   "id": "tata",
+   "name": "Tata",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Tata"
+   ],
+   "profiles": [
+    "tata-hdtata",
+    "tata-lztata"
+   ],
+   "cars": 8,
+   "file": "tata.json",
+   "size": 8440,
+   "sha256": "542d54461810f2fe2df8909c1a8f8a103e09dc7f5236918736b23b3db2f00324"
   },
   {
    "id": "toyota",
    "name": "Toyota",
-   "revision": 1,
+   "revision": 2,
    "engine": ">=2.0",
    "makes": [
     "Toyota"
    ],
    "profiles": [
-    "toyota-hiworld"
+    "toyota-bnr14crowntoyota",
+    "toyota-bnrcamrytoyota",
+    "toyota-bnrlexusis250toyota",
+    "toyota-bnrtoyota",
+    "toyota-bsjtoyota",
+    "toyota-djtoyota",
+    "toyota-hdlexuslsp001",
+    "toyota-hdtyp004",
+    "toyota-hiworld",
+    "toyota-keyichuangtoyota",
+    "toyota-lzlexustoyota",
+    "toyota-lztoyota",
+    "toyota-oudi14crowntoyota",
+    "toyota-oudiis250",
+    "toyota-retoyota",
+    "toyota-sptoyota",
+    "toyota-wytoyota",
+    "toyota-xfytoyota",
+    "toyota-xinbastoyota"
    ],
-   "cars": 142,
+   "cars": 598,
    "file": "toyota.json",
-   "size": 20222,
-   "sha256": "333870fed451f188e7a543679ebdc4fa0a781731cbd66a0764be12477752af8e"
+   "size": 145166,
+   "sha256": "0834f0d7b83f06984a3db37f2f8248f0f0abdbd4f49ebd3304bd28ce96004fa8"
+  },
+  {
+   "id": "trumpchi",
+   "name": "GAC Trumpchi",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "GAC"
+   ],
+   "profiles": [
+    "trumpchi-bnrtrumpchi",
+    "trumpchi-dgtrumpchi",
+    "trumpchi-hdtrumpchi",
+    "trumpchi-odtrumpchi",
+    "trumpchi-retrumpchi"
+   ],
+   "cars": 114,
+   "file": "trumpchi.json",
+   "size": 28410,
+   "sha256": "502ebad16050ad21d5f361c1e8f51a25f7e44de0326e2267cf63e69df451c3f6"
+  },
+  {
+   "id": "uaz",
+   "name": "UAZ",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "UAZ"
+   ],
+   "profiles": [
+    "uaz-hduap001"
+   ],
+   "cars": 1,
+   "file": "uaz.json",
+   "size": 4447,
+   "sha256": "672cec98f62b26b2858978c9edca363ec2b2d9b2e43649c613c3de6da258528c"
+  },
+  {
+   "id": "venucia",
+   "name": "Venucia",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Venucia"
+   ],
+   "profiles": [
+    "venucia-hdqichen",
+    "venucia-hdqichenm50v",
+    "venucia-odqichend60",
+    "venucia-odqichend60ev",
+    "venucia-odqichenm50v",
+    "venucia-reqichent70"
+   ],
+   "cars": 19,
+   "file": "venucia.json",
+   "size": 21705,
+   "sha256": "c2030d71e9912c97ad9c0856d20c35e2dceeba4e82a583cbb2619ae1061b06a4"
   },
   {
    "id": "volkswagen",
    "name": "Volkswagen group",
-   "revision": 1,
+   "revision": 2,
    "engine": ">=2.1",
    "makes": [
     "Mercedes-Benz",
+    "Seat",
     "Skoda",
     "Volkswagen"
    ],
    "profiles": [
+    "volkswagen-autoaimqb",
+    "volkswagen-bnrmqb6",
+    "volkswagen-bnrmqb7",
+    "volkswagen-hdmqb6turui",
+    "volkswagen-hdmqb7turui",
+    "volkswagen-lztouareg",
+    "volkswagen-odoldtouareg",
+    "volkswagen-spmqb7",
+    "volkswagen-sppq",
     "vw-mqb-hiworld",
     "vw-mqb-raise",
     "vw-pq-hiworld",
     "vw-pq-raise"
    ],
-   "cars": 181,
+   "cars": 358,
    "file": "volkswagen.json",
-   "size": 41402,
-   "sha256": "5bf8cc72473c3a21f74e5bae9d8a6f81469f96a00707b12f790e17c8a07f03f8"
+   "size": 92289,
+   "sha256": "f4858a3a9acf31bc79bd7adb4510c309468fb76edb8491f07b9783fe8ca90c08"
+  },
+  {
+   "id": "volvo",
+   "name": "Volvo",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Volvo"
+   ],
+   "profiles": [
+    "volvo-hdvolvos60",
+    "volvo-hdvolvoxc90",
+    "volvo-lzvolvo",
+    "volvo-lzvolvo2",
+    "volvo-odvolvoxc60",
+    "volvo-oudivolvo",
+    "volvo-raisevolvo"
+   ],
+   "cars": 24,
+   "file": "volvo.json",
+   "size": 34356,
+   "sha256": "f71deda0b82e4218e5b24bc1cec42c9e6b6abcb67132daab783a1536d25e3ba1"
+  },
+  {
+   "id": "weichai",
+   "name": "Weichai",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Weichai"
+   ],
+   "profiles": [
+    "weichai-hdweichai",
+    "weichai-odweichaig01",
+    "weichai-raiseweichaig01"
+   ],
+   "cars": 7,
+   "file": "weichai.json",
+   "size": 13522,
+   "sha256": "322cb98c89354df9bdbe6fb5f510dc7b2211c399307f06763759681f92ce47a3"
+  },
+  {
+   "id": "weiwang",
+   "name": "BAIC Weiwang",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "BAIC"
+   ],
+   "profiles": [
+    "weiwang-hdsaic"
+   ],
+   "cars": 8,
+   "file": "weiwang.json",
+   "size": 4687,
+   "sha256": "1aab7f38d5511d63ab167d09a09dd61b7fc3a6ca358049f2f1a03b2a23beb92b"
+  },
+  {
+   "id": "weltmeister",
+   "name": "WM Motor",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "WM"
+   ],
+   "profiles": [
+    "weltmeister-oudiweltmeister"
+   ],
+   "cars": 1,
+   "file": "weltmeister.json",
+   "size": 4082,
+   "sha256": "7434ffaa286184f86acd6b25f202d44654ebb1d75d7141910923e0b24e27beac"
+  },
+  {
+   "id": "wuling",
+   "name": "Wuling",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Wuling"
+   ],
+   "profiles": [
+    "wuling-hdwuling",
+    "wuling-oudihongguangminiprotol"
+   ],
+   "cars": 9,
+   "file": "wuling.json",
+   "size": 9913,
+   "sha256": "3a739437734d7f3c26ad2f49001943487b0063e594f316262846198bf0edf434"
+  },
+  {
+   "id": "yema",
+   "name": "Yema",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Yema"
+   ],
+   "profiles": [
+    "yema-oudiyemat80",
+    "yema-reyema"
+   ],
+   "cars": 4,
+   "file": "yema.json",
+   "size": 7619,
+   "sha256": "63498c30568a2bc91dbd96510b5971ee77ec391f6c60f11c6f2e8694de40455e"
+  },
+  {
+   "id": "yutong",
+   "name": "Yutong",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Yutong"
+   ],
+   "profiles": [
+    "yutong-oudiyutong"
+   ],
+   "cars": 3,
+   "file": "yutong.json",
+   "size": 4309,
+   "sha256": "3bbf7fb557a15af172c20443b9daf47a1e5c1fd080d50bab7d0e534d6a6202db"
+  },
+  {
+   "id": "zhonghua",
+   "name": "Brilliance",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Brilliance"
+   ],
+   "profiles": [
+    "zhonghua-hdzhonghua",
+    "zhonghua-odzhonghua",
+    "zhonghua-rezhonghua"
+   ],
+   "cars": 15,
+   "file": "zhonghua.json",
+   "size": 13964,
+   "sha256": "727c09e100ede9124feca64a92a8c0b52044d47ac9ff7d884b6b2876a8f0e977"
+  },
+  {
+   "id": "zotye",
+   "name": "Zotye",
+   "revision": 1,
+   "engine": ">=2.0",
+   "makes": [
+    "Zotye"
+   ],
+   "profiles": [
+    "zotye-hdzotyet600",
+    "zotye-hdzotyex5",
+    "zotye-lzzotyet600",
+    "zotye-odzotyee200",
+    "zotye-odzotyet",
+    "zotye-odzotyet700",
+    "zotye-rezotyet"
+   ],
+   "cars": 25,
+   "file": "zotye.json",
+   "size": 41492,
+   "sha256": "d395526f8eb55b39d6b6ce873271e8f960b07a6e827ac6fc9bf2f4e4ba404893"
   }
  ]
 }
