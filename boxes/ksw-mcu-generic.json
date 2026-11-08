@@ -1,0 +1,32 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.6",
+ "id": "ksw-mcu-generic",
+ "name": "KSW MCU (F2 00): any car (raw messages)",
+ "description": "The KSW MCU of the Android screens of BMW, Mercedes-Benz…: no CAN box of its own, the MCU decodes the car and sends the values in its own frames F2 00 CMD LEN data SUM, SUM = (CMD + LEN + data) XOR FF, 115200 bit/s; the MCU profile ksw-px6 of LibreHU service (v194 and later) copies them to the car data engine (CAN link « through the MCU »). No acknowledgement. From VincentZ4's « KSW API – Commands » v2.12 (BMW F1x 2011-2012 CIC 8.8/10.25 in, PX6, Android 9) and McuCommunicator (github.com/KswCarProject/McuCommunicator, GPL-3.0; values only). Any car: no decoding, raw messages. Also the description of this box type (\"box\": \"ksw-mcu\").",
+ "box": "ksw-mcu",
+ "box_type": {
+  "name": "KSW MCU (F2 00)"
+ },
+ "framing": {
+  "head": "F2 00",
+  "order": "cmd,len",
+  "len_offset": 0,
+  "checksum": {
+   "algo": "sum",
+   "over": "cmd,len,data",
+   "size": 1,
+   "add": 0,
+   "xor": "0xFF"
+  },
+  "no_ack_for": [],
+  "box_answers": [],
+  "baud": 115200
+ },
+ "link": {
+  "ack": false,
+  "send": []
+ },
+ "messages": {}
+}

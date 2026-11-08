@@ -409,6 +409,25 @@
     },
     "steps_signed": {
      "type": "boolean"
+    },
+    "event_value": {
+     "type": "string",
+     "pattern": "^0[xX][0-9A-Fa-f]{1,2}$",
+     "description": "engine 2.8: the key frames are those whose event_byte (masked by event_mask) has this value"
+    },
+    "pressed_for": {
+     "type": "object",
+     "description": "engine 2.8: codes (as in names) pressed on other values of state_byte than pressed",
+     "propertyNames": {
+      "pattern": "^[0-9]{1,3}$"
+     },
+     "additionalProperties": {
+      "type": "array",
+      "items": {
+       "type": "integer"
+      },
+      "minItems": 1
+     }
     }
    }
   },
@@ -471,6 +490,25 @@
      },
      "steps_signed": {
       "type": "boolean"
+     },
+     "event_value": {
+      "type": "string",
+      "pattern": "^0[xX][0-9A-Fa-f]{1,2}$",
+      "description": "engine 2.8: the key frames are those whose event_byte (masked by event_mask) has this value"
+     },
+     "pressed_for": {
+      "type": "object",
+      "description": "engine 2.8: codes (as in names) pressed on other values of state_byte than pressed",
+      "propertyNames": {
+       "pattern": "^[0-9]{1,3}$"
+      },
+      "additionalProperties": {
+       "type": "array",
+       "items": {
+        "type": "integer"
+       },
+       "minItems": 1
+      }
      }
     }
    }

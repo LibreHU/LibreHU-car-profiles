@@ -1,0 +1,387 @@
+{
+ "format": "librehu-can-vehicle",
+ "version": 2,
+ "engine": ">=2.8",
+ "id": "bmw-ksw-cic",
+ "name": "BMW with a KSW screen (CIC)",
+ "description": "Hand-made from VincentZ4's « KSW API – Commands » v2.12 (BMW F1x 2011-2012 CIC 8.8/10.25 in, PX6, Android 9) and McuCommunicator (github.com/KswCarProject/McuCommunicator, GPL-3.0; values only): the KSW MCU decodes the car itself and sends A1 frames, sub-command in D0 (17 keys, 19 driving data, 1C air conditioning, 10 handbrake / gear / belt / turn signals, 12 doors). Needs the MCU profile ksw-px6 of LibreHU service (v194 and later, CAN link « through the MCU »). Volume, tracks and play are pressed on 0 (McuCommunicator); KSW's own service reads some of them the other way: if one of these keys acts on release, remove its pressed_for. Mileage, consumption, « oil sum » and the units byte are kept as KSW names them (units as the car shows them). NEVER TRIED ON A CAR: check every value before relying on it.",
+ "box": "ksw-mcu",
+ "link": {
+  "ack": false,
+  "send": []
+ },
+ "variants": [
+  {
+   "name": "BMW F1x 2011-2012, CIC 8.8 / 10.25 in (KSW screen)"
+  }
+ ],
+ "messages": {
+  "0xA1": {
+   "name": "KSW car data",
+   "mux": 0,
+   "signals": {},
+   "cases": {
+    "0x10": {
+     "name": "Handbrake, gear, belt, turn signals",
+     "signals": {
+      "brake": {
+       "start_byte": 1,
+       "bits": {
+        "handbrake": {
+         "bit": 3,
+         "role": "handbrake"
+        }
+       }
+      },
+      "state": {
+       "start_byte": 2,
+       "bits": {
+        "seat belt": {
+         "bit": 0,
+         "role": "x.seatbelt"
+        },
+        "left": {
+         "bit": 3,
+         "role": "turn.left"
+        },
+        "right": {
+         "bit": 4,
+         "role": "turn.right"
+        },
+        "hazard": {
+         "bit": 5,
+         "role": "turn.hazard"
+        }
+       }
+      },
+      "gear": {
+       "start_byte": 2,
+       "start_bit": 1,
+       "bit_length": 2,
+       "values": {
+        "0": "P",
+        "1": "N",
+        "2": "D",
+        "3": "R"
+       },
+       "role": "x.gear",
+       "label": {
+        "en": "gear",
+        "fr": "levier"
+       }
+      },
+      "lever": {
+       "start_byte": 2,
+       "expr": "((D2 & 6) == 6) | (((D2 & 6) == 0) << 1)",
+       "bits": {
+        "reverse": {
+         "bit": 0,
+         "role": "gear.reverse"
+        },
+        "park": {
+         "bit": 1,
+         "role": "gear.park"
+        }
+       }
+      }
+     }
+    },
+    "0x12": {
+     "name": "Doors",
+     "signals": {
+      "doors": {
+       "start_byte": 1,
+       "bits": {
+        "trunk": {
+         "bit": 2,
+         "role": "door.trunk"
+        },
+        "hood": {
+         "bit": 3,
+         "role": "door.hood"
+        },
+        "front left": {
+         "bit": 4,
+         "role": "door.front_left"
+        },
+        "front right": {
+         "bit": 5,
+         "role": "door.front_right"
+        },
+        "rear left": {
+         "bit": 6,
+         "role": "door.rear_left"
+        },
+        "rear right": {
+         "bit": 7,
+         "role": "door.rear_right"
+        }
+       }
+      }
+     }
+    },
+    "0x19": {
+     "name": "Driving data",
+     "signals": {
+      "mileage": {
+       "start_byte": 1,
+       "size": 2,
+       "endian": "big",
+       "unit": "km",
+       "role": "x.mileage",
+       "label": {
+        "en": "mileage",
+        "fr": "kilométrage"
+       }
+      },
+      "consumption": {
+       "start_byte": 3,
+       "size": 2,
+       "endian": "big",
+       "factor": 0.1,
+       "role": "x.consumption",
+       "label": {
+        "en": "consumption",
+        "fr": "consommation"
+       }
+      },
+      "average speed": {
+       "start_byte": 5,
+       "size": 2,
+       "endian": "big",
+       "factor": 0.1,
+       "unit": "km/h",
+       "role": "trip.average_speed"
+      },
+      "speed": {
+       "start_byte": 7,
+       "size": 2,
+       "endian": "big",
+       "unit": "km/h",
+       "role": "vehicle.speed"
+      },
+      "rpm": {
+       "start_byte": 9,
+       "size": 2,
+       "endian": "big",
+       "unit": "rpm",
+       "role": "engine.rpm"
+      },
+      "oil sum": {
+       "start_byte": 11,
+       "size": 2,
+       "endian": "big",
+       "role": "x.oil_sum",
+       "label": {
+        "en": "« oil sum »",
+        "fr": "« oil sum »"
+       }
+      },
+      "outside": {
+       "start_byte": 13,
+       "size": 2,
+       "endian": "big",
+       "signed": true,
+       "factor": 0.1,
+       "unit": "°C",
+       "role": "outside.temp"
+      },
+      "units": {
+       "start_byte": 15,
+       "role": "x.units",
+       "label": {
+        "en": "units",
+        "fr": "unités"
+       }
+      }
+     }
+    },
+    "0x1C": {
+     "name": "Air conditioning",
+     "signals": {
+      "state": {
+       "start_byte": 1,
+       "bits": {
+        "on": {
+         "bit": 7,
+         "role": "hvac.power"
+        },
+        "ac": {
+         "bit": 6,
+         "role": "hvac.ac"
+        },
+        "air loop 1": {
+         "bit": 5,
+         "role": "x.air_loop_1"
+        },
+        "air loop 2": {
+         "bit": 4,
+         "role": "x.air_loop_2"
+        },
+        "front defrost": {
+         "bit": 3,
+         "role": "hvac.defrost_front"
+        },
+        "rear defrost": {
+         "bit": 1,
+         "role": "hvac.defrost_rear"
+        },
+        "sync": {
+         "bit": 0,
+         "role": "x.sync"
+        }
+       }
+      },
+      "airflow": {
+       "start_byte": 2,
+       "role": "x.airflow",
+       "label": {
+        "en": "air flow (bits)",
+        "fr": "diffusion (bits)"
+       }
+      },
+      "left": {
+       "start_byte": 3,
+       "invalid": [
+        "0x00",
+        "0xFF"
+       ],
+       "factor": 0.5,
+       "offset": 15.5,
+       "unit": "°C",
+       "role": "hvac.temp_left"
+      },
+      "right": {
+       "start_byte": 4,
+       "invalid": [
+        "0x00",
+        "0xFF"
+       ],
+       "factor": 0.5,
+       "offset": 15.5,
+       "unit": "°C",
+       "role": "hvac.temp_right"
+      },
+      "mode": {
+       "start_byte": 5,
+       "bits": {
+        "eco": {
+         "bit": 5,
+         "role": "x.eco"
+        },
+        "auto": {
+         "bit": 4,
+         "role": "hvac.auto"
+        }
+       }
+      },
+      "fan": {
+       "start_byte": 5,
+       "mask": "0x0F",
+       "factor": 0.5,
+       "role": "hvac.fan"
+      }
+     }
+    }
+   }
+  }
+ },
+ "wheel_keys": {
+  "cmd": "0xA1",
+  "code_byte": 1,
+  "state_byte": 2,
+  "pressed": [
+   1
+  ],
+  "event_byte": 0,
+  "event_value": "0x17",
+  "pressed_for": {
+   "21": [
+    0
+   ],
+   "22": [
+    0
+   ],
+   "23": [
+    0
+   ],
+   "24": [
+    0
+   ],
+   "25": [
+    0
+   ]
+  },
+  "names": {
+   "1": "up",
+   "2": "down",
+   "3": "left",
+   "4": "right",
+   "5": "knob press",
+   "6": "knob turned right",
+   "7": "knob turned left",
+   "8": "menu",
+   "11": "telephone (long press)",
+   "12": "back",
+   "13": "option",
+   "14": "navigation",
+   "16": "media",
+   "17": "telephone",
+   "20": "voice",
+   "21": "volume +",
+   "22": "volume -",
+   "23": "previous",
+   "24": "next",
+   "25": "play / pause",
+   "31": "hang up"
+  }
+ },
+ "examples": [
+  {
+   "cmd": "0xA1",
+   "data": "19 30 39 00 64 01 F4 00 32 0B B8 00 28 FF EC 00",
+   "expect": {
+    "vehicle.speed": 50,
+    "engine.rpm": 3000,
+    "outside.temp": -2,
+    "trip.average_speed": 50,
+    "x.mileage": 12345,
+    "x.consumption": 10
+   }
+  },
+  {
+   "cmd": "0xA1",
+   "data": "1C C0 00 11 13 15",
+   "expect": {
+    "hvac.power": true,
+    "hvac.ac": true,
+    "hvac.temp_left": 24,
+    "hvac.temp_right": 25,
+    "hvac.auto": true,
+    "hvac.fan": 2.5
+   }
+  },
+  {
+   "cmd": "0xA1",
+   "data": "10 08 4E",
+   "expect": {
+    "handbrake": true,
+    "gear.reverse": true,
+    "gear.park": false,
+    "gear": "R",
+    "turn.left": true,
+    "turn.right": false,
+    "x.seatbelt": false
+   }
+  },
+  {
+   "cmd": "0xA1",
+   "data": "12 14",
+   "expect": {
+    "door.front_left": true,
+    "door.trunk": true,
+    "door.rear_right": false
+   }
+  }
+ ]
+}

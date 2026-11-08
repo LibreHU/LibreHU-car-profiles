@@ -41,7 +41,9 @@ Dans l'onglet CAN, les octets qui changent apparaissent **en orange**. Pour chaq
    valeur (`vehicle.speed`, `door.front_left`, `steering.angle`…). Liste des rôles :
    [`CanRoles.kt`](https://github.com/LibreHU/LibreHU-service/blob/main/core/src/main/kotlin/org/librehu/core/can/CanRoles.kt),
    alignée sur la COVESA Vehicle Signal Specification. Une valeur sans rôle connu : `x.<nom>`.
-5. Les **touches du volant** dans `wheel_keys` (message, octet du code, octet d'état, codes « appuyé »).
+5. Les **touches du volant** dans `wheel_keys` (message, octet du code, octet d'état, codes « appuyé »). Quand la
+   commande des touches porte aussi d'autres données (MCU KSW : `A1 17` touches, `A1 19` données), `event_value`
+   choisit les messages de touches et `pressed_for` donne les codes appuyés sur une autre valeur (moteur 2.8).
 6. Si le boîtier attend des messages de l'autoradio (type de voiture, bonjour…), les mettre dans `link.send`.
 7. Mettre `"engine"` au moteur dont la fiche a besoin. L'outil vous le dit : `>=2.0` pour une fiche simple, `>=2.1` avec
    des formules (`expr`).

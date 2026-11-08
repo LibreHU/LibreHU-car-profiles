@@ -13,7 +13,7 @@ v184 no car is built into it. Guide to port a car (French): [PORTING.md](PORTING
 | Dossier | Contenu |
 |---|---|
 | `brands/<marque>/` | les fiches de la marque (`<id>.json`) |
-| `boxes/` | **types de boîtiers** : le profil générique de chacun (`"box_type"` + sa `"framing"`, moteur 2.6 ; messages bruts, aucun décodage), paquet `boxes`. **Un nouveau boîtier = un fichier ici**, sans nouveau service ; une fiche le nomme par son `"box"` (ou par un de ses fabricants, `"aliases"`). Le service a les cinq premiers intégrés (Hiworld, Raise), en repli ; CYT (BYD, Ford) et Simple (Audi) viennent du paquet (moteur 2.7) |
+| `boxes/` | **types de boîtiers** : le profil générique de chacun (`"box_type"` + sa `"framing"`, moteur 2.6 ; messages bruts, aucun décodage), paquet `boxes`. **Un nouveau boîtier = un fichier ici**, sans nouveau service ; une fiche le nomme par son `"box"` (ou par un de ses fabricants, `"aliases"`). Le service a les cinq premiers intégrés (Hiworld, Raise), en repli ; CYT (BYD, Ford) et Simple (Audi) viennent du paquet (moteur 2.7), ainsi que **KSW** (`ksw-mcu`, `F2 00` : la MCU des écrans KSW est elle-même le décodeur, lue avec le profil MCU `ksw-px6` du service v194) |
 | `template/new-car.json` | fiche modèle à copier |
 | `schema/` | schéma JSON du format (copie de celui du service) |
 | `dist/` | **généré par la CI** : `index.json`, un paquet par marque (`<marque>.json`) et celui des types de boîtiers (`boxes.json`, installé avant les marques) |
@@ -21,6 +21,10 @@ v184 no car is built into it. Guide to port a car (French): [PORTING.md](PORTING
 | `tools/carinfo/` | rejoue les décodeurs de l'appli Car Info d'origine, à partir de son listage jadx « fallback » (l'appli n'est jamais exécutée), et en tire une fiche par décodeur : **511 fiches générées dans `brands/`**, jamais essayées sur une voiture (« NEVER TRIED ON A CAR » dans leur description) ; les voitures sans décodeur dans Car Info y sont ajoutées, marquées « (guessed) », au décodeur de la même marque et du même boîtier : chaque modèle de voiture du catalogue a un profil ; voir [tools/carinfo/README.md](tools/carinfo/README.md) |
 
 - **Porter une voiture** : [PORTING.md](PORTING.md).
+- **Écrans KSW** (BMW, Mercedes-Benz…) : `brands/bmw/bmw-ksw-cic.json` (BMW F1x 2011-2012 CIC, moteur 2.8 : touches
+  iDrive et volant, vitesse, régime, température extérieure, clim, portes, frein à main, rapport, clignotants), faite à
+  la main d'après la « KSW API – Commands » v2.12 de VincentZ4 et [McuCommunicator](https://github.com/KswCarProject/McuCommunicator)
+  (valeurs seulement) ; **jamais essayée sur une voiture**.
 - **Format** : [docs/can-vehicles.md](https://github.com/LibreHU/LibreHU-service/blob/main/docs/can-vehicles.md),
   page [Moteur voiture](https://librehu.github.io/engine.html).
 - **Versions** : chaque fiche dit le moteur dont elle a besoin (`"engine": ">=2.1"`, Semantic Versioning) ; un paquet
