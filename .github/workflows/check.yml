@@ -38,10 +38,11 @@ jobs:
 
       - name: Engine of LibreHU service (examples, engine requirement)
         run: |
-          # The tool published with the service, else built from its sources (same engine).
-          if ! curl -fsSL -o librehu-car-tool.jar https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/librehu-car-tool.jar; then
+          # The tool published with the service, else built from its sources (same engine). Retried: the runners'
+          # network drops now and then (run of 08/11/2026: download cut, then Maven Central timed out).
+          if ! curl -fsSL --retry 5 --retry-delay 15 --retry-all-errors -o librehu-car-tool.jar https://github.com/LibreHU/LibreHU-service/releases/download/latest-main/librehu-car-tool.jar; then
             git clone --depth 1 https://github.com/LibreHU/LibreHU-service.git "$RUNNER_TEMP/service"
-            (cd "$RUNNER_TEMP/service" && ./gradlew --no-daemon -q :core:carToolJar)
+            (cd "$RUNNER_TEMP/service" && { ./gradlew --no-daemon -q :core:carToolJar || { sleep 60; ./gradlew --no-daemon -q :core:carToolJar; }; })
             cp "$RUNNER_TEMP/service/core/build/libs/librehu-car-tool.jar" .
           fi
           java -jar librehu-car-tool.jar version

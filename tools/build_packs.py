@@ -22,7 +22,19 @@ ROOT = Path(__file__).resolve().parent.parent
 BRANDS = ROOT / "brands"
 BOXES = ROOT / "boxes"
 DIST = ROOT / "dist"
-NAMES = {"boxes": "CAN box types", "renault": "Renault", "hyundai-kia": "Hyundai, Kia", "toyota": "Toyota", "honda": "Honda", "volkswagen": "Volkswagen group", "psa": "Peugeot, Citroën, DS"}
+# The name of a pack when its folder's name, capitalised, is not it (the Chinese makes as Car Info abbreviates them).
+NAMES = {
+    "boxes": "CAN box types", "renault": "Renault", "hyundai-kia": "Hyundai, Kia", "toyota": "Toyota", "honda": "Honda",
+    "volkswagen": "Volkswagen group", "psa": "Peugeot, Citroën, DS", "alfa": "Alfa Romeo", "bba": "BMW, Mercedes-Benz, Audi (BBA box)",
+    "benz": "Mercedes-Benz", "bj": "BAIC BJ", "bjev": "BAIC BJEV", "bmw": "BMW", "byd": "BYD", "cnhtc": "Sinotruk",
+    "dffd": "Dongfeng Fengdu", "dffg": "Dongfeng Fengguang", "dffs": "Dongfeng Aeolus", "dffx": "Dongfeng Forthing",
+    "dftl": "Dongfeng Tianlong", "gmc": "GMC", "gpatton": "George Patton", "greatwall": "Great Wall", "hezhong": "Neta",
+    "hongyan": "SAIC Hongyan", "ikco": "IKCO", "jac": "JAC", "jiefang": "FAW Jiefang", "jmc": "JMC", "kinglong": "King Long",
+    "knowbeans": "Zhidou", "landrover": "Land Rover", "leepmotor": "Leapmotor", "mg": "MG", "nlmmotor": "New Longma",
+    "oushang": "Changan Oshan", "phantom": "BAIC Huansu", "racing": "Ruichi", "senova": "BAIC Senova", "southeast": "Soueast",
+    "ssangyong": "SsangYong", "swm": "SWM", "trumpchi": "GAC Trumpchi", "uaz": "UAZ", "weiwang": "BAIC Weiwang",
+    "weltmeister": "WM Motor", "zhonghua": "Brilliance",
+}
 
 
 def version(req: str):

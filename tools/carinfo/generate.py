@@ -114,13 +114,33 @@ KEYS = {
     "Src_radio": "radio", "Src_music": "music", "Src_phone": "phone", "Src_setting": "settings", "Src_bt": "bluetooth",
 }
 
+# Car Info's file names (one per series) → the make. The Chinese makes are named from the protocol documents Car Info lists
+# for them (« 东风风神 » for dffs…).
 MAKES = {"citroen": "Citroën", "benz": "Mercedes-Benz", "vw": "Volkswagen", "volkswagen": "Volkswagen", "bmw": "BMW", "gmc": "GMC",
          "ds": "DS", "mg": "MG", "byd": "BYD", "baic": "BAIC", "jac": "JAC", "faw": "FAW", "gac": "GAC", "saic": "SAIC",
-         "alfa": "Alfa Romeo", "landrover": "Land Rover", "mini": "MINI", "ssangyong": "SsangYong", "kia": "Kia"}
+         "alfa": "Alfa Romeo", "landrover": "Land Rover", "mini": "MINI", "ssangyong": "SsangYong", "kia": "Kia",
+         "amico": "AMICO", "bba": "BMW, Mercedes-Benz, Audi", "bj": "BAIC", "bjev": "BAIC BJEV", "cnhtc": "Sinotruk",
+         "dffd": "Dongfeng Fengdu", "dffg": "Dongfeng Fengguang", "dffs": "Dongfeng Aeolus", "dffx": "Dongfeng Forthing",
+         "dftl": "Dongfeng Tianlong", "gio": "GAC Trumpchi", "gpatton": "George Patton", "greatwall": "Great Wall",
+         "hezhong": "Neta", "hongyan": "SAIC Hongyan", "ikco": "IKCO", "jiefang": "FAW Jiefang", "jmc": "JMC",
+         "kinglong": "King Long", "knowbeans": "Zhidou", "leepmotor": "Leapmotor", "maple": "Maple", "nlmmotor": "New Longma",
+         "oushang": "Changan Oshan", "phantom": "BAIC Huansu", "racing": "Ruichi", "saipa": "SAIPA", "samsung": "Renault Samsung",
+         "senova": "BAIC Senova", "southeast": "Soueast", "swm": "SWM", "trumpchi": "GAC Trumpchi", "uaz": "UAZ",
+         "vinfast": "VinFast", "weiwang": "BAIC Weiwang", "weltmeister": "WM Motor", "zhonghua": "Brilliance"}
+
+# The folder of brands/ (one pack per folder) when LibreHU groups the makes.
+FOLDERS = {"hyundai": "hyundai-kia", "kia": "hyundai-kia", "peugeot": "psa", "citroen": "psa", "ds": "psa", "vw": "volkswagen",
+           "skoda": "volkswagen", "seat": "volkswagen"}
+
+# Not cars: Car Info's rear seat screens, site machines and scooters.
+NOT_CARS = {"other", "reardisplay", "klyde", "default"}
 
 
 def make_of(xml):
-    k = re.sub(r"ver$", "", xml.rsplit(".", 1)[0].lower())
+    k = xml.rsplit(".", 1)[0].lower()
+    if k.endswith("ver") and k != "landrover":  # the second file of a make (« nissanver.xml »)
+        k = k[:-3]
+    k = {"ssongyong": "ssangyong"}.get(k, k)
     return k, MAKES.get(k, k[:1].upper() + k[1:])
 
 
@@ -132,8 +152,10 @@ def trim(name):
 
 
 def variant_name(row):
-    _, make = make_of(row["xml"])
+    k, make = make_of(row["xml"])
     model = (row.get("modelName") or "").replace("_", " ").strip()
+    if k == "bba":  # one box for the three German makes: NTG (Mercedes-Benz), A4L / Q3 (Audi), CCC / CIC / NBT / EVO (BMW)
+        make = "Mercedes-Benz" if model.lower().startswith("ntg") else "Audi" if model.lower().startswith("a") else "BMW"
     year = (row.get("yearName") or "").replace("_", "-").strip()
     return re.sub(r"\s+", " ", f"{make} {model} {year}, {trim(row.get('configName'))}").strip(" ,")
 
@@ -416,6 +438,9 @@ def main():
             report["no car in the catalogue"].append(short)
             continue
         mk = collections.Counter(make_of(r["xml"])[0] for r in crow).most_common(1)[0][0]
+        if mk in NOT_CARS:
+            report["not a car"].append(short)
+            continue
         pid = re.sub(r"[^a-z0-9-]", "", f"{mk}-{short.lower().replace('protocol', '').strip('_')}")[:60]
         bauds = collections.Counter(r.get("baudrate") for r in crow if r.get("baudrate") in (9600, 19200, 38400, 57600, 115200))
         baud = bauds.most_common(1)[0][0] if bauds else 38400
@@ -452,12 +477,12 @@ def main():
             report["no example possible"].append(short)
             continue
         profile["examples"] = ex
-        d = os.path.join(out_dir, mk)
+        d = os.path.join(out_dir, FOLDERS.get(mk, mk))
         os.makedirs(d, exist_ok=True)
         json.dump(profile, open(os.path.join(d, pid + ".json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         made += 1
         cars += len(variants)
-        report["generated"].append(f"{mk}/{pid} ({len(variants)} cars, {len(msgs)} messages{', keys' if keys else ''}{', car types' if types else ''})")
+        report["generated"].append(f"{FOLDERS.get(mk, mk)}/{pid} ({len(variants)} cars, {len(msgs)} messages{', keys' if keys else ''}{', car types' if types else ''})")
     rep = {k: v for k, v in report.items()}
     rep["summary"] = {"profiles": made, "cars": cars}
     # Next to the profiles' folder, not in it (the car tool checks every .json below it).

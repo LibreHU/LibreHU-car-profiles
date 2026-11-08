@@ -89,8 +89,10 @@ quels octets, quelle formule. Mode d'emploi : [tools/carinfo/README.md](tools/ca
   n'en ont pas dans Car Info lui-même) ; mêmes résultats que les analyses à la main pour PSA (111 / 111) et Volkswagen
   (174 / 174) ; sondage : **528 décodeurs sur 532 donnent des messages** (4 861 messages).
 - **Générateur** (`tools/carinfo/generate.py`) : une fiche par décodeur (type de boîtier tiré de sa trame, voitures avec
-  le type de voiture rejoué pour chacune, rôles, touches du volant avec leurs noms, exemples) : **507 fiches, 5 319
-  voitures**, toutes acceptées par le moteur (`check`). Jamais essayées sur une voiture : marquées comme telles.
+  le type de voiture rejoué pour chacune, rôles, touches du volant avec leurs noms, exemples) : **503 fiches, 5 314
+  voitures**, toutes acceptées par le moteur (`check`), **publiées dans `brands/`** le 08/11/2026 (111 marques, 6 073
+  voitures avec les fiches faites à la main). Jamais essayées sur une voiture : « NEVER TRIED ON A CAR » dans leur
+  description. Laissés de côté : les écrans arrière, engins de chantier et scooters de Car Info (pas des voitures).
 - Une fiche tirée de ce code n'a jamais roulé : elle sera marquée **non testée** tant que personne ne l'a essayée sur
   la voiture (comme toute fiche, à vérifier avec une capture, § 1).
 

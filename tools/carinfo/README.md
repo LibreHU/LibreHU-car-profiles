@@ -29,6 +29,8 @@ none in Car Info itself (checked on Alfa MiTo / Raise: `AlfaRaiseManager` knows 
 the hand analyses for PSA (111 / 111) and VW (174 / 174). Probing: **528 of 532 decoders give messages (4 861
 messages)**; Mazda's output is noise (the same fields on its 256 commands, dropped by the generator); nothing from
 `Panoramic360SerialProtocol` (empty) and `ReBaicM20Protocol` (empty `handlePacket`), nor yet from `HangDaoProtocol` and
-`ReJacProtocolSingle`. Generator: **507 profiles, 5 319 cars**, all checked by the engine (`check`: 512 / 512 with the
-box types); left out: 7 framings with no LibreHU box type yet, 8 decoders with nothing LibreHU reads, 10 of the
-hand-made profiles. Never tried on a car.
+`ReJacProtocolSingle`. Generator: **503 profiles, 5 314 cars**, all checked by the engine (`check`: 518 / 518 with the
+box types and the hand-made profiles), **published in `brands/`** on 2026-11-08 (111 makes, 6 073 cars with the
+hand-made profiles); left out: 7 framings with no LibreHU box type yet, 8 decoders with nothing LibreHU reads, 10 of the
+hand-made profiles, 4 series that are no cars (rear seat screens, site machines, scooters). Make names: from the
+protocol documents Car Info lists (« 东风风神 » → Dongfeng Aeolus…), `MAKES` in `generate.py`. Never tried on a car.
