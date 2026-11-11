@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Checks the car profiles and the box types against the JSON Schema and builds one pack per make (dist/<make>.json),
 the pack of the box types (dist/boxes.json, from boxes/) and the index LibreHU service and LibreHU Apps read
-(dist/index.json). No dependency but `jsonschema` (pip install jsonschema).
+(dist/index.json, with each pack's makes and their models for the search and the filters of LibreHU Apps). No dependency but `jsonschema` (pip install jsonschema).
 
     python3 tools/build_packs.py           # check + build dist/
     python3 tools/build_packs.py --check   # check only (pull requests)
@@ -35,6 +35,104 @@ NAMES = {
     "ssangyong": "SsangYong", "swm": "SWM", "trumpchi": "GAC Trumpchi", "uaz": "UAZ", "weiwang": "BAIC Weiwang",
     "weltmeister": "WM Motor", "zhonghua": "Brilliance",
 }
+
+
+# Makes of two words in the variants' names ("Alfa Romeo Giulia 2017, all trims"); the others are one word.
+TWO_WORD_MAKES = {"alfa romeo", "great wall", "land rover", "aston martin", "rolls royce", "george patton", "king long", "new longma"}
+# Model names that look like years (Peugeot 2008…): anything else of four digits right after the make is a year.
+YEAR_LIKE_MODELS = {"1007", "2008", "3008", "4007", "4008", "5008"}
+# Where a model's name ends in a variant's name: years (2016, 2010-2017, 2016~2023, 2023~PRESENT, 2013-NOW, Car Info's
+# 102021 or 2008201803 codes, MODELYEAR-2021), "all", a note in brackets, "compatible" (兼容).
+END_OF_MODEL = re.compile(
+    r"^(?:(?:19[5-9]\d|20[0-4]\d)(?:[-~/(].*)?|\d{6,}|(?:now|present|all|[-~])$|modelyear.*|\(.*|兼容.*|compatible.*)$",
+    re.IGNORECASE,
+)
+
+
+def make_model(name: str):
+    """(make, model) of a variant's name, "<make> <model> <years>, <trim>" ("Renault kadjar 2016, low trim" →
+    ("Renault", "Kadjar")); model None when the name has none ("Citroën, other compatible models"). The first word after
+    the make is always the model's (Peugeot 2008, 3008), the model ends at the years or a note."""
+    words = name.split(",")[0].split()
+    if not words:
+        return None, None
+    n = 2 if len(words) > 1 and f"{words[0]} {words[1]}".lower() in TWO_WORD_MAKES else 1
+    make = " ".join(words[:n])
+    rest = words[n:]
+    # "Haval haval h9": the make written again.
+    if rest and rest[0].lower() == make.lower():
+        rest = rest[1:]
+    model = []
+    for i, w in enumerate(rest):
+        if (i > 0 or w not in YEAR_LIKE_MODELS) and END_OF_MODEL.match(w):
+            break
+        model.append(w)
+    words = " ".join(model).replace("_", " ").split()
+    if not words:
+        return make, None
+    # As written, the first letter of each word raised; a word with a digit in capitals (h6 → H6, gs4 → GS4).
+    return make, " ".join(w.upper() if any(c.isdigit() for c in w) else w[:1].upper() + w[1:] for w in words)
+
+
+def makes_spelling(folders) -> dict:
+    """The spelling of each make (lower case → the most frequent one: "LADA" and "Lada" are one make)."""
+    seen: dict = {}
+    for folder in folders:
+        for f in folder.glob("*.json"):
+            for v in json.loads(f.read_text(encoding="utf-8")).get("variants", []):
+                make, _ = make_model(v.get("name", ""))
+                if make:
+                    c = seen.setdefault(make.lower(), {})
+                    c[make] = c.get(make, 0) + 1
+    return {k: max(c.items(), key=lambda kv: kv[1])[0] for k, c in seen.items()}
+
+
+def models_of(profiles, spelling: dict) -> dict:
+    """Each make of these profiles and its models, sorted, once each (whatever their case); a make whose names give no
+    model ("Bentley bentley 2019") is there with none."""
+    found: dict = {}
+    for p in profiles:
+        for v in p.get("variants", []):
+            make, model = make_model(v.get("name", ""))
+            if not make:
+                continue
+            models = found.setdefault(spelling.get(make.lower(), make), {})
+            if model:
+                models.setdefault(model.lower(), model)
+    return {m: sorted(v.values(), key=str.lower) for m, v in sorted(found.items(), key=lambda kv: kv[0].lower())}
+
+
+def self_test():
+    """The names Car Info's conversion writes, and what the filters of LibreHU Apps show for them."""
+    cases = {
+        "Renault kadjar 2016, low trim": ("Renault", "Kadjar"),
+        "Haval haval h6 sport 2018, 低配": ("Haval", "H6 Sport"),
+        "Ford focus 2015~2018, high trim": ("Ford", "Focus"),
+        "Lincoln MKX 20072015, all trims (same protocol)": ("Lincoln", "MKX"),
+        "Volkswagen Grand_Lavida 2013-now, all trims": ("Volkswagen", "Grand Lavida"),
+        "BAIC Senova shenbao x25 2016-至今, all trims": ("BAIC", "Senova Shenbao X25"),
+        "GAC Trumpchi qizhi phev all, all trims": ("GAC", "Trumpchi Qizhi Phev"),
+        "Alfa Romeo Giulia 2017, all trims": ("Alfa Romeo", "Giulia"),
+        "Citroën, other compatible models, original screen removed, high trim": ("Citroën", None),
+        "Chevrolet Equinox 2010-2017, cfg auto": ("Chevrolet", "Equinox"),
+        "Peugeot 3008 2013-NOW (original Small Screen Kept), all trims": ("Peugeot", "3008"),
+        "Peugeot 2008 2014-2021 (Turkey), all trims": ("Peugeot", "2008"),
+        "Dacia Duster 102021, all trims": ("Dacia", "Duster"),
+        "Citroën Berlingo 2008201803, all trims": ("Citroën", "Berlingo"),
+        "Honda Civic 2016-2018(LPG - Turkey), all trims": ("Honda", "Civic"),
+        "Baojun BAOJUN730 MODELYEAR-2014-2015, all trims": ("Baojun", "BAOJUN730"),
+        "Citroën C4 2020-2023 (export), all trims": ("Citroën", "C4"),
+        "DS 兼容 兼容, all trims": ("DS", None),
+        "UAZ 2015, all trims": ("UAZ", None),
+        "Renault kadjar 2017(TURKEY, all trims": ("Renault", "Kadjar"),
+        "Land Rover Discoverysport compatible, all trims": ("Land Rover", "Discoverysport"),
+        "King Long kaige 2018, all trims": ("King Long", "Kaige"),
+        "Bentley bentley 2019, high trim": ("Bentley", None),
+    }
+    for name, want in cases.items():
+        got = make_model(name)
+        if got != want:
+            raise SystemExit(f"make_model({name!r}) = {got}, expected {want}")
 
 
 def version(req: str):
@@ -132,6 +230,7 @@ def coverage() -> dict | None:
 def build() -> dict:
     DIST.mkdir(exist_ok=True)
     packs = []
+    spelling = makes_spelling([p for p in BRANDS.iterdir() if p.is_dir()])
     # The box types first (a make's profiles may name one of them), then the makes.
     for folder in [BOXES] + sorted(p for p in BRANDS.iterdir() if p.is_dir()):
         profiles = [json.loads(f.read_text(encoding="utf-8")) for f in sorted(folder.glob("*.json"))]
@@ -139,6 +238,7 @@ def build() -> dict:
             continue
         engine = max((p.get("engine", ">=1.0") for p in profiles), key=version)
         makes = sorted({v["name"].split(" ")[0].rstrip(",") for p in profiles for v in p.get("variants", []) if v.get("name")})
+        models = models_of(profiles, spelling)
         pack = {
             "format": "librehu-car-pack",
             "version": 1,
@@ -160,6 +260,8 @@ def build() -> dict:
                 "makes": makes,
                 "profiles": [p["id"] for p in profiles],
                 "cars": sum(len(p.get("variants", [])) for p in profiles),
+                # Makes and their models, for the search and the filters of LibreHU Apps (Cars page).
+                "models": models,
                 "file": f"{folder.name}.json",
                 "size": len(data),
                 "sha256": hashlib.sha256(data).hexdigest(),
@@ -178,6 +280,7 @@ def build() -> dict:
 
 
 def main() -> int:
+    self_test()
     schema = json.loads((ROOT / "schema" / "can-vehicle.schema.json").read_text(encoding="utf-8"))
     errors = check(schema)
     for e in errors:
