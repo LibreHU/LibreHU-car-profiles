@@ -70,6 +70,10 @@ def make_model(name: str):
     words = " ".join(model).replace("_", " ").split()
     if not words:
         return make, None
+    # The make glued to the model: AUDIA6L → A6L, BAOJUN730 → 730 (not DS3, MG5, BMW3: too little would be left).
+    glued = re.sub(r"[^a-z]", "", make.lower())
+    if len(glued) >= 3 and words[0].lower().startswith(glued) and len(words[0]) - len(glued) >= 2:
+        words[0] = words[0][len(glued):]
     # As written, the first letter of each word raised; a word with a digit in capitals (h6 → H6, gs4 → GS4).
     return make, " ".join(w.upper() if any(c.isdigit() for c in w) else w[:1].upper() + w[1:] for w in words)
 
@@ -120,7 +124,7 @@ def self_test():
         "Dacia Duster 102021, all trims": ("Dacia", "Duster"),
         "Citroën Berlingo 2008201803, all trims": ("Citroën", "Berlingo"),
         "Honda Civic 2016-2018(LPG - Turkey), all trims": ("Honda", "Civic"),
-        "Baojun BAOJUN730 MODELYEAR-2014-2015, all trims": ("Baojun", "BAOJUN730"),
+        "Baojun BAOJUN730 MODELYEAR-2014-2015, all trims": ("Baojun", "730"),
         "Citroën C4 2020-2023 (export), all trims": ("Citroën", "C4"),
         "DS 兼容 兼容, all trims": ("DS", None),
         "UAZ 2015, all trims": ("UAZ", None),
@@ -128,6 +132,10 @@ def self_test():
         "Land Rover Discoverysport compatible, all trims": ("Land Rover", "Discoverysport"),
         "King Long kaige 2018, all trims": ("King Long", "Kaige"),
         "Bentley bentley 2019, high trim": ("Bentley", None),
+        "Audi AUDIA6L 2012-2018, all trims": ("Audi", "A6L"),
+        "Baojun BAOJUN730 2017, all trims": ("Baojun", "730"),
+        "DS DS3 2010-2019, all trims": ("DS", "DS3"),
+        "BMW BMW3 2004-2011, all trims": ("BMW", "BMW3"),
     }
     for name, want in cases.items():
         got = make_model(name)
