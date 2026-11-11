@@ -20,6 +20,7 @@
     "simple-aa55-len-generic"
    ],
    "cars": 0,
+   "models": {},
    "file": "boxes.json",
    "size": 10093,
    "sha256": "9ddfd63545e6614d83236f3de9db91705afad952f23e3a90b249cee1adbd5ffd"
@@ -36,6 +37,11 @@
     "acura-oudiacura"
    ],
    "cars": 1,
+   "models": {
+    "Acura": [
+     "Zdx"
+    ]
+   },
    "file": "acura.json",
    "size": 3020,
    "sha256": "a1cc1a49079eca52c5c9f631e135ff5314d56b07a8242b43ca9397b1981f83ee"
@@ -52,6 +58,11 @@
     "alfa-bagooalfa"
    ],
    "cars": 1,
+   "models": {
+    "Alfa Romeo": [
+     "Alfaromeo"
+    ]
+   },
    "file": "alfa.json",
    "size": 2742,
    "sha256": "94d96aae3e721d0bf10b91e25e710014184814e87286eefeca73b8296cf15f34"
@@ -76,6 +87,24 @@
     "audi-spaudi2"
    ],
    "cars": 54,
+   "models": {
+    "Audi": [
+     "A3",
+     "A4",
+     "A4L",
+     "A6",
+     "AUDIA6L",
+     "AUDIQ5L",
+     "AUDIQ7",
+     "AUDIR8",
+     "AUDIRS3",
+     "AUDIS3",
+     "AUDIS4",
+     "Q3",
+     "Q5",
+     "TT"
+    ]
+   },
    "file": "audi.json",
    "size": 45693,
    "sha256": "f66c7c1347f01d56d57992946b2d1d4ac49edfa3199c8aa2fede21f3c97279ac"
@@ -96,6 +125,25 @@
     "baojun-rebaojun"
    ],
    "cars": 46,
+   "models": {
+    "Baojun": [
+     "BAOJUN360",
+     "BAOJUN510",
+     "BAOJUN530",
+     "BAOJUN560",
+     "BAOJUN730",
+     "BAOJUNRS3",
+     "BAOJUNRS5"
+    ],
+    "Wuling": [
+     "VICTORY",
+     "WulingJiachen",
+     "WULINGS3",
+     "WulingXingChen",
+     "Wulingxingchi",
+     "WulingXingGuang"
+    ]
+   },
    "file": "baojun.json",
    "size": 25427,
    "sha256": "364fad5efdccce3ed62bb98884cd03e8f58b766770d3b228b79f64b191f97442"
@@ -114,6 +162,41 @@
     "bba-lzbba"
    ],
    "cars": 31,
+   "models": {
+    "Audi": [
+     "A4L",
+     "A4LQ5",
+     "AUDI2G ALL-480-240",
+     "AUDIQ3"
+    ],
+    "BMW": [
+     "Ccc 1",
+     "Ccc 2",
+     "Ccc 3",
+     "Ccc 4",
+     "Ccc 5",
+     "Ccc 6",
+     "Cic 1280*480",
+     "Cic 800*480",
+     "Evo 1280*480",
+     "Evo 1440*540-1",
+     "Evo 1440*540-2",
+     "Evo 800*480",
+     "Nbt 1280*480",
+     "Nbt 800*480"
+    ],
+    "Mercedes-Benz": [
+     "NTG4.0 400*240",
+     "NTG4.0 576*124",
+     "NTG4.0 800*480",
+     "NTG4.5 400*240",
+     "NTG4.5 800*480",
+     "NTG5.0 800*480",
+     "NTG5.0 960*540",
+     "NTG5.5 1920*720",
+     "NTG6.0 1920*720"
+    ]
+   },
    "file": "bba.json",
    "size": 9234,
    "sha256": "55aa32ce6632557d6966461f09f22d3a5741d2577108b163854bada431673862"
@@ -130,6 +213,9 @@
     "bentley-lzbentley"
    ],
    "cars": 3,
+   "models": {
+    "Bentley": []
+   },
    "file": "bentley.json",
    "size": 7825,
    "sha256": "805977ff158ebdb7904db60ba48e9b565de170ce519ede15067e326870d0d87d"
@@ -159,6 +245,60 @@
     "benz-xbsbenzvito"
    ],
    "cars": 131,
+   "models": {
+    "BAIC": [
+     "BJ90"
+    ],
+    "Mercedes-Benz": [
+     "A180",
+     "B200",
+     "BenzA",
+     "BenzB",
+     "BenzCLK",
+     "BenzGL",
+     "BenzML",
+     "BenzS",
+     "C Class",
+     "C180",
+     "C200",
+     "C260",
+     "Cla",
+     "Cls",
+     "CLS300",
+     "E Class",
+     "E200",
+     "E260",
+     "E300",
+     "E300L",
+     "E350",
+     "G350",
+     "G55",
+     "Gla",
+     "GLA200",
+     "Glc",
+     "Gle",
+     "GLE43",
+     "Glk",
+     "GLK300",
+     "GLK350",
+     "Metris",
+     "ML320",
+     "ML350",
+     "ML350CDI",
+     "ML400",
+     "R Class",
+     "R320",
+     "S350",
+     "SL300",
+     "Slk",
+     "SLK200",
+     "Smart",
+     "Sprinter",
+     "Viano",
+     "Vito",
+     "W203"
+    ]
+   },
    "file": "benz.json",
    "size": 67811,
    "sha256": "01b3c510cd637e8f00c18955d52a63fa82eef3f3f338e4255419097cb604d0cc"
@@ -188,6 +328,24 @@
     "besturn-rebentengx80"
    ],
    "cars": 41,
+   "models": {
+    "Besturn": [
+     "MODELB30",
+     "MODELB50",
+     "MODELB70",
+     "MODELB90",
+     "MODELJUNPAIA50",
+     "MODELJUNPAICX65",
+     "MODELSENYAR9",
+     "MODELX40",
+     "MODELX80"
+    ],
+    "Haval": [
+     "H2",
+     "H6",
+     "M6"
+    ]
+   },
    "file": "besturn.json",
    "size": 52873,
    "sha256": "457f71e0afb8d4b6aac5d2780320c8cabd7917b99783f94dbcfeb9a45342d4c5"
@@ -205,6 +363,13 @@
     "bisu-raisebisu"
    ],
    "cars": 10,
+   "models": {
+    "Bisu": [
+     "M3",
+     "T3",
+     "T5"
+    ]
+   },
    "file": "bisu.json",
    "size": 12187,
    "sha256": "4ffef7f45bd440ad9149dc4c484c3db2ef0730aebaa5c5534db68b9684ff3087"
@@ -226,6 +391,33 @@
     "bj-rebaicd50"
    ],
    "cars": 33,
+   "models": {
+    "BAIC": [
+     "BJ20",
+     "BJ40",
+     "BJ80",
+     "BJ90",
+     "Huansu",
+     "Huansu Magic Speed",
+     "Huansu Magic Speed S2",
+     "Huansu Magic Speed S3",
+     "Huansu Magic Speed S5",
+     "Senova",
+     "Senova Shenbao D50",
+     "Senova Shenbao D60",
+     "Senova Shenbao X25",
+     "Senova Shenbao X35",
+     "Senova Shenbao X55",
+     "Weiwang",
+     "Weiwang Weiwang M20",
+     "Weiwang Weiwang M30",
+     "Weiwang Weiwang M50",
+     "X3"
+    ],
+    "Changhe": [
+     "CHANGHEQ25"
+    ]
+   },
    "file": "bj.json",
    "size": 24864,
    "sha256": "8e1140910866bc6915bf2ad57b7adfea0fe5b29dc7228477f7a7752252523eb7"
@@ -244,6 +436,18 @@
     "bjev-rebaicev"
    ],
    "cars": 12,
+   "models": {
+    "BAIC": [
+     "BJEV",
+     "BJEV EC180",
+     "BJEV EC5",
+     "BJEV EU5",
+     "BJEV EV160",
+     "BJEV EX360",
+     "Dynasty M7",
+     "Senova Shenbao D50"
+    ]
+   },
    "file": "bjev.json",
    "size": 12809,
    "sha256": "c117c3aab8d4acacb46b82ef00b882b9be2e02e0a4c31f6d47debe9b1ef1f74d"
@@ -273,6 +477,30 @@
     "bmw-spbmw"
    ],
    "cars": 77,
+   "models": {
+    "BMW": [
+     "BMW1",
+     "BMW3",
+     "BMW318I",
+     "BMW320I",
+     "BMW5",
+     "BMWCCC Ccc",
+     "BMWCIC CIC-1025",
+     "BMWCIC CIC-65",
+     "BMWCIC CIC-88",
+     "BMWE39 E39",
+     "BMWE53 E53",
+     "BMWE81",
+     "BMWNBT NBT-1025",
+     "BMWNBT NBT-65",
+     "BMWNBT NBT-88",
+     "BMWX1",
+     "BMWX3",
+     "BMWX5",
+     "F1X",
+     "MINI"
+    ]
+   },
    "file": "bmw.json",
    "size": 60067,
    "sha256": "f72befd692368ca6ea0f12ae667935275ddcdcbfb6ab501a7d362c912443e6a4"
@@ -295,6 +523,43 @@
     "buick-oudigmc"
    ],
    "cars": 127,
+   "models": {
+    "Buick": [
+     "Enclave",
+     "Encore",
+     "Envision",
+     "Excelle",
+     "Excelle Gt",
+     "Excelle Gx",
+     "GL6",
+     "GL8",
+     "GL8 25S",
+     "GL8 28T",
+     "Gmc Gmc",
+     "Lacrosse",
+     "Regal",
+     "Verano",
+     "Verano Gs"
+    ],
+    "Cadillac": [
+     "Ats L",
+     "Cts",
+     "Srx"
+    ],
+    "Chevrolet": [
+     "Aveo",
+     "Captiva",
+     "Cavalier",
+     "Cruze",
+     "Epica",
+     "Equinox",
+     "Lova Rv",
+     "Malibu",
+     "Malibu Xl",
+     "Sail",
+     "Trax"
+    ]
+   },
    "file": "buick.json",
    "size": 43710,
    "sha256": "834fbdda430b0033c2ee830f510c9cea7ec49835b88231a33adfca28fc10a77b"
@@ -324,6 +589,38 @@
     "byd-rcwbyd"
    ],
    "cars": 77,
+   "models": {
+    "BYD": [
+     "E1",
+     "E2",
+     "E3",
+     "E6",
+     "F3",
+     "G5",
+     "MODELF6",
+     "MODELG6",
+     "MODELM6",
+     "ModelSong",
+     "ModelSongMax",
+     "ModelSongNewEnergy",
+     "ModelSuRui",
+     "ModelTangNewEnergy",
+     "ModelYuan",
+     "ModelYuanNewEnergy",
+     "Qin",
+     "S6",
+     "S7",
+     "Tang"
+    ],
+    "Isuzu": [
+     "D-MAX",
+     "MU-X"
+    ],
+    "LADA": [
+     "Vesta",
+     "Vesta Cng"
+    ]
+   },
    "file": "byd.json",
    "size": 58762,
    "sha256": "212dd7cb443d82e0a61fd4d129df393032f8e2308fc247550e55de67976d1637"
@@ -342,6 +639,18 @@
     "cadillac-odkaired"
    ],
    "cars": 17,
+   "models": {
+    "Cadillac": [
+     "Ats",
+     "Ats L",
+     "Cts",
+     "Escalade",
+     "Kaired",
+     "SLS",
+     "Srx",
+     "Xts"
+    ]
+   },
    "file": "cadillac.json",
    "size": 14036,
    "sha256": "29f0fd224f0825eb3716f64c5222ebdb55a0e662ee79763a2d710fddb56b2505"
@@ -367,6 +676,45 @@
     "changan-rechanganv7"
    ],
    "cars": 108,
+   "models": {
+    "Changan": [
+     "Alsvin V7",
+     "Benben Ev",
+     "CS15",
+     "CS15 E PRO",
+     "CS35",
+     "CS35 PLUS",
+     "CS55",
+     "CS75",
+     "CS85",
+     "CS95",
+     "Eado",
+     "Linxuan",
+     "Lumin",
+     "Oshan",
+     "Oshan Benni",
+     "Oshan COS1 Pro",
+     "Oshan Oushang",
+     "Oshan Oushang A600",
+     "Oshan Oushang A800",
+     "Oshan Oushang Changxing",
+     "Oshan Oushang Cos",
+     "Oshan Oushang Cos Pro",
+     "Oshan Oushang COS1",
+     "Oshan Oushang CX70",
+     "Oshan Oushang Hunter",
+     "Oshan Oushang Keshang",
+     "Oshan Oushang X7",
+     "Oshan Oushang X70A",
+     "RAETON CC",
+     "Yidong",
+     "Yidong DT",
+     "Yue Xiang"
+    ],
+    "Fiat": [
+     "Titano"
+    ]
+   },
    "file": "changan.json",
    "size": 62903,
    "sha256": "15b3f78a4decaa5fb8e78229d5c264eb2b9f446dabe78d2f9fd1ce077249930b"
@@ -383,6 +731,9 @@
     "changhe-odchangheq7"
    ],
    "cars": 1,
+   "models": {
+    "Changhe": []
+   },
    "file": "changhe.json",
    "size": 4256,
    "sha256": "1e2c4fcfc8807481f7f9c7f02239945785e2c824910fdfeb831a447c3b08d909"
@@ -410,6 +761,40 @@
     "chery-rechery"
    ],
    "cars": 83,
+   "models": {
+    "Chery": [
+     "3X E",
+     "3X Plus",
+     "A3",
+     "Ant",
+     "Arizet",
+     "Arizet Other",
+     "ARZ E",
+     "DR F35",
+     "EQ1",
+     "EXEED TXL",
+     "Ghibli",
+     "Ice Cream",
+     "Jetour",
+     "Jetour X90",
+     "KAIYIX3",
+     "KAIYIX3PRO",
+     "KaiyiXuandu",
+     "KaiyiXuanjie",
+     "KaiyiXuanjiePro",
+     "Little Ant Eq 1",
+     "MY2",
+     "QQ",
+     "Quattroporte",
+     "SHENG DAI",
+     "TAO HAPPY",
+     "Tiger",
+     "TIGGO4"
+    ],
+    "Sinogold": [
+     "Junxing"
+    ]
+   },
    "file": "chery.json",
    "size": 65236,
    "sha256": "82fb361c4b501536e927ad0dfb75cf13426b7d98c6b152632c9de1dda8f1bcf2"
@@ -436,6 +821,110 @@
     "chevrolet-spgmprotok"
    ],
    "cars": 554,
+   "models": {
+    "Buick": [
+     "Enclave",
+     "Encore",
+     "Encore Gx",
+     "Envision",
+     "Envisions",
+     "Excelle",
+     "Excelle Gt",
+     "Excelle Gx",
+     "GL6",
+     "GL8",
+     "GL8 25S",
+     "GL8 Avenir",
+     "GL8 Es",
+     "Lacrosse",
+     "Regal",
+     "Velite 6",
+     "Verano",
+     "Verano Gs"
+    ],
+    "Cadillac": [
+     "Ats L",
+     "Cts",
+     "DTS",
+     "Escalade",
+     "Kaired",
+     "Srx",
+     "Xts"
+    ],
+    "Chevrolet": [
+     "Avalanch",
+     "Aveo",
+     "Blazer",
+     "Boit",
+     "Camaro",
+     "Canyon",
+     "Captiva",
+     "Cavalier",
+     "Cobalt",
+     "Colorado",
+     "Cruze",
+     "Epica",
+     "Equinox",
+     "Express Van",
+     "Gmc Terrain",
+     "Impala",
+     "Lova Rv",
+     "Malibu",
+     "Malibu Xl",
+     "Menlo",
+     "Montana",
+     "Monza",
+     "Onix",
+     "Orlando",
+     "Prisma",
+     "S10",
+     "Sail",
+     "Silverado",
+     "Silverado HD",
+     "Sonic",
+     "Spark",
+     "Spin",
+     "Suburban",
+     "Tahoe",
+     "Tracker",
+     "Trailblazer",
+     "Traverse",
+     "Trax",
+     "Volrando",
+     "Yukon"
+    ],
+    "GMC": [
+     "Acadia",
+     "Savana",
+     "Sierra",
+     "Terrain",
+     "Yukon"
+    ],
+    "Hummer": [
+     "H2",
+     "H3"
+    ],
+    "Opel": [
+     "Adam",
+     "Antara",
+     "Astra",
+     "Astra J",
+     "Astra K",
+     "Combo",
+     "Corsa",
+     "Corsa D",
+     "Corsa E",
+     "Insignia",
+     "Karl",
+     "Meriva",
+     "Meriva B",
+     "Mokka",
+     "Mokka X",
+     "Tigra",
+     "Vectra",
+     "Zafira"
+    ]
+   },
    "file": "chevrolet.json",
    "size": 92334,
    "sha256": "dbc039f2334de117a6c28ee4e32574dc17120632c7c39d0e070de2aabcb2eca9"
@@ -452,6 +941,11 @@
     "chrysler-lzchrysler"
    ],
    "cars": 2,
+   "models": {
+    "Chrysler": [
+     "300C"
+    ]
+   },
    "file": "chrysler.json",
    "size": 7622,
    "sha256": "b4ce407a6280f6e45a8ac92f110e6309998eac51d997ce5ffb60b06079ce7c9d"
@@ -468,6 +962,12 @@
     "cnhtc-odcnhtc"
    ],
    "cars": 2,
+   "models": {
+    "Sinotruk": [
+     "Howo",
+     "Sitrak"
+    ]
+   },
    "file": "cnhtc.json",
    "size": 2994,
    "sha256": "ba9484502b5f53102a9fd8b3f6431e4c51b726c458866807567117bf87f4c853"
@@ -484,6 +984,11 @@
     "daihatsu-hddaihatsu"
    ],
    "cars": 2,
+   "models": {
+    "Daihatsu": [
+     "Xenia"
+    ]
+   },
    "file": "daihatsu.json",
    "size": 3246,
    "sha256": "c13d24ad111bf978404a27222195e83776744f0e837864c66d0aa539600b0c7e"
@@ -500,6 +1005,11 @@
     "dayun-oudidayun"
    ],
    "cars": 1,
+   "models": {
+    "Dayun": [
+     "YUANZHIM1"
+    ]
+   },
    "file": "dayun.json",
    "size": 4679,
    "sha256": "c166a019ad17ef1106b3c91a458e8db145a37aab86038878168864d1c504d958"
@@ -517,6 +1027,15 @@
     "dffd-oddffev"
    ],
    "cars": 6,
+   "models": {
+    "Dongfeng": [
+     "Fengdu",
+     "Fengdu EX1 Pro",
+     "Fengdu FEV",
+     "Fengdu MX6",
+     "Fengdu 纳米01"
+    ]
+   },
    "file": "dffd.json",
    "size": 8557,
    "sha256": "0908b010ee0492685d17201a27260488a07651776fc60e70a9c2535ce22570e0"
@@ -535,6 +1054,20 @@
     "dffg-redf580protol"
    ],
    "cars": 25,
+   "models": {
+    "Dongfeng": [
+     "Fengguang",
+     "Fengguang 330S",
+     "Fengguang 360",
+     "Fengguang 370",
+     "Fengguang 500",
+     "Fengguang 560",
+     "Fengguang 580PRO",
+     "Fengguang E3",
+     "Fengguang FG580",
+     "Fengguang S560"
+    ]
+   },
    "file": "dffg.json",
    "size": 19289,
    "sha256": "e0d63f658c3b5fdb99d8ca3651329e604630d2762251dc92e955f6a95bc72808"
@@ -555,6 +1088,23 @@
     "dffs-redfprotol"
    ],
    "cars": 59,
+   "models": {
+    "Dongfeng": [
+     "Aeolus",
+     "Aeolus A60",
+     "Aeolus AX3",
+     "Aeolus AX4",
+     "Aeolus AX5",
+     "Aeolus AX7",
+     "Aeolus Fengsheng A30",
+     "Aeolus Fengsheng D27",
+     "Aeolus Fengsheng EX1",
+     "Aeolus Fengsheng X37",
+     "Aeolus XIAOKANGC51",
+     "Aeolus YIXUAN",
+     "Fengdu MX5"
+    ]
+   },
    "file": "dffs.json",
    "size": 31067,
    "sha256": "6a327ea87a585d79d72bc9fe7c0f6614a01578deb46b66d95deb8ed2b6ec23c9"
@@ -575,6 +1125,22 @@
     "dffx-rejoyearx5"
    ],
    "cars": 24,
+   "models": {
+    "Dongfeng": [
+     "Forthing",
+     "Forthing CM7 20215-2021",
+     "Forthing JYS50",
+     "Forthing JYX5",
+     "Forthing JYX6",
+     "Forthing M7",
+     "Forthing S360EVE",
+     "Forthing S50 Ev",
+     "Forthing S50 Fuel",
+     "Forthing SX6",
+     "Forthing SX7H",
+     "Forthing T5"
+    ]
+   },
    "file": "dffx.json",
    "size": 22676,
    "sha256": "17bddc69e57c729ca97b01ee842159034a01e9a7e9fbdfd9b46a5f13776915ee"
@@ -591,6 +1157,11 @@
     "dftl-oddftl"
    ],
    "cars": 1,
+   "models": {
+    "Dongfeng": [
+     "Tianlong"
+    ]
+   },
    "file": "dftl.json",
    "size": 4462,
    "sha256": "2fd586c56cb3733cf1dafe68149425a19511d67fda43e109e730b63dd29ea311"
@@ -611,6 +1182,16 @@
     "dodge-rewrangler"
    ],
    "cars": 9,
+   "models": {
+    "Dodge": [
+     "Challenger",
+     "Journey",
+     "Ram"
+    ],
+    "Fiat": [
+     "Freemont"
+    ]
+   },
    "file": "dodge.json",
    "size": 19009,
    "sha256": "21b6c412276a50ab0ff9f6c09f64a799630be0ca68e8f0c0d9e5c124fcf5933f"
@@ -627,6 +1208,9 @@
     "ferrari-odferrari"
    ],
    "cars": 1,
+   "models": {
+    "Ferrari": []
+   },
    "file": "ferrari.json",
    "size": 2539,
    "sha256": "d5a3e2002f6a97c752370c5464460f1920f61077c680a621cf94c88325734629"
@@ -656,6 +1240,68 @@
     "fiat-sp14fiatprotok"
    ],
    "cars": 224,
+   "models": {
+    "Alfa Romeo": [
+     "147",
+     "159",
+     "Giulia",
+     "Giulietta",
+     "Mito",
+     "Stelvio"
+    ],
+    "Chrysler": [
+     "300C"
+    ],
+    "Dodge": [
+     "Journey"
+    ],
+    "Fiat": [
+     "500",
+     "500C",
+     "500L",
+     "500X",
+     "Abarth Spider",
+     "Aegea",
+     "Argo",
+     "Bravo",
+     "Brazil",
+     "Corma",
+     "Cronos",
+     "Doblo",
+     "Ducato",
+     "Ducato LVDS",
+     "F500",
+     "Fastback",
+     "Feixiang",
+     "Fiorino",
+     "Freemont",
+     "Hybrid",
+     "Lancia",
+     "Linea",
+     "Mobi",
+     "Newfiat",
+     "Oldfiat",
+     "Ottimo",
+     "Palio",
+     "Panda",
+     "Panda Hybrid",
+     "Pulse",
+     "Punto",
+     "Strada",
+     "Tipo",
+     "Toro",
+     "Uno"
+    ],
+    "Jeep": [
+     "Cherokee",
+     "Compass"
+    ],
+    "Maserati": [
+     "Ghibli",
+     "GT",
+     "Quattroporte"
+    ]
+   },
    "file": "fiat.json",
    "size": 57922,
    "sha256": "0c1cb9bed8b24d76c68bc7d251ce87c2accf91298a00503bfe7eb3a93ed2ccf4"
@@ -696,6 +1342,81 @@
     "ford-spmondeo"
    ],
    "cars": 482,
+   "models": {
+    "Ford": [
+     "B-MAX",
+     "BaoDian",
+     "Bronco",
+     "Cmax",
+     "E350",
+     "Ecosport",
+     "Edge",
+     "Edge 13",
+     "Edge 15-18",
+     "Edge 15CHINA",
+     "Escape",
+     "Escort",
+     "Everest",
+     "Expedition",
+     "Expediton",
+     "Explorer",
+     "F150",
+     "F250",
+     "F350",
+     "F500",
+     "Falcon",
+     "Feista",
+     "FG",
+     "Fiesta",
+     "Fiesta 13",
+     "Flex",
+     "Focus",
+     "Focus 3",
+     "Focus 4",
+     "Focus Europe",
+     "Fushun",
+     "Fusion",
+     "Galaxy",
+     "Grand C-MAX",
+     "KA",
+     "Kuga",
+     "Maverick",
+     "Mondeo",
+     "Mondeo Fusion",
+     "Mondeo Hybrid",
+     "Mondeozs",
+     "Mustang",
+     "New Fiesta",
+     "New Mondeo",
+     "New Transit",
+     "Puma",
+     "Ranger",
+     "Raptor",
+     "Smax",
+     "Taurus",
+     "Territdry",
+     "Tourneo Connect",
+     "Tourneo Courier",
+     "Tourneo Courier 15",
+     "Tourneo Custom",
+     "Transit",
+     "Transit 15",
+     "Transit Courier",
+     "Tuario",
+     "Tuario 16-17"
+    ],
+    "Lincoln": [
+     "Continental",
+     "Mkc",
+     "MKX",
+     "Mkz",
+     "Nautilus",
+     "Navigator"
+    ],
+    "Mazda": [
+     "BT50"
+    ]
+   },
    "file": "ford.json",
    "size": 173769,
    "sha256": "0b76102f72e8bca9ba27795c4b459a390bd85878552bdc5e4d61c7dbaf231132"
@@ -713,6 +1434,20 @@
     "foton-ouditunand"
    ],
    "cars": 11,
+   "models": {
+    "Foton": [
+     "CAVEN",
+     "FengJing I7 I9",
+     "FengJing I9",
+     "General",
+     "OLLIN PR0",
+     "Tunand",
+     "Tuyanuo",
+     "卡文乐福",
+     "欧马可",
+     "火星7"
+    ]
+   },
    "file": "foton.json",
    "size": 9498,
    "sha256": "ad087048ad134a20c09a5baac4a818449e09c14e18319d67021b5813fed0784f"
@@ -740,6 +1475,55 @@
     "geely-regeelygc7"
    ],
    "cars": 124,
+   "models": {
+    "Geely": [
+     "Bin Yue",
+     "BinRui",
+     "Bo Rui",
+     "Bo Yue",
+     "Bo Yue Pro",
+     "BOYUEFACELIFTMILLIONS",
+     "Coolray Hybrid",
+     "Coolray Russia",
+     "EC",
+     "EC7",
+     "Emgrand Ev",
+     "Emperor",
+     "GC7",
+     "Geometry A",
+     "GL",
+     "GL Hybrid",
+     "GS",
+     "GSE",
+     "HaoYue",
+     "JiaJi",
+     "JiaJiL",
+     "LEIDARD5",
+     "LEIDARD6",
+     "Panda",
+     "Persona",
+     "PREFACE",
+     "Proton",
+     "Radar",
+     "Remote Star Enjoy",
+     "S70",
+     "X50",
+     "X70",
+     "X90",
+     "Yuan Jing",
+     "Yuanjing S1",
+     "Yuanjing Suv X6",
+     "Yuanjing X1",
+     "Yuanjing X3",
+     "Yuanjing X6",
+     "YUANJINGX3PRO"
+    ],
+    "Maple": [
+     "80V",
+     "EX3",
+     "X3 Pro"
+    ]
+   },
    "file": "geely.json",
    "size": 73280,
    "sha256": "1829866089319cab6430e8205a0c68f263202a12c0c36e3151588618be11adb8"
@@ -758,6 +1542,23 @@
     "gmc-spgmenclave"
    ],
    "cars": 10,
+   "models": {
+    "Buick": [
+     "Enclave",
+     "Yukon"
+    ],
+    "GMC": [
+     "Acadia",
+     "Current Current",
+     "Sierra",
+     "Sierra HD",
+     "Yukon",
+     "Yukon XL"
+    ],
+    "Hummer": [
+     "H2"
+    ]
+   },
    "file": "gmc.json",
    "size": 3348,
    "sha256": "3792e36bc2e829f3b00cfa98bcbd0bddf1b1553c685e988581f56966e06ff1b2"
@@ -774,6 +1575,11 @@
     "gpatton-oudigpatton"
    ],
    "cars": 1,
+   "models": {
+    "George Patton": [
+     "Chariot"
+    ]
+   },
    "file": "gpatton.json",
    "size": 2734,
    "sha256": "7b217e2471ba7598c5bb7595aa5f772dd95d8178565dd142872d2fe69d9865e2"
@@ -795,6 +1601,25 @@
     "greatwall-rehaval"
    ],
    "cars": 28,
+   "models": {
+    "Great Wall": [
+     "C30",
+     "Greatwall H3 05-09",
+     "Jingangpower",
+     "Power",
+     "W5",
+     "W6",
+     "W7"
+    ],
+    "Haval": [
+     "H1",
+     "H2",
+     "H4",
+     "H6",
+     "H9",
+     "M6"
+    ]
+   },
    "file": "greatwall.json",
    "size": 19150,
    "sha256": "feea39b3589e3da51e60c869f1cb6d2042e2c4db53a4779365c456151ae71b95"
@@ -820,6 +1645,27 @@
     "haima-rehaimas5"
    ],
    "cars": 28,
+   "models": {
+    "BYD": [
+     "F3",
+     "ModelSuRui"
+    ],
+    "Chery": [
+     "A3"
+    ],
+    "Haima": [
+     "Family",
+     "Family F5",
+     "M3",
+     "M5",
+     "M6",
+     "M8",
+     "S5",
+     "S5YOUNG",
+     "S7",
+     "V70"
+    ]
+   },
    "file": "haima.json",
    "size": 33875,
    "sha256": "8e14e937b2a51be38cf6e87517c9c3f1355c6051729b0e8cc65c159f67e9064a"
@@ -838,6 +1684,15 @@
     "hanteng-rehanteng"
    ],
    "cars": 10,
+   "models": {
+    "Hanteng": [
+     "X5",
+     "X7"
+    ],
+    "Mitsubishi": [
+     "YiGe"
+    ]
+   },
    "file": "hanteng.json",
    "size": 11874,
    "sha256": "108924e87a28833ae4abd4e6bf5c3bce096746a988467b3650f5feaded8142da"
@@ -867,6 +1722,35 @@
     "haval-rehavalm6plus"
    ],
    "cars": 153,
+   "models": {
+    "Great Wall": [
+     "Changchen",
+     "Jingangpower",
+     "Power",
+     "W7"
+    ],
+    "Haval": [
+     "Connon",
+     "F7",
+     "F7X",
+     "First Love",
+     "H1",
+     "H2",
+     "H2S",
+     "H3",
+     "H4",
+     "H6",
+     "H6 Couple",
+     "H6 Keep Host Keep Host",
+     "H6 Sport",
+     "H7",
+     "H7L",
+     "H8",
+     "H9",
+     "M6",
+     "M6PLUS"
+    ]
+   },
    "file": "haval.json",
    "size": 80332,
    "sha256": "b982cd233a085566530c8a7760a5b8f44fe440cde552be2b118eaf65f7bacdc3"
@@ -883,6 +1767,11 @@
     "hezhong-oudihezhong"
    ],
    "cars": 1,
+   "models": {
+    "Neta": [
+     "Nezha"
+    ]
+   },
    "file": "hezhong.json",
    "size": 3879,
    "sha256": "933a15749f844e3af5db58a37654ae0974c6a4154f67d310126f17e72bad2666"
@@ -923,6 +1812,51 @@
     "honda-xbshonda"
    ],
    "cars": 331,
+   "models": {
+    "Honda": [
+     "Accord",
+     "Acura",
+     "Avancier",
+     "BR-V",
+     "Breeze",
+     "Breeze Phev",
+     "City",
+     "Civic",
+     "CIVIC TYPER",
+     "Clarity",
+     "Crider",
+     "Crosstour",
+     "Crosstour 13",
+     "Crosstour 16",
+     "Crv",
+     "Elysion",
+     "Envix",
+     "EVERUS",
+     "Fit",
+     "Freed",
+     "Gienia",
+     "Greiz",
+     "Hrv",
+     "Insight",
+     "Inspire",
+     "Integra",
+     "Jade",
+     "Jazz",
+     "Life",
+     "MNV",
+     "Nbox",
+     "Odyssey",
+     "Passport",
+     "Pilot",
+     "Spirior",
+     "STEP WGN",
+     "Urv",
+     "Vezel",
+     "WR-V",
+     "Xrv",
+     "Zrv"
+    ]
+   },
    "file": "honda.json",
    "size": 131508,
    "sha256": "a85ff247ea286bf2fbae0325f4879f1ab9dd8e3e23203c4f29a770bbac3b7251"
@@ -942,6 +1876,13 @@
     "hongqi-raisehongqih5"
    ],
    "cars": 8,
+   "models": {
+    "Hongqi": [
+     "EQM5",
+     "H5",
+     "H7"
+    ]
+   },
    "file": "hongqi.json",
    "size": 21581,
    "sha256": "71b969dbaa834b0e01b8e7573d4fd5005fe92f6325ca43acc3188bb4c6ec28e2"
@@ -958,6 +1899,11 @@
     "hongyan-oudihongyan"
    ],
    "cars": 1,
+   "models": {
+    "SAIC": [
+     "Hongyan Jieshi"
+    ]
+   },
    "file": "hongyan.json",
    "size": 5256,
    "sha256": "5f2fddb2535a763cf669dd99546238a0c482b5fa53711bf67cfa0f3946109ef4"
@@ -974,6 +1920,11 @@
     "huanghai-rehuanghai"
    ],
    "cars": 1,
+   "models": {
+    "Huanghai": [
+     "N2"
+    ]
+   },
    "file": "huanghai.json",
    "size": 3874,
    "sha256": "49d7cc1c3fc925433ecf0b525be490bba8a0c715fd37aa98ae7789270e3bbb37"
@@ -990,6 +1941,12 @@
     "hummer-oudihummerh2"
    ],
    "cars": 2,
+   "models": {
+    "Hummer": [
+     "H2",
+     "H3"
+    ]
+   },
    "file": "hummer.json",
    "size": 1657,
    "sha256": "113a15ce6920b7d33a4ec344b560b39d878e98876dcd449e2ee78bf166d1c09d"
@@ -1014,6 +1971,119 @@
     "kia-spkorea"
    ],
    "cars": 448,
+   "models": {
+    "Hyundai": [
+     "Accent",
+     "Avante",
+     "Azera",
+     "Carnival",
+     "Casper",
+     "Creta",
+     "Elantra",
+     "Encino",
+     "Equus",
+     "Genesis",
+     "Genesis Coupe",
+     "Genesis G330",
+     "Genesis G80",
+     "Grandeur",
+     "Grandeur HG240",
+     "Grandeur HG300",
+     "GV70",
+     "H-1",
+     "H1 Starex",
+     "HB20S",
+     "I20",
+     "I30",
+     "I40",
+     "IONIQ",
+     "IX25",
+     "IX35",
+     "IX45",
+     "K9",
+     "Kona",
+     "Lafesta",
+     "Langdong",
+     "Lawrence",
+     "Lingdong",
+     "Mistra",
+     "New Zealand",
+     "NIRO",
+     "None",
+     "Optima",
+     "Palisade",
+     "Porter II",
+     "Santafe",
+     "SantaFe Sport",
+     "SantaFe XL",
+     "Sonata",
+     "Sonata YF",
+     "SONATA8",
+     "SONATA8 SONATA8",
+     "SONATA9",
+     "SONATA9 Hev",
+     "SONATA9 SONATA8",
+     "Sorento",
+     "Soul",
+     "Sportage",
+     "Stargazer",
+     "Staria",
+     "Tucson",
+     "Veloster",
+     "Venue",
+     "Veracruz",
+     "Xcient"
+    ],
+    "Kia": [
+     "Bongo III",
+     "Borrego",
+     "Cadenza",
+     "Cadenza Cadenza",
+     "Caren",
+     "Carnes",
+     "Carnival",
+     "CEED",
+     "K3",
+     "K4",
+     "K5",
+     "K7",
+     "K9",
+     "Kx Cross",
+     "KX3",
+     "KX5",
+     "KX7",
+     "Mohave",
+     "Morning",
+     "Mroning",
+     "NIRO",
+     "Niro EV",
+     "Opirus",
+     "OPTIMA",
+     "Picanto",
+     "Pride",
+     "Ray",
+     "SANTAFE2",
+     "Sedona",
+     "Seltos",
+     "Sorento",
+     "SORENTO L",
+     "Soul",
+     "Sportage",
+     "SPORTAGE2",
+     "Stonic"
+    ],
+    "SsangYong": [
+     "Actyon",
+     "Korando",
+     "Korando Turismo",
+     "Kyron",
+     "Rexton G4",
+     "Rexton Sports",
+     "Rodius",
+     "Tivoli",
+     "Tivoli Air"
+    ]
+   },
    "file": "hyundai-kia.json",
    "size": 81891,
    "sha256": "946df36e9aab410e633d58c43dae4ce45b5e4cc27e0ee995bb92e60fb96706ae"
@@ -1033,6 +2103,22 @@
     "ikco-hdikco"
    ],
    "cars": 6,
+   "models": {
+    "AMICO": [
+     "Asena"
+    ],
+    "IKCO": [
+     "Dena",
+     "Soren",
+     "Tara"
+    ],
+    "Peugeot": [
+     "207I"
+    ],
+    "SAIPA": [
+     "Shahin"
+    ]
+   },
    "file": "ikco.json",
    "size": 7108,
    "sha256": "f4a68bbeae682480881fecf5be70f6547060fd7edb8e1f68a31f2fb857d68dce"
@@ -1051,6 +2137,17 @@
     "isuzu-raiseisuzuprotol"
    ],
    "cars": 18,
+   "models": {
+    "Isuzu": [
+     "D-MAX",
+     "Mu-X牧游侠",
+     "五十铃 全系",
+     "庆铃",
+     "庆铃-达咖",
+     "瑞迈",
+     "铃拓"
+    ]
+   },
    "file": "isuzu.json",
    "size": 19145,
    "sha256": "a86006b638e2382a17c351e96abed9ec2798df39c1a7f04696e47622164c28ea"
@@ -1069,6 +2166,11 @@
     "iveco-raiseiveco"
    ],
    "cars": 4,
+   "models": {
+    "Iveco": [
+     "Daily"
+    ]
+   },
    "file": "iveco.json",
    "size": 8945,
    "sha256": "334aef954d7496795357230b14e4874e46186f1a383b805cf8e8119d4d11de2f"
@@ -1093,6 +2195,34 @@
     "jac-rejac"
    ],
    "cars": 48,
+   "models": {
+    "JAC": [
+     "A5",
+     "EV04",
+     "I30",
+     "IEV6E",
+     "IEV7",
+     "IEV7S",
+     "LINGPAO L3",
+     "M4",
+     "M5",
+     "R3",
+     "Ruifeng",
+     "S2",
+     "S2 MINI",
+     "S3",
+     "S4",
+     "S5",
+     "S7",
+     "Sehol X6",
+     "Sunray",
+     "Surpass",
+     "T8",
+     "XINGRUI",
+     "嘉悦X7",
+     "江淮帅铃"
+    ]
+   },
    "file": "jac.json",
    "size": 53756,
    "sha256": "ac6008240d86f412a7938f8f1487f96b3ab3d10bf81c9589073a2d5273f0741d"
@@ -1110,6 +2240,15 @@
     "jaguar-lzjaguarxf"
    ],
    "cars": 8,
+   "models": {
+    "Jaguar": [
+     "RANGEROVERSPORT",
+     "S TYPE",
+     "XF",
+     "XFL",
+     "XJL"
+    ]
+   },
    "file": "jaguar.json",
    "size": 16256,
    "sha256": "efd6cab8b878c8385c86b8535ecf68017ea706bcf449bc0659a42eefd1e96914"
@@ -1141,6 +2280,69 @@
     "jeep-xbsjeep"
    ],
    "cars": 215,
+   "models": {
+    "Chrysler": [
+     "300C",
+     "CHRYSLERSEBRING",
+     "Pacifica",
+     "Pacifica Hybrid",
+     "Sebring",
+     "Series"
+    ],
+    "Dodge": [
+     "Charger",
+     "Dakota",
+     "Durango",
+     "Journey",
+     "KUBO",
+     "RAM",
+     "Ram 1500",
+     "Ram Truck",
+     "RAMBLER"
+    ],
+    "Fiat": [
+     "500X",
+     "Aegea",
+     "Aegea HB",
+     "Argo",
+     "Bravo",
+     "Cronos",
+     "Doblo",
+     "Ducato",
+     "Fastback",
+     "Fiorino",
+     "Freemont",
+     "Linea",
+     "Linea Classic",
+     "Mobi",
+     "Punto",
+     "Strada",
+     "Tipo",
+     "Toro",
+     "Uno"
+    ],
+    "Hummer": [
+     "H2",
+     "H3"
+    ],
+    "Jeep": [
+     "Challenger",
+     "Charger",
+     "Cherokee",
+     "Comander PHEV",
+     "Commander",
+     "Compass",
+     "Gladiator",
+     "Gladiator JT",
+     "Grandcherokee",
+     "Liberty",
+     "Patriot",
+     "Ram",
+     "Wrangler",
+     "Wrangler JK",
+     "Wrangler JL"
+    ]
+   },
    "file": "jeep.json",
    "size": 85957,
    "sha256": "8035595475b84ab640ce480c697461e2911fa90ce5a251f613d9f68db5fa25ec"
@@ -1157,6 +2359,13 @@
     "jiefang-odjiefang"
    ],
    "cars": 3,
+   "models": {
+    "FAW": [
+     "Jiefang",
+     "Jiefang J6G",
+     "Jiefang J7"
+    ]
+   },
    "file": "jiefang.json",
    "size": 4795,
    "sha256": "ac9b2449acffa440444e5b3338766168d7011814f234cb541ea31cefc63107b8"
@@ -1173,6 +2382,11 @@
     "jinbei-rejinbei"
    ],
    "cars": 1,
+   "models": {
+    "Jinbei": [
+     "X30L"
+    ]
+   },
    "file": "jinbei.json",
    "size": 6107,
    "sha256": "72b40d73434fc42913f5e1f0c5d8945b0d89104ea99f80f216180b256aace61e"
@@ -1196,6 +2410,30 @@
     "jmc-raisejmcisuzuprotol"
    ],
    "cars": 22,
+   "models": {
+    "JAC": [
+     "Ruifeng",
+     "XINGRUI"
+    ],
+    "JMC": [
+     "BaoDian",
+     "D180",
+     "Dadao",
+     "Fushun",
+     "Gse",
+     "Jl E400",
+     "Jl Yi",
+     "Jl YUHU7",
+     "Kaiyun",
+     "Mu-X牧游侠",
+     "Tdci",
+     "YUHU5",
+     "Yusheng S330",
+     "Yusheng S350",
+     "Yz EV3",
+     "铃拓"
+    ]
+   },
    "file": "jmc.json",
    "size": 38710,
    "sha256": "cb2d2a62400de070015132c985ae219c4dc9b5781db1589e7906322d54449c04"
@@ -1212,6 +2450,11 @@
     "kawei-hdkawei"
    ],
    "cars": 2,
+   "models": {
+    "Kawei": [
+     "K150 20"
+    ]
+   },
    "file": "kawei.json",
    "size": 2977,
    "sha256": "f9610e1e796cf0da42e65e4dba939148a5d92737c576de6b809d2810571d11bf"
@@ -1228,6 +2471,11 @@
     "kinglong-oudikinglong"
    ],
    "cars": 1,
+   "models": {
+    "King Long": [
+     "Kinglong"
+    ]
+   },
    "file": "kinglong.json",
    "size": 2354,
    "sha256": "2a6f2745f6081d95f54731d1a5cd9d6ca5261a785deedd3f5b7b74410db10152"
@@ -1244,6 +2492,12 @@
     "knowbeans-oudiknowbeans"
    ],
    "cars": 3,
+   "models": {
+    "Zhidou": [
+     "D1",
+     "D2"
+    ]
+   },
    "file": "knowbeans.json",
    "size": 3020,
    "sha256": "88fc157f1805d11e8688d02ea95cae1b2d8f276bf4e9ff19de31114bea1b2cae"
@@ -1260,6 +2514,9 @@
     "lamborghini-odlamborghini"
    ],
    "cars": 2,
+   "models": {
+    "Lamborghini": []
+   },
    "file": "lamborghini.json",
    "size": 4790,
    "sha256": "8025b25b0977b1243a39bd6b50d1554e9b82881fc4cae48ec4e9a9e5233ee55d"
@@ -1281,6 +2538,15 @@
     "landrover-relandroverplus"
    ],
    "cars": 13,
+   "models": {
+    "Land Rover": [
+     "Discovery",
+     "DISCOVERY3",
+     "Discoverysport",
+     "Evoque",
+     "Freelander"
+    ]
+   },
    "file": "landrover.json",
    "size": 30705,
    "sha256": "b493a131d09d938a3581ef742a79e71cfa3d8a20e719ef34726bbca3f30e3919"
@@ -1298,6 +2564,12 @@
     "landwind-relufeng"
    ],
    "cars": 4,
+   "models": {
+    "Landwind": [
+     "X7",
+     "Xiaoyao"
+    ]
+   },
    "file": "landwind.json",
    "size": 11018,
    "sha256": "99688d4c8467a72bf174c7f9dde05c2bbed905d7b19acb7e8af2a2f8b64c2a13"
@@ -1314,6 +2586,11 @@
     "leepmotor-hdleepmotor"
    ],
    "cars": 3,
+   "models": {
+    "Leapmotor": [
+     "T03"
+    ]
+   },
    "file": "leepmotor.json",
    "size": 7182,
    "sha256": "24a01e0702916387a128001e80d184e03d3bc4b2c2a137b5534a769553b8e1d2"
@@ -1332,6 +2609,14 @@
     "leopaard-odcheetahprotool"
    ],
    "cars": 6,
+   "models": {
+    "Leopaard": [
+     "Black Giant",
+     "CS9",
+     "CS9 Electric",
+     "CS9 Fuel"
+    ]
+   },
    "file": "leopaard.json",
    "size": 11827,
    "sha256": "c2b98226fda77eb4bacd93993536978f041323c80c84339f1b04a1be4f039883"
@@ -1349,6 +2634,11 @@
     "levdeo-relevdeo"
    ],
    "cars": 3,
+   "models": {
+    "Levdeo": [
+     "Mengo"
+    ]
+   },
    "file": "levdeo.json",
    "size": 6889,
    "sha256": "c91378ea6a6ada40521049b91beafa9ea740a20f47ae342f02e3895b4ef88576"
@@ -1367,6 +2657,14 @@
     "lifan-relifan720"
    ],
    "cars": 7,
+   "models": {
+    "Lifan": [
+     "650EV",
+     "720",
+     "820",
+     "X70"
+    ]
+   },
    "file": "lifan.json",
    "size": 14358,
    "sha256": "cca890a7279e4a70fe2f7bb87d575dabbe752f2d3a8d17870867d0c1ed5f568f"
@@ -1383,6 +2681,11 @@
     "lincoln-oudilincoln"
    ],
    "cars": 1,
+   "models": {
+    "Lincoln": [
+     "Navigator"
+    ]
+   },
    "file": "lincoln.json",
    "size": 1662,
    "sha256": "18203241fc90cbb1c9ef975aca6955a4b3f2ba0c98acda6b42afe0c93135c441"
@@ -1401,6 +2704,15 @@
     "luxgen-raiseu6"
    ],
    "cars": 8,
+   "models": {
+    "Luxgen": [
+     "Luxury 7",
+     "MPV7",
+     "S5",
+     "U5",
+     "U6"
+    ]
+   },
    "file": "luxgen.json",
    "size": 12317,
    "sha256": "234ef08cdba6dfc026e65dfac6d0df2bd08ba9cf11fac5d5c315c3d1a526706b"
@@ -1419,6 +2731,21 @@
     "mahindra-ramahengda"
    ],
    "cars": 11,
+   "models": {
+    "Mahindra": [
+     "KUV100 15",
+     "S11 19",
+     "S6 19",
+     "S9 19",
+     "Scorpion",
+     "THAR 21",
+     "TUV300 15",
+     "XUV 500"
+    ],
+    "Tata": [
+     "Nexon"
+    ]
+   },
    "file": "mahindra.json",
    "size": 16117,
    "sha256": "51264ffdd0801e064fe9dcb2f9f35cd0c6ede5713ba713b9d0876cc475c7efdb"
@@ -1435,6 +2762,11 @@
     "maserati-lzmaserati"
    ],
    "cars": 2,
+   "models": {
+    "Maserati": [
+     "Quattroporte"
+    ]
+   },
    "file": "maserati.json",
    "size": 6277,
    "sha256": "b763e784df6c4ca074cc207870da194a9fe20eac1ccb280a8a3263c982bd20a1"
@@ -1454,6 +2786,19 @@
     "maxus-resaicmaxus"
    ],
    "cars": 21,
+   "models": {
+    "Maxus": [
+     "EV30",
+     "G10",
+     "G50",
+     "M1",
+     "T60",
+     "T70",
+     "V1",
+     "V80",
+     "V90"
+    ]
+   },
    "file": "maxus.json",
    "size": 16896,
    "sha256": "60a79f70be5c9b38e52d00c939c5460255c2f9a16c5392d7fbb4679d2254c07d"
@@ -1483,6 +2828,34 @@
     "mazda-xbsmazda6"
    ],
    "cars": 87,
+   "models": {
+    "Mazda": [
+     "Atenza",
+     "Axela",
+     "BT50",
+     "Cx 30",
+     "CX3",
+     "CX4",
+     "CX5",
+     "CX7",
+     "CX8",
+     "CX9",
+     "MAZDA2",
+     "MAZDA3",
+     "MAZDA3 Axela",
+     "MAZDA3 Oversea",
+     "MAZDA3 Xingpin",
+     "MAZDA5",
+     "MAZDA6",
+     "MAZDA6 Atenza",
+     "MAZDA6 Old",
+     "MAZDA6 Ruiyi",
+     "MAZDA7",
+     "MAZDA8",
+     "MX5",
+     "RX8"
+    ]
+   },
    "file": "mazda.json",
    "size": 59065,
    "sha256": "b090644543c18f3c6d572afb8453f1bb0de07f8b1d885d2843c171ab528db937"
@@ -1505,6 +2878,33 @@
     "mg-resaiccommon"
    ],
    "cars": 57,
+   "models": {
+    "Maxus": [
+     "T60"
+    ],
+    "MG": [
+     "EZS",
+     "Gs",
+     "Hs",
+     "MG3",
+     "MG5",
+     "MG6",
+     "RuiTeng",
+     "Zs"
+    ],
+    "Roewe": [
+     "360 Plus",
+     "EI5",
+     "EI6",
+     "I5",
+     "I6",
+     "RX3",
+     "RX5",
+     "RX5 Hybrid",
+     "RX5 Plus",
+     "RX8"
+    ]
+   },
    "file": "mg.json",
    "size": 31958,
    "sha256": "56fb5ff18859cf46d3b9686ecec9ca4eea6d68be4c4f70bc51c215f9c9caeaf5"
@@ -1524,6 +2924,35 @@
     "mitsubishi-spmitsubishi"
    ],
    "cars": 72,
+   "models": {
+    "Mitsubishi": [
+     "ASX",
+     "Eclipse Cross",
+     "Eclipse Cross PHEV",
+     "Galant",
+     "Jc",
+     "L200",
+     "L200TRITON",
+     "Lancer",
+     "Lancer Evo",
+     "Lancer Evolution X",
+     "Lancer EX",
+     "LC200",
+     "Montero",
+     "Montero Sport",
+     "Outlander",
+     "Outlander Sport",
+     "Pajero Sport",
+     "Pajieluo",
+     "RVR",
+     "Shogun",
+     "Shogun Sport",
+     "Triton",
+     "XForce",
+     "Xpander",
+     "YiGe"
+    ]
+   },
    "file": "mitsubishi.json",
    "size": 25508,
    "sha256": "1cff58f8d6b5b81e663a085ff36096697437aa6893b4af271c1f22ef8e579da7"
@@ -1564,6 +2993,78 @@
     "nissan-xbsteana08"
    ],
    "cars": 321,
+   "models": {
+    "Nissan": [
+     "Alaskan",
+     "Altima",
+     "Armada",
+     "Duke",
+     "Duke 13-16",
+     "Elgrand",
+     "Fengon",
+     "Frontier",
+     "Fuga",
+     "FX37",
+     "FX50S",
+     "G37",
+     "GTR",
+     "Infiniti",
+     "Infiniti EX35",
+     "Infiniti FX35",
+     "Infiniti Q50L",
+     "Infiniti QX60",
+     "Juke",
+     "Juke-in",
+     "Kicks",
+     "Lannia",
+     "Leaf",
+     "Magnite",
+     "Maxima",
+     "Murano",
+     "NAVANA",
+     "Navara",
+     "NV300",
+     "Pathfinder",
+     "Patrol",
+     "Pulasr",
+     "Q50",
+     "Q50L",
+     "Q70",
+     "Qashaqi",
+     "Qashqai",
+     "Qrv Overseas-edition",
+     "Quest",
+     "QX50",
+     "QX56",
+     "QX70",
+     "QX80",
+     "RIKI6",
+     "RIKI7",
+     "Rogue",
+     "Rogue Sport",
+     "S15",
+     "Sentra",
+     "Sentra VS",
+     "Serena",
+     "Sylphy",
+     "Sylphy E POWER",
+     "Teana",
+     "TEANA XV",
+     "Teana-xv",
+     "Terra",
+     "Tiida",
+     "TITAN",
+     "Titan VS",
+     "Townstar",
+     "Trail",
+     "Versa",
+     "X-Trail",
+     "Yumsun Domestic"
+    ],
+    "Renault": [
+     "Samsung SM7"
+    ]
+   },
    "file": "nissan.json",
    "size": 181538,
    "sha256": "0b6ebc2f71e6a72e3e116c61605ad66b5c92476c6f6ac96d2f2f5cd70219557d"
@@ -1580,6 +3081,11 @@
     "nlmmotor-nlmmotorod"
    ],
    "cars": 1,
+   "models": {
+    "New Longma": [
+     "QITENGM70 Ev"
+    ]
+   },
    "file": "nlmmotor.json",
    "size": 5112,
    "sha256": "6f323f64b2af801ce8a2528268d839be719b2ca06a7bf5bc074067ab1c1d3864"
@@ -1600,6 +3106,30 @@
     "opel-sprp5op002"
    ],
    "cars": 42,
+   "models": {
+    "Opel": [
+     "Adam",
+     "Antara",
+     "Astra",
+     "Astra H",
+     "Astra J",
+     "Astra K",
+     "Combo",
+     "Corsa",
+     "Corsa D",
+     "Corsa E",
+     "Corsaf",
+     "Grandland",
+     "Karl",
+     "Meriva",
+     "Meriva A",
+     "Old",
+     "Vectra",
+     "Vectra C",
+     "Zafira",
+     "Zafira B"
+    ]
+   },
    "file": "opel.json",
    "size": 22069,
    "sha256": "9415a9a4c49e0a43c2fe00ddcfa58706cc0091e7ae6c9e02cdd9b86021b33972"
@@ -1619,6 +3149,19 @@
     "oushang-odchanganx"
    ],
    "cars": 19,
+   "models": {
+    "Changan": [
+     "CS35 PLUS",
+     "CS55",
+     "Oshan Oushang A800",
+     "Oshan Oushang COS1",
+     "Oshan Oushang CX70",
+     "Oshan Oushang X5",
+     "Oshan Oushang X7",
+     "Oshan Oushang X70A",
+     "Oushang"
+    ]
+   },
    "file": "oushang.json",
    "size": 32294,
    "sha256": "8abe0fd2cc770d5811f22526629108776e046d3683951ca816015f58811cdc60"
@@ -1636,6 +3179,16 @@
     "perodua-peroduaraise"
    ],
    "cars": 10,
+   "models": {
+    "Perodua": [
+     "Alza",
+     "Aruz",
+     "Ativa",
+     "Axia",
+     "Bezza",
+     "Myvi"
+    ]
+   },
    "file": "perodua.json",
    "size": 9465,
    "sha256": "4b9ea7c6d0053b258625393146e918553416a90f3942ed0ef5002e5d7cbdf5ae"
@@ -1653,6 +3206,12 @@
     "phantom-odbaics6"
    ],
    "cars": 3,
+   "models": {
+    "BAIC": [
+     "Huansu",
+     "Huansu Magic Speed"
+    ]
+   },
    "file": "phantom.json",
    "size": 9105,
    "sha256": "245216a035c99c56da7eeed39f30491a2805ec3bc5d479e732b7ce76a7303690"
@@ -1673,6 +3232,15 @@
     "porsche-odporscheold"
    ],
    "cars": 13,
+   "models": {
+    "Porsche": [
+     "911",
+     "Boxster",
+     "Cayenne",
+     "Macan",
+     "Panamera"
+    ]
+   },
    "file": "porsche.json",
    "size": 17845,
    "sha256": "cb687e59400b4be2ac1c8503a11c87a3a7bdc76e530c9ba0587baaf486a6dc6f"
@@ -1698,6 +3266,80 @@
     "psa-raise"
    ],
    "cars": 265,
+   "models": {
+    "Citroën": [
+     "Berlingo",
+     "C Elysee",
+     "C Quatre",
+     "C2",
+     "C3",
+     "C3 Aircross",
+     "C3L",
+     "C3XR",
+     "C4",
+     "C4 Cactus",
+     "C4 Quatre",
+     "C4 Sprcetourer",
+     "C4L",
+     "C5",
+     "C5 Aircorss",
+     "DS3",
+     "DS4",
+     "DS5",
+     "DS6",
+     "Elysee",
+     "ES600",
+     "Jumper",
+     "Jumpy",
+     "RCZ",
+     "Triumph",
+     "Xsara"
+    ],
+    "DS": [
+     "DS3",
+     "DS4",
+     "DS5",
+     "DS5LS",
+     "DS6"
+    ],
+    "Opel": [
+     "Corsa F",
+     "Crossland X",
+     "Mokka"
+    ],
+    "Peugeot": [
+     "2008",
+     "206",
+     "207",
+     "208",
+     "3008",
+     "301",
+     "307",
+     "308",
+     "308CC",
+     "308S",
+     "308SW",
+     "4008",
+     "407",
+     "407 9",
+     "408",
+     "408CC",
+     "408SW",
+     "5008",
+     "508",
+     "508L",
+     "607",
+     "Boxer",
+     "C3",
+     "Expert",
+     "MPV Tepee",
+     "Partner",
+     "Rcz",
+     "Rifter",
+     "Tepee",
+     "Traveller"
+    ]
+   },
    "file": "psa.json",
    "size": 69781,
    "sha256": "5c347b9ea7c5fe45824ee26fc898279da407860be131a827411f97c51906a689"
@@ -1715,6 +3357,13 @@
     "qoros-oudiqoros"
    ],
    "cars": 6,
+   "models": {
+    "Qoros": [
+     "QOROS3",
+     "QOROS5",
+     "QOROS5S"
+    ]
+   },
    "file": "qoros.json",
    "size": 8690,
    "sha256": "26416c2310a16e3a103b45394a243e9b984fab1003f662b94791bc86bb884215"
@@ -1732,6 +3381,11 @@
     "racing-racingraise"
    ],
    "cars": 5,
+   "models": {
+    "Ruichi": [
+     "EC75"
+    ]
+   },
    "file": "racing.json",
    "size": 11691,
    "sha256": "6781b569dea39fe37f4cd173d46fe88464018d0f6990bb8ed3f7571423fae9b9"
@@ -1762,6 +3416,116 @@
     "renault-xprenault"
    ],
    "cars": 334,
+   "models": {
+    "Dacia": [
+     "Dokker",
+     "Duster",
+     "Lodgy",
+     "Logan",
+     "LOGAN3",
+     "LoganStepway",
+     "Sandero",
+     "Sandero 3",
+     "SanderoStepway"
+    ],
+    "LADA": [
+     "Priora",
+     "Vesta",
+     "XRAY"
+    ],
+    "Mercedes-Benz": [
+     "Smart"
+    ],
+    "Nissan": [
+     "Magnite"
+    ],
+    "Renault": [
+     "Arkana",
+     "Arkana EV",
+     "Brilliancerenaultgoldencupview",
+     "Captur",
+     "Captur II",
+     "Clio",
+     "CLIO3",
+     "CLIO4",
+     "CLIO5",
+     "CLIO5 1",
+     "Dacia 1",
+     "Dacia Duster",
+     "Dacia Sandero",
+     "Dokker",
+     "Duster",
+     "Duster 1",
+     "Duster Oroch",
+     "Express",
+     "Fluence",
+     "Jogger",
+     "Kadjar",
+     "Kangoo",
+     "Kangoo II",
+     "Kangoo III",
+     "Kaptur",
+     "Kardian",
+     "Kiger",
+     "Kiger I",
+     "Koleos",
+     "Koleos 1",
+     "Koleos 2",
+     "KOLEOS2",
+     "Krebbin",
+     "Kwid",
+     "L90",
+     "Laguna",
+     "Latitude",
+     "Latltude",
+     "Lodgy",
+     "Logan",
+     "Logan II",
+     "Logan III",
+     "Master",
+     "Megane",
+     "Megane 4",
+     "MEGANE2",
+     "MEGANE3",
+     "MEGANE4 1",
+     "Modus",
+     "None",
+     "Samsung None",
+     "Samsung QM3",
+     "Samsung QM5",
+     "Samsung QM6",
+     "Samsung SM3",
+     "Samsung SM5",
+     "Samsung SM6",
+     "Samsung SM7",
+     "Samsung XM3",
+     "Sandero",
+     "Sandero II",
+     "Sandero III",
+     "Scenic",
+     "Scenic II",
+     "Scenic III",
+     "Scenic IV",
+     "SM6",
+     "Smart",
+     "Symbol",
+     "Symbol II",
+     "Symbol III",
+     "Taliant",
+     "Talisman",
+     "Traffic II",
+     "Traffic III",
+     "Trafic",
+     "Trafic 3",
+     "Triber",
+     "Twingo",
+     "Twingo II",
+     "Twingo III",
+     "Zoe"
+    ],
+    "UAZ": [],
+    "VinFast": []
+   },
    "file": "renault.json",
    "size": 69629,
    "sha256": "adf0046ca6849e5510d67913e7344c1f4c1ee1652e5f447715760aef998572d9"
@@ -1788,6 +3552,35 @@
     "roewe-rerongwei550protok"
    ],
    "cars": 51,
+   "models": {
+    "Maxus": [
+     "D60"
+    ],
+    "MG": [
+     "Hs",
+     "MG3",
+     "MG4",
+     "MG5",
+     "MG6",
+     "Mulan",
+     "RuiTeng",
+     "Zs"
+    ],
+    "Roewe": [
+     "360",
+     "550",
+     "950",
+     "EI6",
+     "Hs",
+     "I5",
+     "I6",
+     "MG6",
+     "RX3",
+     "RX5",
+     "RX5 Plus",
+     "Zs"
+    ]
+   },
    "file": "roewe.json",
    "size": 51158,
    "sha256": "a6414e825b3e0aa66e565c43a89208b1badad3079a8a0770c6ad7c2020bf42d0"
@@ -1805,6 +3598,12 @@
     "saab-saabraise"
    ],
    "cars": 4,
+   "models": {
+    "Saab": [
+     "2008",
+     "SAAB9 3"
+    ]
+   },
    "file": "saab.json",
    "size": 6504,
    "sha256": "8a748ca828f2dc491c37928b553eb179bf08c301e4414a9fa64d608354dcbbab"
@@ -1823,6 +3622,23 @@
     "senova-odsaic"
    ],
    "cars": 17,
+   "models": {
+    "BAIC": [
+     "BJ20",
+     "BJ40",
+     "Huansu",
+     "Huansu Magic Speed",
+     "Senova",
+     "Senova Shenbao D60",
+     "Senova Shenbao D70",
+     "Senova Shenbao X25",
+     "Senova Shenbao X35",
+     "Senova Shenbao X55",
+     "Senova Shenbao Zhixing",
+     "Weiwang Weiwang M50"
+    ],
+    "Changhe": []
+   },
    "file": "senova.json",
    "size": 14579,
    "sha256": "2eab09d561ebc9daf61bc68713c3f8af5e653fefeb52a9dc36ed0950451f19c0"
@@ -1841,6 +3657,20 @@
     "shacman-reshacman"
    ],
    "cars": 9,
+   "models": {
+    "Shacman": [
+     "德龙G2",
+     "德龙L5000",
+     "德龙M3000S",
+     "德龙M6000",
+     "德龙X5000",
+     "智云E2",
+     "轩德翼6 翼9"
+    ],
+    "Sinotruk": [
+     "豪沃统帅PRO"
+    ]
+   },
    "file": "shacman.json",
    "size": 9725,
    "sha256": "46c73dc4081437767d8c08611146e26f9f3d83864a538c98477cc3e07e1ef49a"
@@ -1857,6 +3687,9 @@
     "sitech-odsitech"
    ],
    "cars": 2,
+   "models": {
+    "Sitech": []
+   },
    "file": "sitech.json",
    "size": 3884,
    "sha256": "3a83c4096df86b5aa23b6a41f414ccd3033b5b0155cea4f36fd387e50d8e1168"
@@ -1875,6 +3708,11 @@
     "skyworth-reskyworth"
    ],
    "cars": 4,
+   "models": {
+    "Skyworth": [
+     "TianMei ET5"
+    ]
+   },
    "file": "skyworth.json",
    "size": 16369,
    "sha256": "f11c6c27debb669e96aa9e3f1fefd68639223180a5ecf54dfe2369f885f5660a"
@@ -1894,6 +3732,16 @@
     "southeast-resouastprotol"
    ],
    "cars": 11,
+   "models": {
+    "Soueast": [
+     "A5",
+     "DX3",
+     "DX5",
+     "DX7",
+     "V5",
+     "V6"
+    ]
+   },
    "file": "southeast.json",
    "size": 20271,
    "sha256": "43ccf7dcc7ca04571c009685cdff54316440314551a7b80bd688125daab6791b"
@@ -1910,6 +3758,11 @@
     "ssangyong-ssongyong"
    ],
    "cars": 1,
+   "models": {
+    "SsangYong": [
+     "Diweila"
+    ]
+   },
    "file": "ssangyong.json",
    "size": 2106,
    "sha256": "5b3912f9f83634f67d86e233d4c3b7bfca82f56e5aab98901a861bae3fc4c65b"
@@ -1932,6 +3785,24 @@
     "subaru-spsubaru"
    ],
    "cars": 24,
+   "models": {
+    "Subaru": [
+     "Crosstrek",
+     "Forester",
+     "Forester 15-18",
+     "Forester 19",
+     "Impreza 15-16",
+     "Impreza 17-19",
+     "Legacy",
+     "Legacy 15-19",
+     "OutBack",
+     "OutBack 15-19",
+     "Tribeca",
+     "XV",
+     "XV Crosstrek 15-17",
+     "XV Crosstrek 18-19"
+    ]
+   },
    "file": "subaru.json",
    "size": 32199,
    "sha256": "79bbcb40dd5b6182859d954d5825131210d6d5ac9441872aa83eea4f17bc87d4"
@@ -1951,6 +3822,16 @@
     "suzuki-spsuzuki"
    ],
    "cars": 12,
+   "models": {
+    "Suzuki": [
+     "Baleno",
+     "Fronx",
+     "Grand Vitara",
+     "IGNIS",
+     "Jimmy",
+     "S-Cross"
+    ]
+   },
    "file": "suzuki.json",
    "size": 17380,
    "sha256": "f55c08b0f934d70c16a2df4a6c9a305c7f92c6011b6f0510e884ba9924a72c96"
@@ -1970,6 +3851,16 @@
     "swm-raiseswmg01"
    ],
    "cars": 14,
+   "models": {
+    "SWM": [
+     "G01",
+     "G03",
+     "G05",
+     "GO5 Pro",
+     "SwayTiger",
+     "SWMX7"
+    ]
+   },
    "file": "swm.json",
    "size": 22800,
    "sha256": "8ea7f3f427215ea84c5f810976a1416f90722da1fd9fc31a488e13de35424da6"
@@ -1987,6 +3878,15 @@
     "tata-lztata"
    ],
    "cars": 8,
+   "models": {
+    "Tata": [
+     "Harrier",
+     "Hexa",
+     "Hexa 19",
+     "Nexon 19",
+     "Tiago"
+    ]
+   },
    "file": "tata.json",
    "size": 9761,
    "sha256": "11ef4d1a17cae2be8b034f9bdf6c0618f609e968fca20d97059c71e7576de24a"
@@ -2021,6 +3921,115 @@
     "toyota-xinbastoyota"
    ],
    "cars": 607,
+   "models": {
+    "Toyota": [
+     "4RUNNER",
+     "ALLION",
+     "Alpha",
+     "Alphard",
+     "Alphard 20SERIES",
+     "Alphard 30SERIES",
+     "Alphard Hybrid",
+     "Alpharo Most 20",
+     "Alpharo Most 30",
+     "Alpharo Most 35",
+     "Alpharo Most 40",
+     "Auris",
+     "Avalon",
+     "BZ4X",
+     "C-HR-Hybrid",
+     "Camry",
+     "Chr",
+     "Chr Ev",
+     "Corolla",
+     "Corolla Cross",
+     "Crown",
+     "Crown 12TH",
+     "CrownKlliger",
+     "Cruiser",
+     "Cruiser Abc",
+     "CURRENT",
+     "ES",
+     "ES 09-18",
+     "ES 13-17",
+     "ES 9",
+     "Fenglanda",
+     "FJ Cruiser",
+     "Fortuner",
+     "Fortuner 2015BEFORE",
+     "Frontlander",
+     "GeRuiWeiYa",
+     "Harrier",
+     "HIACE",
+     "Highlander",
+     "HILUX",
+     "Hyryder",
+     "Innova",
+     "IS",
+     "Izoa",
+     "Kluger",
+     "Land Cruise LC300",
+     "Land Cruiser 200",
+     "Land Cruiser Prado",
+     "Landcruiser",
+     "LC100",
+     "LC300",
+     "Levin",
+     "Lexus Gs",
+     "Lexus Gs 10-13",
+     "Lexus GS300",
+     "Lexus IS250",
+     "Lexus IS300",
+     "Lexus IS300C",
+     "Lexus Ls",
+     "Lexus LS460",
+     "Lexus LS460L",
+     "Lexus LX470",
+     "Lexus LX470 5",
+     "Lexus Nx",
+     "Lexus Nx 14-16",
+     "Lexus Rx",
+     "Lexus Rx 09-14",
+     "Lexus Rx 15-17",
+     "Lexus Rx 8",
+     "Lexus Rx 9月14日",
+     "Lexus RX270",
+     "Lexus RX300 98",
+     "Lexus RX330",
+     "Majesty",
+     "Majesty 1",
+     "Noah",
+     "None",
+     "Prado",
+     "PREVIA",
+     "Prius",
+     "Prius C Aqua",
+     "PRO ACE CITY",
+     "Proace",
+     "RAV4",
+     "RAV4-HEV",
+     "Reiz",
+     "Sequoia",
+     "SharpRelease",
+     "Sienna",
+     "Sienna 22",
+     "Sienta",
+     "Superbully",
+     "TACOMA",
+     "Tundra",
+     "Vellfire",
+     "Veloz",
+     "Venza",
+     "Verso",
+     "Vios",
+     "Voxy",
+     "Wildlander",
+     "WILLANDER",
+     "Yaris",
+     "Yaris Cross",
+     "YARiS L"
+    ]
+   },
    "file": "toyota.json",
    "size": 163841,
    "sha256": "63d3101616f8dbd6029f757064e1187b1f6af4cc0fd6f39516b3eb183a489c8b"
@@ -2041,6 +4050,33 @@
     "trumpchi-retrumpchi"
    ],
    "cars": 118,
+   "models": {
+    "GAC": [
+     "Trumpchi",
+     "Trumpchi Airtrek Ev",
+     "Trumpchi Alon",
+     "Trumpchi AlonES",
+     "Trumpchi CE3",
+     "Trumpchi GA3",
+     "Trumpchi GA3S",
+     "Trumpchi GA4",
+     "Trumpchi GA6",
+     "Trumpchi GE3",
+     "Trumpchi GM6",
+     "Trumpchi GM8",
+     "Trumpchi GS3",
+     "Trumpchi GS4",
+     "Trumpchi GS5",
+     "Trumpchi GS5 Super",
+     "Trumpchi GS7",
+     "Trumpchi GS8",
+     "Trumpchi M8",
+     "Trumpchi Qizhi Phev",
+     "Trumpchi QizhiEV",
+     "Trumpchi Taxi",
+     "Trumpchi XINGLANG"
+    ]
+   },
    "file": "trumpchi.json",
    "size": 34987,
    "sha256": "1abbe0689c2a8bd9ad3ad66fb1e3638350e94b1833a119e76929c983ac764cac"
@@ -2057,6 +4093,11 @@
     "uaz-hduap001"
    ],
    "cars": 1,
+   "models": {
+    "UAZ": [
+     "Patriot"
+    ]
+   },
    "file": "uaz.json",
    "size": 5089,
    "sha256": "4c75abc2c96d469b394c5ef8a783750db2f4359a7cab344cb001c112a18fc0b0"
@@ -2078,6 +4119,16 @@
     "venucia-reqichent70"
    ],
    "cars": 20,
+   "models": {
+    "Venucia": [
+     "MODELD50EV",
+     "MODELD60",
+     "MODELD60EV",
+     "MODELM50V",
+     "MODELT90",
+     "T70"
+    ]
+   },
    "file": "venucia.json",
    "size": 22582,
    "sha256": "f7952e7e84a89a8b085e9b28321d7c728df7a46244597abd3c2c45dc73a4b802"
@@ -2109,6 +4160,124 @@
     "vw-pq-raise"
    ],
    "cars": 366,
+   "models": {
+    "Mercedes-Benz": [
+     "B200",
+     "BenzA",
+     "BenzB",
+     "BenzGL",
+     "BenzML",
+     "R Class",
+     "R320",
+     "SL300",
+     "Smart",
+     "Sprinter",
+     "Viano",
+     "Vito"
+    ],
+    "Seat": [
+     "Alhambra",
+     "Altea",
+     "Altea Xl",
+     "Ateca",
+     "Ibiza",
+     "Ibiza MK5",
+     "Leon MK2",
+     "Leon MK3",
+     "Toledo"
+    ],
+    "Skoda": [
+     "Fabia MK2",
+     "Fabia MK3",
+     "Kamiq",
+     "KAROQ",
+     "Kodiak",
+     "Kodiak Gt",
+     "Octavia",
+     "Octavia A8",
+     "Octavia MK2",
+     "Octavia MK3",
+     "Praktik",
+     "Rapid",
+     "Roomster",
+     "Spaceback",
+     "Superb Haorui",
+     "Superb MK2",
+     "Superb MK3",
+     "Superb Supai",
+     "Yeti"
+    ],
+    "Volkswagen": [
+     "Amarok",
+     "Bora",
+     "Caddy",
+     "Caravelle",
+     "Cc",
+     "Cross Lavida",
+     "CrossFox",
+     "EOS",
+     "Fox",
+     "Fusca",
+     "Gol",
+     "Golf",
+     "Golf 6",
+     "Golf 7 Ev",
+     "Golf MK5",
+     "Golf MK6",
+     "Golf MK7",
+     "Golf Sportsvan",
+     "Grand Lavida",
+     "Jetta",
+     "Lamando",
+     "Lavida",
+     "Leon",
+     "LingYu",
+     "Magotan",
+     "Multivan",
+     "New Beetle",
+     "Nivus",
+     "NMS",
+     "Oldtouareg",
+     "Passat",
+     "Passat B6",
+     "Passat B7",
+     "Passat Gte",
+     "PASSATB8",
+     "Phideon",
+     "Polo",
+     "Polo MK6",
+     "Pq",
+     "Sagitar",
+     "Santana",
+     "Saveiro",
+     "Scala",
+     "Scirocco",
+     "Sharan",
+     "T Cross",
+     "T-Roc",
+     "T6",
+     "Tacqua",
+     "Tayron",
+     "Teramont",
+     "Teramont X",
+     "Tharu",
+     "Tiguan",
+     "Tiguan 2",
+     "Tiguan L",
+     "Tiguan L Gte",
+     "Touareg",
+     "Touran",
+     "Touran L",
+     "Transporter",
+     "Transporter 5",
+     "TREK",
+     "Troc",
+     "Up",
+     "Variant",
+     "Viloran",
+     "Voyage"
+    ]
+   },
    "file": "volkswagen.json",
    "size": 100183,
    "sha256": "92c96bd748b25f56dc3604901944b5dcb88e7e39bb59c776d6ef5379562444ff"
@@ -2131,6 +4300,24 @@
     "volvo-raisevolvo"
    ],
    "cars": 24,
+   "models": {
+    "Volvo": [
+     "C30",
+     "C70",
+     "S40",
+     "S60",
+     "S60 2.0T",
+     "S60 3.0T",
+     "S60L",
+     "S80",
+     "S80L",
+     "V40",
+     "V60",
+     "V70",
+     "XC60",
+     "XC90"
+    ]
+   },
    "file": "volvo.json",
    "size": 38657,
    "sha256": "5de6aa743b845de39c4745a20b99aacc2fd04a68857fa6104237b3663ea18100"
@@ -2149,6 +4336,13 @@
     "weichai-raiseweichaig01"
    ],
    "cars": 7,
+   "models": {
+    "Weichai": [
+     "D50",
+     "U60V",
+     "U70"
+    ]
+   },
    "file": "weichai.json",
    "size": 15215,
    "sha256": "4efc49ffea379e6b234e86fce8d30749a303917695bd594cb3871be58b50ffea"
@@ -2165,6 +4359,17 @@
     "weiwang-hdsaic"
    ],
    "cars": 9,
+   "models": {
+    "BAIC": [
+     "Dynasty M7",
+     "Huansu Magic Speed",
+     "Senova",
+     "Senova Shenbao X35",
+     "Weiwang",
+     "Weiwang EV300",
+     "Weiwang Weiwang M50"
+    ]
+   },
    "file": "weiwang.json",
    "size": 5567,
    "sha256": "a1e35fcb4140e82142306bd2f413b604219d6aa8d77dace746fbc3f087a42576"
@@ -2181,6 +4386,11 @@
     "weltmeister-oudiweltmeister"
    ],
    "cars": 1,
+   "models": {
+    "WM": [
+     "Motor Weltmeister E5"
+    ]
+   },
    "file": "weltmeister.json",
    "size": 4578,
    "sha256": "a92fdcb732272b2954bd0229cb00e3fb33a6e5ac43b3860ae9a1ffec9443bdc2"
@@ -2198,6 +4408,14 @@
     "wuling-oudihongguangminiprotol"
    ],
    "cars": 9,
+   "models": {
+    "Wuling": [
+     "VICTORY",
+     "XINGGUANG150",
+     "XINGGUANG70",
+     "XingGuangMini"
+    ]
+   },
    "file": "wuling.json",
    "size": 10864,
    "sha256": "59262bbcffa142910a2fb1df20d2680d8aaedf42f88f4791902ec842647056a3"
@@ -2215,6 +4433,13 @@
     "yema-reyema"
    ],
    "cars": 4,
+   "models": {
+    "Yema": [
+     "A10E",
+     "Bojun",
+     "T80"
+    ]
+   },
    "file": "yema.json",
    "size": 9298,
    "sha256": "fea1bdebd9d6cee0eefcb0a5cf9e54b73cf60b517b976d8277f2d5627fb8c4e1"
@@ -2231,6 +4456,13 @@
     "yutong-oudiyutong"
    ],
    "cars": 3,
+   "models": {
+    "Yutong": [
+     "T2",
+     "T3",
+     "T5"
+    ]
+   },
    "file": "yutong.json",
    "size": 5351,
    "sha256": "ff3e33028597ba7c55f614fa7fc1c5e933eec249973970f6cd0f39928b5f7489"
@@ -2249,6 +4481,16 @@
     "zhonghua-rezhonghua"
    ],
    "cars": 15,
+   "models": {
+    "Brilliance": [
+     "H3",
+     "H530",
+     "HUASONG7",
+     "V3",
+     "V5",
+     "V6"
+    ]
+   },
    "file": "zhonghua.json",
    "size": 14829,
    "sha256": "2c65be789581479d07960f3d8c5b6c264c238c3217484ce3ae10bd99da722b39"
@@ -2271,6 +4513,21 @@
     "zotye-rezotyet"
    ],
    "cars": 26,
+   "models": {
+    "Zotye": [
+     "E200",
+     "JUNMA S70",
+     "SR7",
+     "SR9",
+     "T300",
+     "T500",
+     "T600",
+     "T700",
+     "X5",
+     "X7",
+     "Z560"
+    ]
+   },
    "file": "zotye.json",
    "size": 44697,
    "sha256": "bf5071383799a913f333bd1308392d01dd3194b2cee5b9323607496e3b0d8789"
