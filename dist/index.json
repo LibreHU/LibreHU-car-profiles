@@ -93,15 +93,15 @@
      "A4",
      "A4L",
      "A6",
-     "AUDIA6L",
-     "AUDIQ5L",
-     "AUDIQ7",
-     "AUDIR8",
-     "AUDIRS3",
-     "AUDIS3",
-     "AUDIS4",
+     "A6L",
      "Q3",
      "Q5",
+     "Q5L",
+     "Q7",
+     "R8",
+     "RS3",
+     "S3",
+     "S4",
      "TT"
     ]
    },
@@ -127,21 +127,21 @@
    "cars": 46,
    "models": {
     "Baojun": [
-     "BAOJUN360",
-     "BAOJUN510",
-     "BAOJUN530",
-     "BAOJUN560",
-     "BAOJUN730",
-     "BAOJUNRS3",
-     "BAOJUNRS5"
+     "360",
+     "510",
+     "530",
+     "560",
+     "730",
+     "RS3",
+     "RS5"
     ],
     "Wuling": [
+     "Jiachen",
+     "S3",
      "VICTORY",
-     "WulingJiachen",
-     "WULINGS3",
-     "WulingXingChen",
-     "Wulingxingchi",
-     "WulingXingGuang"
+     "XingChen",
+     "Xingchi",
+     "XingGuang"
     ]
    },
    "file": "baojun.json",
@@ -164,10 +164,10 @@
    "cars": 31,
    "models": {
     "Audi": [
+     "2G ALL-480-240",
      "A4L",
      "A4LQ5",
-     "AUDI2G ALL-480-240",
-     "AUDIQ3"
+     "Q3"
     ],
     "BMW": [
      "Ccc 1",
@@ -415,7 +415,7 @@
      "X3"
     ],
     "Changhe": [
-     "CHANGHEQ25"
+     "Q25"
     ]
    },
    "file": "bj.json",
@@ -479,26 +479,26 @@
    "cars": 77,
    "models": {
     "BMW": [
+     "318I",
+     "320I",
      "BMW1",
      "BMW3",
-     "BMW318I",
-     "BMW320I",
      "BMW5",
-     "BMWCCC Ccc",
-     "BMWCIC CIC-1025",
-     "BMWCIC CIC-65",
-     "BMWCIC CIC-88",
-     "BMWE39 E39",
-     "BMWE53 E53",
-     "BMWE81",
-     "BMWNBT NBT-1025",
-     "BMWNBT NBT-65",
-     "BMWNBT NBT-88",
-     "BMWX1",
-     "BMWX3",
-     "BMWX5",
+     "CCC Ccc",
+     "CIC CIC-1025",
+     "CIC CIC-65",
+     "CIC CIC-88",
+     "E39 E39",
+     "E53 E53",
+     "E81",
      "F1X",
-     "MINI"
+     "MINI",
+     "NBT NBT-1025",
+     "NBT NBT-65",
+     "NBT NBT-88",
+     "X1",
+     "X3",
+     "X5"
     ]
    },
    "file": "bmw.json",
@@ -2283,10 +2283,9 @@
    "models": {
     "Chrysler": [
      "300C",
-     "CHRYSLERSEBRING",
      "Pacifica",
      "Pacifica Hybrid",
-     "Sebring",
+     "SEBRING",
      "Series"
     ],
     "Dodge": [
@@ -3359,9 +3358,9 @@
    "cars": 6,
    "models": {
     "Qoros": [
+     "5S",
      "QOROS3",
-     "QOROS5",
-     "QOROS5S"
+     "QOROS5"
     ]
    },
    "file": "qoros.json",
@@ -3858,7 +3857,7 @@
      "G05",
      "GO5 Pro",
      "SwayTiger",
-     "SWMX7"
+     "X7"
     ]
    },
    "file": "swm.json",
